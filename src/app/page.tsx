@@ -247,17 +247,19 @@ export default function Home() {
       </div>
       <div className="mx-auto w-full max-w-5xl px-6 py-8">
         <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
-          <p className="text-xs uppercase tracking-[0.15em] text-foreground/60">Section 8 — THE EPiCENTRE BRIDGE</p>
-          <p className="mt-3 text-foreground/80">Funding accelerates you.</p>
-          <p className="text-foreground font-semibold">EPiCENTRE <span className="font-bold">refines</span> you.</p>
-          <p className="mt-4 text-foreground/80">A sanctuary built for:</p>
-          <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside">
-            <li>psychological reconstruction</li>
-            <li>monastic clarity</li>
-            <li>creative rebellion</li>
-            <li>disciplined becoming</li>
-          </ul>
-          <p className="mt-6 text-foreground/80">The retreat where your future self learns to breathe.</p>
+          <h4 className="text-3xl sm:text-4xl font-serif font-semibold text-center">THE EPiCENTRE BRIDGE</h4>
+          <p className="mt-3 text-foreground/80 text-center">Funding accelerates you.</p>
+          <p className="text-foreground font-semibold text-center">EPiCENTRE <span className="font-bold">refines</span> you.</p>
+          <p className="mt-4 text-foreground/80 text-center">A sanctuary built for:</p>
+          <div className="mt-3 text-center">
+            <ul className="text-foreground/80 grid grid-cols-1 md:grid-cols-2 gap-2 list-disc list-inside inline-block text-left">
+              <li>psychological reconstruction</li>
+              <li>monastic clarity</li>
+              <li>creative rebellion</li>
+              <li>disciplined becoming</li>
+            </ul>
+          </div>
+          <p className="mt-6 text-foreground/80 text-center">The retreat where your future self learns to breathe.</p>
         </div>
       </div>
 
