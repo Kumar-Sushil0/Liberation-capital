@@ -129,8 +129,8 @@ export default function Home() {
       </div>
 
       <div className="mx-auto w-full max-w-6xl px-6 py-8">
-        <div className="mb-4">
-          <p className="text-xs uppercase tracking-[0.15em] text-foreground/60">Section 5 — Philosophical Framework</p>
+        <div className="mb-4 text-center">
+          <h4 className="text-3xl sm:text-4xl font-serif font-semibold">Philosophical Framework</h4>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
           <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
@@ -138,7 +138,6 @@ export default function Home() {
             <p className="mt-3 text-foreground/80">Not the pitch.</p>
             <p className="text-foreground/80">Not the project.</p>
             <p className="text-foreground/80">The person.</p>
-            <p className="mt-3 text-foreground/80">Identity upgrades outperform market trends.</p>
           </div>
           <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
             <h5 className="text-xl font-serif font-bold">2. Alignment Over Extraction</h5>
@@ -153,6 +152,7 @@ export default function Home() {
             <p className="text-foreground/80">The human pulls the lever.</p>
           </div>
         </div>
+        <p className="mt-6 text-center text-foreground/80">Identity upgrades outperform market trends.</p>
       </div>
 
       <div className="mx-auto w-full max-w-5xl px-6 py-8">
