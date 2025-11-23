@@ -94,37 +94,37 @@ export default function Home() {
 
       <div className="mx-auto w-full max-w-5xl px-6 py-8">
         <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
-          <p className="text-xs uppercase tracking-[0.15em] text-foreground/60">Section 4 — The Funding Architecture</p>
-          <p className="mt-3 text-foreground/80">There is no “application.”</p>
-          <p className="text-foreground font-semibold">There is only a rite of passage.</p>
-          <ol className="mt-6 space-y-4 text-foreground/90 list-decimal list-inside">
+          <h4 className="text-3xl sm:text-4xl font-serif font-semibold text-center">The Funding Architecture</h4>
+          <p className="mt-3 text-foreground/80 text-center">There is no “application.”</p>
+          <p className="text-foreground font-semibold text-center">There is only a rite of passage.</p>
+          <ol className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-foreground/90 list-decimal list-inside">
             <li>
-              <p className="font-bold">GAME i DESIGN — The Mirror</p>
-              <p className="text-foreground/80">Who are you without the performance?</p>
+              <span className="font-bold">GAME i DESIGN — The Mirror</span>
+              <p className="mt-1 text-foreground/80">Who are you without the performance?</p>
             </li>
             <li>
-              <p className="font-bold">CORE i DESIGN — The Descent</p>
-              <p className="text-foreground/80">Silence, structure, emotional archaeology.</p>
+              <span className="font-bold">CORE i DESIGN — The Descent</span>
+              <p className="mt-1 text-foreground/80">Silence, structure, emotional archaeology.</p>
             </li>
             <li>
-              <p className="font-bold">PLAY i DESIGN — The Daily Proof</p>
-              <p className="text-foreground/80">Effort, alignment, discipline. No vibes. Just receipts.</p>
+              <span className="font-bold">PLAY i DESIGN — The Daily Proof</span>
+              <p className="mt-1 text-foreground/80">Effort, alignment, discipline. No vibes. Just receipts.</p>
             </li>
             <li>
-              <p className="font-bold">Eligibility — Coherence Threshold</p>
-              <p className="text-foreground/80">80%+ alignment. No shortcuts.</p>
+              <span className="font-bold">Eligibility — Coherence Threshold</span>
+              <p className="mt-1 text-foreground/80">80%+ alignment. No shortcuts.</p>
             </li>
             <li>
-              <p className="font-bold">Liberation Day — The Public Rite</p>
-              <p className="text-foreground/80">Investors listen like surgeons, not sharks.</p>
+              <span className="font-bold">Liberation Day — The Public Rite</span>
+              <p className="mt-1 text-foreground/80">Investors listen like surgeons, not sharks.</p>
             </li>
             <li>
-              <p className="font-bold">Capital — Scaffolding, Not Shackles</p>
-              <p className="text-foreground/80">Terms clean. Ownership zero. Gratitude optional.</p>
+              <span className="font-bold">Capital — Scaffolding, Not Shackles</span>
+              <p className="mt-1 text-foreground/80">Terms clean. Ownership zero. Gratitude optional.</p>
             </li>
           </ol>
-          <p className="mt-6 text-foreground/80">A simple architecture for a difficult truth:</p>
-          <p className="mt-2 text-foreground font-semibold">Liberation is not granted. It is survived into.</p>
+          <p className="mt-6 text-foreground/80 text-center">A simple architecture for a difficult truth:</p>
+          <p className="mt-2 text-foreground font-semibold text-center">Liberation is not granted. It is survived into.</p>
         </div>
       </div>
 
