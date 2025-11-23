@@ -52,12 +52,12 @@ export default function Home() {
           <h4 className="text-3xl sm:text-4xl font-serif font-semibold">The Two Paths</h4>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-          <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
+          <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8 text-center">
             <h5 className="text-xl font-serif font-bold">▾ For Investors</h5>
             <p className="mt-3 text-foreground/80">A path for those who’ve already won the conventional game</p>
             <p className="text-foreground/80">and now seek returns measured in courage, coherence, and culture.</p>
             <p className="mt-3 text-foreground/80">Here you fund:</p>
-            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside">
+            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside inline-block text-left">
               <li>transitions</li>
               <li>identity upgrades</li>
               <li>life redesigns</li>
@@ -66,10 +66,15 @@ export default function Home() {
             </ul>
             <p className="mt-3 text-foreground/80">Not for control.</p>
             <p className="text-foreground/80">For contribution.</p>
-            <a href="#" className="mt-4 inline-block text-sm font-semibold">Explore Investor Path →</a>
+            <a
+              href="#"
+              className="mt-4 inline-flex h-10 px-5 items-center rounded-md border border-foreground/30 text-foreground text-sm font-semibold hover:bg-foreground/10 transition"
+            >
+              Explore Investor Path →
+            </a>
           </div>
 
-          <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
+          <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8 text-center">
             <h5 className="text-xl font-serif font-bold">▾ For Applicants</h5>
             <p className="mt-3 text-foreground/80">If you’re designing your <span className="font-bold">LIFEiDESIGN</span> game —</p>
             <p className="text-foreground/80">if your current life feels like a polite cage —</p>
@@ -77,7 +82,12 @@ export default function Home() {
             <p className="mt-3 text-foreground/80">This is where the funding of your becoming begins.</p>
             <p className="text-foreground/80">But you don’t enter by pitching.</p>
             <p className="text-foreground/80">You enter by <span className="font-bold">proving your devotion to your own evolution.</span></p>
-            <a href="#" className="mt-4 inline-block text-sm font-semibold">Apply for Funding →</a>
+            <a
+              href="#"
+              className="mt-4 inline-flex h-10 px-5 items-center rounded-md border border-foreground/30 text-foreground text-sm font-semibold hover:bg-foreground/10 transition"
+            >
+              Apply for Funding →
+            </a>
           </div>
         </div>
       </div>
