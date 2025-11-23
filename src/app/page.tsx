@@ -135,21 +135,27 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
           <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
             <h5 className="text-xl font-serif font-bold">1. The Human Is The Asset</h5>
-            <p className="mt-3 text-foreground/80">Not the pitch.</p>
-            <p className="text-foreground/80">Not the project.</p>
-            <p className="text-foreground/80">The person.</p>
+            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside">
+              <li>Not the pitch.</li>
+              <li>Not the project.</li>
+              <li>The person.</li>
+            </ul>
           </div>
           <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
             <h5 className="text-xl font-serif font-bold">2. Alignment Over Extraction</h5>
-            <p className="mt-3 text-foreground/80">No invisible chains.</p>
-            <p className="text-foreground/80">No exploitative clauses.</p>
-            <p className="text-foreground/80">We fund coherence, not compliance.</p>
+            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside">
+              <li>No invisible chains.</li>
+              <li>No exploitative clauses.</li>
+              <li>We fund coherence, not compliance.</li>
+            </ul>
           </div>
           <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
             <h5 className="text-xl font-serif font-bold">3. Capital As a Liberation Engine</h5>
-            <p className="mt-3 text-foreground/80">Money is not the master.</p>
-            <p className="text-foreground/80">Money is the crowbar.</p>
-            <p className="text-foreground/80">The human pulls the lever.</p>
+            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside">
+              <li>Money is not the master.</li>
+              <li>Money is the crowbar.</li>
+              <li>The human pulls the lever.</li>
+            </ul>
           </div>
         </div>
         <p className="mt-6 text-center text-foreground/80">Identity upgrades outperform market trends.</p>
