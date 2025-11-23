@@ -19,29 +19,37 @@ export default function Home() {
       </div>
 
       <div className="mx-auto w-full max-w-5xl px-6 py-8">
-        <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
+        <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8 text-center">
           <p className="text-xs uppercase tracking-[0.15em] text-foreground/60">Institution Statement</p>
-          <h4 className="mt-2 text-2xl font-serif font-semibold" style={{ fontFamily: '"built", "Satoshi", sans-serif' }}>
+          <h4 className="mt-2 text-3xl sm:text-4xl font-serif font-semibold" style={{ fontFamily: '"built", "Satoshi", sans-serif' }}>
             Liberation Capital exists to answer a single question:
           </h4>
           <p className="mt-4 text-lg font-semibold">What are we trying to liberate humans from?</p>
-          <ul className="mt-4 text-foreground/80 space-y-2 list-disc list-inside">
+          <ul className="mt-4 text-foreground/80 space-y-2 list-disc list-inside inline-block text-left">
             <li><span className="font-bold">EPiCENTRE</span> frees them from environmental mediocrity.</li>
             <li><span className="font-bold">LIFEiDESIGN</span> frees them from unconscious existence.</li>
             <li><span className="font-bold">D.D</span> frees them from inherited identities.</li>
           </ul>
-          <p className="mt-6 text-foreground/80">So Liberation Capital does not chase returns.</p>
-          <p className="mt-2 text-foreground font-semibold">It chases <span className="font-bold">Return on Awakening.</span></p>
-          <p className="mt-2 text-foreground/80">We don’t deploy capital to scale companies.</p>
-          <p className="mt-2 text-foreground/80">We deploy it to <span className="font-bold">unchain human potential</span> — to arm people redesigning the architecture of their lives.</p>
-          <p className="mt-2 text-foreground/80">This is not venture capital.</p>
-          <p className="mt-2 text-foreground font-semibold">This is <span className="font-bold">philosophical midwifery with a balance sheet.</span></p>
+          <div className="mt-6 space-y-1 text-foreground/80 leading-tight">
+            <p>So Liberation Capital does not chase returns.</p>
+            <p>
+              It chases <span className="font-bold text-foreground">Return on Awakening.</span>
+            </p>
+            <p>We don’t deploy capital to scale companies.</p>
+            <p>
+              We deploy it to <span className="font-bold text-foreground">unchain human potential</span> — to arm people redesigning the architecture of their lives.
+            </p>
+            <p>This is not venture capital.</p>
+            <p>
+              This is <span className="font-bold text-foreground">philosophical midwifery with a balance sheet.</span>
+            </p>
+          </div>
         </div>
       </div>
 
       <div className="mx-auto w-full max-w-5xl px-6 py-8">
-        <div className="mb-4">
-          <p className="text-xs uppercase tracking-[0.15em] text-foreground/60">Section 3 — The Two Paths</p>
+        <div className="mb-4 text-center">
+          <h4 className="text-3xl sm:text-4xl font-serif font-semibold">The Two Paths</h4>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
