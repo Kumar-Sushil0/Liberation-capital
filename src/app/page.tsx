@@ -265,12 +265,24 @@ export default function Home() {
 
       <div className="mx-auto w-full max-w-5xl px-6 py-8">
         <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
-          <p className="text-xs uppercase tracking-[0.15em] text-foreground/60">Section 9 — Final Threshold</p>
-          <p className="mt-3 text-foreground/80">There are only two ways to step into this philosophy:</p>
-          <p className="mt-3 text-foreground font-semibold">Become an Investor</p>
-          <p className="text-foreground/80">or</p>
-          <p className="text-foreground font-semibold">Apply for Funding</p>
-          <div className="mt-4 space-y-1">
+          <h4 className="text-3xl sm:text-4xl font-serif font-semibold text-center">Final Threshold</h4>
+          <p className="mt-3 text-foreground/80 text-center">There are only two ways to step into this philosophy:</p>
+          <div className="mt-3 flex items-center justify-center gap-4">
+            <a
+              href="#investors"
+              className="inline-flex h-10 px-5 items-center rounded-md border border-foreground/30 text-foreground text-sm font-semibold hover:bg-foreground/10 transition"
+            >
+              Become an Investor
+            </a>
+            <span className="text-foreground/80">or</span>
+            <a
+              href="#applicants"
+              className="inline-flex h-10 px-5 items-center rounded-md border border-foreground/30 text-foreground text-sm font-semibold hover:bg-foreground/10 transition"
+            >
+              Apply for Funding
+            </a>
+          </div>
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
             <p className="text-foreground/80">Choose with intention.</p>
             <p className="text-foreground/80">Choose with honesty.</p>
             <p className="text-foreground/80">Choose with consequence.</p>
