@@ -163,10 +163,10 @@ export default function Home() {
 
       <div className="mx-auto w-full max-w-5xl px-6 py-8">
         <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
-          <p className="text-xs uppercase tracking-[0.15em] text-foreground/60">Section 7 — Applicant Journey</p>
-          <p className="mt-3 text-foreground/80">You don’t convince us with charm.</p>
-          <p className="text-foreground font-semibold">You convince us with <span className="font-bold">coherence</span>.</p>
-          <div className="mt-6 space-y-6">
+          <h4 className="text-3xl sm:text-4xl font-serif font-semibold text-center">Applicant Journey</h4>
+          <p className="mt-3 text-foreground/80 text-center">You don’t convince us with charm.</p>
+          <p className="text-foreground font-semibold text-center">You convince us with <span className="font-bold">coherence</span>.</p>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>
               <h6 className="text-lg font-serif font-bold">Step 1 — Begin LIFEiDESIGN</h6>
               <p className="text-foreground/80">Your transformation becomes the due diligence.</p>
@@ -189,7 +189,14 @@ export default function Home() {
               <p className="text-foreground/80">A temporary alliance against stagnation.</p>
             </div>
           </div>
-          <a href="#" className="mt-6 inline-block text-sm font-semibold">Apply for Funding →</a>
+          <div className="mt-6 flex justify-center">
+            <a
+              href="#"
+              className="inline-flex h-10 px-5 items-center rounded-md border border-foreground/30 text-foreground text-sm font-semibold hover:bg-foreground/10 transition"
+            >
+              Apply for Funding →
+            </a>
+          </div>
         </div>
       </div>
       <div className="mx-auto w-full max-w-5xl px-6 py-8">
