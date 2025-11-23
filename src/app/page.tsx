@@ -161,6 +161,52 @@ export default function Home() {
         <p className="mt-6 text-center text-foreground/80">Identity upgrades outperform market trends.</p>
       </div>
 
+      <div className="mx-auto w-full max-w-6xl px-6 py-8">
+        <div className="mb-4 text-center">
+          <h4 className="text-3xl sm:text-4xl font-serif font-semibold">Investor Journey</h4>
+        </div>
+        <div className="text-center">
+          <p className="text-foreground/80">Most funds want predictable ROI.</p>
+          <p className="text-foreground/80">Liberation Capital wants <span className="font-bold">brave money</span> —</p>
+          <p className="text-foreground/80">capital that can tolerate volatility, honesty, and evolution.</p>
+        </div>
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+          <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
+            <h5 className="text-xl font-serif font-bold">Observer</h5>
+            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside">
+              <li>Learn the doctrine.</li>
+              <li>Understand the philosophy.</li>
+            </ul>
+          </div>
+          <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
+            <h5 className="text-xl font-serif font-bold">Patron</h5>
+            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside">
+              <li>Back human metamorphosis.</li>
+              <li>Participate in Liberation Day.</li>
+            </ul>
+          </div>
+          <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
+            <h5 className="text-xl font-serif font-bold">Architect</h5>
+            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside">
+              <li>Co-create the next era of human-first funding.</li>
+              <li>Shape the cultural shift.</li>
+            </ul>
+          </div>
+        </div>
+        <div className="mt-6 text-center text-foreground/80">
+          <p>If your ego needs to be the hero, this will wound you.</p>
+          <p>If your curiosity enjoys chaos with purpose, welcome.</p>
+        </div>
+        <div className="mt-6 flex justify-center">
+          <a
+            href="#"
+            className="inline-flex h-10 px-5 items-center rounded-md border border-foreground/30 text-foreground text-sm font-semibold hover:bg-foreground/10 transition"
+          >
+            Enter Investor Path →
+          </a>
+        </div>
+      </div>
+
       <div className="mx-auto w-full max-w-5xl px-6 py-8">
         <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
           <h4 className="text-3xl sm:text-4xl font-serif font-semibold text-center">Applicant Journey</h4>
