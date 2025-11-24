@@ -9,10 +9,10 @@ export default function Home() {
           Because evolution is the only ROI that outlives money.
         </p>
         <div className="mt-8 flex items-center justify-center gap-6">
-          <a href="#investors" className="inline-flex h-10 px-5 items-center rounded-md border border-foreground/30 text-foreground text-sm font-semibold hover:bg-foreground/10 transition">
+          <a href="/investor" className="inline-flex h-10 px-5 items-center rounded-md border border-foreground/30 text-foreground text-sm font-semibold hover:bg-foreground/10 transition">
             For Investors
           </a>
-          <a href="#applicants" className="inline-flex h-10 px-5 items-center rounded-md border border-foreground/30 text-foreground text-sm font-semibold hover:bg-foreground/10 transition">
+          <a href="/applicants" className="inline-flex h-10 px-5 items-center rounded-md border border-foreground/30 text-foreground text-sm font-semibold hover:bg-foreground/10 transition">
             For Applicants
           </a>
         </div>
@@ -67,7 +67,7 @@ export default function Home() {
             <p className="mt-3 text-foreground/80">Not for control.</p>
             <p className="text-foreground/80">For contribution.</p>
             <a
-              href="#"
+              href="/investor"
               className="mt-4 inline-flex h-10 px-5 items-center rounded-md border border-foreground/30 text-foreground text-sm font-semibold hover:bg-foreground/10 transition"
             >
               Explore Investor Path →
@@ -83,7 +83,7 @@ export default function Home() {
             <p className="text-foreground/80">But you don’t enter by pitching.</p>
             <p className="text-foreground/80">You enter by <span className="font-bold">proving your devotion to your own evolution.</span></p>
             <a
-              href="#"
+              href="/applicants"
               className="mt-4 inline-flex h-10 px-5 items-center rounded-md border border-foreground/30 text-foreground text-sm font-semibold hover:bg-foreground/10 transition"
             >
               Apply for Funding →
@@ -199,7 +199,7 @@ export default function Home() {
         </div>
         <div className="mt-6 flex justify-center">
           <a
-            href="#"
+            href="/investor"
             className="inline-flex h-10 px-5 items-center rounded-md border border-foreground/30 text-foreground text-sm font-semibold hover:bg-foreground/10 transition"
           >
             Enter Investor Path →
@@ -237,7 +237,7 @@ export default function Home() {
           </div>
           <div className="mt-6 flex justify-center">
             <a
-              href="#"
+              href="/applicants"
               className="inline-flex h-10 px-5 items-center rounded-md border border-foreground/30 text-foreground text-sm font-semibold hover:bg-foreground/10 transition"
             >
               Apply for Funding →
@@ -269,14 +269,14 @@ export default function Home() {
           <p className="mt-3 text-foreground/80 text-center">There are only two ways to step into this philosophy:</p>
           <div className="mt-3 flex items-center justify-center gap-4">
             <a
-              href="#investors"
+              href="/investor"
               className="inline-flex h-10 px-5 items-center rounded-md border border-foreground/30 text-foreground text-sm font-semibold hover:bg-foreground/10 transition"
             >
               Become an Investor
             </a>
             <span className="text-foreground/80">or</span>
             <a
-              href="#applicants"
+              href="/applicants"
               className="inline-flex h-10 px-5 items-center rounded-md border border-foreground/30 text-foreground text-sm font-semibold hover:bg-foreground/10 transition"
             >
               Apply for Funding
