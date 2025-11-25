@@ -7,10 +7,10 @@ export default function ApplicantsPage() {
       subtitle="If you want funding, redesign your life first."
     >
 
-      <div className="mx-auto w-full max-w-5xl px-6 py-8">
-        <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
-          <h5 className="text-xl font-serif font-bold">▾ If you want funding, redesign your life first.</h5>
-          <div className="mt-3 text-foreground/80">
+      <div className="mx-auto w-full max-w-6xl px-6 py-8">
+        <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8 text-center">
+          <h4 className="text-3xl sm:text-4xl font-semibold">If you want funding, redesign your life first.</h4>
+          <div className="mt-3 text-foreground/80 leading-relaxed max-w-4xl mx-auto">
             <p>Liberation Capital does not fund ideas, talent, ambition, or charisma.</p>
             <p>We fund <span className="font-bold">coherence</span> —</p>
             <p>the moment your internal world stops contradicting your future.</p>
@@ -23,14 +23,14 @@ export default function ApplicantsPage() {
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-5xl px-6 py-8">
-        <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
-          <h5 className="text-xl font-serif font-bold">▾ Prerequisites</h5>
-          <div className="mt-3 text-foreground/80">
+      <div className="mx-auto w-full max-w-6xl px-6 py-8">
+        <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8 text-center">
+          <h4 className="text-3xl sm:text-4xl font-semibold">Prerequisites</h4>
+          <div className="mt-3 text-foreground/80 leading-relaxed max-w-4xl mx-auto">
             <p>Before you touch capital, you must touch yourself —</p>
             <p>your patterns, your excuses, your discipline, your design.</p>
             <p className="mt-2">The prerequisites are simple:</p>
-            <ul className="mt-3 text-foreground/80 space-y-4 list-disc list-inside inline-block text-left">
+            <ul className="mt-3 text-foreground/80 grid grid-cols-1 md:grid-cols-3 gap-8 list-disc list-outside w-fit text-left mx-auto">
               <li>
                 <div>
                   <span className="font-bold">You must play LIFEiDESIGN.</span>
@@ -56,30 +56,32 @@ export default function ApplicantsPage() {
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-5xl px-6 py-8">
-        <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
-          <h5 className="text-xl font-serif font-bold">▾ The LIFEiDESIGN Requirement</h5>
-          <div className="mt-3 text-foreground/80">
-            <p className="font-serif italic font-semibold">The first door is always yourself.</p>
+      <div className="mx-auto w-full max-w-6xl px-6 py-8">
+        <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8 text-center">
+          <h4 className="text-3xl sm:text-4xl font-semibold">The LIFEiDESIGN Requirement</h4>
+          <div className="mt-3 text-foreground/80 leading-relaxed max-w-4xl mx-auto">
+            <p className="  font-semibold">The first door is always yourself.</p>
             <p className="mt-2">Every applicant must complete:</p>
-            <ol className="mt-4 space-y-6 list-decimal list-inside">
-              <li>
-                <span className="font-bold">GAME i DESIGN — The Mirror</span>
-                <p className="mt-1">Three 1-hour games that strip away performance, branding, and social identity.</p>
-                <p>You sit with your life, not your pitch.</p>
-              </li>
-              <li>
-                <span className="font-bold">CORE i DESIGN — The Descent</span>
-                <p className="mt-1">A solo digital retreat into silence, solitude, and psychological excavation.</p>
-                <p>You map your lineage, your shadow contracts, your emotional architecture.</p>
-              </li>
-              <li>
-                <span className="font-bold">PLAY i DESIGN — The Daily Proof</span>
-                <p className="mt-1">The lifestyle OS where discipline becomes data and excuses become visible cracks.</p>
-                <p>No one “applies” to Liberation Capital.</p>
-                <p>You earn the right to be considered.</p>
-              </li>
-            </ol>
+            <div className="mt-4 flex justify-center">
+              <ol className="space-y-6 list-decimal list-outside w-fit text-left">
+                <li>
+                  <span className="font-bold">GAME i DESIGN — The Mirror</span>
+                  <p className="mt-1">Three 1-hour games that strip away performance, branding, and social identity.</p>
+                  <p>You sit with your life, not your pitch.</p>
+                </li>
+                <li>
+                  <span className="font-bold">CORE i DESIGN — The Descent</span>
+                  <p className="mt-1">A solo digital retreat into silence, solitude, and psychological excavation.</p>
+                  <p>You map your lineage, your shadow contracts, your emotional architecture.</p>
+                </li>
+                <li>
+                  <span className="font-bold">PLAY i DESIGN — The Daily Proof</span>
+                  <p className="mt-1">The lifestyle OS where discipline becomes data and excuses become visible cracks.</p>
+                  <p>No one “applies” to Liberation Capital.</p>
+                  <p>You earn the right to be considered.</p>
+                </li>
+              </ol>
+            </div>
           </div>
         </div>
       </div>
@@ -117,7 +119,7 @@ export default function ApplicantsPage() {
           <h5 className="text-xl font-serif font-bold">▾ What Happens Once You’re Eligible</h5>
           <div className="mt-3 text-foreground/80">
             <p>When the door opens, you will prepare:</p>
-            <ul className="mt-3 text-foreground/80 space-y-4 list-disc list-inside inline-block text-left">
+            <ul className="mt-3 text-foreground/80 space-y-4 list-disc list-outside inline-block text-left">
               <li>
                 <div>
                   <span className="font-bold">Your LIFEiDESIGN Blueprint</span>
