@@ -23,9 +23,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-5xl px-6 py-8">
+      <div className="mx-auto w-full max-w-6xl px-6 py-8">
         <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8 text-center">
-          <p className="text-xs uppercase tracking-[0.15em] text-foreground/60">Institution Statement</p>
           <h4 className="mt-2 text-3xl sm:text-4xl font-serif font-semibold" style={{ fontFamily: '"built", "Satoshi", sans-serif' }}>
             Liberation Capital exists to answer a single question:
           </h4>
@@ -36,18 +35,12 @@ export default function Home() {
             <li><span className="font-bold">D.D</span> frees them from inherited identities.</li>
           </ul>
           <div className="mt-6 space-y-1 text-foreground/80 leading-tight">
-            <p>So Liberation Capital does not chase returns.</p>
-            <p>
-              It chases <span className="font-bold text-foreground">Return on Awakening.</span>
-            </p>
-            <p>We don’t deploy capital to scale companies.</p>
-            <p>
-              We deploy it to <span className="font-bold text-foreground">unchain human potential</span> — to arm people redesigning the architecture of their lives.
-            </p>
-            <p>This is not venture capital.</p>
-            <p>
-              This is <span className="font-bold text-foreground">philosophical midwifery with a balance sheet.</span>
-            </p>
+            <p>So Liberation Capital does not chase returns.It chases Return on Awakening.We don’t deploy capital to scale companies.</p>
+
+            <p>We deploy it to unchain human potential to arm people redesigning the architecture of their lives.</p>
+           
+            <p>This is not venture capital. This is philosophical midwifery with a balance sheet.</p>
+           
           </div>
         </div>
       </div>
@@ -58,7 +51,7 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8 text-center">
-            <h5 className="text-xl font-serif font-bold">▾ For Investors</h5>
+            <h5 className="text-xl font-serif font-bold">For Investors</h5>
             <p className="mt-3 text-foreground/80">A path for those who’ve already won the conventional game</p>
             <p className="text-foreground/80">and now seek returns measured in courage, coherence, and culture.</p>
             <p className="mt-3 text-foreground/80">Here you fund:</p>
@@ -80,7 +73,7 @@ export default function Home() {
           </div>
 
           <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8 text-center">
-            <h5 className="text-xl font-serif font-bold">▾ For Applicants</h5>
+            <h5 className="text-xl font-serif font-bold">For Applicants</h5>
             <p className="mt-3 text-foreground/80">If you’re designing your <span className="font-bold">LIFEiDESIGN</span> game —</p>
             <p className="text-foreground/80">if your current life feels like a polite cage —</p>
             <p className="text-foreground/80">if you can no longer unsee your potential...</p>
