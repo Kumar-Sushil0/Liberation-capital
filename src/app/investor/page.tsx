@@ -165,54 +165,60 @@ export default function InverstorPage() {
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-5xl px-6 py-8">
-        <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
-          <h5 className="text-xl font-serif font-bold">▾ Liberation Day — The Public Rite</h5>
-          <div className="mt-3 text-foreground/80">
-            <p>Liberation Day is not Shark Tank.</p>
-            <p>It is a ceremony.</p>
+      <div className="mx-auto w-full max-w-6xl px-6 py-8">
+        <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8 text-center">
+          <h4 className="text-3xl sm:text-4xl font-semibold">Liberation Day — The Public Rite</h4>
+          <div className="mt-3 text-foreground/80 leading-relaxed max-w-4xl mx-auto">
+            <p>Liberation Day is not Shark Tank. It is a ceremony.</p>
+           
             <p className="mt-3">Players present:</p>
-            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside inline-block text-left">
-              <li>their <span className="underline">LIFEiDESIGN</span> blueprint</li>
-              <li>their alignment data</li>
-              <li>their coherence score</li>
-              <li>their Liberation Number</li>
-              <li>their future identity</li>
+            <ul className="mt-3 text-foreground/80 grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-3 w-fit text-left mx-auto">
+              <li className="flex items-center gap-2"><span className="text-green-600">✓</span><span>their <span className="underline">LIFEiDESIGN</span> blueprint</span></li>
+              <li className="flex items-center gap-2"><span className="text-green-600">✓</span><span>their alignment data</span></li>
+              <li className="flex items-center gap-2"><span className="text-green-600">✓</span><span>their coherence score</span></li>
+              <li className="flex items-center gap-2"><span className="text-green-600">✓</span><span>their Liberation Number</span></li>
+              <li className="flex items-center gap-2"><span className="text-green-600">✓</span><span>their future identity</span></li>
+              <li className="flex items-center gap-2"><span className="text-green-600">✓</span><span>New Point here</span></li>
             </ul>
-            <p className="mt-3">There is no pitching.</p>
-            <p>No performance.</p>
-            <p>No ego theatrics.</p>
-            <p className="mt-3">Their life is the due diligence.</p>
-            <p>Their discipline is the valuation.</p>
-            <p>Their presence is the proof.</p>
-            <p className="mt-3">Investors listen like surgeons —</p>
-            <p>not interrogating, but sensing congruence.</p>
-            <p className="mt-3">If alignment is mutual, the alliance is formed.</p>
+            <p className="mt-3">There is no pitching. No performance. No ego theatrics.</p>
+            
+            <p className="mt-3">Their life is the due diligence. Their discipline is the valuation. Their presence is the proof.</p>
+            
+            <p className="mt-3">Investors listen like surgeons — not interrogating, but sensing congruence. If alignment is mutual, the alliance is formed.</p>
+            
           </div>
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-5xl px-6 py-8">
-        <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
-          <h5 className="text-xl font-serif font-bold">▾ Investor Access</h5>
-          <div className="mt-3 text-foreground/80">
-            <p>Liberation Capital is not for investors seeking:</p>
-            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside inline-block text-left">
-              <li>obedience</li>
-              <li>control</li>
-              <li>predictability</li>
-              <li>performance theater</li>
-            </ul>
-            <p className="mt-4">It is for investors seeking:</p>
-            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside inline-block text-left">
-              <li>truth</li>
-              <li>cultural impact</li>
-              <li>human evolution</li>
-              <li>spiritual courage</li>
-              <li>meaning beyond numbers</li>
-            </ul>
+      <div className="mx-auto w-full max-w-6xl px-6 py-8">
+        <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8 text-center">
+          <h4 className="text-3xl sm:text-4xl font-semibold">Investor Access</h4>
+          <div className="mt-3 text-foreground/80 leading-relaxed max-w-4xl mx-auto">
+            <div className="mt-6 flex justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left w-fit">
+                <div>
+                  <p className="font-semibold mb-3">Not for investors seeking:</p>
+                  <ul className="text-foreground/80 space-y-2 list-disc list-inside">
+                    <li>obedience</li>
+                    <li>control</li>
+                    <li>predictability</li>
+                    <li>performance theater</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold mb-3">It is for investors seeking:</p>
+                  <ul className="text-foreground/80 space-y-2 list-disc list-inside">
+                    <li>truth</li>
+                    <li>cultural impact</li>
+                    <li>human evolution</li>
+                    <li>spiritual courage</li>
+                    <li>meaning beyond numbers</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
             <p className="mt-4">If that’s you:</p>
-            <div className="mt-3 flex justify-start">
+            <div className="mt-3 flex justify-center">
               <a
                 href="#investors"
                 className="inline-flex h-10 px-5 items-center rounded-md border border-foreground/30 text-foreground text-sm font-semibold hover:bg-foreground/10 transition"
