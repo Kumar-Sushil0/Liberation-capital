@@ -139,15 +139,14 @@ export default function InverstorPage() {
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-5xl px-6 py-8">
-        <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
-          <h5 className="text-xl font-serif font-bold">▾ What You’re Actually Funding</h5>
-          <div className="mt-3 text-foreground/80">
-            <p>Not startups.</p>
-            <p>Not slides.</p>
-            <p>Not vanity metrics.</p>
-            <p className="mt-3">You are funding:</p>
-            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside inline-block text-left">
+      <div className="mx-auto w-full max-w-6xl px-6 py-8">
+        <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8 text-center">
+          <h4 className="text-3xl sm:text-4xl font-semibold">What You’re Actually Funding</h4>
+          <div className="mt-3 text-foreground/80 leading-relaxed max-w-4xl mx-auto">
+            <p>Not startups.  Not slides.  Not vanity metrics.</p>
+            
+            <p className="mt-3 underline">You are funding:</p>
+            <ul className="mt-3 text-foreground/80 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 list-disc list-inside w-fit text-left mx-auto">
               <li>transitions</li>
               <li>identity upgrades</li>
               <li>courage experiments</li>
@@ -156,13 +155,12 @@ export default function InverstorPage() {
               <li>stories that ripple</li>
               <li>lives redesigned in real time</li>
             </ul>
-            <p className="mt-3">This is not charity.</p>
-            <p>This is not VC.</p>
-            <p>This is not impact theater.</p>
-            <p className="mt-3">This is <span className="font-bold">brave money</span> —</p>
-            <p>capital that chooses consciousness over convenience,</p>
-            <p>creation over compliance,</p>
-            <p>becoming over business.</p>
+            <p className="mt-3">This is not charity. This is not VC. This is not impact theater.</p>
+           
+            <p className="mt-3">This is brave money capital that chooses consciousness over convenience, —</p>
+
+            <p>creation over compliance, becoming over business.</p>
+            
           </div>
         </div>
       </div>
