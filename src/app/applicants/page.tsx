@@ -1,9 +1,11 @@
+import PageLayout from "@/components/PageLayout";
+
 export default function ApplicantsPage() {
   return (
-    <>
-      <div className="mx-auto w-full max-w-5xl px-6 py-12 text-center">
-        <h4 className="text-3xl sm:text-4xl font-serif font-semibold">For Applicants</h4>
-      </div>
+    <PageLayout
+      title="For Applicants"
+      subtitle="If you want funding, redesign your life first."
+    >
 
       <div className="mx-auto w-full max-w-5xl px-6 py-8">
         <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
@@ -202,6 +204,6 @@ export default function ApplicantsPage() {
           </div>
         </div>
       </div>
-    </>
+    </PageLayout>
   );
 }

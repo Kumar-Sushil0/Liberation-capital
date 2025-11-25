@@ -1,9 +1,11 @@
+import PageLayout from "@/components/PageLayout";
+
 export default function InverstorPage() {
   return (
-    <>
-      <div className="mx-auto w-full max-w-5xl px-6 py-12 text-center">
-        <h4 className="text-3xl sm:text-4xl font-serif font-semibold">For Investors</h4>
-      </div>
+    <PageLayout
+      title="For Investors"
+      subtitle="Where Capital Meets Conscious Evolution"
+    >
 
       <div className="mx-auto w-full max-w-5xl px-6 py-8">
         <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
@@ -192,6 +194,6 @@ export default function InverstorPage() {
           </div>
         </div>
       </div>
-    </>
+    </PageLayout>
   );
 }

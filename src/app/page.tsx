@@ -1,6 +1,11 @@
+import PageLayout from "@/components/PageLayout";
+
 export default function Home() {
   return (
-    <>
+    <PageLayout
+      title="Liberation Capital"
+      subtitle="We fund people, not businesses. Because evolution is the only ROI that outlives money."
+    >
       <div className="mx-auto w-full max-w-3xl px-6 py-12 text-center">
         <h3 className="text-3xl sm:text-4xl font-serif font-semibold tracking-tight">
           We fund people, not businesses.
@@ -289,6 +294,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </>
+    </PageLayout>
   );
 }
