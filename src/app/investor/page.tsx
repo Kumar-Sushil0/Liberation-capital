@@ -84,34 +84,57 @@ export default function InverstorPage() {
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-5xl px-6 py-8">
-        <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
-          <h5 className="text-xl font-serif font-bold">▾ The Investment Model</h5>
-          <div className="mt-3 text-foreground/80">
+      <div className="mx-auto w-full max-w-7xl px-6 py-8">
+        <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8 text-center">
+          <h4 className="text-3xl sm:text-4xl font-semibold">The Investment Model</h4>
+          <div className="mt-6 text-foreground/80 leading-relaxed max-w-6xl mx-auto">
             <p className="font-semibold italic">Simple. Clean. Ethically asymmetrical.</p>
-            <p className="mt-3">We invest: <span className="font-bold">$100,000</span></p>
-            <p>You return: <span className="font-bold">Principal + 10% per annum</span></p>
-            <p>Timeline: <span className="font-bold">3 years</span></p>
-            <p className="mt-2">After that, financial obligation: <span className="font-bold">Zero</span>.</p>
-            <p className="mt-3">If — and only if — the player feels that Liberation Capital</p>
-            <p>was the <span className="font-bold">bedrock of their transformation</span>,</p>
-            <p>they may voluntarily choose to contribute <span className="font-bold">2% of net profit</span> annually.</p>
-            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside inline-block text-left">
-              <li>2% or 0%.</li>
-              <li>No in-between.</li>
-              <li>No guilt.</li>
-              <li>No spiritual blackmail.</li>
-              <li>No ownership.</li>
-              <li>No extraction.</li>
-            </ul>
-            <p className="mt-4">This model protects the soul of the system:</p>
-            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside inline-block text-left">
-              <li>Effort precedes capital.</li>
-              <li>Capital never owns the human.</li>
-              <li>Gratitude is optional, not weaponized.</li>
-              <li>Evolution stays the center of gravity.</li>
-            </ul>
-            <p className="mt-4">This is funding as a <span className="font-bold">clean alliance</span>, not a leash.</p>
+            <div className="mt-4 border border-foreground/20">
+              <div className="grid grid-cols-1 md:grid-cols-4">
+                <div className="border-b md:border-b-0 md:border-r border-foreground/20 p-4 text-center">
+                  <p><span className="font-bold">We invest:</span></p>
+                  <p className="mt-1">$100,000</p>
+                </div>
+                <div className="border-b md:border-b-0 md:border-r border-foreground/20 p-4 text-center">
+                  <p><span className="font-bold">You return:</span></p>
+                  <p className="mt-1">Principal + 10% per annum</p>
+                </div>
+                <div className="border-b md:border-b-0 md:border-r border-foreground/20 p-4 text-center">
+                  <p><span className="font-bold">Timeline:</span></p>
+                  <p className="mt-1">3 years</p>
+                </div>
+                <div className="p-4 text-center">
+                  <p><span className="font-bold">After that:</span></p>
+                  <p className="mt-1">Financial obligation: Zero</p>
+                </div>
+              </div>
+            </div>
+            <p className="mt-4">Only when the player feels that Liberation Capital was the bedrock of their transformation, they may voluntarily choose to contribute 2% of net profit annually.</p>
+            
+            <div className="mt-6 flex justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left w-fit">
+                <div>
+                  <ul className="text-foreground/80 space-y-2 list-disc list-inside">
+                    <li>2% or 0%.</li>
+                    <li>No in-between.</li>
+                    <li>No guilt.</li>
+                    <li>No spiritual blackmail.</li>
+                    <li>No ownership.</li>
+                    <li>No extraction.</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold mb-3">This model protects the soul of the system:</p>
+                  <ul className="text-foreground/80 space-y-2 list-disc list-inside">
+                    <li>Effort precedes capital.</li>
+                    <li>Capital never owns the human.</li>
+                    <li>Gratitude is optional, not weaponized.</li>
+                    <li>Evolution stays the center of gravity.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <p className="mt-6">This is funding as a clean alliance, not a leash.</p>
           </div>
         </div>
       </div>
