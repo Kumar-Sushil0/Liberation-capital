@@ -45,7 +45,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-5xl px-6 py-8">
+      <div className="mx-auto w-full max-w-7xl px-6 py-8">
         <div className="mb-4 text-center">
           <h4 className="text-3xl sm:text-4xl font-serif font-semibold">The Two Paths</h4>
         </div>
@@ -54,16 +54,16 @@ export default function Home() {
             <h5 className="text-xl font-serif font-bold">For Investors</h5>
             <p className="mt-3 text-foreground/80">A path for those who’ve already won the conventional game</p>
             <p className="text-foreground/80">and now seek returns measured in courage, coherence, and culture.</p>
-            <p className="mt-3 text-foreground/80">Here you fund:</p>
-            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside inline-block text-left">
+            <p className="mt-3 text-foreground/80 underline">Here you fund:</p>
+            <ul className="mt-3 text-foreground/80 grid grid-cols-2 gap-x-4 gap-y-2 list-disc list-inside text-left max-w-md mx-auto">
               <li>transitions</li>
               <li>identity upgrades</li>
               <li>life redesigns</li>
               <li>human experiments</li>
               <li>cultural rewrites</li>
             </ul>
-            <p className="mt-3 text-foreground/80">Not for control.</p>
-            <p className="text-foreground/80">For contribution.</p>
+            <p className="mt-3 text-foreground/80">Not for control.For contribution.</p>
+            
             <a
               href="/investor"
               className="mt-4 inline-flex h-10 px-5 items-center rounded-md border border-foreground/30 text-foreground text-sm font-semibold hover:bg-foreground/10 transition"
@@ -93,36 +93,44 @@ export default function Home() {
       <div className="mx-auto w-full max-w-5xl px-6 py-8">
         <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
           <h4 className="text-3xl sm:text-4xl font-serif font-semibold text-center">The Funding Architecture</h4>
-          <p className="mt-3 text-foreground/80 text-center">There is no “application.”</p>
-          <p className="text-foreground font-semibold text-center">There is only a rite of passage.</p>
-          <ol className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-foreground/90 list-decimal list-inside">
-            <li>
-              <span className="font-bold">GAME i DESIGN — The Mirror</span>
-              <p className="mt-1 text-foreground/80">Who are you without the performance?</p>
-            </li>
-            <li>
-              <span className="font-bold">CORE i DESIGN — The Descent</span>
-              <p className="mt-1 text-foreground/80">Silence, structure, emotional archaeology.</p>
-            </li>
-            <li>
-              <span className="font-bold">PLAY i DESIGN — The Daily Proof</span>
-              <p className="mt-1 text-foreground/80">Effort, alignment, discipline. No vibes. Just receipts.</p>
-            </li>
-            <li>
-              <span className="font-bold">Eligibility — Coherence Threshold</span>
-              <p className="mt-1 text-foreground/80">80%+ alignment. No shortcuts.</p>
-            </li>
-            <li>
-              <span className="font-bold">Liberation Day — The Public Rite</span>
-              <p className="mt-1 text-foreground/80">Investors listen like surgeons, not sharks.</p>
-            </li>
-            <li>
-              <span className="font-bold">Capital — Scaffolding, Not Shackles</span>
-              <p className="mt-1 text-foreground/80">Terms clean. Ownership zero. Gratitude optional.</p>
-            </li>
-          </ol>
-          <p className="mt-6 text-foreground/80 text-center">A simple architecture for a difficult truth:</p>
-          <p className="mt-2 text-foreground font-semibold text-center">Liberation is not granted. It is survived into.</p>
+          <p className="mt-3 text-foreground/80 text-center">There is no “application.There is only a rite of passage.”</p>
+          
+          <div className="mt-6 border border-foreground/20">
+            <div className="grid grid-cols-1 md:grid-cols-3">
+              <div className="border-b md:border-b md:border-r border-foreground/20 p-4">
+                <span className="font-bold text-foreground/60 text-sm">1.</span>
+                <span className="font-bold block mt-1">GAME i DESIGN — The Mirror</span>
+                <p className="mt-1 text-sm text-foreground/80">Who are you without the performance?</p>
+              </div>
+              <div className="border-b md:border-b md:border-r border-foreground/20 p-4">
+                <span className="font-bold text-foreground/60 text-sm">2.</span>
+                <span className="font-bold block mt-1">CORE i DESIGN — The Descent</span>
+                <p className="mt-1 text-sm text-foreground/80">Silence, structure, emotional archaeology.</p>
+              </div>
+              <div className="border-b md:border-b border-foreground/20 p-4">
+                <span className="font-bold text-foreground/60 text-sm">3.</span>
+                <span className="font-bold block mt-1">PLAY i DESIGN — The Daily Proof</span>
+                <p className="mt-1 text-sm text-foreground/80">Effort, alignment, discipline. No vibes. Just receipts.</p>
+              </div>
+              <div className="border-b md:border-0 md:border-r border-foreground/20 p-4">
+                <span className="font-bold text-foreground/60 text-sm">4.</span>
+                <span className="font-bold block mt-1">Eligibility — Coherence Threshold</span>
+                <p className="mt-1 text-sm text-foreground/80">80%+ alignment. No shortcuts.</p>
+              </div>
+              <div className="border-b md:border-0 md:border-r border-foreground/20 p-4">
+                <span className="font-bold text-foreground/60 text-sm">5.</span>
+                <span className="font-bold block mt-1">Liberation Day — The Public Rite</span>
+                <p className="mt-1 text-sm text-foreground/80">Investors listen like surgeons, not sharks.</p>
+              </div>
+              <div className="p-4">
+                <span className="font-bold text-foreground/60 text-sm">6.</span>
+                <span className="font-bold block mt-1">Capital — Scaffolding, Not Shackles</span>
+                <p className="mt-1 text-sm text-foreground/80">Terms clean. Ownership zero. Gratitude optional.</p>
+              </div>
+            </div>
+          </div>
+          <p className="mt-6 text-foreground/80 text-center">A simple architecture for a difficult truth: Liberation is not granted. It is survived into.</p>
+          
         </div>
       </div>
 
@@ -159,41 +167,40 @@ export default function Home() {
         <p className="mt-6 text-center text-foreground/80">Identity upgrades outperform market trends.</p>
       </div>
 
-      <div className="mx-auto w-full max-w-6xl px-6 py-8">
+      <div className="mx-auto w-full max-w-7xl px-6 py-8">
         <div className="mb-4 text-center">
           <h4 className="text-3xl sm:text-4xl font-serif font-semibold">Investor Journey</h4>
         </div>
         <div className="text-center">
-          <p className="text-foreground/80">Most funds want predictable ROI.</p>
-          <p className="text-foreground/80">Liberation Capital wants <span className="font-bold">brave money</span> —</p>
-          <p className="text-foreground/80">capital that can tolerate volatility, honesty, and evolution.</p>
+          <p className="text-foreground/80">Most funds want predictable ROI. Liberation Capital wants  brave money — capital that can tolerate volatility, honesty, and evolution.</p>
+          
         </div>
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-2 items-start">
           <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
             <h5 className="text-xl font-serif font-bold">Observer</h5>
-            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside">
+            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside text-sm">
               <li>Learn the doctrine.</li>
               <li>Understand the philosophy.</li>
             </ul>
           </div>
           <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
             <h5 className="text-xl font-serif font-bold">Patron</h5>
-            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside">
+            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside text-sm">
               <li>Back human metamorphosis.</li>
               <li>Participate in Liberation Day.</li>
             </ul>
           </div>
           <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
             <h5 className="text-xl font-serif font-bold">Architect</h5>
-            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside">
+            <ul className="mt-3 text-foreground/80 space-y-2 list-disc list-inside text-sm">
               <li>Co-create the next era of human-first funding.</li>
               <li>Shape the cultural shift.</li>
             </ul>
           </div>
         </div>
         <div className="mt-6 text-center text-foreground/80">
-          <p>If your ego needs to be the hero, this will wound you.</p>
-          <p>If your curiosity enjoys chaos with purpose, welcome.</p>
+          <p>If your ego needs to be the hero, this will wound you. If your curiosity enjoys chaos with purpose, welcome.</p>
+          
         </div>
         <div className="mt-6 flex justify-center">
           <a
@@ -205,32 +212,38 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-5xl px-6 py-8">
+      <div className="mx-auto w-full max-w-7xl px-6 py-8">
         <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
           <h4 className="text-3xl sm:text-4xl font-serif font-semibold text-center">Applicant Journey</h4>
           <p className="mt-3 text-foreground/80 text-center">You don’t convince us with charm.</p>
           <p className="text-foreground font-semibold text-center">You convince us with <span className="font-bold">coherence</span>.</p>
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div>
-              <h6 className="text-lg font-serif font-bold">Step 1 — Begin LIFEiDESIGN</h6>
-              <p className="text-foreground/80">Your transformation becomes the due diligence.</p>
-            </div>
-            <div>
-              <h6 className="text-lg font-serif font-bold">Step 2 — Play Daily</h6>
-              <p className="text-foreground/80">Alignment, discipline, evidence.</p>
-            </div>
-            <div>
-              <h6 className="text-lg font-serif font-bold">Step 3 — Cross the Threshold</h6>
-              <p className="text-foreground/80">80%+ coherence opens the door.</p>
-            </div>
-            <div>
-              <h6 className="text-lg font-serif font-bold">Step 4 — Present Your Design</h6>
-              <p className="text-foreground/80">Your life becomes your pitch.</p>
-              <p className="text-foreground/80">Your liberation number becomes the mathematics.</p>
-            </div>
-            <div>
-              <h6 className="text-lg font-serif font-bold">Step 5 — Receive Capital</h6>
-              <p className="text-foreground/80">A temporary alliance against stagnation.</p>
+          <div className="mt-6 border border-foreground/20">
+            <div className="grid grid-cols-1 md:grid-cols-3">
+              <div className="border-b md:border-b md:border-r border-foreground/20 p-4">
+                <h6 className="text-lg font-serif font-bold">Step 1 — Begin LIFEiDESIGN</h6>
+                <p className="text-sm text-foreground/80 mt-1">Your transformation becomes the due diligence.</p>
+              </div>
+              <div className="border-b md:border-b md:border-r border-foreground/20 p-4">
+                <h6 className="text-lg font-serif font-bold">Step 2 — Play Daily</h6>
+                <p className="text-sm text-foreground/80 mt-1">Alignment, discipline, evidence.</p>
+              </div>
+              <div className="border-b md:border-b border-foreground/20 p-4">
+                <h6 className="text-lg font-serif font-bold">Step 3 — Cross the Threshold</h6>
+                <p className="text-sm text-foreground/80 mt-1">80%+ coherence opens the door.</p>
+              </div>
+              <div className="border-b md:border-0 md:border-r border-foreground/20 p-4">
+                <h6 className="text-lg font-serif font-bold">Step 4 — Present Your Design</h6>
+                <p className="text-sm text-foreground/80 mt-1">Your life becomes your pitch.</p>
+                <p className="text-sm text-foreground/80">Your liberation number becomes the mathematics.</p>
+              </div>
+              <div className="border-b md:border-0 md:border-r border-foreground/20 p-4">
+                <h6 className="text-lg font-serif font-bold">Step 5 — Receive Capital</h6>
+                <p className="text-sm text-foreground/80 mt-1">A temporary alliance against stagnation.</p>
+              </div>
+              <div className="p-4">
+                <h6 className="text-lg font-serif font-bold text-foreground/40">Step 6 — Coming Soon</h6>
+                <p className="text-sm text-foreground/40 mt-1">Future expansion.</p>
+              </div>
             </div>
           </div>
           <div className="mt-6 flex justify-center">
@@ -246,11 +259,10 @@ export default function Home() {
       <div className="mx-auto w-full max-w-5xl px-6 py-8">
         <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
           <h4 className="text-3xl sm:text-4xl font-serif font-semibold text-center">THE EPiCENTRE BRIDGE</h4>
-          <p className="mt-3 text-foreground/80 text-center">Funding accelerates you.</p>
-          <p className="text-foreground font-semibold text-center">EPiCENTRE <span className="font-bold">refines</span> you.</p>
-          <p className="mt-4 text-foreground/80 text-center">A sanctuary built for:</p>
-          <div className="mt-3 text-center">
-            <ul className="text-foreground/80 grid grid-cols-1 md:grid-cols-2 gap-2 list-disc list-inside inline-block text-left">
+          <p className="mt-3 text-foreground/80 text-center">Funding accelerates you. EPiCENTRE refines you.</p>
+          <p className="mt-4 text-foreground/80 text-center underline">A sanctuary built for:</p>
+          <div className="mt-3 flex justify-center">
+            <ul className="text-foreground/80 grid grid-cols-2 gap-x-6 gap-y-2 list-disc list-inside w-fit">
               <li>psychological reconstruction</li>
               <li>monastic clarity</li>
               <li>creative rebellion</li>
@@ -265,6 +277,7 @@ export default function Home() {
         <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8">
           <h4 className="text-3xl sm:text-4xl font-serif font-semibold text-center">Final Threshold</h4>
           <p className="mt-3 text-foreground/80 text-center">There are only two ways to step into this philosophy:</p>
+          <br/>
           <div className="mt-3 flex items-center justify-center gap-4">
             <a
               href="/investor"
@@ -280,6 +293,7 @@ export default function Home() {
               Apply for Funding
             </a>
           </div>
+          <br/>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
             <p className="text-foreground/80">Choose with intention.</p>
             <p className="text-foreground/80">Choose with honesty.</p>
