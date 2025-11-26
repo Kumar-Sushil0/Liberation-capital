@@ -8,7 +8,7 @@ export default function PhilosophyPage() {
     >
       <div className="mx-auto w-full max-w-6xl px-6 py-8">
         <div className="rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8 text-center">
-          <h4 className="text-3xl sm:text-4xl font-serif italic font-semibold">▾ The spine behind the capital.</h4>
+          <h4 className="text-3xl sm:text-4xl font-serif italic font-semibold">The spine behind the capital.</h4>
           <div className="mt-3 text-foreground/80 leading-relaxed max-w-4xl mx-auto">
             <p>Most institutions hide their philosophy in footnotes.</p>
             <p className="mt-2">Liberation Capital places it at the front door.</p>
@@ -25,12 +25,10 @@ export default function PhilosophyPage() {
           <h4 className="text-3xl sm:text-4xl font-serif italic font-semibold">A Flag on Fire</h4>
           <div className="mt-3 text-foreground/80 leading-relaxed max-w-4xl mx-auto">
             <p>Liberation Capital is not a whisper network of soft enlightenment.</p>
-            <p className="mt-2">It is a visible banner — high enough to attract the brave,</p>
-            <p>sharp enough to repel the tourists.</p>
-            <p className="mt-2">If someone feels intimidated by the process, good.</p>
-            <p>That’s the first filter.</p>
-            <p className="mt-2">Evolution begins with intimidation.</p>
-            <p className="mt-2">Our ethos rests on three uncompromising truths:</p>
+            <p className="mt-2">It is a visible banner — high enough to attract the brave, sharp enough to repel the tourists.</p>
+            <p className="mt-2">If someone feels intimidated by the process, good. That’s the first filter</p>
+            <p className="mt-2">Evolution begins with intimidation. Our ethos rests on three uncompromising truths:</p>
+            <p className="mt-2"></p>
           </div>
         </div>
       </div>
