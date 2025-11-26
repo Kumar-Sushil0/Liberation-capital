@@ -69,13 +69,15 @@ export const FixedHeader = () => {
             <div className="nav">
               <div className="container">
                 <a className="btn" href="/" onClick={() => setIsMenuOpen(false)}>Home</a>
-                <a className="btn" href="/rooms" onClick={() => setIsMenuOpen(false)}>Rooms</a>
-                <a className="btn" href="/experiences" onClick={() => setIsMenuOpen(false)}>Experiences</a>
-                <a className="btn" href="/explorations" onClick={() => setIsMenuOpen(false)}>Explorations</a>
-                <a className="btn" href="/wellness" onClick={() => setIsMenuOpen(false)}>Wellness</a>
-                <a className="btn" href="/events" onClick={() => setIsMenuOpen(false)}>Events</a>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 60" height={60} width={600} overflow="visible" className="outline">
-                  <rect strokeWidth={2} fill="transparent" height={60} width={600} y={0} x={0} pathLength={100} className="rect" />
+                <a className="btn" href="/philosophy" onClick={() => setIsMenuOpen(false)}>Philosophy</a>
+                <a className="btn" href="/process" onClick={() => setIsMenuOpen(false)}>Process</a>
+                <a className="btn" href="/ecosystem" onClick={() => setIsMenuOpen(false)}>Ecosystem</a>
+                <a className="btn" href="/institution" onClick={() => setIsMenuOpen(false)}>Institution</a>
+                <a className="btn" href="/applicants" onClick={() => setIsMenuOpen(false)}>Applicants</a>
+                <a className="btn" href="/operation" onClick={() => setIsMenuOpen(false)}>Operation</a>
+                <a className="btn" href="/investor" onClick={() => setIsMenuOpen(false)}>Investor</a>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 60" height={60} width={800} overflow="visible" className="outline">
+                  <rect strokeWidth={2} fill="transparent" height={60} width={800} y={0} x={0} pathLength={100} className="rect" />
                 </svg>
               </div>
             </div>
@@ -121,20 +123,26 @@ export const FixedHeader = () => {
               <a className={styles.mobileSidebarItem} href="/" onClick={handleCubeClick}>
                 <span>Home</span>
               </a>
-              <a className={styles.mobileSidebarItem} href="/rooms" onClick={handleCubeClick}>
-                <span>Rooms</span>
+              <a className={styles.mobileSidebarItem} href="/philosophy" onClick={handleCubeClick}>
+                <span>Philosophy</span>
               </a>
-              <a className={styles.mobileSidebarItem} href="/experiences" onClick={handleCubeClick}>
-                <span>Experiences</span>
+              <a className={styles.mobileSidebarItem} href="/process" onClick={handleCubeClick}>
+                <span>Process</span>
               </a>
-              <a className={styles.mobileSidebarItem} href="/explorations" onClick={handleCubeClick}>
-                <span>Explorations</span>
+              <a className={styles.mobileSidebarItem} href="/ecosystem" onClick={handleCubeClick}>
+                <span>Ecosystem</span>
               </a>
-              <a className={styles.mobileSidebarItem} href="/wellness" onClick={handleCubeClick}>
-                <span>Wellness</span>
+              <a className={styles.mobileSidebarItem} href="/institution" onClick={handleCubeClick}>
+                <span>Institution</span>
               </a>
-              <a className={styles.mobileSidebarItem} href="/events" onClick={handleCubeClick}>
-                <span>Events</span>
+              <a className={styles.mobileSidebarItem} href="/applicants" onClick={handleCubeClick}>
+                <span>Applicants</span>
+              </a>
+              <a className={styles.mobileSidebarItem} href="/operation" onClick={handleCubeClick}>
+                <span>Operation</span>
+              </a>
+              <a className={styles.mobileSidebarItem} href="/investor" onClick={handleCubeClick}>
+                <span>Investor</span>
               </a>
             </div>
           </StyledMobileSidebar>
@@ -171,7 +179,7 @@ const StyledMenuWrapper = styled.div`
 
   .nav {
     position: relative;
-    width: 600px;
+    width: 800px;
     height: 60px;
     border-radius: 40px;
   }
