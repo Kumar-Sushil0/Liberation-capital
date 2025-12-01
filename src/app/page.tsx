@@ -7,10 +7,8 @@ import { useScrollManager } from '../hooks/useScrollManager';
 import { 
   HeroSlide, 
   ContentSlide1, 
-  SubscrollSlide1, 
-  ContentSlide2, 
-  ContentSlide3, 
-  FinalSlide,
+  SubscrollSlide1,
+  Slide03,
   Slide04,
   Slide05,
   Slide06,
@@ -164,23 +162,9 @@ export default function Home() {
       case "content1":
         return <ContentSlide1 />;
       case "subscroll1":
-        return (
-          <SubscrollSlide1
-            currentSection={currentSection}
-            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
-            onAllColumnsVisible={() => {
-              setTimeout(() => {
-                isScrollPausedRef.current = false;
-              }, 500);
-            }}
-          />
-        );
-      case "content2":
-        return <ContentSlide2 />;
-      case "content3":
-        return <ContentSlide3 />;
-      case "final":
-        return <FinalSlide />;
+        return <SubscrollSlide1 />;
+      case "slide03":
+        return <Slide03 />;
       case "slide04":
         return <Slide04 />;
       case "slide05":
