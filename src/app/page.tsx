@@ -12,9 +12,6 @@ import {
   Slide04,
   Slide05,
   Slide08,
-  Slide09,
-  Slide10,
-  Slide11,
   Slide12,
   Slide13,
   Slide14,
@@ -208,13 +205,17 @@ export default function Home() {
           />
         );
       case "slide08":
-        return <Slide08 />;
-      case "slide09":
-        return <Slide09 />;
-      case "slide10":
-        return <Slide10 />;
-      case "slide11":
-        return <Slide11 />;
+        return (
+          <Slide08
+            currentSection={currentSection}
+            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            onAllColumnsVisible={() => {
+              setTimeout(() => {
+                isScrollPausedRef.current = false;
+              }, 500);
+            }}
+          />
+        );
       case "slide12":
         return <Slide12 />;
       case "slide13":
