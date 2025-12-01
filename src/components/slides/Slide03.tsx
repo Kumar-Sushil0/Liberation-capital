@@ -2,9 +2,19 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from '../../styles/slides.module.css';
 
-export const Slide03 = () => {
+interface Slide03Props {
+  currentSection?: number;
+  isScrollEnabled?: boolean;
+  onAllColumnsVisible?: () => void;
+}
+
+export const Slide03 = ({ 
+  currentSection = 0, 
+  isScrollEnabled = true,
+  onAllColumnsVisible 
+}: Slide03Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [visibleColumns, setVisibleColumns] = useState(0);
+  const [visibleColumns, setVisibleColumns] = useState(isScrollEnabled ? 0 : 4);
   const [skipTransitions, setSkipTransitions] = useState(true);
   const [isInitialized, setIsInitialized] = useState(false);
   const isScrollingRef = useRef(false);
@@ -12,7 +22,7 @@ export const Slide03 = () => {
   // Initialize component
   useEffect(() => {
     setSkipTransitions(true);
-    setVisibleColumns(0);
+    setVisibleColumns(isScrollEnabled ? 0 : 4);
 
     const timer = setTimeout(() => {
       setSkipTransitions(false);
@@ -20,19 +30,74 @@ export const Slide03 = () => {
     }, 100);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [isScrollEnabled]);
+
+  // Reset when isScrollEnabled changes
+  useEffect(() => {
+    if (!isInitialized) return;
+    
+    if (currentSection !== 3) return;
+
+    setSkipTransitions(true);
+
+    if (!isScrollEnabled) {
+      setVisibleColumns(4);
+      if (onAllColumnsVisible) {
+        onAllColumnsVisible();
+      }
+    } else {
+      setVisibleColumns(0);
+      const container = containerRef.current;
+      if (container) {
+        container.scrollTop = 0;
+      }
+    }
+
+    setTimeout(() => {
+      setSkipTransitions(false);
+    }, 50);
+  }, [isScrollEnabled, onAllColumnsVisible, isInitialized, currentSection]);
+
+  // Reset to initial state when entering this slide
+  const prevSectionRef = useRef(currentSection);
+  useEffect(() => {
+    if (!isInitialized) return;
+
+    const prevSection = prevSectionRef.current;
+    prevSectionRef.current = currentSection;
+
+    if (currentSection === 3 && prevSection !== 3 && isScrollEnabled) {
+      setSkipTransitions(true);
+      setVisibleColumns(0);
+
+      const container = containerRef.current;
+      if (container) {
+        container.scrollTop = 0;
+      }
+
+      setTimeout(() => {
+        setSkipTransitions(false);
+      }, 100);
+    }
+  }, [currentSection, isScrollEnabled, isInitialized]);
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container || !isInitialized) return;
 
+    if (!isScrollEnabled) {
+      return;
+    }
+
     let wheelDelta = 0;
     let wheelTimer: NodeJS.Timeout | null = null;
     let currentStep = 0;
+    let isProcessingScroll = false;
 
-    const smoothScrollToStep = (step: number) => {
-      if (isScrollingRef.current) return;
+    const smoothScrollToStep = (step: number, skipAnimation = false) => {
+      if (isScrollingRef.current || isProcessingScroll) return;
       isScrollingRef.current = true;
+      isProcessingScroll = true;
 
       const scrollHeight = container.scrollHeight;
       const containerHeight = container.clientHeight;
@@ -47,6 +112,29 @@ export const Slide03 = () => {
       ];
 
       const targetScroll = scrollPositions[step] || 0;
+
+      if (skipAnimation || step === 0) {
+        setSkipTransitions(true);
+        container.scrollTop = targetScroll;
+        setVisibleColumns(step);
+        currentStep = step;
+        isScrollingRef.current = false;
+        
+        setTimeout(() => {
+          isProcessingScroll = false;
+        }, 100);
+
+        setTimeout(() => {
+          setSkipTransitions(false);
+        }, 50);
+
+        if (step === 4 && onAllColumnsVisible) {
+          onAllColumnsVisible();
+        }
+
+        return;
+      }
+
       const startScroll = container.scrollTop;
       const distance = targetScroll - startScroll;
       const duration = 500;
@@ -68,6 +156,14 @@ export const Slide03 = () => {
           isScrollingRef.current = false;
           setVisibleColumns(step);
           currentStep = step;
+          
+          setTimeout(() => {
+            isProcessingScroll = false;
+          }, 100);
+
+          if (step === 4 && onAllColumnsVisible) {
+            onAllColumnsVisible();
+          }
         }
       };
 
@@ -81,18 +177,22 @@ export const Slide03 = () => {
 
       wheelDelta += e.deltaY;
 
-      if (wheelTimer) {
-        clearTimeout(wheelTimer);
-      }
+      if (wheelTimer) clearTimeout(wheelTimer);
 
       wheelTimer = setTimeout(() => {
-        if (Math.abs(wheelDelta) > 40) {
+        if (Math.abs(wheelDelta) > 40 && !isProcessingScroll) {
           if (wheelDelta > 0) {
             const nextStep = Math.min(currentStep + 1, 4);
             smoothScrollToStep(nextStep);
           } else {
-            const prevStep = Math.max(currentStep - 1, 0);
-            smoothScrollToStep(prevStep);
+            if (currentStep === 0) {
+              if (typeof window !== 'undefined' && (window as any).gotoPrevSlide) {
+                (window as any).gotoPrevSlide();
+              }
+            } else {
+              const prevStep = Math.max(currentStep - 1, 0);
+              smoothScrollToStep(prevStep);
+            }
           }
         }
         wheelDelta = 0;
@@ -105,7 +205,7 @@ export const Slide03 = () => {
       container.removeEventListener('wheel', handleWheel);
       if (wheelTimer) clearTimeout(wheelTimer);
     };
-  }, [isInitialized]);
+  }, [isInitialized, isScrollEnabled, onAllColumnsVisible]);
 
   return (
     <div

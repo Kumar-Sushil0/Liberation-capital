@@ -1,48 +1,243 @@
 "use client";
+import { useState, useRef, useEffect } from 'react';
+import styles from '../../styles/slides.module.css';
 
-export const SubscrollSlide1 = () => {
-  return (
-    <div style={{
-      width: '100%',
-      height: '100%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '3rem',
-      position: 'relative'
-    }}>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gridTemplateRows: '1fr 1fr',
-        gap: '2rem',
-        width: '100%',
-        height: '100%',
-        maxWidth: '1400px',
-        position: 'relative'
-      }}>
-        {/* Vertical separator line */}
-        <div style={{
-          position: 'absolute',
-          left: '50%',
-          top: '0',
-          bottom: '0',
-          width: '1px',
-          background: '#00e87b',
-          transform: 'translateX(-50%)'
-        }} />
+interface SubscrollSlide1Props {
+  currentSection?: number;
+  isScrollEnabled?: boolean;
+  onAllColumnsVisible?: () => void;
+}
+
+export const SubscrollSlide1 = ({ 
+  currentSection = 0, 
+  isScrollEnabled = true,
+  onAllColumnsVisible 
+}: SubscrollSlide1Props) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [visibleColumns, setVisibleColumns] = useState(isScrollEnabled ? 0 : 3);
+  const [skipTransitions, setSkipTransitions] = useState(true);
+  const [isInitialized, setIsInitialized] = useState(false);
+  const isScrollingRef = useRef(false);
+
+  // Initialize component
+  useEffect(() => {
+    setSkipTransitions(true);
+    setVisibleColumns(isScrollEnabled ? 0 : 3);
+
+    const timer = setTimeout(() => {
+      setSkipTransitions(false);
+      setIsInitialized(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [isScrollEnabled]);
+
+  // Reset when isScrollEnabled changes
+  useEffect(() => {
+    if (!isInitialized) return;
+    
+    if (currentSection !== 2) return;
+
+    setSkipTransitions(true);
+
+    if (!isScrollEnabled) {
+      setVisibleColumns(3);
+      if (onAllColumnsVisible) {
+        onAllColumnsVisible();
+      }
+    } else {
+      setVisibleColumns(0);
+      const container = containerRef.current;
+      if (container) {
+        container.scrollTop = 0;
+      }
+    }
+
+    setTimeout(() => {
+      setSkipTransitions(false);
+    }, 50);
+  }, [isScrollEnabled, onAllColumnsVisible, isInitialized, currentSection]);
+
+  // Reset to initial state when entering this slide
+  const prevSectionRef = useRef(currentSection);
+  useEffect(() => {
+    if (!isInitialized) return;
+
+    const prevSection = prevSectionRef.current;
+    prevSectionRef.current = currentSection;
+
+    if (currentSection === 2 && prevSection !== 2 && isScrollEnabled) {
+      setSkipTransitions(true);
+      setVisibleColumns(0);
+
+      const container = containerRef.current;
+      if (container) {
+        container.scrollTop = 0;
+      }
+
+      setTimeout(() => {
+        setSkipTransitions(false);
+      }, 100);
+    }
+  }, [currentSection, isScrollEnabled, isInitialized]);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container || !isInitialized) return;
+
+    if (!isScrollEnabled) {
+      return;
+    }
+
+    let wheelDelta = 0;
+    let wheelTimer: NodeJS.Timeout | null = null;
+    let currentStep = 0;
+    let isProcessingScroll = false;
+
+    const smoothScrollToStep = (step: number, skipAnimation = false) => {
+      if (isScrollingRef.current || isProcessingScroll) return;
+      isScrollingRef.current = true;
+      isProcessingScroll = true;
+
+      const scrollHeight = container.scrollHeight;
+      const containerHeight = container.clientHeight;
+      const maxScroll = scrollHeight - containerHeight;
+
+      const scrollPositions = [
+        0,
+        maxScroll * 0.33,
+        maxScroll * 0.66,
+        maxScroll
+      ];
+
+      const targetScroll = scrollPositions[step] || 0;
+
+      if (skipAnimation || step === 0) {
+        setSkipTransitions(true);
+        container.scrollTop = targetScroll;
+        setVisibleColumns(step);
+        currentStep = step;
+        isScrollingRef.current = false;
         
-        {/* Horizontal separator line */}
+        setTimeout(() => {
+          isProcessingScroll = false;
+        }, 100);
+
+        setTimeout(() => {
+          setSkipTransitions(false);
+        }, 50);
+
+        if (step === 3 && onAllColumnsVisible) {
+          onAllColumnsVisible();
+        }
+
+        return;
+      }
+
+      const startScroll = container.scrollTop;
+      const distance = targetScroll - startScroll;
+      const duration = 500;
+      const startTime = performance.now();
+
+      const animateScroll = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        const easeProgress = progress < 0.5
+          ? 4 * progress * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+        container.scrollTop = startScroll + (distance * easeProgress);
+
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        } else {
+          isScrollingRef.current = false;
+          setVisibleColumns(step);
+          currentStep = step;
+          
+          setTimeout(() => {
+            isProcessingScroll = false;
+          }, 100);
+
+          if (step === 3 && onAllColumnsVisible) {
+            onAllColumnsVisible();
+          }
+        }
+      };
+
+      requestAnimationFrame(animateScroll);
+    };
+
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+
+      if (isScrollingRef.current) return;
+
+      wheelDelta += e.deltaY;
+
+      if (wheelTimer) clearTimeout(wheelTimer);
+
+      wheelTimer = setTimeout(() => {
+        if (Math.abs(wheelDelta) > 40 && !isProcessingScroll) {
+          if (wheelDelta > 0) {
+            const nextStep = Math.min(currentStep + 1, 3);
+            smoothScrollToStep(nextStep);
+          } else {
+            if (currentStep === 0) {
+              if (typeof window !== 'undefined' && (window as any).gotoPrevSlide) {
+                (window as any).gotoPrevSlide();
+              }
+            } else {
+              const prevStep = Math.max(currentStep - 1, 0);
+              smoothScrollToStep(prevStep);
+            }
+          }
+        }
+        wheelDelta = 0;
+      }, 10);
+    };
+
+    container.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => {
+      container.removeEventListener('wheel', handleWheel);
+      if (wheelTimer) clearTimeout(wheelTimer);
+    };
+  }, [isInitialized, isScrollEnabled, onAllColumnsVisible]);
+
+  return (
+    <div
+      ref={containerRef}
+      className={styles.scrollRevealContainer}
+      style={{
+        height: '100vh',
+        overflowY: 'auto',
+        overflowX: 'hidden'
+      }}
+    >
+      <div style={{ height: '200vh', position: 'relative' }}>
         <div style={{
-          position: 'absolute',
-          top: '50%',
-          left: '0',
-          right: '0',
-          height: '1px',
-          background: '#00e87b',
-          transform: 'translateY(-50%)'
-        }} />
-        {/* Top Left - The World Funds Products, Not People */}
+          position: 'sticky',
+          top: 0,
+          width: '100%',
+          height: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '3rem'
+        }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr 1fr',
+            gap: '3rem',
+            width: '100%',
+            maxWidth: '1400px',
+            position: 'relative',
+            flex: '0 0 auto'
+          }}>
+        {/* Column 1 - The World Funds Products, Not People */}
         <div style={{
           display: 'flex',
           flexDirection: 'column',
@@ -50,7 +245,10 @@ export const SubscrollSlide1 = () => {
           justifyContent: 'center',
           gap: '0.3rem',
           padding: '1.5rem',
-          textAlign: 'center'
+          textAlign: 'center',
+          opacity: visibleColumns >= 1 ? 1 : 0,
+          transform: visibleColumns >= 1 ? 'translateX(0)' : 'translateX(100px)',
+          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
         }}>
           <h3 style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', fontWeight: 'bold', marginBottom: '0.5rem' }}>
             The World Funds Products, Not People
@@ -72,7 +270,7 @@ export const SubscrollSlide1 = () => {
           </p>
         </div>
 
-        {/* Top Right - The Institution Behind the Ascent */}
+        {/* Column 2 - The Institution Behind the Ascent */}
         <div style={{
           display: 'flex',
           flexDirection: 'column',
@@ -80,7 +278,10 @@ export const SubscrollSlide1 = () => {
           justifyContent: 'center',
           gap: '0.3rem',
           padding: '1.5rem',
-          textAlign: 'center'
+          textAlign: 'center',
+          opacity: visibleColumns >= 2 ? 1 : 0,
+          transform: visibleColumns >= 2 ? 'translateX(0)' : 'translateX(100px)',
+          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
         }}>
           <h3 style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', fontWeight: 'bold', marginBottom: '0.5rem' }}>
             The Institution Behind the Ascent
@@ -105,7 +306,7 @@ export const SubscrollSlide1 = () => {
           </p>
         </div>
 
-        {/* Bottom Left - Why We Exist */}
+        {/* Column 3 - Why We Exist */}
         <div style={{
           display: 'flex',
           flexDirection: 'column',
@@ -113,7 +314,10 @@ export const SubscrollSlide1 = () => {
           justifyContent: 'center',
           gap: '0.3rem',
           padding: '1.5rem',
-          textAlign: 'center'
+          textAlign: 'center',
+          opacity: visibleColumns >= 3 ? 1 : 0,
+          transform: visibleColumns >= 3 ? 'translateX(0)' : 'translateX(100px)',
+          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s'
         }}>
           <h3 style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', fontWeight: 'bold', marginBottom: '0.5rem' }}>
             Why We Exist (Traction ≠ Coherence)
@@ -131,18 +335,79 @@ export const SubscrollSlide1 = () => {
             We care whether your future self is <span style={{ fontStyle: 'italic' }}>executable</span>.
           </p>
         </div>
+          </div>
 
-        {/* Bottom Right - Empty */}
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '0.3rem',
-          padding: '1.5rem',
-          textAlign: 'center'
-        }}>
-          {/* Empty quadrant */}
+          {/* Progress Indicator */}
+          <div className={styles.columnProgressIndicator}>
+            <div className={styles.progressLine}>
+              <div
+                className={styles.progressSegment}
+                style={{
+                  opacity: visibleColumns >= 1 ? 1 : 0,
+                  transform: visibleColumns >= 1 ? 'scale(1)' : 'scale(0)',
+                  transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
+                }}
+              >
+                <div
+                  className={`${styles.progressNumber} ${visibleColumns >= 1 ? styles.progressActive : ''}`}
+                  style={{
+                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
+                  }}
+                >
+                </div>
+              </div>
+              <div
+                className={`${styles.progressConnector} ${visibleColumns >= 2 ? styles.progressActive : ''}`}
+                style={{
+                  opacity: visibleColumns >= 2 ? 1 : 0,
+                  transform: visibleColumns >= 2 ? 'scaleX(1)' : 'scaleX(0)',
+                  transformOrigin: 'left',
+                  transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
+                }}
+              ></div>
+              <div
+                className={styles.progressSegment}
+                style={{
+                  opacity: visibleColumns >= 2 ? 1 : 0,
+                  transform: visibleColumns >= 2 ? 'scale(1)' : 'scale(0)',
+                  transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
+                }}
+              >
+                <div
+                  className={`${styles.progressNumber} ${visibleColumns >= 2 ? styles.progressActive : ''}`}
+                  style={{
+                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
+                  }}
+                >
+                </div>
+              </div>
+              <div
+                className={`${styles.progressConnector} ${visibleColumns >= 3 ? styles.progressActive : ''}`}
+                style={{
+                  opacity: visibleColumns >= 3 ? 1 : 0,
+                  transform: visibleColumns >= 3 ? 'scaleX(1)' : 'scaleX(0)',
+                  transformOrigin: 'left',
+                  transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
+                }}
+              ></div>
+              <div
+                className={styles.progressSegment}
+                style={{
+                  opacity: visibleColumns >= 3 ? 1 : 0,
+                  transform: visibleColumns >= 3 ? 'scale(1)' : 'scale(0)',
+                  transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s'
+                }}
+              >
+                <div
+                  className={`${styles.progressNumber} ${visibleColumns >= 3 ? styles.progressActive : ''}`}
+                  style={{
+                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s'
+                  }}
+                >
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -162,9 +162,29 @@ export default function Home() {
       case "content1":
         return <ContentSlide1 />;
       case "subscroll1":
-        return <SubscrollSlide1 />;
+        return (
+          <SubscrollSlide1
+            currentSection={currentSection}
+            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            onAllColumnsVisible={() => {
+              setTimeout(() => {
+                isScrollPausedRef.current = false;
+              }, 500);
+            }}
+          />
+        );
       case "slide03":
-        return <Slide03 />;
+        return (
+          <Slide03
+            currentSection={currentSection}
+            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            onAllColumnsVisible={() => {
+              setTimeout(() => {
+                isScrollPausedRef.current = false;
+              }, 500);
+            }}
+          />
+        );
       case "slide04":
         return <Slide04 />;
       case "slide05":

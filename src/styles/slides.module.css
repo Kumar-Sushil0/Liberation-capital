@@ -605,3 +605,175 @@
     font-size: 12px;
   }
 }
+
+/* Column Progress Indicator */
+.columnProgressIndicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0 2rem 0;
+  padding: 0;
+}
+
+.progressLine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+}
+
+.progressSegment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+}
+
+.progressNumber {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  border-radius: 2px;
+  background: #000000;
+  border: 1px solid #00e87b;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "satoshi";
+  font-size: 10px;
+  font-weight: 600;
+  color: #00e87b;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.progressNumber.progressActive {
+  background: #000000;
+  border-color: #00e87b;
+  color: #00e87b;
+  font-weight: 700;
+  box-shadow: 0 0 15px rgba(0, 232, 123, 0.6);
+}
+
+.progressConnector {
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 232, 123, 0.5),
+    transparent
+  );
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.progressConnector::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 232, 123, 0.5),
+    transparent
+  );
+  transition: right 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progressConnector.progressActive::before {
+  right: 0;
+}
+
+/* Responsive adjustments for progress indicator */
+@media (max-width: 768px) {
+  .columnProgressIndicator {
+    margin: 1.5rem 0 0.5rem 0;
+    padding: 0;
+  }
+
+  .progressLine {
+    max-width: 100%;
+    height: 3px;
+  }
+
+  .progressNumber {
+    width: 18px;
+    height: 18px;
+    font-size: 9px;
+  }
+
+  .progressSegment:nth-child(1) {
+    left: calc((100% - 6rem) / 6 - 9px);
+  }
+
+  .progressSegment:nth-child(3) {
+    left: calc(50% - 9px);
+  }
+
+  .progressSegment:nth-child(5) {
+    left: calc(100% - (100% - 6rem) / 6 - 9px);
+  }
+
+  .progressConnector:nth-child(2) {
+    left: calc((100% - 6rem) / 6 + 9px);
+    right: calc(50% - 9px);
+  }
+
+  .progressConnector:nth-child(4) {
+    left: calc(50% + 9px);
+    right: calc((100% - 6rem) / 6 - 9px);
+  }
+}
+
+@media (max-width: 480px) {
+  .columnProgressIndicator {
+    margin: 1rem 0 0.5rem 0;
+  }
+
+  .progressLine {
+    max-width: 100%;
+    height: 2px;
+  }
+
+  .progressNumber {
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+  }
+
+  .progressSegment:nth-child(1) {
+    left: calc((100% - 6rem) / 6 - 8px);
+  }
+
+  .progressSegment:nth-child(3) {
+    left: calc(50% - 8px);
+  }
+
+  .progressSegment:nth-child(5) {
+    left: calc(100% - (100% - 6rem) / 6 - 8px);
+  }
+
+  .progressConnector:nth-child(2) {
+    left: calc((100% - 6rem) / 6 + 8px);
+    right: calc(50% - 8px);
+  }
+
+  .progressConnector:nth-child(4) {
+    left: calc(50% + 8px);
+    right: calc((100% - 6rem) / 6 - 8px);
+  }
+}
