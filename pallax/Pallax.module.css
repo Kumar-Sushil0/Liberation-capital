@@ -1,0 +1,6694 @@
+.container {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  color: var(--light, #ffffff);
+  text-transform: uppercase;
+  overflow: hidden;
+  overscroll-behavior: none; /* Prevent pull-to-refresh */
+  touch-action: pan-y; /* Allow vertical scrolling but prevent pull-to-refresh */
+}
+
+.header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  width: 100%;
+  z-index: 3;
+  height: 7em;
+  font-size: clamp(0.66rem, 2vw, 1rem);
+  letter-spacing: 0.5em;
+  color: #ffffff;
+}
+
+.header a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.section {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  visibility: hidden;
+}
+
+.outer,
+.inner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+.sectionHeading {
+  font-size: clamp(1rem, 8vw, 10rem);
+  font-weight: 600;
+  text-align: center;
+  margin-right: -0.5em;
+  width: 90vw;
+  max-width: 1200px;
+  text-transform: none;
+  z-index: 999;
+  color: #ffffff;
+}
+
+.clipText {
+  overflow: hidden;
+}
+
+.char {
+  display: inline-block;
+  will-change: transform;
+}
+
+.sectionHeading * {
+  will-change: transform;
+}
+
+/* Background colors for each section */
+.first .bg {
+  background-color: #000000;
+}
+
+.second .bg {
+  background-color: #000000;
+}
+
+.third .bg {
+  background-color: #000000;
+}
+
+.fourth .bg {
+  background-color: #000000;
+}
+
+.fifth .bg {
+  background-color: #000000;
+}
+
+.sixth .bg {
+  background-color: #000000;
+}
+
+.seventh .bg {
+  background-color: #000000;
+}
+
+.eighth .bg {
+  background-color: #000000;
+}
+
+.ninth .bg {
+  background-color: #000000;
+}
+
+/* Hero Layout Styles */
+.heroLayout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  height: 100vh;
+  padding: 0 4rem;
+  position: relative;
+  z-index: 2;
+  gap: 3rem;
+}
+
+.heroContent {
+  flex: 1;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.heroParagraph {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #888888;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0;
+  margin-bottom: 0.4rem;
+  text-transform: none;
+}
+
+.heroImage {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroImageContent {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+}
+
+/* Mobile-Specific Hero Layout (Slide 2) */
+.heroLayoutMobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding: 2rem 1.5rem;
+  position: relative;
+  z-index: 2;
+  gap: 2rem;
+}
+
+.heroImageMobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.heroImageContentMobile {
+  width: 180px !important;
+  height: 180px !important;
+  object-fit: contain;
+}
+
+.heroContentMobile {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroTextMobile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.heroParagraphMobile {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #888888;
+  font-family: "satoshi", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  margin: 0;
+  text-align: center;
+  text-transform: none;
+}
+
+.heroParagraphMobile strong {
+  color: #888888;
+  font-weight: 700;
+}
+
+/* Responsive adjustments for very small screens */
+@media (max-width: 480px) {
+  .heroLayoutMobile {
+    padding: 1.5rem 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .heroImageContentMobile {
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  .heroTextMobile {
+    gap: 0.3rem;
+  }
+
+  .heroParagraphMobile {
+    font-size: 11px;
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+  }
+}
+
+@media (max-width: 375px) {
+  .heroLayoutMobile {
+    padding: 1.25rem 1rem;
+    gap: 1.25rem;
+  }
+
+  .heroImageContentMobile {
+    width: 130px !important;
+    height: 130px !important;
+  }
+
+  .heroParagraphMobile {
+    font-size: 10px;
+    line-height: 1.4;
+    letter-spacing: 0.1px;
+  }
+}
+
+/* Responsive Styles for Hero Layout (Slide 2) - Desktop */
+@media (max-width: 1024px) {
+  .heroLayout {
+    padding: 0 3rem;
+    gap: 2rem;
+  }
+
+  .heroImageContent {
+    width: 320px;
+    height: 320px;
+  }
+
+  .heroParagraph {
+    font-size: 13px;
+  }
+}
+
+/* Mobile-Specific Slide 4 Layout */
+.slide4MobileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 2;
+  overflow-y: auto;
+}
+
+.slide4MobileContainer .greyLineContainerMobile {
+  width: 100%;
+  max-width: 500px;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+  flex-shrink: 0;
+}
+
+.slide4MobileContainer .greyLineTextMobile {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #888888;
+  font-family: "satoshi", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0;
+  text-align: center;
+  text-transform: none;
+}
+
+.mobileColumnsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  gap: 2.5rem;
+  flex-shrink: 0;
+}
+
+.mobileColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.mobileColumnTitle {
+  font-family: "Full Moon BT W01 Falling Leav", "satoshi", sans-serif;
+  font-size: 22px;
+  color: #00e87b;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  text-align: center;
+}
+
+.mobileColumnText {
+  font-family: "satoshi", sans-serif;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #888888;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 0;
+  text-align: center;
+  text-transform: none;
+}
+
+.mobileColumnImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.mobileImageContent {
+  width: 120px !important;
+  height: 120px !important;
+  object-fit: contain;
+}
+
+/* Responsive adjustments for very small screens */
+@media (max-width: 480px) {
+  .slide4MobileContainer {
+    padding: 0 0.75rem;
+  }
+
+  .slide4MobileContainer .greyLineContainerMobile {
+    margin-bottom: 1.5rem;
+  }
+
+  .slide4MobileContainer .greyLineTextMobile {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .mobileColumnsWrapper {
+    gap: 2rem;
+    max-width: 100%;
+  }
+
+  .mobileColumnTitle {
+    font-size: 20px;
+  }
+
+  .mobileColumnText {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .mobileImageContent {
+    width: 100px !important;
+    height: 100px !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .slide4MobileContainer {
+    padding: 0 0.5rem;
+  }
+
+  .slide4MobileContainer .greyLineContainerMobile {
+    margin-bottom: 1.25rem;
+  }
+
+  .slide4MobileContainer .greyLineTextMobile {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .mobileColumnsWrapper {
+    gap: 1.75rem;
+  }
+
+  .mobileColumnTitle {
+    font-size: 18px;
+  }
+
+  .mobileColumnText {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .mobileImageContent {
+    width: 90px !important;
+    height: 90px !important;
+  }
+}
+
+/* Gang Section Styles */
+.gangSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.gangTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #00e87b;
+  font-family: "satoshi";
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(0, 232, 123, 0.3);
+}
+
+.gangMembers {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.memberCard {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 232, 123, 0.2);
+  transition: all 0.3s ease;
+}
+
+.memberCard:hover {
+  border-color: rgba(0, 232, 123, 0.5);
+  transform: translateY(-2px);
+}
+
+.memberName {
+  font-size: 18px;
+  font-weight: 600;
+  color: #00e87b;
+  font-family: "satoshi";
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.memberDescription {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* Rubik's Cube Styles */
+.rubiksCube {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.rubiksCube:hover {
+  background-color: rgba(0, 232, 123, 0.05);
+  transform: scale(1.05);
+}
+
+.cubeRow {
+  display: flex;
+  gap: 2px;
+  height: 33.33%;
+}
+
+.cubeSquare {
+  width: 33.33%;
+  height: 100%;
+  border: 1px solid #00e87b;
+  background-color: transparent;
+  box-sizing: border-box;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cubeSquare:hover {
+  background-color: rgba(0, 232, 123, 0.1);
+  transform: scale(1.1);
+}
+
+.cubeSquare.active {
+  background-color: rgba(0, 232, 123, 0.3);
+  border-color: #00e87b;
+  box-shadow: 0 0 15px rgba(0, 232, 123, 0.6);
+}
+
+/* Demo Section Styles */
+.demoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.demoTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #00e87b;
+  font-family: "satoshi";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  text-shadow: 0 0 15px rgba(0, 232, 123, 0.3);
+}
+
+.demoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.demoList li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.demoList li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #00e87b;
+  font-weight: 600;
+}
+
+/* Features Section Styles */
+.featuresSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.featuresTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #00e87b;
+  font-family: "satoshi";
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(0, 232, 123, 0.3);
+}
+
+.featuresGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.featureCard {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 232, 123, 0.2);
+  transition: all 0.3s ease;
+}
+
+.featureCard:hover {
+  border-color: rgba(0, 232, 123, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 232, 123, 0.1);
+}
+
+.featureName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #00e87b;
+  font-family: "satoshi";
+  margin: 0 0 0.8rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.featureDescription {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #fff;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* CTA Section Styles */
+.ctaSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.ctaTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #00e87b;
+  font-family: "satoshi";
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(0, 232, 123, 0.3);
+}
+
+.ctaButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.ctaButton {
+  background: linear-gradient(135deg, #00e87b, #00c96a);
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  font-family: "satoshi";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 232, 123, 0.3);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 232, 123, 0.4);
+  background: linear-gradient(135deg, #00f085, #00d96a);
+}
+
+.ctaButtonSecondary {
+  background: transparent;
+  border: 1px solid #00e87b;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: #00e87b;
+  font-family: "satoshi";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ctaButtonSecondary:hover {
+  background: rgba(0, 232, 123, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 232, 123, 0.2);
+}
+
+/* Font Face Import */
+@font-face {
+  font-family: "Full Moon BT W01 Falling Leav";
+  src: url("../../../public/Full Moon BT W01 Falling Leav.otf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Global styles - moved to container */
+.container * {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+/* Mute Button */
+.muteButtonContainer {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.muteButtonContainer.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.muteButton {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+}
+
+.muteButton svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+
+.muteButton:hover {
+  color: #00e87b;
+  transform: scale(1.1);
+}
+
+.muteButton:hover svg {
+  stroke: #00e87b;
+}
+
+/* Progress Indicator */
+.progressIndicator {
+  position: fixed;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  background: transparent;
+  padding: 15px 10px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.progressBar {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.progressDot {
+  width: 8px;
+  height: 8px;
+  background: #000000;
+  border: 1px solid #00e87b;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.progressDot:hover {
+  background: #00e87b;
+  border: 1px solid #00e87b;
+}
+
+.progressDot.active {
+  background: #000000;
+  border: 1px solid #00e87b;
+  box-shadow: 0 0 10px rgba(0, 232, 123, 0.5);
+  width: 8px;
+  height: 80px;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subscroll fill animation */
+.progressDot.active.subscroll::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(
+    to top,
+    transparent,
+    rgba(0, 232, 123, 0.5),
+    transparent
+  );
+  border-radius: 1px;
+  animation: greenFillUp 1.2s ease-out forwards;
+  z-index: 0;
+}
+
+.progressDot.active.subscroll::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: #000000;
+  border-radius: 1px;
+  animation: blackFillUp 1.2s ease-out forwards;
+  z-index: 1;
+}
+
+@keyframes greenFillUp {
+  0% {
+    height: 0;
+  }
+  60% {
+    height: 100%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes blackFillUp {
+  0% {
+    height: 0;
+  }
+  30% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+/* Subscroll stacked dots */
+.subscrollDots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 4px 0;
+  z-index: 2;
+}
+
+.subscrollDotItem {
+  width: 12px;
+  height: 3px;
+  background: #00e87b;
+  border-radius: 0;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+/* Animation when individual lines shoot up */
+.subscrollDotItemAnimating {
+  width: 12px !important;
+  height: 3px !important;
+  background: #00e87b !important;
+  border-radius: 0 !important;
+  flex-shrink: 0 !important;
+  animation: lineShootUp 0.6s ease-out forwards !important;
+}
+
+@keyframes lineShootUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-15px);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+}
+
+/* Responsive styles for progress indicator */
+@media (max-width: 1024px) {
+  .progressIndicator {
+    right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .progressIndicator {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    padding: 15px 10px;
+    border-radius: 8px;
+  }
+
+  .progressBar {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .progressDot {
+    width: 6px;
+    height: 6px;
+    background: #000000;
+    border: 1px solid #00e87b;
+    border-radius: 1px;
+  }
+
+  .progressDot.active {
+    background: #000000;
+    border: 1px solid #00e87b;
+    width: 6px;
+    height: 60px;
+    border-radius: 1px;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  .progressIndicator {
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    padding: 12px 8px;
+  }
+
+  .progressDot {
+    width: 5px;
+    height: 5px;
+    background: #000000;
+    border: 1px solid #00e87b;
+    border-radius: 1px;
+  }
+
+  .progressDot.active {
+    background: #000000;
+    border: 1px solid #00e87b;
+    width: 5px;
+    height: 50px;
+    border-radius: 1px;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+/* Progress Indicator Grid (2x2 grid layout) */
+.progressIndicatorGrid {
+  position: fixed;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  background: transparent;
+  padding: 15px 10px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.progressBarGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.progressGroup {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2px;
+  width: fit-content;
+}
+
+.progressDotGrid {
+  width: 8px;
+  height: 8px;
+  background: #000000;
+  border: 1px solid #00e87b;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.progressDotGrid:hover {
+  background: #00e87b;
+  border: 1px solid #00e87b;
+}
+
+.progressDotGrid.activeGrid {
+  background: #00e87b;
+  border: 1px solid #00e87b;
+  box-shadow: 0 0 10px rgba(0, 232, 123, 0.5);
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  position: relative;
+  overflow: visible;
+}
+
+/* Subscroll stacked dots for grid */
+.subscrollDotsGrid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.subscrollDotItemGrid {
+  width: 100%;
+  height: 100%;
+  background: #00e87b;
+  border-radius: 1px;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.subscrollDotItemAnimatingGrid {
+  width: 100% !important;
+  height: 100% !important;
+  background: #00e87b !important;
+  border-radius: 1px !important;
+  flex-shrink: 0 !important;
+  animation: lineShootUpGrid 0.6s ease-out forwards !important;
+}
+
+@keyframes lineShootUpGrid {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(0, -8px) scale(1.2);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(0, -16px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Responsive styles for progress indicator grid */
+@media (max-width: 1024px) {
+  .progressIndicatorGrid {
+    right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .progressIndicatorGrid {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    padding: 15px 10px;
+    border-radius: 8px;
+  }
+
+  .progressBarGrid {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .progressGroup {
+    gap: 2px;
+  }
+
+  .progressDotGrid {
+    width: 6px;
+    height: 6px;
+    background: #000000;
+    border: 1px solid #00e87b;
+    border-radius: 1px;
+  }
+
+  .progressDotGrid.activeGrid {
+    background: #00e87b;
+    border: 1px solid #00e87b;
+    width: 6px;
+    height: 6px;
+    border-radius: 1px;
+    position: relative;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 480px) {
+  .progressIndicatorGrid {
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    padding: 12px 8px;
+  }
+
+  .progressDotGrid {
+    width: 5px;
+    height: 5px;
+    background: #000000;
+    border: 1px solid #00e87b;
+    border-radius: 1px;
+  }
+
+  .progressDotGrid.activeGrid {
+    background: #00e87b;
+    border: 1px solid #00e87b;
+    width: 5px;
+    height: 5px;
+    border-radius: 1px;
+    position: relative;
+    overflow: visible;
+  }
+}
+
+/* Fixed Text Container */
+.fixedTextContainer {
+  position: fixed;
+  top: 10px;
+  left: 30px;
+  z-index: 1003;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+/* Fixed Flipping Words */
+.fixedFlippingWords {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+}
+
+.fixedFlippingWords * {
+  color: #ffffff !important;
+}
+
+.fixedFlippingWords span {
+  color: #ffffff !important;
+}
+
+/* Fixed Dummy Text */
+.fixedDummyText {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  color: #00e87b;
+  font-family: "Full Moon BT W01 Falling Leav", "satoshi";
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Call to Action Styles */
+.ctaSection {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: 32px;
+  color: #00e87b;
+  font-family: "satoshi";
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 1rem 0;
+}
+
+.ctaAction {
+  padding: 2rem;
+  background: rgba(0, 232, 123, 0.1);
+  border: 1px solid #00e87b;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.ctaAction:hover {
+  background: rgba(0, 232, 123, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 232, 123, 0.3);
+}
+
+.actionTitle {
+  font-size: 18px;
+  color: #00e87b;
+  font-family: "satoshi";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.section12Cta {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.section12Cta .ctaAction {
+  padding: 1rem 2rem;
+}
+
+.section12Text {
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  color: #00e87b;
+  font-family: "satoshi";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 1rem 0;
+}
+
+/* Game Gang Styles */
+.gangSection {
+  margin-top: 0;
+}
+
+.gangTitle {
+  font-size: 20px;
+  color: #00e87b;
+  font-family: "satoshi";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 2rem 0;
+}
+
+.gangMembers {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.memberCard {
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 232, 123, 0.2);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.memberCard:hover {
+  border-color: rgba(0, 232, 123, 0.4);
+  transform: translateY(-2px);
+}
+
+.memberName {
+  font-size: 16px;
+  color: #00e87b;
+  font-family: "satoshi";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 1rem 0;
+}
+
+.memberDescription {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.cubeTitle {
+  font-size: 16px;
+  color: #888888;
+  font-family: "satoshi", sans-serif;
+  font-weight: normal;
+  letter-spacing: 1px;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+  line-height: 1.4;
+  width: 100%;
+}
+
+/* Ensure heroImage stacks content vertically */
+.heroImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Features Container */
+.featuresContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding: 0 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Master Container for Scroll Reveal Slides */
+.scrollRevealMasterContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  padding: 0 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Grey Line Container - Fixed Height and Position */
+.greyLineContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 180px; /* Increased height to accommodate bottom padding */
+  flex-shrink: 0; /* Prevent shrinking */
+  padding-top: 100px; /* Keep top padding to push content down */
+  padding-bottom: 20px; /* Add back a little bottom padding */
+}
+
+.greyLineText {
+  font-family: "satoshi", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #888888;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+  max-width: none;
+  padding: 0 1rem;
+  line-height: 1.6;
+  text-transform: none; /* Override any inherited uppercase */
+}
+
+.greyLineTextNoWrap {
+  font-family: "satoshi", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #888888;
+  text-align: center;
+  margin: 0;
+  padding: 0 1rem;
+  line-height: 1.6;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+/* Main Content Container - Takes Remaining Space */
+.scrollRevealMainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Changed from center to top alignment */
+  width: 100%;
+  min-height: 0; /* Allow shrinking */
+}
+
+/* Three Column Grid Layout */
+.threeColumnGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  margin-bottom: 3rem;
+}
+
+.gridColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 100%;
+}
+
+.columnTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 60px;
+}
+
+.titleText {
+  font-size: 24px;
+  font-weight: 700;
+  color: #00e87b;
+  font-family: "satoshi";
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(0, 232, 123, 0.3);
+}
+
+.textContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 80px;
+}
+
+.textContent .heroParagraph {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0;
+  max-width: 300px;
+}
+
+.imageContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.imageContent .heroImageContent {
+  width: 200px !important;
+  height: 200px !important;
+  object-fit: contain;
+}
+
+/* Powers Container */
+.powersContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding: 0 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Gains Container */
+.gainsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding: 0 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.gainsTopText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1400px;
+  margin-bottom: 1rem;
+}
+
+.gainsTopText .heroParagraph {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #fff;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0;
+  width: 100%;
+  text-align: justify;
+  text-align-last: center;
+}
+
+.gainsMainContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  gap: 3rem;
+}
+
+.gainsMainContent .gainsSection,
+.gainsMainContent .lossesSection {
+  flex: 1;
+  max-width: 50%;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  height: fit-content;
+  margin-top: 0;
+}
+
+.gainsMainContent .gainsSection:hover,
+.gainsMainContent .lossesSection:hover {
+  transform: translateY(-2px);
+}
+
+.gainsMainContent .separatorLine {
+  width: 2px;
+  height: 80%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 232, 123, 0.5),
+    transparent
+  );
+  align-self: center;
+  margin: 0 1.5rem;
+}
+
+/* Game Flow Section Styles */
+.tenth .bg {
+  background: #000000;
+}
+
+/* Eleventh Slide - Hero Layout */
+.eleventh .bg {
+  background-color: #000000;
+}
+
+.gameFlowContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 3rem;
+}
+
+.gameFlowHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.gameFlowTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #00e87b;
+  margin-bottom: 1rem;
+  font-family: "satoshi";
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.gameFlowSubtitle {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-family: "satoshi";
+  font-weight: 500;
+}
+
+.gameFlowDescription {
+  font-size: 1rem;
+  color: #ccc;
+  font-family: "satoshi";
+  font-style: italic;
+}
+
+.poemSection {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.poemTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #00e87b;
+  margin-bottom: 1.5rem;
+  font-family: "satoshi";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.poemLines {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.poemLines p {
+  font-size: 1.1rem;
+  color: #fff;
+  font-family: "satoshi";
+  line-height: 1.6;
+  margin: 0;
+}
+
+.playGamesSection {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.playGamesGrid {
+  display: flex;
+  gap: 0;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  height: 200px;
+  justify-content: center;
+}
+
+.playGamesTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #00e87b;
+  margin-bottom: 2rem;
+  font-family: "satoshi";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.gameItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.8rem;
+  padding: 1.2rem 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  border: 2px solid rgba(0, 232, 123, 0.3);
+  transition: all 0.6s ease;
+  height: 180px;
+  width: 280px;
+  flex-shrink: 0;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.gameItem.overlapped {
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: left;
+  gap: 1rem;
+  width: 320px;
+  padding: 1rem;
+}
+
+.gameItem:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 232, 123, 0.5);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.gameNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #00e87b, #00c96b);
+  color: #000;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "satoshi";
+  flex-shrink: 0;
+}
+
+.gameContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.6s ease;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.gameItem.overlapped .gameContent {
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.gameTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #00e87b;
+  margin-bottom: 0.3rem;
+  font-family: "satoshi";
+  text-transform: none;
+  transition: all 0.6s ease;
+  transform-origin: center;
+}
+
+.gameItem.overlapped .gameTitle {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  height: 140px;
+  width: 80px;
+  margin-bottom: 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameDescription {
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.4;
+  font-family: "satoshi";
+  margin: 0;
+  transition: all 0.6s ease;
+}
+
+.gameItem.overlapped .gameDescription {
+  flex: 1;
+}
+
+.gameItem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000000;
+  border-radius: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  z-index: 10;
+}
+
+.gameItem.overlayTransition::before {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .gameFlowContainer {
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .gameFlowTitle {
+    font-size: 2rem;
+  }
+
+  .playGamesGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .gameItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .gameNumber {
+    align-self: center;
+  }
+}
+
+.gameFlowBottomText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 2rem;
+}
+
+.gameFlowBottomText .heroParagraph {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #fff;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0;
+  text-align: center;
+}
+
+.gainsBottomText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1400px;
+  margin-top: 1rem;
+}
+
+.gainsBottomText .heroParagraph {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #fff;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0;
+  width: 100%;
+  text-align: justify;
+  text-align-last: center;
+}
+
+/* Powers Section Styles */
+.powersSection {
+  width: 100%;
+  max-width: 600px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  color: #00e87b;
+  font-family: "satoshi";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.powersGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 1.5rem;
+}
+
+.powerItem {
+  background: rgba(0, 232, 123, 0.05);
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #fff;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  text-transform: none;
+}
+
+.powerItem:hover {
+  background: rgba(0, 232, 123, 0.1);
+  transform: translateY(-2px);
+}
+
+.powerItem strong {
+  color: #00e87b;
+  font-weight: 600;
+}
+
+/* Side by Side Layout */
+.sideBySideLayout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  height: 100vh;
+  padding: 0 4rem;
+  position: relative;
+  z-index: 2;
+  gap: 3rem;
+}
+
+.sideBySideLayout .powersSection,
+.sideBySideLayout .forcesSection {
+  flex: 1;
+  max-width: 50%;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  height: fit-content;
+  margin-top: 0;
+}
+
+.sideBySideLayout .powersSection:hover,
+.sideBySideLayout .forcesSection:hover,
+.sideBySideLayout .gainsSection:hover,
+.sideBySideLayout .lossesSection:hover {
+  transform: translateY(-2px);
+}
+
+.sideBySideLayout .gainsSection,
+.sideBySideLayout .lossesSection {
+  flex: 1;
+  max-width: 50%;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  height: fit-content;
+  margin-top: 0;
+}
+
+/* Separator Line */
+.separatorLine {
+  width: 2px;
+  height: 80%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 232, 123, 0.5),
+    transparent
+  );
+  align-self: center;
+  margin: 0 1.5rem;
+}
+
+/* Forces Grid */
+.forcesGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 1.5rem;
+}
+
+.forceItem {
+  background: rgba(255, 107, 107, 0.05);
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #fff;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  text-transform: none;
+}
+
+.forceItem:hover {
+  background: rgba(255, 107, 107, 0.1);
+  transform: translateY(-2px);
+}
+
+.forceItem strong {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+/* Section Icon Styles */
+.sectionIcon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.iconImage {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.iconImage:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.dummyLines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.dummyLine {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "satoshi";
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Gains and Losses Section Styles */
+.gainsSection,
+.lossesSection {
+  margin-bottom: 0;
+}
+
+.gainsList,
+.lossesList {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.gainsList li,
+.lossesList li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+  text-transform: none;
+}
+
+.gainsList li::before {
+  content: "✓";
+  color: #00e87b;
+  position: absolute;
+  left: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.lossesList li::before {
+  content: "✗";
+  color: #ff6b6b;
+  position: absolute;
+  left: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.featuresBottomText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.featuresBottomText .heroParagraph {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #fff;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0;
+  width: 100%;
+  text-align: justify;
+  text-align-last: center;
+}
+
+.powersMainContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  gap: 3rem;
+}
+
+.powersMainContent .powersSection,
+.powersMainContent .forcesSection {
+  flex: 1;
+  max-width: 50%;
+  padding: 0 2rem 2rem 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  height: fit-content;
+  margin-top: 0;
+  text-align: center;
+}
+
+.powersMainContent .powersSection:hover,
+.powersMainContent .forcesSection:hover {
+  transform: translateY(-2px);
+}
+
+.powersMainContent .separatorLine {
+  width: 2px;
+  height: 80%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 232, 123, 0.5),
+    transparent
+  );
+  align-self: center;
+  margin: 0 1.5rem;
+}
+
+.powersBottomText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1400px;
+  margin-top: 1rem;
+}
+
+.powersBottomText .heroParagraph {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #fff;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0;
+  width: 100%;
+  text-align: justify;
+  text-align-last: center;
+}
+
+.rubiksCube {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.cubeRow {
+  display: flex;
+  gap: 4px;
+  height: 33.33%;
+}
+
+.cubeSquare {
+  width: 33.33%;
+  height: 100%;
+  border: 3px solid #00e87b;
+  background-color: transparent;
+  box-sizing: border-box;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cubeSquare:hover {
+  background-color: rgba(0, 232, 123, 0.1);
+  transform: scale(1.05);
+}
+
+.cubeSquare.active {
+  background-color: rgba(0, 232, 123, 0.2);
+  border-color: #00e87b;
+  box-shadow: 0 0 15px rgba(0, 232, 123, 0.5);
+}
+
+/* Video Player Styles */
+.videoContainer {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  overflow: visible;
+}
+
+.demoVideo {
+  width: 260px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+  border: 2px solid rgba(0, 232, 123, 0.3);
+  border-bottom: none;
+  background: rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease;
+  margin-bottom: 0;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hide default video controls */
+.demoVideo::-webkit-media-controls {
+  display: none !important;
+}
+
+.demoVideo::-moz-media-controls {
+  display: none !important;
+}
+
+/* Center Play Button */
+.centerPlayBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.centerPlayBtn:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.centerPlayBtn:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+.centerPlayBtn svg {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Custom controls container - removed, timeline now positioned directly on video */
+
+.playPauseBtn {
+  background: none;
+  border: none;
+  color: #00e87b;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.timelineContainer {
+  width: 260px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 0 0 12px 12px;
+  cursor: pointer;
+  border: 2px solid rgba(0, 232, 123, 0.4);
+  border-top: none;
+  position: relative;
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.timelineProgress {
+  height: 100%;
+  background: #00e87b;
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.1s ease;
+}
+
+.timeDisplay {
+  color: #fff;
+  font-size: 12px;
+  font-family: "satoshi", sans-serif;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* Removed hover effect to prevent cutting issues with overflow: hidden */
+
+/* Video Carousel Styles */
+.videoCarouselSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.videoCarousel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  height: 480px;
+  position: relative;
+  overflow: hidden; /* Clips videos sliding out of view */
+}
+
+.videoCarouselWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Clips videos that slide out */
+}
+
+.videoCarouselSlide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center center;
+}
+
+.videoCarouselSlide .videoContainer {
+  max-width: 260px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videoCarouselSlide .demoVideo {
+  border-color: rgba(0, 232, 123, 0.4);
+}
+
+/* Removed carousel hover effect to prevent cutting issues with overflow: hidden */
+
+/* Carousel Navigation */
+.videoCarouselNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.carouselNavButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  color: #00e87b;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carouselNavButton:hover {
+  transform: scale(1.1);
+}
+
+.carouselNavButton:active {
+  transform: scale(0.95);
+}
+
+.carouselNavButton svg {
+  transition: all 0.3s ease;
+}
+
+.carouselNavButton:hover svg {
+  stroke: #00e87b;
+}
+
+.carouselDots {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.carouselDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carouselDot:hover {
+  background: rgba(0, 232, 123, 0.5);
+  transform: scale(1.2);
+}
+
+.carouselDot.active {
+  background: #00e87b;
+  box-shadow: 0 0 10px rgba(0, 232, 123, 0.5);
+  transform: scale(1.3);
+}
+
+/* Responsive adjustments for carousel */
+@media (max-width: 768px) {
+  .videoCarouselSection {
+    max-width: 400px;
+    padding: 0 1rem;
+  }
+
+  .videoCarousel {
+    height: 400px;
+  }
+
+  .videoContainer {
+    max-width: 280px;
+  }
+
+  .videoCarouselSlide .videoContainer {
+    max-width: 240px;
+  }
+
+  .demoVideo {
+    width: 220px;
+    height: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .timelineContainer {
+    width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .carouselNavButton {
+    width: 35px;
+    height: 35px;
+  }
+
+  .carouselNavButton svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .carouselDot {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .videoCarouselSection {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  .videoCarousel {
+    height: 340px;
+  }
+
+  .videoContainer {
+    max-width: 200px;
+  }
+
+  .videoCarouselSlide .videoContainer {
+    max-width: 180px;
+  }
+
+  .demoVideo {
+    width: 160px;
+    height: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .timelineContainer {
+    width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .centerPlayBtn svg {
+    width: 45px;
+    height: 45px;
+  }
+
+  .carouselNavButton {
+    width: 30px;
+    height: 30px;
+  }
+
+  .carouselNavButton svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .carouselDot {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+@media (max-width: 360px) {
+  .videoCarouselSection {
+    padding: 0 0.25rem;
+  }
+
+  .videoCarousel {
+    height: 300px;
+  }
+
+  .videoContainer {
+    max-width: 160px;
+  }
+
+  .videoCarouselSlide .videoContainer {
+    max-width: 140px;
+  }
+
+  .demoVideo {
+    width: 140px;
+    height: 240px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .timelineContainer {
+    width: 140px;
+    height: 3px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .centerPlayBtn svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .carouselNavButton {
+    width: 28px;
+    height: 28px;
+  }
+
+  .carouselNavButton svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Responsive adjustments for scroll reveal containers */
+@media (max-width: 768px) {
+  .scrollRevealMasterContainer {
+    padding: 0 2rem;
+  }
+
+  .greyLineContainer {
+    height: 150px;
+    padding-top: 80px;
+    padding-bottom: 15px;
+  }
+
+  .greyLineText {
+    font-size: 12px;
+    max-width: 600px;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollRevealMasterContainer {
+    padding: 0 1rem;
+  }
+
+  .greyLineContainer {
+    height: 120px;
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+
+  .greyLineText {
+    font-size: 11px;
+    max-width: 100%;
+    padding: 0 0.5rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 360px) {
+  .scrollRevealMasterContainer {
+    padding: 0 0.5rem;
+  }
+
+  .greyLineContainer {
+    height: 110px;
+    padding-top: 50px;
+    padding-bottom: 8px;
+  }
+
+  .greyLineText {
+    font-size: 10px;
+    padding: 0 0.25rem;
+    line-height: 1.4;
+  }
+}
+
+/* ScrollRevealContainer - Hide scrollbar */
+.scrollRevealContainer {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.scrollRevealContainer::-webkit-scrollbar {
+  display: none; /* WebKit browsers (Chrome, Safari, Edge) */
+}
+
+/* Fixed Small Cube Grid at Top Right */
+.fixedSmallCubeGrid {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1003;
+  background: transparent;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.smallRubiksCube {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 42px;
+  height: 42px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+.smallRubiksCube:hover {
+  background-color: rgba(0, 232, 123, 0.05);
+  transform: scale(1.1);
+}
+
+.smallCubeRow {
+  display: flex;
+  gap: 1px;
+  height: 33.33%;
+}
+
+.smallCubeSquare {
+  width: 33.33%;
+  height: 100%;
+  background: #000000;
+  border: 1px solid #00e87b;
+  box-sizing: border-box;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.smallCubeSquare.active {
+  background: #000000;
+  border: 1px solid #00e87b;
+  box-shadow: 0 0 10px rgba(0, 232, 123, 0.5);
+}
+
+/* Popup Container */
+.cubePopup {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid #00e87b;
+  border-radius: 8px;
+  padding: 12px 0;
+  margin-top: 8px;
+  min-width: 160px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1004;
+  backdrop-filter: blur(10px);
+}
+
+.cubePopup.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.popupOption {
+  padding: 10px 16px;
+  color: #ffffff;
+  font-family: "satoshi";
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(0, 232, 123, 0.2);
+}
+
+.popupOption:last-child {
+  border-bottom: none;
+}
+
+.popupOption:hover {
+  background-color: rgba(0, 232, 123, 0.1);
+  color: #00e87b;
+}
+
+/* Floating Arrow Styles */
+.floatingArrow {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.floatingArrow:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.floatingArrow:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+.arrowSvg {
+  transition: all 0.3s ease;
+  animation: bounce 2s infinite;
+}
+
+.floatingArrow:hover .arrowSvg {
+  transform: translateY(2px);
+  animation: none;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Twelfth Slide - Design Modes */
+.twelfth .bg {
+  background-color: #000000;
+}
+
+/* Thirteenth Slide - Design Modes Flipped */
+.thirteenth .bg {
+  background-color: #000000;
+}
+
+.fourteenth .bg {
+  background-color: #000000;
+}
+
+.fifteenth .bg {
+  background-color: #000000;
+}
+
+.sixteenth .bg {
+  background-color: #000000;
+}
+
+.seventeenth .bg {
+  background-color: #000000;
+}
+
+.eighteenth .bg {
+  background-color: #000000;
+}
+
+.nineteenth .bg {
+  background-color: #000000;
+}
+
+.twentieth .bg {
+  background-color: #000000;
+}
+
+.twentyfirst .bg {
+  background-color: #000000;
+}
+
+.twentysecond .bg {
+  background-color: #000000;
+}
+
+.twentythird .bg {
+  background-color: #000000;
+}
+
+.twentyfourth .bg {
+  background-color: #000000;
+}
+
+.twentyfifth .bg {
+  background-color: #000000;
+}
+
+.twentysixth .bg {
+  background-color: #000000;
+}
+
+.twentyseventh .bg {
+  background-color: #000000;
+}
+
+.twentyeighth .bg {
+  background-color: #000000;
+}
+
+.twentyninth .bg {
+  background-color: #000000;
+}
+
+.thirtieth .bg {
+  background-color: #000000;
+}
+
+/* Game Modes Section Styles */
+.pallaxGameModesText {
+  text-align: center;
+}
+
+.pallaxGameModesButtons {
+  display: grid;
+  grid-template-columns: 140px 140px;
+  grid-template-rows: 140px 140px;
+  gap: 0.5rem;
+  width: fit-content;
+  margin: 2rem auto;
+}
+
+.pallaxGameModeButton {
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 232, 123, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  font-family: "satoshi";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pallaxGameModeButton:hover {
+  border-color: rgba(0, 232, 123, 0.4);
+  background: rgba(0, 232, 123, 0.05);
+  transform: translateX(5px);
+}
+
+.pallaxGameModeButton.active {
+  border-color: rgba(0, 232, 123, 0.6);
+  background: rgba(0, 232, 123, 0.1);
+  color: #00e87b;
+}
+
+.pallaxSectionTitle {
+  font-size: 16px;
+  color: #00e87b;
+  font-family: "satoshi";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+/* Game Ecosystem Section Styles */
+.pallaxEcosystemParagraph {
+  text-align: center;
+}
+
+.pallaxEcosystemButtons {
+  display: grid;
+  grid-template-columns: 140px 140px;
+  grid-template-rows: 140px 140px;
+  gap: 0.5rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.pallaxEcosystemButton {
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 232, 123, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  font-family: "satoshi";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pallaxEcosystemButton:hover {
+  border-color: rgba(0, 232, 123, 0.4);
+  background: rgba(0, 232, 123, 0.05);
+  transform: translateX(5px);
+}
+
+.pallaxEcosystemButton.active {
+  border-color: rgba(0, 232, 123, 0.6);
+  background: rgba(0, 232, 123, 0.1);
+  color: #00e87b;
+}
+
+.pallaxEcosystemContent {
+  width: 100%;
+}
+
+.pallaxEcosystemTitle {
+  font-size: 20px;
+  color: #00e87b;
+  font-family: "satoshi";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 2rem 0;
+}
+
+.pallaxEcosystemDescription {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0 0 1.5rem 0;
+}
+
+.pallaxPlaceholderSpace {
+  height: 3rem;
+  background: rgba(0, 232, 123, 0.05);
+  border: 1px dashed rgba(0, 232, 123, 0.3);
+  border-radius: 4px;
+  margin-bottom: 2rem;
+}
+
+.pallaxComingSoon {
+  font-size: 18px;
+  color: #00e87b;
+  font-family: "satoshi";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 2rem 0;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 232, 123, 0.05);
+  border: 1px solid rgba(0, 232, 123, 0.2);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.pallaxComingSoon:hover {
+  background: rgba(0, 232, 123, 0.1);
+  border-color: rgba(0, 232, 123, 0.4);
+}
+
+/* DD Introduction Section Styles */
+.pallaxAboutDigen {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.pallaxSectionHeader {
+  margin-bottom: 1.5rem;
+}
+
+.pallaxDdSubtitle {
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  font-size: 14px;
+  color: #00e87b;
+  font-family: "Full Moon BT W01 Falling Leav", "satoshi", sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.pallaxDdSubtitle span {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.pallaxDdMainTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: "built";
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 1rem 0;
+}
+
+.pallaxDdMainTitle span {
+  color: #00e87b;
+}
+
+.pallaxDdDescription {
+  margin-top: 1rem;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pallaxDdDescription h3 {
+  font-size: 1.2rem;
+  color: #888888;
+  font-family: "satoshi", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  text-transform: none;
+}
+
+.pallaxDigenCounts {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.pallaxDigenCount {
+  text-align: center;
+  padding: 1rem;
+}
+
+.pallaxCountNumber {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #00e87b;
+  font-family: "built";
+  margin: 0 0 0.5rem 0;
+}
+
+.pallaxCountTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  font-family: "satoshi";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 0.5rem 0;
+}
+
+.pallaxCountDesc {
+  font-size: 1rem;
+  color: #fff;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.pallaxSocials {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 0;
+}
+
+.pallaxSocialIcond {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pallaxSocialIcond img {
+  height: 120px !important;
+  width: 120px !important;
+}
+
+.pallaxSocialLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.pallaxSocialIcons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pallaxSocialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.pallaxSocialIcon:hover {
+  background: rgba(0, 232, 123, 0.2);
+  transform: scale(1.1);
+}
+
+.pallaxSocialIcon svg {
+  color: white;
+}
+
+.pallaxWebsiteLink {
+  font-family: "Full Moon BT W01 Falling Leav", "satoshi", sans-serif;
+  color: #00e87b;
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.pallaxDesignationText {
+  font-family: "built", sans-serif;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.pallaxYoddLink {
+  font-family: "satoshi", sans-serif;
+  color: #00e87b;
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: all 0.3s ease;
+  text-align: left;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.pallaxYoddLink:hover {
+  color: #fff;
+}
+
+/* Responsive Design for Slide 16 - DD Introduction */
+@media (max-width: 768px) {
+  .pallaxAboutDigen {
+    padding: 1.5rem;
+    height: 100vh;
+    justify-content: center;
+  }
+
+  .pallaxSectionHeader {
+    margin-bottom: 2rem;
+  }
+
+  .pallaxDdSubtitle {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+  }
+
+  .pallaxDdSubtitle span {
+    margin: 0 0.3rem;
+  }
+
+  .pallaxDdDescription {
+    width: 90%;
+    margin-top: 0.75rem;
+  }
+
+  .pallaxDdDescription h3 {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .pallaxDigenCounts {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .pallaxDigenCount {
+    padding: 0.5rem;
+  }
+
+  .pallaxCountDesc {
+    font-size: 0.9rem;
+  }
+
+  .pallaxSocials {
+    gap: 1.5rem;
+    margin-top: 0;
+  }
+
+  .pallaxSocialIcond img {
+    height: 90px !important;
+    width: 90px !important;
+  }
+
+  .pallaxWebsiteLink {
+    font-size: 13px;
+  }
+
+  .pallaxDesignationText {
+    font-size: 22px;
+  }
+
+  .pallaxYoddLink {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pallaxAboutDigen {
+    padding: 1rem;
+  }
+
+  .pallaxSectionHeader {
+    margin-bottom: 1.5rem;
+  }
+
+  .pallaxDdSubtitle {
+    font-size: 11px;
+    letter-spacing: 0.3px;
+  }
+
+  .pallaxDdSubtitle span {
+    margin: 0 0.2rem;
+  }
+
+  .pallaxDdDescription {
+    width: 95%;
+    margin-top: 0.5rem;
+  }
+
+  .pallaxDdDescription h3 {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .pallaxDigenCounts {
+    gap: 1.5rem;
+  }
+
+  .pallaxDigenCount {
+    padding: 0.25rem;
+  }
+
+  .pallaxCountDesc {
+    font-size: 0.8rem;
+  }
+
+  .pallaxSocials {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 0;
+  }
+
+  .pallaxSocialIcond img {
+    height: 75px !important;
+    width: 75px !important;
+  }
+
+  .pallaxSocialLinks {
+    align-items: center;
+  }
+
+  .pallaxWebsiteLink {
+    font-size: 12px;
+  }
+
+  .pallaxDesignationText {
+    font-size: 18px;
+  }
+
+  .pallaxYoddLink {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .pallaxAboutDigen {
+    padding: 0.75rem;
+  }
+
+  .pallaxDdSubtitle {
+    font-size: 10px;
+  }
+
+  .pallaxDdDescription h3 {
+    font-size: 0.75rem;
+  }
+
+  .pallaxDigenCounts {
+    gap: 1rem;
+  }
+
+  .pallaxCountDesc {
+    font-size: 0.7rem;
+  }
+
+  .pallaxSocialIcond img {
+    height: 65px !important;
+    width: 65px !important;
+  }
+
+  .pallaxWebsiteLink {
+    font-size: 11px;
+  }
+
+  .pallaxDesignationText {
+    font-size: 16px;
+  }
+
+  .pallaxYoddLink {
+    font-size: 9px;
+  }
+}
+
+/* Game Gang Section Styles */
+.pallaxGangSection {
+  margin-top: 0;
+}
+
+.pallaxGangTitle {
+  font-size: 20px;
+  color: #00e87b;
+  font-family: "satoshi";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+.pallaxGangMembers {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.pallaxMemberCard {
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 232, 123, 0.2);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.pallaxMemberCard:hover {
+  border-color: rgba(0, 232, 123, 0.4);
+  transform: translateY(-2px);
+}
+
+.pallaxMemberName {
+  font-size: 16px;
+  color: #00e87b;
+  font-family: "satoshi";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 1rem 0;
+}
+
+.pallaxMemberDescription {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.pallaxRubiksCube {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.pallaxCubeRow {
+  display: flex;
+  gap: 4px;
+  height: 33.33%;
+}
+
+.pallaxCubeSquare {
+  width: 33.33%;
+  height: 100%;
+  border: 3px solid #00e87b;
+  background-color: transparent;
+  box-sizing: border-box;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pallaxCubeSquare:hover {
+  background-color: rgba(0, 232, 123, 0.1);
+  transform: scale(1.05);
+}
+
+.pallaxCubeSquare.active {
+  background-color: rgba(0, 232, 123, 0.2);
+  border-color: #00e87b;
+  box-shadow: 0 0 15px rgba(0, 232, 123, 0.5);
+}
+
+/* FAQ Section Styles */
+.pallaxFaqLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  height: 100vh;
+  padding: 0 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.pallaxFaqGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 2rem;
+}
+
+.pallaxFaqItem {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 232, 123, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.pallaxFaqItem:hover {
+  border-color: rgba(0, 232, 123, 0.4);
+  transform: translateY(-2px);
+}
+
+.pallaxFaqQuestion {
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  font-family: "satoshi";
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.pallaxFaqQuestion:hover {
+  background: rgba(0, 232, 123, 0.05);
+}
+
+.pallaxFaqIcon {
+  font-size: 18px;
+  color: #00e87b;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.pallaxFaqAnswer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.pallaxFaqAnswer.pallaxExpanded {
+  max-height: 200px;
+}
+
+.pallaxFaqAnswer p {
+  padding: 0 1rem 1rem 1rem;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #888888;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: none;
+}
+
+/* Press Kit Section Styles */
+.pallaxLinksSection {
+  margin-top: 0;
+}
+
+.pallaxCtaSection {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.pallaxCtaAction {
+  padding: 2rem;
+  background: rgba(0, 232, 123, 0.1);
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.pallaxCtaAction::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(0deg, rgba(0, 232, 123, 0.8), transparent, rgba(0, 232, 123, 0.8));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+.pallaxCtaAction:hover {
+  background: rgba(0, 232, 123, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 232, 123, 0.3);
+}
+
+.pallaxActionTitle {
+  font-size: 18px;
+  color: #00e87b;
+  font-family: "Full Moon BT W01 Falling Leav", "satoshi", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.pallaxSection19Cta {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.pallaxSection19Cta .pallaxCtaAction {
+  padding: 1rem 2rem;
+}
+
+/* Contact Section Styles */
+.pallaxContactSection {
+  margin-top: 0;
+}
+
+.pallaxContactTitle {
+  font-size: 14px;
+  color: #00e87b;
+  font-family: "Full Moon BT W01 Falling Leav", "satoshi", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+.pallaxContactContent {
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.pallaxContactDescription {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #888888;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0 0 2rem 0;
+  text-align: center;
+  text-transform: none;
+}
+
+.pallaxEmailLink {
+  font-size: 18px;
+  color: #00e87b;
+  font-family: "satoshi";
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.pallaxEmailLink:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 232, 123, 0.5);
+}
+
+/* Contact Layout Styles */
+.contactLayout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  height: 100vh;
+  padding: 2rem 4rem;
+  position: relative;
+  z-index: 2;
+  gap: 3rem;
+}
+
+.contactContent {
+  flex: 1;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactImageWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.contactImage {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.contactSeparatorLine {
+  width: 2px;
+  height: 80%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 232, 123, 0.5),
+    transparent
+  );
+  align-self: center;
+  margin: 0 1.5rem;
+}
+
+/* Mobile Responsive Styles for Contact Section */
+@media (max-width: 1024px) {
+  .contactLayout {
+    padding: 2rem 3rem;
+    gap: 2rem;
+  }
+
+  .contactImage {
+    width: 180px;
+    height: 180px;
+  }
+
+  .pallaxContactTitle {
+    font-size: 22px;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .pallaxContactDescription {
+    font-size: 15px;
+  }
+
+  .pallaxEmailLink {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactLayout {
+    flex-direction: column;
+    padding: 2rem 2rem;
+    gap: 2rem;
+    height: auto;
+    min-height: 100vh;
+    justify-content: flex-start;
+    padding-top: 4rem;
+  }
+
+  .contactSeparatorLine {
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(0, 232, 123, 0.5),
+      transparent
+    );
+    margin: 1rem 0;
+  }
+
+  .contactContent {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contactImage {
+    width: 150px;
+    height: 150px;
+  }
+
+  .pallaxContactTitle {
+    font-size: 20px;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .pallaxContactContent {
+    padding: 1.5rem;
+  }
+
+  .pallaxContactDescription {
+    font-size: 14px;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .pallaxEmailLink {
+    font-size: 15px;
+    word-break: break-word;
+  }
+
+  .heroParagraph {
+    font-size: 13px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactLayout {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+    padding-top: 3rem;
+  }
+
+  .contactImage {
+    width: 120px;
+    height: 120px;
+  }
+
+  .pallaxContactTitle {
+    font-size: 18px;
+    margin: 0 0 1rem 0;
+    letter-spacing: 0.5px;
+  }
+
+  .pallaxContactContent {
+    padding: 1rem;
+  }
+
+  .pallaxContactDescription {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+  }
+
+  .pallaxEmailLink {
+    font-size: 14px;
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  .heroParagraph {
+    font-size: 12px !important;
+    margin: 0 0 0.5rem 0 !important;
+  }
+
+  .contactSeparatorLine {
+    width: 70%;
+    margin: 0.5rem 0;
+  }
+}
+
+/* Game Pass Section Styles */
+.pallaxGamePassSection {
+  margin-top: 0;
+}
+
+.pallaxGamePassTitle {
+  font-size: 26px;
+  color: #00e87b;
+  font-family: "Full Moon BT W01 Falling Leav", "satoshi", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+.pallaxGamePassContent {
+  margin-bottom: 2rem;
+}
+
+.pallaxGamePassDescription {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #888888;
+  font-family: "satoshi";
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0 0 1rem 0;
+  text-align: center;
+  text-transform: none;
+}
+
+.pallaxGamePassCta {
+  margin-top: 2rem;
+}
+
+/* Slide 12 Container with Hero Paragraph */
+.slide12Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 2rem 4rem;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.slide12ContentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  max-height: calc(100vh - 4rem);
+  overflow: hidden;
+}
+
+.slide12HeroSection {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+}
+
+.slide12HeroText {
+  font-family: "satoshi", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #888888;
+  margin: 0;
+  line-height: 1.6;
+  text-transform: none;
+}
+
+/* Slide 13 Container with Hero Paragraph */
+.slide13Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 2rem 4rem;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.slide13ContentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  max-height: calc(100vh - 4rem);
+  overflow: hidden;
+}
+
+.slide13HeroSection {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+}
+
+.slide13HeroText {
+  font-family: "satoshi", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #888888;
+  margin: 0;
+  line-height: 1.6;
+  text-transform: none;
+}
+
+/* Pallax Design Modes - Exact Layout Copy */
+.pallaxInteractiveLayout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  height: 450px;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+  gap: 3rem;
+  flex-shrink: 0;
+}
+
+.pallaxTitlesSection {
+  flex: 1;
+  width: 50%;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-right: 3rem;
+  position: relative;
+}
+
+.pallaxSectionParagraph {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.pallaxSectionParagraphContainer {
+  margin-bottom: 2rem;
+}
+
+.pallaxSectionParagraphContainer .pallaxSectionParagraph:last-child {
+  margin-bottom: 0;
+}
+
+.pallaxTitleButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pallaxSectionButtons {
+  display: grid;
+  grid-template-columns: 140px 140px;
+  grid-template-rows: 140px 140px;
+  gap: 0.5rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.pallaxTitleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: "satoshi";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 1rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.pallaxTitleButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  padding: 1px;
+  background: linear-gradient(0deg, rgba(0, 232, 123, 0.8), transparent, rgba(0, 232, 123, 0.8));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+.pallaxTitleButtonNoBorder::before {
+  display: none !important;
+}
+
+.pallaxTitleButtonNoBorder:hover {
+  border-color: transparent !important;
+  background: transparent !important;
+  transform: none !important;
+}
+
+.pallaxTitleButton:hover {
+  border-color: #00e87b;
+  background: rgba(0, 232, 123, 0.15);
+  transform: translateY(-2px);
+}
+
+.pallaxActive {
+  background: rgba(0, 232, 123, 0.1);
+  border-color: #00e87b;
+  color: #00e87b;
+}
+
+.pallaxContentSection {
+  flex: 1;
+  max-width: 60%;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.pallaxModeContent {
+  width: 100%;
+}
+
+.pallaxModeTitle {
+  font-size: 20px;
+  color: #00e87b;
+  font-family: "satoshi";
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.pallaxSectionModeTitle {
+  text-align: center;
+}
+
+.pallaxModeSubtext {
+  font-size: 16px;
+  color: #ccc;
+  font-family: "satoshi";
+  font-weight: 400;
+  text-align: center;
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+.pallaxModeDuration {
+  font-size: 14px;
+  color: #00e87b;
+  font-family: "satoshi";
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 2rem 0;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+.pallaxModeList {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.pallaxSectionModeList {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pallaxSectionModeList li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  text-transform: none;
+}
+
+.pallaxListItemIcon {
+  margin-bottom: 0.5rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pallaxIconImage {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .pallaxInteractiveLayout {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+    height: auto;
+  }
+
+  .pallaxTitlesSection {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .pallaxContentSection {
+    max-width: 100%;
+    min-height: 300px;
+  }
+
+  .pallaxSectionButtons {
+    grid-template-columns: 120px 120px;
+    grid-template-rows: 120px 120px;
+  }
+
+  .pallaxTitleButton {
+    font-size: 0.8rem;
+    padding: 0.8rem;
+  }
+
+  .pallaxSectionModeList {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Scroll Reveal Container */
+.scrollRevealContainer {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Initial state for columns to prevent flash */
+.gridColumn {
+  will-change: opacity, transform;
+}
+
+.gridColumnInitial {
+  opacity: 0 !important;
+  transform: translateY(50px) !important;
+  transition: none !important;
+}
+
+/* Features bottom text initial state */
+.featuresBottomTextInitial {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: none !important;
+}
+
+/* Powers bottom text initial state */
+.powersBottomTextInitial {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: none !important;
+}
+
+/* Column
+ Progress Indicator */
+.columnProgressIndicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0 2rem 0;
+  padding: 0;
+}
+
+.progressLine {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  gap: 0;
+  position: relative;
+}
+
+.progressSegment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 2;
+}
+
+.progressSegment:nth-child(1) {
+  left: calc((100% - 6rem) / 6 - 10px);
+}
+
+.progressSegment:nth-child(3) {
+  left: calc(50% - 10px);
+}
+
+.progressSegment:nth-child(5) {
+  left: calc(100% - (100% - 6rem) / 6 - 10px);
+}
+
+.progressNumber {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: #000000;
+  border: 1px solid #00e87b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "satoshi";
+  font-size: 10px;
+  font-weight: 600;
+  color: #00e87b;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+  position: relative;
+}
+
+.progressNumber.progressActive {
+  background: #000000;
+  border-color: #00e87b;
+  color: #00e87b;
+  font-weight: 700;
+  box-shadow: 0 0 15px rgba(0, 232, 123, 0.6);
+  transform: scale(1.1);
+}
+
+.progressConnector {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 232, 123, 0.5),
+    transparent
+  );
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.progressConnector:nth-child(2) {
+  left: calc((100% - 6rem) / 6 + 10px);
+  right: calc(50% - 10px);
+}
+
+.progressConnector:nth-child(4) {
+  left: calc(50% + 10px);
+  right: calc((100% - 6rem) / 6 - 10px);
+}
+
+.progressConnector::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 232, 123, 0.5),
+    transparent
+  );
+  transition: right 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progressConnector.progressActive::before {
+  right: 0;
+}
+
+/* Responsive adjustments for progress indicator */
+@media (max-width: 768px) {
+  .columnProgressIndicator {
+    margin: 1.5rem 0 0.5rem 0;
+    padding: 0;
+  }
+
+  .progressLine {
+    max-width: 100%;
+    height: 3px;
+  }
+
+  .progressNumber {
+    width: 18px;
+    height: 18px;
+    font-size: 9px;
+  }
+
+  .progressSegment:nth-child(1) {
+    left: calc((100% - 6rem) / 6 - 9px);
+  }
+
+  .progressSegment:nth-child(3) {
+    left: calc(50% - 9px);
+  }
+
+  .progressSegment:nth-child(5) {
+    left: calc(100% - (100% - 6rem) / 6 - 9px);
+  }
+
+  .progressConnector:nth-child(2) {
+    left: calc((100% - 6rem) / 6 + 9px);
+    right: calc(50% - 9px);
+  }
+
+  .progressConnector:nth-child(4) {
+    left: calc(50% + 9px);
+    right: calc((100% - 6rem) / 6 - 9px);
+  }
+}
+
+@media (max-width: 480px) {
+  .columnProgressIndicator {
+    margin: 1rem 0 0.5rem 0;
+  }
+
+  .progressLine {
+    max-width: 100%;
+    height: 2px;
+  }
+
+  .progressNumber {
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+  }
+
+  .progressSegment:nth-child(1) {
+    left: calc((100% - 6rem) / 6 - 8px);
+  }
+
+  .progressSegment:nth-child(3) {
+    left: calc(50% - 8px);
+  }
+
+  .progressSegment:nth-child(5) {
+    left: calc(100% - (100% - 6rem) / 6 - 8px);
+  }
+
+  .progressConnector:nth-child(2) {
+    left: calc((100% - 6rem) / 6 + 8px);
+    right: calc(50% - 8px);
+  }
+
+  .progressConnector:nth-child(4) {
+    left: calc(50% + 8px);
+    right: calc((100% - 6rem) / 6 - 8px);
+  }
+}
+
+/* Slide 12 Design Modes Overlapping Cards - Unique Classes */
+.slide12OverlappingCardsContainer {
+  width: 50%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.slide12CardsStack {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  perspective: 1000px;
+}
+
+.slide12CardWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  transform-origin: center top;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.slide12OverlappingCard {
+  width: 100%;
+  height: 85%;
+  max-height: 350px;
+  border-radius: 1.5rem;
+  border: none;
+  background: #000000;
+  padding: 0 0 2rem 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center top;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.slide12OverlappingCard:hover:not(.slide12CardActive) {
+  box-shadow: 0 10px 30px rgba(0, 232, 123, 0.2);
+}
+
+.slide12OverlappingCard:hover .slide12CardTitle {
+  color: #00e87b;
+}
+
+.slide12CardActive {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  transform: scale(1.02);
+}
+
+.slide12CardContent {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 0;
+  pointer-events: none;
+  min-width: 0;
+  overflow: visible;
+}
+
+.slide12CardTitle {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+  line-height: 1.2;
+  transition: all 0.3s ease;
+  font-family: "satoshi", sans-serif;
+  padding-bottom: 0;
+  position: relative;
+  cursor: pointer;
+  z-index: 1000;
+  pointer-events: auto;
+  text-align: right;
+}
+
+.slide12CardTitleDivider {
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 232, 123, 0.5),
+    transparent
+  );
+  align-self: flex-end;
+  margin-bottom: 0.5rem;
+  margin-left: auto;
+}
+
+.slide12CardTitle * {
+  pointer-events: none;
+}
+
+.slide12CardTitle:hover {
+  color: #00e87b;
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(0, 232, 123, 0.5);
+  z-index: 1001;
+}
+
+.slide12CardActive .slide12CardTitle {
+  color: var(--card-color, #00e87b);
+}
+
+.slide12CardDescription {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: none;
+  line-height: 1.6;
+  color: #888888;
+  margin: 0 1rem 1.5rem 1rem;
+  transition: color 0.6s ease;
+  font-family: "satoshi", sans-serif;
+  white-space: pre-line;
+  min-width: 0;
+  max-width: none;
+  overflow: visible;
+}
+
+.slide12CardActive .slide12CardDescription {
+  color: #888888;
+}
+
+.slide12CardNumber {
+  display: none;
+}
+
+.slide12ProgressIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  z-index: 100;
+}
+
+.slide12ProgressBar {
+  width: 200px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.slide12ProgressFill {
+  height: 100%;
+  background: white;
+  border-radius: 2px;
+  transition: width 0.6s ease;
+}
+
+.slide12ProgressText {
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  font-family: "satoshi", sans-serif;
+}
+
+/* Game Flow New Layout - Slide 10 */
+.gameFlowNewContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0;
+  box-sizing: border-box;
+  background: transparent;
+  gap: 0;
+}
+
+.gameFlowCardsSection {
+  width: 50%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem;
+}
+
+.gameFlowCardsStack {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
+  perspective: 1000px;
+  transform: translateY(-80px);
+}
+
+.gameFlowCardWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center top;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.gameFlowCard {
+  width: 100%;
+  height: 85%;
+  max-height: 350px;
+  border-radius: 1.5rem;
+  border: none;
+  background: #000000;
+  padding: 1.5rem 0 2rem 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center top;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.gameFlowCardActive {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  transform: scale(1.02);
+}
+
+.gameFlowCardContent {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 0;
+  pointer-events: none;
+}
+
+.gameFlowCardTitle {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+  line-height: 1.2;
+  transition: color 0.6s ease;
+  font-family: "satoshi", sans-serif;
+  padding-bottom: 0;
+  position: relative;
+}
+
+.gameFlowCardTitleDivider {
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 232, 123, 0.5),
+    transparent
+  );
+  align-self: center;
+  margin-bottom: 0.5rem;
+}
+
+.gameFlowCardActive .gameFlowCardTitle {
+  color: var(--card-color, #00e87b);
+}
+
+.gameFlowCardSubtitle {
+  display: none;
+}
+
+.gameFlowCardDescription {
+  font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+  line-height: 1.6;
+  color: #888888;
+  margin: 0 2rem 1.5rem 2rem;
+  transition: color 0.6s ease;
+  font-family: "satoshi", sans-serif;
+  text-transform: none;
+}
+
+.gameFlowCardActive .gameFlowCardDescription {
+  color: #888888;
+}
+
+.gameFlowCardNumber {
+  display: none;
+}
+
+.gameFlowImagesSection {
+  width: 50%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.gameFlowImageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.gameFlowImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.5rem;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gameFlowImageText {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  font-family: "satoshi", sans-serif;
+}
+
+.gameFlowProgressIndicator {
+  position: relative;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.gameFlowProgressBar {
+  width: 200px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.gameFlowProgressFill {
+  height: 100%;
+  background: #00e87b;
+  border-radius: 2px;
+  transition: width 0.6s ease;
+}
+
+.gameFlowProgressText {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "satoshi", sans-serif;
+}
+
+/* Responsive Design for Slide 12 Cards */
+@media (max-width: 768px) {
+  .slide12OverlappingCardsContainer {
+    padding: 1rem;
+  }
+
+  .slide12CardsStack {
+    width: 320px;
+    height: 420px;
+  }
+
+  .slide12CardContent {
+    padding: 0 1.5rem 2rem 1.5rem;
+  }
+
+  .slide12CardTitle {
+    font-size: 1.5rem;
+  }
+
+  .slide12CardDescription {
+    font-size: 1rem;
+  }
+
+  .slide12CardNumber {
+    font-size: 1.2rem;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .slide12ProgressBar {
+    width: 150px;
+  }
+}
+
+/* Game Ecosystem Carousel Styles */
+.gameEcosystemCarousel {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #000000;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.carouselContainer {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Changed from auto to hidden to prevent native scrolling */
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.carouselContainer::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
+
+.carouselWrapper {
+  display: flex;
+  width: 400%; /* 4 slides * 100% each */
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  gap: 0; /* Ensure no gaps between slides */
+  position: relative;
+  left: 0;
+}
+
+.carouselSlide {
+  flex: 0 0 25%; /* Each slide takes 25% of the wrapper (100% of viewport) */
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0; /* Remove any default margins */
+  padding: 0; /* Remove any default padding */
+  border: none; /* Remove any borders that might create gaps */
+  box-sizing: border-box; /* Ensure padding/borders don't affect width */
+}
+
+.slideContent {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  padding: 4rem 4rem;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.slideText {
+  margin-bottom: 0;
+}
+
+.slideTitle {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  text-shadow: none;
+  line-height: 1.3;
+  
+}
+
+.slideDescription {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  line-height: 1.5;
+  font-weight: 400;
+  opacity: 0.85;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-shadow: none;
+  color: #888888;
+  text-transform: none;
+  width: 100%;
+}
+
+/* Text container for launching and liberation text */
+.slideTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0;
+}
+
+/* Table-like layout for text alignment */
+.textTableRow {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.textPrefixCell {
+  display: table-cell;
+  width: auto;
+  text-align: right;
+  vertical-align: middle;
+  padding-right: 0.3rem;
+}
+
+.textValueCell {
+  display: table-cell;
+  width: auto;
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* Launching text above liberation text */
+.slideLaunchText {
+  margin-top: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.launchTextPrefix {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'satoshi', sans-serif;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  opacity: 0.9;
+}
+
+.launchTextDate {
+  color: #00e87b;
+  text-transform: uppercase;
+  font-family: 'satoshi', sans-serif;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  opacity: 0.9;
+}
+
+/* Green text below description */
+.slideGreenText {
+  margin-top: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.liberationMovePrefix {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'satoshi', sans-serif;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  opacity: 0.9;
+}
+
+.liberationMoveText {
+  color: #00e87b;
+  text-transform: uppercase;
+  font-family: 'satoshi', sans-serif;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  opacity: 0.9;
+}
+
+.slideIndicator {
+  display: none;
+}
+
+/* Grey text above indicator dots */
+.slideTopText {
+  text-align: center;
+  pointer-events: none;
+}
+
+.topTextLabel {
+  font-family: 'satoshi', sans-serif;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  font-weight: 400;
+  
+  color: #888888;
+  text-transform: none;
+  
+}
+
+.slideNumber {
+  color: #ffffff;
+}
+
+.slideTotal {
+  opacity: 0.6;
+}
+
+/* Bottom section container for text and dots */
+.carouselBottomSection {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 3;
+}
+
+.carouselDots {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.carouselDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.carouselDotActive {
+  background: #ffffff;
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .slideContent {
+    padding: 3rem 2rem;
+    gap: 1.5rem;
+  }
+
+  .slideTitle {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+  }
+
+  .slideDescription {
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+  }
+
+
+  .greenTextLabel {
+    font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+  }
+
+  .slideIndicator {
+    top: 2rem;
+    right: 2rem;
+    font-size: 1rem;
+  }
+
+  .carouselBottomSection {
+    bottom: 2.5rem;
+    gap: 0.8rem;
+  }
+
+  .topTextLabel {
+    font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .slideContent {
+    padding: 2rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .slideTitle {
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    margin-bottom: 1rem;
+  }
+
+  .slideDescription {
+    font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+  }
+
+
+  .greenTextLabel {
+    font-size: clamp(0.6rem, 1vw, 0.8rem);
+    letter-spacing: 0.1em;
+  }
+
+  .slideIndicator {
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .carouselBottomSection {
+    bottom: 2rem;
+    gap: 0.6rem;
+  }
+
+  .topTextLabel {
+    font-size: clamp(0.6rem, 1vw, 0.8rem);
+    letter-spacing: 0.15em;
+  }
+
+
+  .carouselDot {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* Slide 17 - Simple 4-Column Image Grid */
+.slide17Container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.slide17HeroSection {
+  position: absolute;
+  top: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.slide17HeroText {
+  font-family: "satoshi", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: none;
+  color: #888888;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.slide17ImageGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.slide17ImageWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  background: transparent;
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.slide17ImageWrapper:hover {
+  transform: scale(1.05) rotateX(5deg) rotateY(2deg);
+  box-shadow: 
+    0 25px 50px rgba(0, 232, 123, 0.4),
+    0 0 0 1px rgba(0, 255, 138, 0.6),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.slide17Image {
+  width: 240px;
+  height: 300px;
+  object-fit: cover;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: brightness(1) saturate(1) contrast(1);
+  transform: scale(1);
+}
+
+.slide17ImageWrapper:hover .slide17Image {
+  transform: scale(1.1) rotateZ(-2deg);
+  filter: brightness(0.7) saturate(1.3) contrast(1.1) hue-rotate(10deg);
+}
+
+.slide17ImageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backdrop-filter: blur(2px);
+}
+
+.slide17ImageWrapper:hover .slide17ImageOverlay {
+  opacity: 1;
+}
+
+.slide17OverlayContent {
+  text-align: center;
+  color: #ffffff;
+  padding: 20px;
+  transform: translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.slide17ImageWrapper:hover .slide17OverlayContent {
+  transform: translateY(0);
+}
+
+.slide17MemberName {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  font-family: "satoshi", sans-serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.slide17MemberDesignation {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  font-family: "satoshi", sans-serif;
+  opacity: 0.95;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  text-transform: none;
+  letter-spacing: 1px;
+  color: #888888;
+}
+
+.slide17MemberDescription {
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin: 0 0 0.5rem 0;
+  font-family: "satoshi", sans-serif;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  text-transform: none;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.slide17OverlaySpacer {
+  flex: 1;
+}
+
+.slide17OverlayCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+  
+}
+
+.slide17OverlayBottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Card name positioned at bottom left */
+.slide17CardName {
+  position: absolute;
+  bottom: 15px;
+  left: 16px;
+  z-index: 2;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slide17MemberName,
+.slide17MemberSurname {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  font-family: "Full Moon BT W01 Falling Leav", "satoshi", sans-serif;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1);
+  letter-spacing: 0.5px;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  line-height: 1.2;
+}
+
+.slide17MemberSurname {
+  margin-top: 2px;
+}
+
+/* Smooth transition: move name from bottom left to top left of overlay */
+.slide17ImageWrapper:hover .slide17CardName {
+  transform: translateY(calc(-250px + 10px));
+  opacity: 0.9;
+}
+
+.slide17ImageWrapper:hover .slide17MemberName,
+.slide17ImageWrapper:hover .slide17MemberSurname {
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: "Full Moon BT W01 Falling Leav", "satoshi", sans-serif;
+  color: #00e87b;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced Animations for Slide 17 */
+
+/* Responsive Design for Slide 17 */
+@media (max-width: 768px) {
+  .slide17Container {
+    padding: 1rem;
+  }
+  
+  .slide17ImageGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 600px;
+  }
+  
+  .slide17Image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  
+  .slide17ImageWrapper {
+    aspect-ratio: 3/4;
+  }
+  
+  .slide17MemberName {
+    font-size: 1rem;
+  }
+  
+  .slide17MemberName,
+  .slide17MemberSurname {
+    font-size: 0.95rem;
+  }
+  
+  .slide17ImageWrapper:hover .slide17CardName {
+    transform: translateY(calc(-180px + 25px));
+  }
+  
+  .slide17ImageWrapper:hover .slide17MemberName,
+  .slide17ImageWrapper:hover .slide17MemberSurname {
+    font-size: 1.1rem;
+    font-family: "Full Moon BT W01 Falling Leav", "satoshi", sans-serif;
+    color: #00e87b;
+  }
+  
+  .slide17MemberDescription {
+    font-size: 0.65rem;
+  }
+  
+  .slide17MemberDesignation {
+    font-size: 0.8rem;
+  }
+  
+  .slide17HeroSection {
+    top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide17ImageGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    padding: 0 0.5rem;
+  }
+  
+  .slide17Image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .slide17ImageWrapper {
+    aspect-ratio: 3/4;
+  }
+  
+  .slide17MemberName,
+  .slide17MemberSurname {
+    font-size: 0.75rem;
+  }
+  
+  .slide17CardName {
+    bottom: 10px;
+    left: 10px;
+  }
+  
+  .slide17ImageWrapper:hover .slide17CardName {
+    transform: translateY(calc(-150px + 20px));
+  }
+  
+  .slide17ImageWrapper:hover .slide17MemberName,
+  .slide17ImageWrapper:hover .slide17MemberSurname {
+    font-size: 0.95rem;
+    font-family: "Full Moon BT W01 Falling Leav", "satoshi", sans-serif;
+    color: #00e87b;
+  }
+  
+  .slide17MemberDescription {
+    font-size: 0.6rem;
+    line-height: 1.3;
+  }
+  
+  .slide17MemberDesignation {
+    font-size: 0.7rem;
+  }
+  
+  .slide17OverlayContent {
+    padding: 10px;
+  }
+  
+  .slide17HeroSection {
+    top: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .slide17ImageGrid {
+    gap: 0.5rem;
+    padding: 0 0.25rem;
+  }
+  
+  .slide17Image {
+    height: 160px;
+  }
+  
+  .slide17MemberName,
+  .slide17MemberSurname {
+    font-size: 0.7rem;
+  }
+  
+  .slide17ImageWrapper:hover .slide17CardName {
+    transform: translateY(calc(-130px + 15px));
+  }
+  
+  .slide17MemberDescription {
+    font-size: 0.55rem;
+  }
+  
+  .slide17MemberDesignation {
+    font-size: 0.65rem;
+  }
+}
+
+
+/* Slide 18 Overlapping Cards - Game Gang 2 */
+.slide18OverlappingCardsContainer {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+.slide18CardsStack {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 500px;
+  margin: 0 auto;
+  transform: translateY(150px);
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.slide18Column {
+  flex: 1;
+  position: relative;
+  height: 100%;
+}
+
+.slide18Column1,
+.slide18Column2,
+.slide18Column3 {
+  flex: 1;
+  position: relative;
+  height: 100%;
+}
+
+.slide18CardWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide18OverlappingCard {
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  border-radius: 12px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.slide18CardActive {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  transform: scale(1.02);
+}
+
+.slide18CardContent {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 2.5rem;
+  padding-top: 2rem;
+}
+
+.slide18CardTitle {
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "satoshi", sans-serif;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  padding-bottom: 0;
+}
+
+
+.slide18CardActive .slide18CardTitle {
+  color: var(--card-color, #00e87b);
+}
+
+.slide18CardDescription {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.6;
+  color: #00e87b;
+  margin-bottom: 0;
+  font-family: "satoshi", sans-serif;
+}
+
+.slide18CardActive .slide18CardDescription {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.slide18CardNumber {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "satoshi", sans-serif;
+}
+
+.slide18CardActive .slide18CardNumber {
+  color: var(--card-color, #00e87b);
+}
+
+.slide18ProgressIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 100;
+}
+
+.slide18ProgressBar {
+  width: 200px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.slide18ProgressFill {
+  height: 100%;
+  background: white;
+  border-radius: 2px;
+  transition: width 0.6s ease;
+}
+
+.slide18ProgressText {
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "satoshi", sans-serif;
+}
+
+/* Responsive Design for Slide 18 Cards */
+@media (max-width: 768px) {
+  .slide18OverlappingCardsContainer {
+    padding: 1rem;
+  }
+
+  .slide18CardsStack {
+    max-width: 100%;
+    height: 420px;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .slide18Column {
+    height: 130px;
+  }
+
+  .slide18CardContent {
+    padding: 1rem;
+  }
+
+  .slide18CardTitle {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .slide18CardDescription {
+    font-size: 0.8rem;
+    display: none; /* Hide description on mobile to save space */
+  }
+
+  .slide18CardNumber {
+    font-size: 1rem;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .slide18ProgressBar {
+    width: 150px;
+  }
+}
+
+/* Hover Cards for Slide 8 Powers vs Forces */
+.powersGrid2x2,
+.forcesGrid2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.cardEmoji {
+  font-size: 2.5rem;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cardHoverContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  box-sizing: border-box;
+  text-transform: none;
+}
+
+.hoverCard:hover .cardHoverContent {
+  opacity: 1;
+}
+
+.hoverCard:hover .cardEmoji {
+  opacity: 0;
+}
+
+.cardTitleBelow {
+  font-size: 13px;
+  color: #888888;
+  font-family: "satoshi";
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+  line-height: 1.3;
+  text-transform: none;
+}
+
+.cardDescription {
+  font-size: 13px;
+  color: #ffffff;
+  font-family: "satoshi";
+  font-weight: 400;
+  line-height: 1.35;
+  margin: 0;
+  word-wrap: break-word;
+  text-transform: none;
+}
+
+.hoverCard {
+  background: #000000;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 150px;
+}
+
+/* Powers (left side) - Green gradient borders */
+.powersGrid2x2 .hoverCard {
+  border: 1px solid transparent;
+  background: linear-gradient(#000000, #000000) padding-box,
+              linear-gradient(0deg, rgba(0, 232, 123, 0.8), transparent, rgba(0, 232, 123, 0.8)) border-box;
+}
+
+.powersGrid2x2 .hoverCard:hover {
+  border-color: #00e87b;
+  background: rgba(0, 232, 123, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 232, 123, 0.3);
+}
+
+/* Forces (right side) - Red gradient borders */
+.forcesGrid2x2 .hoverCard {
+  border: 1px solid transparent;
+  background: linear-gradient(#000000, #000000) padding-box,
+              linear-gradient(0deg, rgba(255, 68, 68, 0.8), transparent, rgba(255, 68, 68, 0.8)) border-box;
+}
+
+.forcesGrid2x2 .hoverCard:hover {
+  border-color: #ff4444;
+  background: rgba(255, 68, 68, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3);
+}
+
+.cardContent {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  transition: all 0.3s ease;
+  position: absolute;
+  width: 100%;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cardDescription {
+  font-size: 12px;
+  color: #cccccc;
+  margin: 0;
+  transition: all 0.3s ease;
+  line-height: 1.3;
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  text-transform: none;
+}
+
+.hoverCard:hover .cardDescription {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hoverCard:hover .cardTitle {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Hover Cards for Slide 9 Gains vs Losses */
+.gainsGrid2x2,
+.lossesGrid2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* Gains (left side) - Green gradient borders */
+.gainsGrid2x2 .hoverCard {
+  border: 1px solid transparent;
+  background: linear-gradient(#000000, #000000) padding-box,
+              linear-gradient(0deg, rgba(0, 232, 123, 0.8), transparent, rgba(0, 232, 123, 0.8)) border-box;
+}
+
+.gainsGrid2x2 .hoverCard:hover {
+  border-color: #00e87b;
+  background: rgba(0, 232, 123, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 232, 123, 0.3);
+}
+
+/* Losses (right side) - Red gradient borders */
+.lossesGrid2x2 .hoverCard {
+  border: 1px solid transparent;
+  background: linear-gradient(#000000, #000000) padding-box,
+              linear-gradient(0deg, rgba(255, 68, 68, 0.8), transparent, rgba(255, 68, 68, 0.8)) border-box;
+}
+
+.lossesGrid2x2 .hoverCard:hover {
+  border-color: #ff4444;
+  background: rgba(255, 68, 68, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3);
+}
+
+/* Press Kit Button Styling */
+.pressKitButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.pressKitButton {
+  background-color: #000000;
+  color: #00e87b;
+  border: 1px solid #00e87b;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pressKitButton:hover {
+  background-color: #00e87b;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 232, 123, 0.3);
+}
+
+/* Slide 1 Layout Styles */
+.slide1Container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  padding: 2rem;
+  position: relative;
+}
+
+.slide1VideoTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 300px));
+  font-family: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif';
+  font-size: 26px;
+  color: #00e87b;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  text-align: center;
+  z-index: 1;
+  pointer-events: none;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.slide1VideoTitleVisible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Video Placeholder Styles */
+.videoPlaceholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.placeholderVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+}
+
+.placeholderOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.videoPlaceholder:hover .placeholderOverlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.placeholderPlayButton {
+  transition: all 0.3s ease;
+}
+
+.videoPlaceholder:hover .placeholderPlayButton {
+  transform: scale(1.1);
+}
+
+.placeholderPlayButton svg {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.placeholderText {
+  color: #ffffff;
+  font-family: "satoshi";
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Begin Transmission Button */
+.beginTransmissionButton {
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  border: 2px solid #00e87b;
+  color: #00e87b;
+  font-family: "Full Moon BT W01 Falling Leav", "satoshi", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  border-radius: 4px;
+  min-width: 400px;
+  white-space: nowrap;
+}
+
+.beginTransmissionButton:hover {
+  font-weight: 700;
+}
+
+.beginTransmissionButton:active {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Fullscreen Popup Styles */
+.fullscreenOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreenVideoTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 300px));
+  font-family: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif';
+  font-size: 26px;
+  color: #00e87b;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  text-align: center;
+  z-index: 1;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.fullScreenVideoContainer {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+.fullScreenVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.videoPlayButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.videoPlayButton:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.videoPlayButton svg {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 11;
+}
+
+.closeButton:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+}
+
+/* Mobile Video Carousel Styles */
+.mobileVideoCarousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.mobileVideoContainer {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.mobileVideoWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9/16;
+}
+
+.mobileVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  background: #000000;
+}
+
+.mobilePlayButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.mobilePlayButton:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.mobileTimeline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.mobileTimelineProgress {
+  height: 100%;
+  background: #00e87b;
+  transition: width 0.1s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.mobileVideoDots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.mobileVideoDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mobileVideoDot:hover {
+  background: rgba(0, 232, 123, 0.5);
+  transform: scale(1.2);
+}
+
+.mobileVideoDotActive {
+  background: #00e87b;
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(0, 232, 123, 0.5);
+}
+
+.mobileSwipeIndicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  opacity: 0.6;
+}
+
+.swipeText {
+  font-family: "satoshi", sans-serif;
+  font-size: 12px;
+  color: #888888;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.mobileVideoCounter {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-family: "satoshi", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+}
+
+/* Responsive adjustments for mobile carousel */
+@media (max-width: 480px) {
+  .mobileVideoCarousel {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .mobileVideoContainer {
+    border-radius: 12px;
+  }
+
+  .mobileVideo {
+    border-radius: 12px;
+  }
+
+  .mobilePlayButton {
+    width: 60px;
+    height: 60px;
+  }
+
+  .mobilePlayButton svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .swipeText {
+    font-size: 11px;
+  }
+
+  .mobileVideoCounter {
+    font-size: 11px;
+    padding: 0.2rem 0.6rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .mobileVideoCarousel {
+    padding: 0 0.5rem;
+  }
+
+  .mobilePlayButton {
+    width: 50px;
+    height: 50px;
+  }
+
+  .mobilePlayButton svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  .mobileVideoDot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .swipeText {
+    font-size: 10px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .slide1Container {
+    padding: 1.5rem;
+  }
+
+  .videoPlaceholder {
+    max-width: 600px;
+  }
+
+  .fullScreenVideoContainer {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 16/9;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide1Container {
+    padding: 1rem;
+  }
+
+  .videoPlaceholder {
+    max-width: 500px;
+  }
+
+  .fullScreenVideoContainer {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 16/9;
+  }
+
+  .closeButton {
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Slide 17 Profile Picture Styles */
+.slide17Header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
+  gap: 20px;
+}
+
+/* Fixed Text Components - Responsive */
+.fixedTextContainer {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.fixedFlippingWords {
+  margin-bottom: 8px;
+}
+
+.fixedDummyText {
+  font-size: 14px;
+  color: #00ff88;
+  font-weight: 400;
+  line-height: 1.2;
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .fixedTextContainer {
+    top: 15px;
+    left: 15px;
+  }
+  
+  .fixedDummyText {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .fixedTextContainer {
+    top: 10px;
+    left: 10px;
+  }
+  
+  .fixedDummyText {
+    font-size: 11px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 320px) {
+  .fixedDummyText {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+}
+
+/* Mobile responsive adjustments for fixed hamburger menu */
+@media (max-width: 768px) {
+  .fixedSmallCubeGrid {
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fixedSmallCubeGrid {
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 360px) {
+  .fixedSmallCubeGrid {
+    top: 5px;
+    right: 5px;
+    padding: 3px;
+  }
+}
+
+/* Mobile Sidebar Styles */
+.mobileSidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1.25rem;
+  border-bottom: 1px solid rgba(0, 232, 123, 0.2);
+}
+
+.mobileSidebarClose {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.mobileSidebarClose:hover {
+  background: rgba(0, 232, 123, 0.1);
+  transform: rotate(90deg);
+}
+
+.mobileSidebarContent {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.mobileSidebarItem {
+  padding: 1.25rem 1.5rem;
+  color: #ffffff;
+  font-family: "Full Moon BT W01 Falling Leav", "satoshi", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  position: relative;
+}
+
+.mobileSidebarItem:hover {
+  background: rgba(0, 232, 123, 0.1);
+  border-left-color: #00e87b;
+  color: #00e87b;
+  padding-left: 2rem;
+}
+
+.mobileSidebarItem:active {
+  background: rgba(0, 232, 123, 0.15);
+}
+
+/* Mobile Sidebar Scrollbar */
+.mobileSidebarContent::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobileSidebarContent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mobileSidebarContent::-webkit-scrollbar-thumb {
+  background: rgba(0, 232, 123, 0.3);
+  border-radius: 2px;
+}
+
+.mobileSidebarContent::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 232, 123, 0.5);
+}
+
+/* Responsive adjustments for mobile sidebar */
+@media (max-width: 480px) {
+  .mobileSidebarHeader {
+    padding: 1.25rem 1rem;
+  }
+
+  .mobileSidebarItem {
+    padding: 1rem 1.25rem;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .mobileSidebarHeader {
+    padding: 1rem 0.75rem;
+  }
+
+  .mobileSidebarItem {
+    padding: 0.875rem 1rem;
+    font-size: 15px;
+  }
+}
+
+
