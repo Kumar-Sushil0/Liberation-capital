@@ -184,28 +184,33 @@
   background: #00e87b;
 }
 
-/* Background colors for each section */
-.first .bg {
-  background-color: #000000;
-}
-
-.second .bg {
-  background-color: #000000;
-}
-
-.third .bg {
-  background-color: #000000;
-}
-
-.fourth .bg {
-  background-color: #000000;
-}
-
-.fifth .bg {
-  background-color: #000000;
-}
-
-.sixth .bg {
+/* Background colors for each section - 24 slides */
+.slide00 .bg,
+.slide01 .bg,
+.slide02 .bg,
+.slide03 .bg,
+.slide04 .bg,
+.slide05 .bg,
+.slide06 .bg,
+.slide07 .bg,
+.slide08 .bg,
+.slide09 .bg,
+.slide10 .bg,
+.slide11 .bg,
+.slide12 .bg,
+.slide13 .bg,
+.slide14 .bg,
+.slide15 .bg,
+.slide16 .bg,
+.slide17 .bg,
+.slide18 .bg,
+.slide19 .bg,
+.slide20 .bg,
+.slide21 .bg,
+.slide22 .bg,
+.slide23 .bg,
+.slide24 .bg,
+.slide25 .bg {
   background-color: #000000;
 }
 
@@ -231,36 +236,4 @@
   }
 }
 
-/* Floating arrow styles */
-.floatingArrow {
-  position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 100;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
 
-.floatingArrow:hover {
-  opacity: 0.7;
-}
-
-.arrowIcon {
-  width: 40px;
-  height: 40px;
-  color: white;
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}

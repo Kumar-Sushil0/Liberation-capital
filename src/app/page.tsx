@@ -10,9 +10,28 @@ import {
   SubscrollSlide1, 
   ContentSlide2, 
   ContentSlide3, 
-  FinalSlide 
+  FinalSlide,
+  Slide04,
+  Slide05,
+  Slide06,
+  Slide07,
+  Slide08,
+  Slide09,
+  Slide10,
+  Slide11,
+  Slide12,
+  Slide13,
+  Slide14,
+  Slide15,
+  Slide16,
+  Slide17,
+  Slide18,
+  Slide19,
+  Slide20,
+  Slide21,
+  Slide22,
+  Slide23
 } from '../components/slides';
-import { FloatingArrow } from '../components/FloatingArrow';
 import { ProgressIndicatorStandalone } from '../components/ProgressIndicatorStandalone';
 import { FixedHeader } from '../components/fixedheader/FixedHeader';
 import { VibeCheckButton } from '../components/VibecheckButton/VibeCheckButton';
@@ -138,10 +157,8 @@ export default function Home() {
     switch (section.type) {
       case "hero":
         return <HeroSlide />;
-      
       case "content1":
         return <ContentSlide1 />;
-      
       case "subscroll1":
         return (
           <SubscrollSlide1
@@ -154,16 +171,52 @@ export default function Home() {
             }}
           />
         );
-      
       case "content2":
         return <ContentSlide2 />;
-      
       case "content3":
         return <ContentSlide3 />;
-      
       case "final":
         return <FinalSlide />;
-      
+      case "slide04":
+        return <Slide04 />;
+      case "slide05":
+        return <Slide05 />;
+      case "slide06":
+        return <Slide06 />;
+      case "slide07":
+        return <Slide07 />;
+      case "slide08":
+        return <Slide08 />;
+      case "slide09":
+        return <Slide09 />;
+      case "slide10":
+        return <Slide10 />;
+      case "slide11":
+        return <Slide11 />;
+      case "slide12":
+        return <Slide12 />;
+      case "slide13":
+        return <Slide13 />;
+      case "slide14":
+        return <Slide14 />;
+      case "slide15":
+        return <Slide15 />;
+      case "slide16":
+        return <Slide16 />;
+      case "slide17":
+        return <Slide17 />;
+      case "slide18":
+        return <Slide18 />;
+      case "slide19":
+        return <Slide19 />;
+      case "slide20":
+        return <Slide20 />;
+      case "slide21":
+        return <Slide21 />;
+      case "slide22":
+        return <Slide22 />;
+      case "slide23":
+        return <Slide23 />;
       default:
         return null;
     }
@@ -214,13 +267,6 @@ export default function Home() {
           </div>
         </section>
       ))}
-
-      {/* Floating Arrow */}
-      <FloatingArrow
-        currentSection={currentSection}
-        sections={sections}
-        scrollToSection={scrollToSection}
-      />
 
       {/* Progress Indicator */}
       <ProgressIndicatorStandalone
