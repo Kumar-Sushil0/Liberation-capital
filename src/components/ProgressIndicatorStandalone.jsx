@@ -14,12 +14,14 @@ import React, { useState } from 'react';
  * - currentSection: active section index (default: 0)
  * - isMuted: mute state (default: false)
  * - showMuteButton: whether to show mute button (default: true)
+ * - onSectionClick: callback when a dot is clicked (optional)
  */
 export const ProgressIndicatorStandalone = ({ 
   totalSections = 20,
   currentSection = 0,
   isMuted = false,
-  showMuteButton = true
+  showMuteButton = true,
+  onSectionClick
 }) => {
   const [isHovering, setIsHovering] = useState(false);
 
@@ -69,9 +71,11 @@ export const ProgressIndicatorStandalone = ({
                 return (
                   <div
                     key={index}
+                    onClick={() => onSectionClick && onSectionClick(index)}
                     style={{
                       ...styles.progressDot,
-                      ...(isActive ? styles.progressDotActive : {})
+                      ...(isActive ? styles.progressDotActive : {}),
+                      ...(onSectionClick ? { cursor: 'pointer' } : {})
                     }}
                   />
                 );

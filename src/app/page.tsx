@@ -13,6 +13,9 @@ import {
   FinalSlide 
 } from '../components/slides';
 import { FloatingArrow } from '../components/FloatingArrow';
+import { ProgressIndicatorStandalone } from '../components/ProgressIndicatorStandalone';
+import { FixedHeader } from '../components/fixedheader/FixedHeader';
+import { VibeCheckButton } from '../components/VibecheckButton/VibeCheckButton';
 
 export default function Home() {
   // Refs for sections and wrappers
@@ -34,6 +37,7 @@ export default function Home() {
   const [currentSection, setCurrentSection] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isPageLoading, setIsPageLoading] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
 
   // Get sections array based on mobile/desktop
   const sections = getSections(isMobile);
@@ -183,6 +187,9 @@ export default function Home() {
         </div>
       )}
 
+      {/* Fixed Header */}
+      <FixedHeader />
+
       {sections.map((section, index) => (
         <section
           key={index}
@@ -215,33 +222,22 @@ export default function Home() {
         scrollToSection={scrollToSection}
       />
 
-      {/* Progress Indicator - Simple dots */}
-      <div style={{
-        position: 'fixed',
-        right: '2rem',
-        top: '50%',
-        transform: 'translateY(-50%)',
-        zIndex: 100,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem'
-      }}>
-        {sections.map((_, index) => (
-          <div
-            key={index}
-            onClick={() => scrollToSection(index)}
-            style={{
-              width: '12px',
-              height: '12px',
-              borderRadius: '50%',
-              background: currentSection === index ? '#00e87b' : '#333',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease',
-              transform: currentSection === index ? 'scale(1.3)' : 'scale(1)'
-            }}
-          />
-        ))}
-      </div>
+      {/* Progress Indicator */}
+      <ProgressIndicatorStandalone
+        totalSections={sections.length}
+        currentSection={currentSection}
+        isMuted={isMuted}
+        showMuteButton={true}
+        onSectionClick={scrollToSection}
+      />
+
+      {/* Vibe Check Button */}
+      <VibeCheckButton
+        currentSection={currentSection}
+        inline={false}
+        sections={sections as any}
+        onClick={() => window.open('https://app.lifeidesign.games', '_blank')}
+      />
     </div>
   );
 }
