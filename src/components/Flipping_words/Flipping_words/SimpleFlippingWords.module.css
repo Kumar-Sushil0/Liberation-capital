@@ -1,0 +1,203 @@
+.simpleWordFlipper {
+  display: flex;
+  justify-content: center;
+  font-family: "built", "Arial Black", sans-serif;
+  gap: 0px;
+}
+
+.simpleLetterContainer {
+  perspective: 1000px;
+}
+
+.simpleLetter {
+  position: relative;
+  width: auto;
+  height: calc(var(--font-size, 104px) * 1.15);
+  font-size: var(--font-size, 104px);
+  font-weight: normal;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.simpleLetterTop,
+.simpleLetterBottom,
+.simpleLetterFlip {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  border-radius: calc(var(--font-size, 104px) * 0.096) calc(var(--font-size, 104px) * 0.096) 0 0;
+  background-color: var(--bg-color, #000000);
+  overflow: hidden;
+}
+
+.simpleLetterFlip2 {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  border-radius: 0 0 calc(var(--font-size, 104px) * 0.096) calc(var(--font-size, 104px) * 0.096);
+  background-color: var(--bg-color, #000000);
+  overflow: hidden;
+}
+
+.simpleLetterTop {
+  top: 0;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.simpleLetterBottom {
+  top: 52%;
+  border-radius: 0 0 10px 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Remove gap for middle I in LIFEIDESIGN */
+.simpleSolidLetter .simpleLetterTop {
+  border-bottom: none;
+  height: 52%; /* Extend top half to cover the gap */
+}
+
+.simpleSolidLetter .simpleLetterBottom {
+  top: 52%;
+  border-top: none;
+  height: 48%; /* Adjust bottom half to maintain total height */
+}
+
+.simpleLetterFlip {
+  top: 0;
+  transform-origin: bottom;
+  backface-visibility: hidden;
+}
+
+.simpleLetterFlip2 {
+  top: 52%;
+  transform-origin: top;
+  backface-visibility: hidden;
+}
+
+.simpleFlipping .simpleLetterFlip {
+  animation: simple-flip-top 0.5s ease-in-out;
+}
+
+.simpleFlipping .simpleLetterFlip2 {
+  animation: simple-flip-bottom 0.5s ease-in-out;
+  animation-delay: 0s;
+}
+
+.simpleLetterFlipTop,
+.simpleLetterFlipBottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.simpleFlipping .simpleLetterFlipBottom,
+.simpleLetterFlip2,
+.simpleFlipping .simpleLetterFlipBottom {
+  transform: rotateX(180deg);
+}
+
+.simpleFlipping .simpleLetterFlip {
+  transform: rotateX(-180deg);
+}
+
+.simpleFlipping .simpleLetterFlip2,
+.simpleFlipping .simpleLetterFlipBottom {
+  transform: rotateX(0deg);
+}
+
+.simpleLetterTop span,
+.simpleLetterBottom span,
+.simpleLetterFlipTop span,
+.simpleLetterFlipBottom span {
+  display: block;
+  height: 100%;
+  line-height: calc(var(--font-size, 104px) * 1.15);
+}
+
+.simpleLetterBottom span,
+.simpleLetterFlipBottom span {
+  margin-top: calc(var(--font-size, 104px) * -0.577);
+}
+
+@media screen and (max-width: 1060px) {
+  .simpleLetter {
+    position: relative;
+    width: auto;
+    min-width: 40px;
+    height: 90px;
+    font-size: 60px;
+    font-weight: normal;
+    color: #ffffff;
+    text-align: center;
+  }
+  .simpleLetterTop,
+  .simpleLetterBottom,
+  .simpleLetterFlip {
+    height: 45px;
+  }
+  .simpleLetterBottom span,
+  .simpleLetterFlipBottom span {
+    margin-top: -45px;
+  }
+  .simpleLetterTop span,
+  .simpleLetterBottom span,
+  .simpleLetterFlipTop span,
+  .simpleLetterFlipBottom span {
+    display: block;
+    height: 100%;
+    line-height: 90px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .simpleLetter {
+    position: relative;
+    width: auto;
+    min-width: 20px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: normal;
+    color: #ffffff;
+    text-align: center;
+  }
+  .simpleLetterTop,
+  .simpleLetterBottom,
+  .simpleLetterFlip {
+    height: 20px;
+  }
+  .simpleLetterBottom span,
+  .simpleLetterFlipBottom span {
+    margin-top: -20px;
+  }
+  .simpleLetterTop span,
+  .simpleLetterBottom span,
+  .simpleLetterFlipTop span,
+  .simpleLetterFlipBottom span {
+    display: block;
+    height: 100%;
+    line-height: 40px;
+  }
+}
+
+@keyframes simple-flip-top {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-180deg);
+  }
+}
+
+@keyframes simple-flip-bottom {
+  0% {
+    transform: rotateX(-180deg);
+  }
+  100% {
+    transform: rotateX(-2deg);
+  }
+}

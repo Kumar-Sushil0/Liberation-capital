@@ -67,6 +67,26 @@ export const getSubscrollSteps = (isMobile: boolean): Record<number, number> => 
   return isMobile ? MOBILE_SUBSCROLL_STEPS : DESKTOP_SUBSCROLL_STEPS;
 };
 
+// Slide words for each section (displayed in header)
+export const slideWords = [
+  "LIBERATION",
+  "CAPITAL",
+  "PILLARS",
+  "ACCELERATOR",
+  "EPICENTRE",
+  "THRESHOLD"
+];
+
+// Dummy texts for each section (displayed in header)
+export const dummyTexts = [
+  "Want a new life?",
+  "Fund humans, not startups",
+  "Design. Discipline. Coherence.",
+  "Identity engineered",
+  "Self pressure-tested",
+  "Choose your path"
+];
+
 // Export default for backward compatibility (desktop)
 export const sections = desktopSections;
 export const SUBSCROLL_SECTIONS = DESKTOP_SUBSCROLL_SECTIONS;

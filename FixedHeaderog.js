@@ -1,11 +1,18 @@
-"use client";
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import styles from './FixedHeader.module.css';
-import SlideFlippingWords from '../Flipping_words/Flipping_words/SlideFlippingWords';
-import { slideWords, dummyTexts } from '../../constants/slides';
+import SlideFlippingWords from '../../../../components/Flipping_words/SlideFlippingWords';
+import { slideWords, dummyTexts } from '../../constants';
+import styles from '../../Pallax.module.css';
 
-export const FixedHeader = ({ currentSection = 0, isMuted = false }) => {
+export const FixedHeader = ({
+  currentSection,
+  isMuted,
+  selectedMember,
+  setSelectedMember,
+  isHoveringCube,
+  setIsHoveringCube,
+  scrollToSection
+}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
   const [showScrollAnimation, setShowScrollAnimation] = useState(false);
@@ -133,7 +140,7 @@ export const FixedHeader = ({ currentSection = 0, isMuted = false }) => {
         {/* Fixed Flipping Words */}
         <div className={styles.fixedFlippingWords}>
           <SlideFlippingWords
-            currentWord={slideWords[currentSection] || slideWords[0]}
+            currentWord={slideWords[currentSection]}
             size={getResponsiveFontSize()}
             mute={isMuted}
           />
@@ -141,7 +148,7 @@ export const FixedHeader = ({ currentSection = 0, isMuted = false }) => {
 
         {/* Fixed Dummy Text */}
         <div className={styles.fixedDummyText}>
-          {dummyTexts[currentSection] || dummyTexts[0]}
+          {dummyTexts[currentSection]}
         </div>
       </div>
 
@@ -170,16 +177,14 @@ export const FixedHeader = ({ currentSection = 0, isMuted = false }) => {
           <StyledMenuWrapper ref={menuRef} $isVisible={isMenuOpen}>
             <div className="nav">
               <div className="container">
-                <a className="btn" href="/" onClick={() => setIsMenuOpen(false)}>Home</a>
-                <a className="btn" href="/philosophy" onClick={() => setIsMenuOpen(false)}>Philosophy</a>
-                <a className="btn" href="/process" onClick={() => setIsMenuOpen(false)}>Process</a>
-                <a className="btn" href="/ecosystem" onClick={() => setIsMenuOpen(false)}>Ecosystem</a>
-                <a className="btn" href="/institution" onClick={() => setIsMenuOpen(false)}>Institution</a>
-                <a className="btn" href="/applicants" onClick={() => setIsMenuOpen(false)}>Applicants</a>
-                <a className="btn" href="/operation" onClick={() => setIsMenuOpen(false)}>Operation</a>
-                <a className="btn" href="/investor" onClick={() => setIsMenuOpen(false)}>Investor</a>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 60" height={60} width={800} overflow="visible" className="outline">
-                  <rect strokeWidth={2} fill="transparent" height={60} width={800} y={0} x={0} pathLength={100} className="rect" />
+                <div className="btn" onClick={() => { scrollToSection(2); setIsMenuOpen(false); }}>Lore</div>
+                <div className="btn" onClick={() => { scrollToSection(6); setIsMenuOpen(false); }}>World</div>
+                <div className="btn" onClick={() => { scrollToSection(10); setIsMenuOpen(false); }}>Playbook</div>
+                <div className="btn" onClick={() => { scrollToSection(14); setIsMenuOpen(false); }}>Unlock</div>
+                <div className="btn" onClick={() => { scrollToSection(18); setIsMenuOpen(false); }}>Levels</div>
+                <div className="btn" onClick={() => { scrollToSection(22); setIsMenuOpen(false); }}>Play</div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 60" height={60} width={600} overflow="visible" className="outline">
+                  <rect strokeWidth={2} fill="transparent" height={60} width={600} y={0} x={0} pathLength={100} className="rect" />
                 </svg>
               </div>
             </div>
@@ -201,9 +206,9 @@ export const FixedHeader = ({ currentSection = 0, isMuted = false }) => {
             <div className={styles.mobileSidebarHeader}>
               <h3 style={{
                 fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif',
-                fontSize: '24px',
+                fontSize: '14px',
                 color: '#00e87b',
-                fontWeight: 'normal',
+                fontWeight: '500',
                 textTransform: 'uppercase',
                 letterSpacing: '2px',
                 margin: 0
@@ -222,30 +227,24 @@ export const FixedHeader = ({ currentSection = 0, isMuted = false }) => {
             </div>
 
             <div className={styles.mobileSidebarContent}>
-              <a className={styles.mobileSidebarItem} href="/" onClick={handleCubeClick}>
-                <span>Home</span>
-              </a>
-              <a className={styles.mobileSidebarItem} href="/philosophy" onClick={handleCubeClick}>
-                <span>Philosophy</span>
-              </a>
-              <a className={styles.mobileSidebarItem} href="/process" onClick={handleCubeClick}>
-                <span>Process</span>
-              </a>
-              <a className={styles.mobileSidebarItem} href="/ecosystem" onClick={handleCubeClick}>
-                <span>Ecosystem</span>
-              </a>
-              <a className={styles.mobileSidebarItem} href="/institution" onClick={handleCubeClick}>
-                <span>Institution</span>
-              </a>
-              <a className={styles.mobileSidebarItem} href="/applicants" onClick={handleCubeClick}>
-                <span>Applicants</span>
-              </a>
-              <a className={styles.mobileSidebarItem} href="/operation" onClick={handleCubeClick}>
-                <span>Operation</span>
-              </a>
-              <a className={styles.mobileSidebarItem} href="/investor" onClick={handleCubeClick}>
-                <span>Investor</span>
-              </a>
+              <div className={styles.mobileSidebarItem} onClick={() => { scrollToSection(2); handleCubeClick(); }}>
+                <span>Lore</span>
+              </div>
+              <div className={styles.mobileSidebarItem} onClick={() => { scrollToSection(6); handleCubeClick(); }}>
+                <span>World</span>
+              </div>
+              <div className={styles.mobileSidebarItem} onClick={() => { scrollToSection(10); handleCubeClick(); }}>
+                <span>Playbook</span>
+              </div>
+              <div className={styles.mobileSidebarItem} onClick={() => { scrollToSection(14); handleCubeClick(); }}>
+                <span>Unlock</span>
+              </div>
+              <div className={styles.mobileSidebarItem} onClick={() => { scrollToSection(18); handleCubeClick(); }}>
+                <span>Levels</span>
+              </div>
+              <div className={styles.mobileSidebarItem} onClick={() => { scrollToSection(22); handleCubeClick(); }}>
+                <span>Play</span>
+              </div>
             </div>
           </StyledMobileSidebar>
         </>
@@ -281,7 +280,7 @@ const StyledMenuWrapper = styled.div`
 
   .nav {
     position: relative;
-    width: 800px;
+    width: 600px;
     height: 60px;
     border-radius: 40px;
   }
@@ -295,11 +294,10 @@ const StyledMenuWrapper = styled.div`
   .container {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(16, 16, 16, 0.4);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
+    justify-content: space-around;
     align-items: center;
     padding: 0.5em;
   }
@@ -315,7 +313,8 @@ const StyledMenuWrapper = styled.div`
     transition: 0.1s;
     font-family: "Full Moon BT W01 Falling Leav", "satoshi", sans-serif;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: 500;
     letter-spacing: 1px;
   }
 
@@ -437,7 +436,6 @@ const StyledMobileSidebar = styled.div`
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
 `;
 
-
 const StyledScrollIconsContainer = styled.div`
   position: fixed;
   top: 20px;
@@ -541,3 +539,4 @@ const StyledScrollIconsContainer = styled.div`
     }
   }
 `;
+

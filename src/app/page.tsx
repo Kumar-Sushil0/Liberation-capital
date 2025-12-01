@@ -188,7 +188,7 @@ export default function Home() {
       )}
 
       {/* Fixed Header */}
-      <FixedHeader />
+      <FixedHeader currentSection={currentSection} isMuted={isMuted} />
 
       {sections.map((section, index) => (
         <section

@@ -1,0 +1,190 @@
+.wordFlipper {
+  display: flex;
+  justify-content: center;
+  font-family: "built", "Arial Black", sans-serif;
+  gap: 0px;
+}
+
+.letterContainer {
+  perspective: 1000px;
+}
+
+.letter {
+  position: relative;
+  width: auto;
+  min-width: var(--letter-width, 60px);
+  height: var(--letter-height, 120px);
+  font-size: var(--letter-font-size, 104px);
+  font-weight: normal;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.letterTop,
+.letterBottom,
+.letterFlip {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: var(--letter-half-height, 60px);
+  border-radius: 10px 10px 0 0;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.letterFlip2 {
+  position: absolute;
+  width: 100%;
+  height: var(--letter-half-height, 60px);
+  border-radius: 0 0 10px 10px;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.letterTop {
+  top: 0;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.letterBottom {
+  top: 52%;
+  border-radius: 0 0 10px 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.letterFlip {
+  top: 0;
+  transform-origin: bottom;
+  backface-visibility: hidden;
+}
+.letterFlip2 {
+  top: 52%;
+  transform-origin: top;
+  backface-visibility: hidden;
+}
+
+.flipping .letterFlip {
+  animation: flip-top 0.5s ease-in-out;
+}
+.flipping .letterFlip2 {
+  animation: flip-bottom 0.5s ease-in-out;
+  animation-delay: 0s;
+}
+
+.letterFlipTop,
+.letterFlipBottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* .letterFlipTop {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.letterFlipBottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+} */
+
+.flipping .letterFlipBottom,
+.letterFlip2,
+.flipping .letterFlipBottom {
+  transform: rotateX(180deg);
+}
+
+.flipping .letterFlip {
+  transform: rotateX(-180deg);
+}
+.flipping .letterFlip2,
+.flipping .letterFlipBottom {
+  transform: rotateX(0deg);
+}
+
+.letterTop span,
+.letterBottom span,
+.letterFlipTop span,
+.letterFlipBottom span {
+  display: block;
+  height: 100%;
+  line-height: var(--letter-line-height, 120px);
+}
+
+.letterBottom span,
+.letterFlipBottom span {
+  margin-top: var(--letter-margin-top, -60px);
+}
+
+/* Shadow effects */
+
+/* Responsive overrides - only when CSS variables are not properly supported or need fallback */
+@media screen and (max-width: 1060px) {
+  .wordFlipper:not([style*="--letter-font-size"]) .letter {
+    min-width: 42px;
+    height: 84px;
+    font-size: 60px;
+  }
+  .wordFlipper:not([style*="--letter-font-size"]) .letterTop,
+  .wordFlipper:not([style*="--letter-font-size"]) .letterBottom,
+  .wordFlipper:not([style*="--letter-font-size"]) .letterFlip,
+  .wordFlipper:not([style*="--letter-font-size"]) .letterFlip2 {
+    height: 42px;
+  }
+  .wordFlipper:not([style*="--letter-font-size"]) .letterTop span,
+  .wordFlipper:not([style*="--letter-font-size"]) .letterBottom span,
+  .wordFlipper:not([style*="--letter-font-size"]) .letterFlipTop span,
+  .wordFlipper:not([style*="--letter-font-size"]) .letterFlipBottom span {
+    line-height: 84px;
+  }
+  .wordFlipper:not([style*="--letter-font-size"]) .letterBottom span,
+  .wordFlipper:not([style*="--letter-font-size"]) .letterFlipBottom span {
+    margin-top: -42px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .wordFlipper:not([style*="--letter-font-size"]) .letter {
+    min-width: 18px;
+    height: 36px;
+    font-size: 24px;
+  }
+  .wordFlipper:not([style*="--letter-font-size"]) .letterTop,
+  .wordFlipper:not([style*="--letter-font-size"]) .letterBottom,
+  .wordFlipper:not([style*="--letter-font-size"]) .letterFlip,
+  .wordFlipper:not([style*="--letter-font-size"]) .letterFlip2 {
+    height: 18px;
+  }
+  .wordFlipper:not([style*="--letter-font-size"]) .letterTop span,
+  .wordFlipper:not([style*="--letter-font-size"]) .letterBottom span,
+  .wordFlipper:not([style*="--letter-font-size"]) .letterFlipTop span,
+  .wordFlipper:not([style*="--letter-font-size"]) .letterFlipBottom span {
+    line-height: 36px;
+  }
+  .wordFlipper:not([style*="--letter-font-size"]) .letterBottom span,
+  .wordFlipper:not([style*="--letter-font-size"]) .letterFlipBottom span {
+    margin-top: -18px;
+  }
+}
+
+@keyframes flip-top {
+  0% {
+    transform: rotateX(0deg);
+    /* transform-origin: bottom; */
+  }
+  100% {
+    transform: rotateX(-180deg);
+    /* transform-origin: bottom; */
+  }
+}
+@keyframes flip-bottom {
+  0% {
+    transform: rotateX(-180deg);
+    /* transform-origin: top; */
+  }
+  100% {
+    transform: rotateX(-2deg);
+    /* transform-origin: top; */
+  }
+}
