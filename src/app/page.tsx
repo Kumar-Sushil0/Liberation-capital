@@ -186,7 +186,17 @@ export default function Home() {
           />
         );
       case "slide04":
-        return <Slide04 />;
+        return (
+          <Slide04
+            currentSection={currentSection}
+            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            onAllColumnsVisible={() => {
+              setTimeout(() => {
+                isScrollPausedRef.current = false;
+              }, 500);
+            }}
+          />
+        );
       case "slide05":
         return <Slide05 />;
       case "slide06":
