@@ -13,11 +13,6 @@ import {
   Slide05,
   Slide08,
   Slide12,
-  Slide13,
-  Slide14,
-  Slide15,
-  Slide16,
-  Slide17,
   Slide18,
   Slide19,
   Slide20,
@@ -225,16 +220,6 @@ export default function Home() {
             }}
           />
         );
-      case "slide13":
-        return <Slide13 />;
-      case "slide14":
-        return <Slide14 />;
-      case "slide15":
-        return <Slide15 />;
-      case "slide16":
-        return <Slide16 />;
-      case "slide17":
-        return <Slide17 />;
       case "slide18":
         return <Slide18 />;
       case "slide19":
