@@ -13,8 +13,6 @@ const desktopSections: SlideConfig[] = [
   { type: "slide03", className: "slide03" },
   { type: "slide04", className: "slide04" },
   { type: "slide05", className: "slide05" },
-  { type: "slide06", className: "slide06" },
-  { type: "slide07", className: "slide07" },
   { type: "slide08", className: "slide08" },
   { type: "slide09", className: "slide09" },
   { type: "slide10", className: "slide10" },
@@ -46,7 +44,7 @@ export const getSections = (isMobile: boolean): SlideConfig[] => {
 };
 
 // Desktop subscroll sections - indices that pause main scroll
-const DESKTOP_SUBSCROLL_SECTIONS: number[] = [2, 3, 4]; // Slide 2 (SubscrollSlide1), Slide 3 (Slide03), and Slide 4 (Slide04) have subscroll
+const DESKTOP_SUBSCROLL_SECTIONS: number[] = [2, 3, 4, 5]; // Slide 2 (SubscrollSlide1), Slide 3 (Slide03), Slide 4 (Slide04), and Slide 5 (Slide05) have subscroll
 
 // Mobile subscroll sections
 const MOBILE_SUBSCROLL_SECTIONS: number[] = [];
@@ -61,6 +59,7 @@ const DESKTOP_SUBSCROLL_STEPS: Record<number, number> = {
   2: 3, // SubscrollSlide1 has 3 columns to reveal
   3: 4, // Slide03 has 4 steps (initial + 3 card reveals)
   4: 4, // Slide04 has 4 steps (initial + 3 card reveals)
+  5: 3, // Slide05 has 3 columns to reveal
 };
 
 // Mobile subscroll steps

@@ -7,8 +7,6 @@ export { ContentSlide3 } from './ContentSlide3';
 export { FinalSlide } from './FinalSlide';
 export { Slide04 } from './Slide04';
 export { Slide05 } from './Slide05';
-export { Slide06 } from './Slide06';
-export { Slide07 } from './Slide07';
 export { Slide08 } from './Slide08';
 export { Slide09 } from './Slide09';
 export { Slide10 } from './Slide10';
