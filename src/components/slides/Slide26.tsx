@@ -1,6 +1,6 @@
 "use client";
 
-export const Slide04 = () => {
+export const Slide26 = () => {
   return (
     <div style={{
       width: '100%',
@@ -21,31 +21,51 @@ export const Slide04 = () => {
         textAlign: 'center'
       }}>
         <h2 style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 'bold', marginBottom: '1rem' }}>
-          The LIFEiDESIGN Accelerator (Identity Engine)
+          PATRONS → For Investors Done with Hype
         </h2>
 
         <p style={{ margin: 0, color: '#ffffff' }}>
-          Part therapy.
+          If you're exhausted by:
+        </p>
+
+        <p style={{ margin: 0, color: '#ffffff', marginTop: '0.3rem' }}>
+          • founders acting
         </p>
 
         <p style={{ margin: 0, color: '#ffffff' }}>
-          Part design lab.
+          • markets hallucinating
         </p>
 
         <p style={{ margin: 0, color: '#ffffff' }}>
-          Part discipline dojo.
+          • startups pretending
+        </p>
+
+        <p style={{ margin: 0, color: '#ffffff' }}>
+          • hype cycles recycling
         </p>
 
         <p style={{ margin: 0, color: '#ffffff', marginTop: '0.5rem' }}>
-          Here, you don't "know thyself."
+          ...welcome home.
+        </p>
+
+        <p style={{ margin: 0, color: '#ffffff', marginTop: '0.5rem' }}>
+          You're not investing in dreams.
         </p>
 
         <p style={{ margin: 0, color: '#ffffff', fontWeight: 'bold' }}>
-          You design thyself.
+          You're investing in coherent humans
         </p>
 
-        <p style={{ margin: 0, color: '#ffffff', marginTop: '0.5rem' }}>
-          Gamify your inner world → master your outer one.
+        <p style={{ margin: 0, color: '#ffffff' }}>
+          with disciplined, measurable evolution.
+        </p>
+
+        <p style={{ margin: 0, color: '#ffffff', marginTop: '0.5rem', fontWeight: 'bold' }}>
+          One ecosystem. Two roles.
+        </p>
+
+        <p style={{ margin: 0, color: '#ffffff', fontWeight: 'bold' }}>
+          Both accelerating human potential.
         </p>
       </div>
     </div>

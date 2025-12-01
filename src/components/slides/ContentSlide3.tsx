@@ -1,21 +1,43 @@
 "use client";
-import React from 'react';
-import styles from '../../styles/slides.module.css';
 
 export const ContentSlide3 = () => {
   return (
-    <div className={styles.slideContent}>
-      <h2 className={styles.slideTitle}>The Test</h2>
-      <div className={styles.slideText}>
-        <p>EPiCENTRE — Where identity meets reality</p>
-        <p style={{ marginTop: '2rem' }}>
-          A silent, monastic, reality-heavy pressure chamber
+    <div style={{
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '2rem'
+    }}>
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '0.5rem',
+        width: '100%',
+        fontSize: 'clamp(0.9rem, 2vw, 1.2rem)',
+        lineHeight: 1.3,
+        textAlign: 'center'
+      }}>
+        <h2 style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 'bold', marginBottom: '1rem' }}>
+          Why We Exist (Traction ≠ Coherence)
+        </h2>
+
+        <p style={{ margin: 0, color: '#ffffff' }}>
+          Anyone can fake traction.
         </p>
-        <p style={{ marginTop: '1rem' }}>
-          where your future self is stress-tested.
+
+        <p style={{ margin: 0, color: '#ffffff', fontWeight: 'bold' }}>
+          No one can fake coherence.
         </p>
-        <p style={{ marginTop: '2rem', opacity: 0.8 }}>
-          If it can't survive stillness, it won't survive life.
+
+        <p style={{ margin: 0, color: '#ffffff', marginTop: '0.5rem' }}>
+          We don't care about pitch decks.
+        </p>
+
+        <p style={{ margin: 0, color: '#ffffff' }}>
+          We care whether your future self is <span style={{ fontStyle: 'italic' }}>executable</span>.
         </p>
       </div>
     </div>

@@ -1,6 +1,6 @@
 "use client";
 
-export const Slide12 = () => {
+export const Slide25 = () => {
   return (
     <div style={{
       width: '100%',
@@ -21,27 +21,39 @@ export const Slide12 = () => {
         textAlign: 'center'
       }}>
         <h2 style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 'bold', marginBottom: '1rem' }}>
-          Liberation Day (Ceremony &gt; Pitch)
+          PLAYERS → For Humans Re-designing Themselves
         </h2>
 
         <p style={{ margin: 0, color: '#ffffff' }}>
-          No sharks.
+          If you're redesigning your life,
         </p>
 
         <p style={{ margin: 0, color: '#ffffff' }}>
-          No theatrics.
+          you shouldn't have to beg a broken system for permission.
+        </p>
+
+        <p style={{ margin: 0, color: '#ffffff', marginTop: '0.5rem', fontWeight: 'bold' }}>
+          We fund:
+        </p>
+
+        <p style={{ margin: 0, color: '#ffffff', marginTop: '0.3rem' }}>
+          • disciplined
         </p>
 
         <p style={{ margin: 0, color: '#ffffff' }}>
-          No "So what's your TAM?" nonsense.
+          • self-aware
+        </p>
+
+        <p style={{ margin: 0, color: '#ffffff' }}>
+          • committed
+        </p>
+
+        <p style={{ margin: 0, color: '#ffffff' }}>
+          • evolving
         </p>
 
         <p style={{ margin: 0, color: '#ffffff', marginTop: '0.5rem' }}>
-          Just a human, a blueprint,
-        </p>
-
-        <p style={{ margin: 0, color: '#ffffff' }}>
-          and a future self stepping forward.
+          ...humans who need capital as oxygen.
         </p>
       </div>
     </div>

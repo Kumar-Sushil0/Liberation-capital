@@ -30,7 +30,11 @@ import {
   Slide20,
   Slide21,
   Slide22,
-  Slide23
+  Slide23,
+  Slide24,
+  Slide25,
+  Slide26,
+  Slide27
 } from '../components/slides';
 import { ProgressIndicatorStandalone } from '../components/ProgressIndicatorStandalone';
 import { FixedHeader } from '../components/fixedheader/FixedHeader';
@@ -217,6 +221,14 @@ export default function Home() {
         return <Slide22 />;
       case "slide23":
         return <Slide23 />;
+      case "slide24":
+        return <Slide24 />;
+      case "slide25":
+        return <Slide25 />;
+      case "slide26":
+        return <Slide26 />;
+      case "slide27":
+        return <Slide27 />;
       default:
         return null;
     }

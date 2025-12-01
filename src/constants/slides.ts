@@ -32,7 +32,11 @@ const desktopSections: SlideConfig[] = [
   { type: "slide20", className: "slide22" },
   { type: "slide21", className: "slide23" },
   { type: "slide22", className: "slide24" },
-  { type: "slide23", className: "slide25" }
+  { type: "slide23", className: "slide25" },
+  { type: "slide24", className: "slide26" },
+  { type: "slide25", className: "slide27" },
+  { type: "slide26", className: "slide28" },
+  { type: "slide27", className: "slide29" }
 ];
 
 // Mobile sections configuration (same for now, can be customized later)
@@ -44,10 +48,10 @@ export const getSections = (isMobile: boolean): SlideConfig[] => {
 };
 
 // Desktop subscroll sections - indices that pause main scroll
-const DESKTOP_SUBSCROLL_SECTIONS = [2]; // Slide 3 (index 2) has subscroll
+const DESKTOP_SUBSCROLL_SECTIONS: number[] = []; // No subscroll sections
 
 // Mobile subscroll sections
-const MOBILE_SUBSCROLL_SECTIONS = [2];
+const MOBILE_SUBSCROLL_SECTIONS: number[] = [];
 
 // Get subscroll sections based on mobile/desktop
 export const getSubscrollSections = (isMobile: boolean): number[] => {
@@ -55,14 +59,10 @@ export const getSubscrollSections = (isMobile: boolean): number[] => {
 };
 
 // Desktop subscroll steps
-const DESKTOP_SUBSCROLL_STEPS: Record<number, number> = {
-  2: 3, // subscroll1: 3 steps (3 columns to reveal)
-};
+const DESKTOP_SUBSCROLL_STEPS: Record<number, number> = {};
 
 // Mobile subscroll steps
-const MOBILE_SUBSCROLL_STEPS: Record<number, number> = {
-  2: 3,
-};
+const MOBILE_SUBSCROLL_STEPS: Record<number, number> = {};
 
 // Get subscroll steps based on mobile/desktop
 export const getSubscrollSteps = (isMobile: boolean): Record<number, number> => {
@@ -94,7 +94,11 @@ export const slideWords = [
   "TRANSCEND",
   "LIBERATE",
   "EMERGE",
-  "BECOME"
+  "BECOME",
+  "IDENTITY",
+  "PLAYERS",
+  "PATRONS",
+  "SUMMARY"
 ];
 
 // Dummy texts for each section (displayed in header) - 24 slides
@@ -122,7 +126,11 @@ export const dummyTexts = [
   "Beyond limits",
   "Freedom achieved",
   "New beginning",
-  "Complete transformation"
+  "Complete transformation",
+  "Identity capital",
+  "For redesigning humans",
+  "For investors done with hype",
+  "Positioning summary"
 ];
 
 // Export default for backward compatibility (desktop)
