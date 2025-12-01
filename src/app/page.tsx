@@ -21,13 +21,8 @@ import {
   Slide18,
   Slide19,
   Slide20,
-  Slide21,
-  Slide22,
   Slide23,
-  Slide24,
-  Slide25,
-  Slide26,
-  Slide27
+  Slide26
 } from '../components/slides';
 import { ProgressIndicatorStandalone } from '../components/ProgressIndicatorStandalone';
 import { FixedHeader } from '../components/fixedheader/FixedHeader';
@@ -217,7 +212,17 @@ export default function Home() {
           />
         );
       case "slide12":
-        return <Slide12 />;
+        return (
+          <Slide12
+            currentSection={currentSection}
+            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            onAllColumnsVisible={() => {
+              setTimeout(() => {
+                isScrollPausedRef.current = false;
+              }, 500);
+            }}
+          />
+        );
       case "slide13":
         return <Slide13 />;
       case "slide14":
@@ -231,23 +236,53 @@ export default function Home() {
       case "slide18":
         return <Slide18 />;
       case "slide19":
-        return <Slide19 />;
+        return (
+          <Slide19
+            currentSection={currentSection}
+            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            onAllColumnsVisible={() => {
+              setTimeout(() => {
+                isScrollPausedRef.current = false;
+              }, 500);
+            }}
+          />
+        );
       case "slide20":
-        return <Slide20 />;
-      case "slide21":
-        return <Slide21 />;
-      case "slide22":
-        return <Slide22 />;
+        return (
+          <Slide20
+            currentSection={currentSection}
+            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            onAllColumnsVisible={() => {
+              setTimeout(() => {
+                isScrollPausedRef.current = false;
+              }, 500);
+            }}
+          />
+        );
       case "slide23":
-        return <Slide23 />;
-      case "slide24":
-        return <Slide24 />;
-      case "slide25":
-        return <Slide25 />;
+        return (
+          <Slide23
+            currentSection={currentSection}
+            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            onAllColumnsVisible={() => {
+              setTimeout(() => {
+                isScrollPausedRef.current = false;
+              }, 500);
+            }}
+          />
+        );
       case "slide26":
-        return <Slide26 />;
-      case "slide27":
-        return <Slide27 />;
+        return (
+          <Slide26
+            currentSection={currentSection}
+            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            onAllColumnsVisible={() => {
+              setTimeout(() => {
+                isScrollPausedRef.current = false;
+              }, 500);
+            }}
+          />
+        );
       default:
         return null;
     }
