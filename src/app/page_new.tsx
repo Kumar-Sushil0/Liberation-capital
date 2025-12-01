@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import styles from '../styles/slides.module.css';
-import { getSections } from '../constants/slides';
+import { getSections, getSubscrollSections } from '../constants/slides';
 import { useScrollManager } from '../hooks/useScrollManager';
 import { 
   HeroSlide, 
@@ -130,7 +130,7 @@ export default function Home() {
   }, []);
 
   // Render section content based on type
-  const renderSectionContent = (section: any) => {
+  const renderSectionContent = (section: any, index: number) => {
     switch (section.type) {
       case "hero":
         return <HeroSlide />;
@@ -201,7 +201,7 @@ export default function Home() {
                 ref={el => { imagesRef.current[index] = el; }}
                 className={styles.bg}
               >
-                {renderSectionContent(section)}
+                {renderSectionContent(section, index)}
               </div>
             </div>
           </div>
