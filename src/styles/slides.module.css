@@ -237,3 +237,371 @@
 }
 
 
+
+/* Scroll Reveal Container - Hide scrollbar */
+.scrollRevealContainer {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.scrollRevealContainer::-webkit-scrollbar {
+  display: none; /* WebKit browsers (Chrome, Safari, Edge) */
+}
+
+/* Master Container for Scroll Reveal Slides */
+.scrollRevealMasterContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Grey Line Container - Fixed Height and Position */
+.greyLineContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 120px;
+  flex-shrink: 0;
+  padding-top: 80px;
+  padding-bottom: 10px;
+}
+
+.greyLineText {
+  font-family: "satoshi", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #888888;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+  max-width: none;
+  padding: 0 1rem;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+/* Main Content Container - Takes Remaining Space */
+.scrollRevealMainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Powers Main Content */
+.powersMainContent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  gap: 2rem;
+  height: 100%;
+  max-height: calc(100vh - 140px);
+}
+
+.powersMainContent .powersSection,
+.powersMainContent .forcesSection {
+  flex: 1;
+  max-width: 50%;
+  padding: 0 1rem 1rem 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  height: 100%;
+  margin-top: 0;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.powersMainContent .powersSection:hover,
+.powersMainContent .forcesSection:hover {
+  transform: translateY(-2px);
+}
+
+.powersMainContent .separatorLine {
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 232, 123, 0.5),
+    transparent
+  );
+  align-self: stretch;
+  margin: 0 1rem;
+  flex-shrink: 0;
+}
+
+/* Powers Section Styles */
+.powersSection {
+  width: 100%;
+  max-width: 600px;
+}
+
+.forcesSection {
+  width: 100%;
+  max-width: 600px;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  color: #00e87b;
+  font-family: "satoshi";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Separator Line */
+.separatorLine {
+  width: 2px;
+  height: 80%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 232, 123, 0.5),
+    transparent
+  );
+  align-self: center;
+  margin: 0 1.5rem;
+}
+
+/* 2x2 Grid Layouts */
+.powersGrid2x2,
+.forcesGrid2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-shrink: 0;
+}
+
+/* Card Wrapper */
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Hover Card */
+.hoverCard {
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 232, 123, 0.2);
+}
+
+.hoverCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 232, 123, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 232, 123, 0.3);
+}
+
+/* Card Content */
+.cardContent {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card Emoji/Image */
+.cardEmoji {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.hoverCard:hover .cardEmoji {
+  opacity: 0.3;
+}
+
+/* Card Hover Content */
+.cardHoverContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+}
+
+.hoverCard:hover .cardHoverContent {
+  opacity: 1;
+}
+
+/* Card Description */
+.cardDescription {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ffffff;
+  font-family: "satoshi";
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 0;
+  text-align: center;
+  text-transform: none;
+}
+
+/* Card Title Below */
+.cardTitleBelow {
+  font-size: 13px;
+  color: #00e87b;
+  font-family: "satoshi";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Responsive adjustments for scroll reveal containers */
+@media (max-width: 768px) {
+  .scrollRevealMasterContainer {
+    padding: 0 2rem;
+  }
+
+  .greyLineContainer {
+    height: 150px;
+    padding-top: 80px;
+    padding-bottom: 15px;
+  }
+
+  .greyLineText {
+    font-size: 12px;
+    max-width: 600px;
+    padding: 0 1rem;
+  }
+
+  .powersMainContent {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .powersMainContent .powersSection,
+  .powersMainContent .forcesSection {
+    max-width: 100%;
+  }
+
+  .powersMainContent .separatorLine {
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(0, 232, 123, 0.5),
+      transparent
+    );
+    margin: 1rem 0;
+  }
+
+  .powersGrid2x2,
+  .forcesGrid2x2 {
+    gap: 1.5rem;
+  }
+
+  .hoverCard {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollRevealMasterContainer {
+    padding: 0 1rem;
+  }
+
+  .greyLineContainer {
+    height: 120px;
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+
+  .greyLineText {
+    font-size: 11px;
+    max-width: 100%;
+    padding: 0 0.5rem;
+    line-height: 1.5;
+  }
+
+  .powersGrid2x2,
+  .forcesGrid2x2 {
+    gap: 1rem;
+  }
+
+  .hoverCard {
+    width: 120px;
+    height: 120px;
+  }
+
+  .cardTitleBelow {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .scrollRevealMasterContainer {
+    padding: 0 0.5rem;
+  }
+
+  .greyLineContainer {
+    height: 110px;
+    padding-top: 50px;
+    padding-bottom: 8px;
+  }
+
+  .greyLineText {
+    font-size: 10px;
+    padding: 0 0.25rem;
+    line-height: 1.4;
+  }
+
+  .hoverCard {
+    width: 100px;
+    height: 100px;
+  }
+
+  .cardTitleBelow {
+    font-size: 12px;
+  }
+}
