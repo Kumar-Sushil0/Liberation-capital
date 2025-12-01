@@ -19,3 +19,5 @@ export { Slide19 } from './Slide19';
 export { Slide20 } from './Slide20';
 export { Slide23 } from './Slide23';
 export { Slide26 } from './Slide26';
+export { PoemSlide } from './PoemSlide';
+export { OperatingSystemSlide } from './OperatingSystemSlide';

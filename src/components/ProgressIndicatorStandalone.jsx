@@ -25,8 +25,8 @@ export const ProgressIndicatorStandalone = ({
 }) => {
   const [isHovering, setIsHovering] = useState(false);
 
-  // Create array of sections (skip first 1, start from index 1)
-  const visibleSections = Array.from({ length: totalSections - 1 }, (_, i) => i + 1);
+  // Create array of sections (start from index 0)
+  const visibleSections = Array.from({ length: totalSections }, (_, i) => i);
   const groupCount = Math.ceil(visibleSections.length / 4);
 
   return (
@@ -60,12 +60,11 @@ export const ProgressIndicatorStandalone = ({
         {Array.from({ length: groupCount }, (_, groupIndex) => {
           const startIndex = groupIndex * 4;
           const groupSections = visibleSections.slice(startIndex, startIndex + 4);
-          const actualStartIndex = startIndex + 1;
           
           return (
             <div key={groupIndex} style={styles.progressGroup}>
-              {groupSections.map((_, localIndex) => {
-                const index = actualStartIndex + localIndex;
+              {groupSections.map((sectionIndex, localIndex) => {
+                const index = sectionIndex;
                 const isActive = currentSection === index;
                 
                 return (

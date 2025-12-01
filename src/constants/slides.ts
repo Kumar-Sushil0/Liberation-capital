@@ -24,7 +24,9 @@ const desktopSections: SlideConfig[] = [
   { type: "slide19", className: "slide19" },
   { type: "slide20", className: "slide20" },
   { type: "slide23", className: "slide23" },
-  { type: "slide26", className: "slide26" }
+  { type: "slide26", className: "slide26" },
+  { type: "poem", className: "slidePoem" },
+  { type: "operatingSystem", className: "slideOperatingSystem" }
 ];
 
 // Mobile sections configuration (same for now, can be customized later)

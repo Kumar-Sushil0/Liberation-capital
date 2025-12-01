@@ -22,7 +22,9 @@ import {
   Slide19,
   Slide20,
   Slide23,
-  Slide26
+  Slide26,
+  PoemSlide,
+  OperatingSystemSlide
 } from '../components/slides';
 import { ProgressIndicatorStandalone } from '../components/ProgressIndicatorStandalone';
 import { FixedHeader } from '../components/fixedheader/FixedHeader';
@@ -283,6 +285,10 @@ export default function Home() {
             }}
           />
         );
+      case "poem":
+        return <PoemSlide />;
+      case "operatingSystem":
+        return <OperatingSystemSlide />;
       default:
         return null;
     }
