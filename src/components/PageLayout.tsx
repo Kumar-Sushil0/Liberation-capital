@@ -6,12 +6,13 @@ import MobileNavigation from "./MobileNavigation";
 import { FixedHeader } from "./fixedheader/FixedHeader";
 
 interface PageLayoutProps {
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
   children: ReactNode;
+  bannerContent?: ReactNode;
 }
 
-export default function PageLayout({ title, subtitle, children }: PageLayoutProps) {
+export default function PageLayout({ title, subtitle, children, bannerContent }: PageLayoutProps) {
   return (
     <main className="min-h-screen bg-background text-foreground font-sans">
       <FixedHeader />
@@ -25,16 +26,25 @@ export default function PageLayout({ title, subtitle, children }: PageLayoutProp
         {/* Transparent banner content */}
         <div className="relative flex min-h-screen items-center justify-center pb-12">
           <div className="mx-auto w-full max-w-5xl px-6">
-            <div className="rounded-3xl border border-white/20 bg-black/30 p-10 backdrop-blur-sm">
-              <h1
-                className="text-center text-5xl font-normal tracking-tight sm:text-7xl"
-                style={{ fontFamily: '"built", "Satoshi", sans-serif' }}
-              >
-                {title}
-              </h1>
-              <p className="mt-4 text-center text-lg text-white/85">
-                {subtitle}
-              </p>
+            <div className="rounded-3xl border border-white/20 bg-black/30 p-10 backdrop-blur-sm text-white">
+              {title && (
+                <h1
+                  className="text-center text-5xl font-normal tracking-tight sm:text-7xl"
+                  style={{ fontFamily: '"built", "Satoshi", sans-serif' }}
+                >
+                  {title}
+                </h1>
+              )}
+              {subtitle && (
+                <p className="mt-4 text-center text-lg text-white/85">
+                  {subtitle}
+                </p>
+              )}
+              {bannerContent && (
+                <div className={title || subtitle ? "mt-8" : ""}>
+                  {bannerContent}
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -193,6 +193,24 @@ export default function InstitutionPage() {
               <p className="mt-2">Below are the gates.</p>
               <p>Enter the one that matches your becoming.</p>
             </div>
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+              <div className="group rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8 text-left">
+                <h6 className="text-lg font-semibold">Fund Life → Become Player</h6>
+                <p className="mt-2">Your life design is the due diligence.</p>
+                <div className="mt-4 hidden group-hover:block">
+                  <p>Apply for the LIFEiDESIGN Accelerator →</p>
+                  <p>Your coherence is your credit score.</p>
+                </div>
+              </div>
+              <div className="group rounded-2xl bg-background shadow-lg ring-1 ring-black/5 p-8 text-left">
+                <h6 className="text-lg font-semibold">Fund Life → Become Patron</h6>
+                <p className="mt-2">Invest in human capital, not hype.</p>
+                <div className="mt-4 hidden group-hover:block">
+                  <p>Request Investor Access →</p>
+                  <p>Brave money funds brave game.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
