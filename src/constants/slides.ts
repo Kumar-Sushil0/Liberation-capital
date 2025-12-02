@@ -10,6 +10,7 @@ const desktopSections: SlideConfig[] = [
   { type: "hero", className: "slide00" },
   { type: "content1", className: "slide01" },
   { type: "warning", className: "slideWarning" },
+  { type: "video", className: "slideVideo" },
   { type: "fundOrigin", className: "slideFundOrigin" },
   { type: "rebuildIdentities", className: "slideRebuildIdentities" },
   { type: "fundCoherence", className: "slideFundCoherence" },
@@ -56,7 +57,7 @@ export const getSections = (isMobile: boolean): SlideConfig[] => {
 };
 
 // Desktop subscroll sections - indices that pause main scroll
-const DESKTOP_SUBSCROLL_SECTIONS: number[] = [6, 8, 27, 28, 29, 30, 37, 38, 39, 40]; // Slide 6 (Slide03), Slide 8 (SubscrollSlide1), Slide 27 (Slide04), Slide 28 (Slide05), Slide 29 (Slide08), Slide 30 (Slide12), Slide 37 (Slide19), Slide 38 (Slide20), Slide 39 (Slide23), and Slide 40 (Slide26) have subscroll
+const DESKTOP_SUBSCROLL_SECTIONS: number[] = [7, 9, 28, 29, 30, 31, 38, 39, 40, 41]; // Slide 7 (Slide03), Slide 9 (SubscrollSlide1), Slide 28 (Slide04), Slide 29 (Slide05), Slide 30 (Slide08), Slide 31 (Slide12), Slide 38 (Slide19), Slide 39 (Slide20), Slide 40 (Slide23), and Slide 41 (Slide26) have subscroll
 
 // Mobile subscroll sections
 const MOBILE_SUBSCROLL_SECTIONS: number[] = [];
@@ -68,16 +69,16 @@ export const getSubscrollSections = (isMobile: boolean): number[] => {
 
 // Desktop subscroll steps
 const DESKTOP_SUBSCROLL_STEPS: Record<number, number> = {
-  6: 4, // Slide03 has 4 steps (initial + 3 card reveals)
-  8: 3, // SubscrollSlide1 has 3 columns to reveal
-  27: 4, // Slide04 has 4 steps (initial + 3 card reveals)
-  28: 3, // Slide05 has 3 columns to reveal
-  29: 3, // Slide08 has 3 columns to reveal
-  30: 4, // Slide12 has 4 steps (initial + 3 card reveals)
-  37: 3, // Slide19 has 3 columns to reveal
-  38: 3, // Slide20 has 3 columns to reveal
-  39: 3, // Slide23 has 3 columns to reveal
-  40: 3, // Slide26 has 3 columns to reveal
+  7: 4, // Slide03 has 4 steps (initial + 3 card reveals)
+  9: 3, // SubscrollSlide1 has 3 columns to reveal
+  28: 4, // Slide04 has 4 steps (initial + 3 card reveals)
+  29: 3, // Slide05 has 3 columns to reveal
+  30: 3, // Slide08 has 3 columns to reveal
+  31: 4, // Slide12 has 4 steps (initial + 3 card reveals)
+  38: 3, // Slide19 has 3 columns to reveal
+  39: 3, // Slide20 has 3 columns to reveal
+  40: 3, // Slide23 has 3 columns to reveal
+  41: 3, // Slide26 has 3 columns to reveal
 };
 
 // Mobile subscroll steps

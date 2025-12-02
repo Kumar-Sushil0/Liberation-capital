@@ -22,6 +22,7 @@ import {
   OperatingSystemSlide
 } from '../components/slides';
 import { WarningSlide } from '../components/slides/WarningSlide';
+import { VideoSlide } from '../components/slides/VideoSlide';
 import { FundOriginSlide } from '../components/slides/FundOriginSlide';
 import { RebuildIdentitiesSlide } from '../components/slides/RebuildIdentitiesSlide';
 import { FundCoherenceSlide } from '../components/slides/FundCoherenceSlide';
@@ -173,6 +174,8 @@ export default function Home() {
         return <ContentSlide1 />;
       case "warning":
         return <WarningSlide />;
+      case "video":
+        return <VideoSlide />;
       case "fundOrigin":
         return <FundOriginSlide />;
       case "rebuildIdentities":
