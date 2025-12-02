@@ -226,10 +226,13 @@ export const Slide03 = ({
           <div className={styles.greyLineContainer}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <p className={styles.greyLineText}>
-                Two tribes. Same ecosystem. Different missions.
+                Two roles. One evolution system.
               </p>
-              <p className={styles.greyLineText}>
-                Same game: human evolution.
+              <p className={styles.greyLineText} style={{ fontStyle: 'italic', marginTop: '0.5rem' }}>
+                Both enter different doors, but walk the same game of human evolution.
+              </p>
+              <p className={styles.greyLineText} style={{ fontStyle: 'italic', marginTop: '0.5rem' }}>
+                If your game of life is editable... edit it.
               </p>
             </div>
           </div>
@@ -255,7 +258,7 @@ export const Slide03 = ({
                     letterSpacing: '1px',
                     margin: 0
                   }}>
-                    Investors
+                    Patrons
                   </span>
                 </h3>
                 <p
@@ -270,7 +273,8 @@ export const Slide03 = ({
                   }}
                 >
                   <span style={{ display: 'block', whiteSpace: 'nowrap' }}>Wealthy, restless, allergic to hype,</span>
-                  <span style={{ display: 'block', whiteSpace: 'nowrap' }}>craving meaning.</span>
+                  <span style={{ display: 'block', whiteSpace: 'nowrap' }}>spiritually bankrupt from funding noise,</span>
+                  <span style={{ display: 'block', whiteSpace: 'nowrap' }}>ready to fund meaning.</span>
                 </p>
 
                 <div className={styles.powersGrid2x2}>
@@ -303,7 +307,7 @@ export const Slide03 = ({
                         transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
                       }}
-                    >Capital Abundance</h4>
+                    >wealthy</h4>
                   </div>
                   <div className={styles.cardWrapper}>
                     <div
@@ -334,7 +338,7 @@ export const Slide03 = ({
                         transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
                       }}
-                    >Meaning Hunger</h4>
+                    >restless</h4>
                   </div>
                   <div className={styles.cardWrapper}>
                     <div
@@ -365,7 +369,7 @@ export const Slide03 = ({
                         transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
                       }}
-                    >Restless Energy</h4>
+                    >allergic to hype</h4>
                   </div>
                   <div className={styles.cardWrapper}>
                     <div
@@ -396,7 +400,7 @@ export const Slide03 = ({
                         transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
                       }}
-                    >Anti-Hype</h4>
+                    >ready to fund meaning</h4>
                   </div>
                 </div>
               </div>
@@ -435,8 +439,9 @@ export const Slide03 = ({
                     marginBottom: '0.5rem'
                   }}
                 >
-                  <span style={{ display: 'block', whiteSpace: 'nowrap' }}>Disciplined, devoted,</span>
-                  <span style={{ display: 'block', whiteSpace: 'nowrap' }}>oxygen-starved for capital.</span>
+                  <span style={{ display: 'block', whiteSpace: 'nowrap' }}>Devoted, disciplined, oxygen-starved for capital,</span>
+                  <span style={{ display: 'block', whiteSpace: 'nowrap' }}>hungry enough to redesign their life,</span>
+                  <span style={{ display: 'block', whiteSpace: 'nowrap' }}>brave enough to pitch their becoming.</span>
                 </p>
 
                 <div className={styles.forcesGrid2x2}>
@@ -469,7 +474,7 @@ export const Slide03 = ({
                         transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
                       }}
-                    >Pure Discipline</h4>
+                    >devoted</h4>
                   </div>
                   <div className={styles.cardWrapper}>
                     <div
@@ -500,7 +505,7 @@ export const Slide03 = ({
                         transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
                       }}
-                    >Total Devotion</h4>
+                    >disciplined</h4>
                   </div>
                   <div className={styles.cardWrapper}>
                     <div
@@ -531,7 +536,7 @@ export const Slide03 = ({
                         transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
                       }}
-                    >Capital Scarcity</h4>
+                    >oxygen-starved for capital</h4>
                   </div>
                   <div className={styles.cardWrapper}>
                     <div
@@ -562,7 +567,7 @@ export const Slide03 = ({
                         transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
                       }}
-                    >Oxygen-Starved</h4>
+                    >brave enough to pitch their becoming</h4>
                   </div>
                 </div>
               </div>

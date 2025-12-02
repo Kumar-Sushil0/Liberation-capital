@@ -36,7 +36,7 @@ export const SubscrollSlide1 = ({
   useEffect(() => {
     if (!isInitialized) return;
     
-    if (currentSection !== 7) return;
+    if (currentSection !== 8) return;
 
     setSkipTransitions(true);
 
@@ -66,7 +66,7 @@ export const SubscrollSlide1 = ({
     const prevSection = prevSectionRef.current;
     prevSectionRef.current = currentSection;
 
-    if (currentSection === 7 && prevSection !== 7 && isScrollEnabled) {
+    if (currentSection === 8 && prevSection !== 8 && isScrollEnabled) {
       setSkipTransitions(true);
       setVisibleColumns(0);
 
@@ -228,6 +228,56 @@ export const SubscrollSlide1 = ({
           justifyContent: 'center',
           padding: '3rem'
         }}>
+          {/* Opening Statement */}
+          <div style={{
+            marginBottom: '2rem',
+            textAlign: 'center',
+            maxWidth: '1200px',
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center'
+          }}>
+            <p style={{
+              margin: 0,
+              color: '#b8b8b8',
+              fontSize: 'clamp(1rem, 2vw, 1.3rem)',
+              lineHeight: 1.5,
+              fontStyle: 'italic',
+              paddingLeft: '1.5rem',
+              borderLeft: '3px solid #444',
+              textAlign: 'left',
+              maxWidth: '900px'
+            }}>
+              You can't design a future self without confronting the current one.
+            </p>
+          </div>
+
+          {/* Subtitle */}
+          <div style={{
+            marginBottom: '2rem',
+            textAlign: 'center',
+            maxWidth: '1200px',
+            width: '100%'
+          }}>
+            <p style={{
+              margin: 0,
+              color: '#ffffff',
+              fontSize: 'clamp(1.1rem, 2.2vw, 1.5rem)',
+              lineHeight: 1.5,
+              marginBottom: '0.5rem'
+            }}>
+              <span style={{ color: '#00e87b', fontWeight: 'bold' }}>GAMEiDESIGN</span> unmasks your blind spots, your hidden code,
+            </p>
+            <p style={{
+              margin: 0,
+              color: '#ffffff',
+              fontSize: 'clamp(1.1rem, 2.2vw, 1.5rem)',
+              lineHeight: 1.5
+            }}>
+              your contradictions, your multiple possible timelines.
+            </p>
+          </div>
+
           <div style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1fr 1fr',
@@ -237,104 +287,97 @@ export const SubscrollSlide1 = ({
             position: 'relative',
             flex: '0 0 auto'
           }}>
-        {/* Column 1 - The World Funds Products, Not People */}
+        {/* Column 1 - Pre-Game */}
         <div style={{
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: '0.3rem',
+          gap: '0.5rem',
           padding: '1.5rem',
           textAlign: 'center',
           opacity: visibleColumns >= 1 ? 1 : 0,
           transform: visibleColumns >= 1 ? 'translateX(0)' : 'translateX(100px)',
           transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
         }}>
-          <h3 style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-            The World Funds Products, Not People
+          <h3 style={{ margin: 0, color: '#00e87b', fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+            Pre-Game
           </h3>
-          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.3 }}>
-            A world obsessed with funding products
-          </p>
-          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.3 }}>
-            forgets the only thing that truly moves a life:
-          </p>
-          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.3, fontWeight: 'bold' }}>
-            the human at the center of it.
-          </p>
-          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.3, marginTop: '0.3rem' }}>
-            Liberation Capital flips the script:
-          </p>
-          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.3, fontWeight: 'bold' }}>
-            You design & gamify → we fund.
+          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.4 }}>
+            identify all potential trajectories
           </p>
         </div>
 
-        {/* Column 2 - The Institution Behind the Ascent */}
+        {/* Column 2 - Me-Game */}
         <div style={{
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: '0.3rem',
+          gap: '0.5rem',
           padding: '1.5rem',
           textAlign: 'center',
           opacity: visibleColumns >= 2 ? 1 : 0,
           transform: visibleColumns >= 2 ? 'translateX(0)' : 'translateX(100px)',
           transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
         }}>
-          <h3 style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-            The Institution Behind the Ascent
+          <h3 style={{ margin: 0, color: '#00e87b', fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+            Me-Game
           </h3>
-          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.3 }}>
-            In a world where money rewards performance,
-          </p>
-          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.3 }}>
-            we reward <span style={{ fontStyle: 'italic' }}>becoming</span>.
-          </p>
-          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.3, marginTop: '0.3rem' }}>
-            Not bandaids.
-          </p>
-          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.3 }}>
-            Blueprints.
-          </p>
-          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.3, marginTop: '0.3rem' }}>
-            This is capital for people willing to rebuild their identity
-          </p>
-          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.3 }}>
-            with intent, discipline, and clarity.
+          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.4 }}>
+            choose the identity you will embody
           </p>
         </div>
 
-        {/* Column 3 - Why We Exist */}
+        {/* Column 3 - End-Game */}
         <div style={{
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: '0.3rem',
+          gap: '0.5rem',
           padding: '1.5rem',
           textAlign: 'center',
           opacity: visibleColumns >= 3 ? 1 : 0,
           transform: visibleColumns >= 3 ? 'translateX(0)' : 'translateX(100px)',
           transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s'
         }}>
-          <h3 style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-            Why We Exist (Traction ≠ Coherence)
+          <h3 style={{ margin: 0, color: '#00e87b', fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+            End-Game
           </h3>
-          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.3 }}>
-            Anyone can fake traction.
-          </p>
-          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.3, fontWeight: 'bold' }}>
-            No one can fake coherence.
-          </p>
-          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.3, marginTop: '0.3rem' }}>
-            We don't care about pitch decks.
-          </p>
-          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.3 }}>
-            We care whether your future self is <span style={{ fontStyle: 'italic' }}>executable</span>.
+          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.4 }}>
+            consolidate your extremes
           </p>
         </div>
+          </div>
+
+          {/* Closing Statements */}
+          <div style={{
+            marginTop: '2rem',
+            textAlign: 'center',
+            maxWidth: '1200px',
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.8rem',
+            alignItems: 'center'
+          }}>
+            <p style={{
+              margin: 0,
+              color: '#ffffff',
+              fontSize: 'clamp(1rem, 2vw, 1.3rem)',
+              lineHeight: 1.5
+            }}>
+              It's brutal honesty married to creative possibility
+            </p>
+            <p style={{
+              margin: 0,
+              color: '#ffffff',
+              fontSize: 'clamp(1rem, 2vw, 1.3rem)',
+              lineHeight: 1.5
+            }}>
+              A mirror sharp enough to cut the illusions you've been living in.
+            </p>
           </div>
 
           {/* Progress Indicator */}

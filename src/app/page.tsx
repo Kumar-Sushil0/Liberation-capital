@@ -25,6 +25,16 @@ import { WarningSlide } from '../components/slides/WarningSlide';
 import { FundOriginSlide } from '../components/slides/FundOriginSlide';
 import { RebuildIdentitiesSlide } from '../components/slides/RebuildIdentitiesSlide';
 import { FundCoherenceSlide } from '../components/slides/FundCoherenceSlide';
+import { LifeiDesignAcceleratorSlide } from '../components/slides/LifeiDesignAcceleratorSlide';
+import { CoreiDesignSlide } from '../components/slides/CoreiDesignSlide';
+import { PlayiDesignSlide } from '../components/slides/PlayiDesignSlide';
+import { EpicentreSlide } from '../components/slides/EpicentreSlide';
+import { SilenceTestSlide } from '../components/slides/SilenceTestSlide';
+import { DisciplineTestSlide } from '../components/slides/DisciplineTestSlide';
+import { DistractionTestSlide } from '../components/slides/DistractionTestSlide';
+import { LiberationDaySlide } from '../components/slides/LiberationDaySlide';
+import { FundCrucibleSlide } from '../components/slides/FundCrucibleSlide';
+import { FundBlueprintSlide } from '../components/slides/FundBlueprintSlide';
 import { ProgressIndicatorStandalone } from '../components/ProgressIndicatorStandalone';
 import { FixedHeader } from '../components/fixedheader/FixedHeader';
 import { VibeCheckButton } from '../components/VibecheckButton/VibeCheckButton';
@@ -160,6 +170,26 @@ export default function Home() {
         return <RebuildIdentitiesSlide />;
       case "fundCoherence":
         return <FundCoherenceSlide />;
+      case "lifeiDesignAccelerator":
+        return <LifeiDesignAcceleratorSlide />;
+      case "coreiDesign":
+        return <CoreiDesignSlide />;
+      case "playiDesign":
+        return <PlayiDesignSlide />;
+      case "epicentre":
+        return <EpicentreSlide />;
+      case "silenceTest":
+        return <SilenceTestSlide />;
+      case "disciplineTest":
+        return <DisciplineTestSlide />;
+      case "distractionTest":
+        return <DistractionTestSlide />;
+      case "liberationDay":
+        return <LiberationDaySlide />;
+      case "fundCrucible":
+        return <FundCrucibleSlide />;
+      case "fundBlueprint":
+        return <FundBlueprintSlide />;
       case "subscroll1":
         return (
           <SubscrollSlide1

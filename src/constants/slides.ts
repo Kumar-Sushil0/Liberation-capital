@@ -14,7 +14,17 @@ const desktopSections: SlideConfig[] = [
   { type: "rebuildIdentities", className: "slideRebuildIdentities" },
   { type: "fundCoherence", className: "slideFundCoherence" },
   { type: "slide03", className: "slide03" },
+  { type: "lifeiDesignAccelerator", className: "slideLifeiDesignAccelerator" },
   { type: "subscroll1", className: "slide02" },
+  { type: "coreiDesign", className: "slideCoreiDesign" },
+  { type: "playiDesign", className: "slidePlayiDesign" },
+  { type: "epicentre", className: "slideEpicentre" },
+  { type: "silenceTest", className: "slideSilenceTest" },
+  { type: "disciplineTest", className: "slideDisciplineTest" },
+  { type: "distractionTest", className: "slideDistractionTest" },
+  { type: "liberationDay", className: "slideLiberationDay" },
+  { type: "fundCrucible", className: "slideFundCrucible" },
+  { type: "fundBlueprint", className: "slideFundBlueprint" },
   { type: "slide04", className: "slide04" },
   { type: "slide05", className: "slide05" },
   { type: "slide08", className: "slide08" },
@@ -37,7 +47,7 @@ export const getSections = (isMobile: boolean): SlideConfig[] => {
 };
 
 // Desktop subscroll sections - indices that pause main scroll
-const DESKTOP_SUBSCROLL_SECTIONS: number[] = [6, 7, 8, 9, 10, 11, 18, 19, 20, 21]; // Slide 6 (Slide03), Slide 7 (SubscrollSlide1), Slide 8 (Slide04), Slide 9 (Slide05), Slide 10 (Slide08), Slide 11 (Slide12), Slide 18 (Slide19), Slide 19 (Slide20), Slide 20 (Slide23), and Slide 21 (Slide26) have subscroll
+const DESKTOP_SUBSCROLL_SECTIONS: number[] = [6, 8, 18, 19, 20, 21, 28, 29, 30, 31]; // Slide 6 (Slide03), Slide 8 (SubscrollSlide1), Slide 18 (Slide04), Slide 19 (Slide05), Slide 20 (Slide08), Slide 21 (Slide12), Slide 28 (Slide19), Slide 29 (Slide20), Slide 30 (Slide23), and Slide 31 (Slide26) have subscroll
 
 // Mobile subscroll sections
 const MOBILE_SUBSCROLL_SECTIONS: number[] = [];
@@ -50,15 +60,15 @@ export const getSubscrollSections = (isMobile: boolean): number[] => {
 // Desktop subscroll steps
 const DESKTOP_SUBSCROLL_STEPS: Record<number, number> = {
   6: 4, // Slide03 has 4 steps (initial + 3 card reveals)
-  7: 3, // SubscrollSlide1 has 3 columns to reveal
-  8: 4, // Slide04 has 4 steps (initial + 3 card reveals)
-  9: 3, // Slide05 has 3 columns to reveal
-  10: 3, // Slide08 has 3 columns to reveal
-  11: 4, // Slide12 has 4 steps (initial + 3 card reveals)
-  18: 3, // Slide19 has 3 columns to reveal
-  19: 3, // Slide20 has 3 columns to reveal
-  20: 3, // Slide23 has 3 columns to reveal
-  21: 3, // Slide26 has 3 columns to reveal
+  8: 3, // SubscrollSlide1 has 3 columns to reveal
+  18: 4, // Slide04 has 4 steps (initial + 3 card reveals)
+  19: 3, // Slide05 has 3 columns to reveal
+  20: 3, // Slide08 has 3 columns to reveal
+  21: 4, // Slide12 has 4 steps (initial + 3 card reveals)
+  28: 3, // Slide19 has 3 columns to reveal
+  29: 3, // Slide20 has 3 columns to reveal
+  30: 3, // Slide23 has 3 columns to reveal
+  31: 3, // Slide26 has 3 columns to reveal
 };
 
 // Mobile subscroll steps
@@ -79,6 +89,14 @@ export const slideWords = [
   "COHERENCE",
   "PILLARS",
   "TRIBES",
+  "ENGINE",
+  "EMOTION",
+  "DISCIPLINE",
+  "CRUCIBLE",
+  "STILLNESS",
+  "INTEGRITY",
+  "WITHDRAWAL",
+  "RITE",
   "REVEAL",
   "DESIGN",
   "ARCHITECT",
@@ -113,6 +131,14 @@ export const dummyTexts = [
   "Identity is biometric",
   "Design. Discipline. Coherence.",
   "Players and Patrons",
+  "Architect your identity",
+  "Emotional operating system",
+  "Daily coherence proof",
+  "Monastic pressure test",
+  "Clarity through silence",
+  "Behavior without applause",
+  "Identity vs impulses",
+  "Ceremony over pitch",
   "Truth exposed",
   "Architecture begins",
   "Blueprint creation",
