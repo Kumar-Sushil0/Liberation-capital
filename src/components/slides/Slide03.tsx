@@ -36,7 +36,7 @@ export const Slide03 = ({
   useEffect(() => {
     if (!isInitialized) return;
     
-    if (currentSection !== 7) return;
+    if (currentSection !== 6) return;
 
     setSkipTransitions(true);
 
@@ -66,7 +66,7 @@ export const Slide03 = ({
     const prevSection = prevSectionRef.current;
     prevSectionRef.current = currentSection;
 
-    if (currentSection === 7 && prevSection !== 7 && isScrollEnabled) {
+    if (currentSection === 6 && prevSection !== 6 && isScrollEnabled) {
       setSkipTransitions(true);
       setVisibleColumns(0);
 

@@ -13,8 +13,8 @@ const desktopSections: SlideConfig[] = [
   { type: "fundOrigin", className: "slideFundOrigin" },
   { type: "rebuildIdentities", className: "slideRebuildIdentities" },
   { type: "fundCoherence", className: "slideFundCoherence" },
-  { type: "subscroll1", className: "slide02" },
   { type: "slide03", className: "slide03" },
+  { type: "subscroll1", className: "slide02" },
   { type: "slide04", className: "slide04" },
   { type: "slide05", className: "slide05" },
   { type: "slide08", className: "slide08" },
@@ -37,7 +37,7 @@ export const getSections = (isMobile: boolean): SlideConfig[] => {
 };
 
 // Desktop subscroll sections - indices that pause main scroll
-const DESKTOP_SUBSCROLL_SECTIONS: number[] = [6, 7, 8, 9, 10, 11, 18, 19, 20, 21]; // Slide 6 (SubscrollSlide1), Slide 7 (Slide03), Slide 8 (Slide04), Slide 9 (Slide05), Slide 10 (Slide08), Slide 11 (Slide12), Slide 18 (Slide19), Slide 19 (Slide20), Slide 20 (Slide23), and Slide 21 (Slide26) have subscroll
+const DESKTOP_SUBSCROLL_SECTIONS: number[] = [6, 7, 8, 9, 10, 11, 18, 19, 20, 21]; // Slide 6 (Slide03), Slide 7 (SubscrollSlide1), Slide 8 (Slide04), Slide 9 (Slide05), Slide 10 (Slide08), Slide 11 (Slide12), Slide 18 (Slide19), Slide 19 (Slide20), Slide 20 (Slide23), and Slide 21 (Slide26) have subscroll
 
 // Mobile subscroll sections
 const MOBILE_SUBSCROLL_SECTIONS: number[] = [];
@@ -49,8 +49,8 @@ export const getSubscrollSections = (isMobile: boolean): number[] => {
 
 // Desktop subscroll steps
 const DESKTOP_SUBSCROLL_STEPS: Record<number, number> = {
-  6: 3, // SubscrollSlide1 has 3 columns to reveal
-  7: 4, // Slide03 has 4 steps (initial + 3 card reveals)
+  6: 4, // Slide03 has 4 steps (initial + 3 card reveals)
+  7: 3, // SubscrollSlide1 has 3 columns to reveal
   8: 4, // Slide04 has 4 steps (initial + 3 card reveals)
   9: 3, // Slide05 has 3 columns to reveal
   10: 3, // Slide08 has 3 columns to reveal

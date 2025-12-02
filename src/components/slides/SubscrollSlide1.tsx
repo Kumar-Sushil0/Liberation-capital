@@ -36,7 +36,7 @@ export const SubscrollSlide1 = ({
   useEffect(() => {
     if (!isInitialized) return;
     
-    if (currentSection !== 6) return;
+    if (currentSection !== 7) return;
 
     setSkipTransitions(true);
 
@@ -66,7 +66,7 @@ export const SubscrollSlide1 = ({
     const prevSection = prevSectionRef.current;
     prevSectionRef.current = currentSection;
 
-    if (currentSection === 6 && prevSection !== 6 && isScrollEnabled) {
+    if (currentSection === 7 && prevSection !== 7 && isScrollEnabled) {
       setSkipTransitions(true);
       setVisibleColumns(0);
 
