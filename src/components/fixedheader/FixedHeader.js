@@ -145,15 +145,6 @@ export const FixedHeader = ({ currentSection = 0, isMuted = false }) => {
         </div>
       </div>
 
-      {/* Mouse Scroll Animation - Top Center */}
-      <StyledScrollIconsContainer $isVisible={showScrollAnimation}>
-        <div className="scroll-icon ex-3">
-          <span className="wheel"></span>
-          <span className="arrow up"></span>
-          <span className="arrow down"></span>
-        </div>
-      </StyledScrollIconsContainer>
-
       {/* Fixed Hamburger Menu at Top Right */}
       <div className={styles.fixedSmallCubeGrid}>
         <StyledHamburgerWrapper ref={cubeRef}>
@@ -185,6 +176,15 @@ export const FixedHeader = ({ currentSection = 0, isMuted = false }) => {
             </div>
           </StyledMenuWrapper>
         )}
+
+        {/* Mouse Scroll Animation - Below Navigation */}
+        <StyledScrollIconsContainer $isVisible={showScrollAnimation}>
+          <div className="scroll-icon ex-3">
+            <span className="wheel"></span>
+            <span className="arrow up"></span>
+            <span className="arrow down"></span>
+          </div>
+        </StyledScrollIconsContainer>
       </div>
 
       {/* Mobile Sidebar - Slides in from right */}
@@ -439,10 +439,11 @@ const StyledMobileSidebar = styled.div`
 
 
 const StyledScrollIconsContainer = styled.div`
-  position: fixed;
-  top: 20px;
+  position: absolute;
+  top: 100%;
   left: 50%;
-  transform: translateX(-50%) scale(0.8);
+  transform: translateX(-50%) scale(0.64);
+  margin-top: 12px;
   display: flex;
   z-index: 1001;
   opacity: ${props => props.$isVisible ? 1 : 0};
