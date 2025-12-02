@@ -72,86 +72,66 @@ export const getSubscrollSteps = (isMobile: boolean): Record<number, number> => 
 
 // Slide words for each section (displayed in header)
 export const slideWords = [
-  "LIBERATION",
-  "CAPITAL",
-  "WARNING",
-  "ORIGIN",
-  "REBUILD",
-  "COHERENCE",
-  "PILLARS",
-  "TRIBES",
-  "ENGINE",
-  "EMOTION",
-  "DISCIPLINE",
-  "CRUCIBLE",
-  "STILLNESS",
-  "INTEGRITY",
-  "WITHDRAWAL",
-  "RITE",
-  "REVEAL",
-  "DESIGN",
-  "ARCHITECT",
-  "WITNESS",
-  "DEPLOY",
-  "EVOLVE",
-  "TRANSFORM",
-  "ASCEND",
-  "MANIFEST",
-  "INTEGRATE",
-  "ACTIVATE",
-  "EMBODY",
-  "REALIZE",
-  "ILLUMINATE",
-  "TRANSCEND",
-  "LIBERATE",
-  "EMERGE",
-  "BECOME",
-  "IDENTITY",
-  "PLAYERS",
-  "PATRONS",
-  "SUMMARY"
+  "LIBERATION",      // 0: hero
+  "CAPITAL",         // 1: content1
+  "WARNING",         // 2: warning
+  "VIDEO",           // 3: video
+  "FUND ORIGIN",     // 4: fundOrigin
+  "FUND ASCENT",     // 5: rebuildIdentities
+  "FUND COHERENCE",  // 6: fundCoherence
+  "FUND TRIBES",     // 7: slide03
+  "FUND ENGINE",     // 8: lifeiDesignAccelerator
+  "FUND AWARENESS",  // 9: subscroll1
+  "FUND EMOTION",    // 10: coreiDesign
+  "FUND DISCIPLINE", // 11: playiDesign
+  "FUND CRUCIBLE",   // 12: epicentre
+  "FUND STILLNESS",  // 13: silenceTest
+  "FUND INTEGRITY",  // 14: disciplineTest
+  "FUND WITHDRAWAL", // 15: distractionTest
+  "FUND RITE",       // 16: liberationDay
+  "FUND RECEIPTS",   // 17: fundCrucible
+  "FUND BLUEPRINT",  // 18: fundBlueprint
+  "FUND ASK",        // 19: fundAsk
+  "FUND ACTIVATION", // 20: fundActivation
+  "FUND SUPPORT",    // 21: fundSupport
+  "FUND ENVIRONMENT",// 22: fundEnvironment
+  "FUND CAPITAL",    // 23: fundCapital
+  "FUND SPIRAL",     // 24: fundSpiral
+  "FUND BECOMING",   // 25: fundBecoming
+  "FUND EVIDENCE",   // 26: fundEvidence
+  "FUND CONTINUUM"   // 27: fundContinuum
 ];
 
 // Dummy texts for each section (displayed in header)
 export const dummyTexts = [
-  "Want a new life?",
-  "Fund humans, not startups",
-  "Ready to think?",
-  "Where the game begins",
-  "We fund becoming",
-  "Identity is biometric",
-  "Design. Discipline. Coherence.",
-  "Players and Patrons",
-  "Architect your identity",
-  "Emotional operating system",
-  "Daily coherence proof",
-  "Monastic pressure test",
-  "Clarity through silence",
-  "Behavior without applause",
-  "Identity vs impulses",
-  "Ceremony over pitch",
-  "Truth exposed",
-  "Architecture begins",
-  "Blueprint creation",
-  "Evolution unveiled",
-  "Capital ignited",
-  "Continuous growth",
-  "Metamorphosis",
-  "Rising higher",
-  "Dreams realized",
-  "Systems aligned",
-  "Power unleashed",
-  "Living truth",
-  "Vision actualized",
-  "Light within",
-  "Beyond limits",
-  "Freedom achieved",
-  "New beginning",
-  "Complete transformation",
-  "Identity capital",
-  "For redesigning humans",
-  "For investors done with hype",
-  "Positioning summary"
+  "Want a new life?",                    // 0: hero
+  "Fund humans, not startups",           // 1: content1
+  "Ready to think?",                     // 2: warning
+  "Watch and understand",                // 3: video
+  "World Funds Products, We Fund Players",  // 4: fundOrigin
+  "Institution Behind Becoming",            // 5: rebuildIdentities
+  "Coherence Over Traction",                // 6: fundCoherence
+  "Players & Patrons",                      // 7: slide03
+  "LIFEiDESIGN Accelerator",             // 8: lifeiDesignAccelerator
+  "GAMEiDESIGN",                         // 9: subscroll1
+  "COREiDESIGN",                         // 10: coreiDesign
+  "PLAYiDESIGN",                         // 11: playiDesign
+  "The Incubator of Identity",           // 12: epicentre
+  "The Silence Test",                    // 13: silenceTest
+  "The Discipline Test",                 // 14: disciplineTest
+  "The Distraction Test",                // 15: distractionTest
+  "Liberation Day (Ceremony > Pitch)",   // 16: liberationDay
+  "Discipline Logs",                     // 17: fundCrucible
+  "Life Architecture Reveal",            // 18: fundBlueprint
+  "The Liberation Number",               // 19: fundAsk
+  "Funding as Scaffolding",              // 20: fundActivation
+  "Funding-In-Kind (FIK)",               // 21: fundSupport
+  "EPiCENTRE Residency",                 // 22: fundEnvironment
+  "Up to $100,000 Deployment",           // 23: fundCapital
+  "Investors Become Players",            // 24: fundSpiral
+  "Players Become Funded Humans",        // 25: fundBecoming
+  "Humans Become Case Studies",          // 26: fundEvidence
+  "Case Studies Become Culture"          // 27: fundContinuum
 ];
 
 // Export default for backward compatibility (desktop)
