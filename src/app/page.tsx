@@ -6,7 +6,7 @@ import { getSections } from '../constants/slides';
 import { useScrollManager } from '../hooks/useScrollManager';
 import { 
   HeroSlide, 
-  ContentSlide1, 
+  ContentSlide1,
   SubscrollSlide1,
   Slide03,
   Slide04,
@@ -21,6 +21,10 @@ import {
   PoemSlide,
   OperatingSystemSlide
 } from '../components/slides';
+import { WarningSlide } from '../components/slides/WarningSlide';
+import { FundOriginSlide } from '../components/slides/FundOriginSlide';
+import { RebuildIdentitiesSlide } from '../components/slides/RebuildIdentitiesSlide';
+import { FundCoherenceSlide } from '../components/slides/FundCoherenceSlide';
 import { ProgressIndicatorStandalone } from '../components/ProgressIndicatorStandalone';
 import { FixedHeader } from '../components/fixedheader/FixedHeader';
 import { VibeCheckButton } from '../components/VibecheckButton/VibeCheckButton';
@@ -148,6 +152,14 @@ export default function Home() {
         return <HeroSlide />;
       case "content1":
         return <ContentSlide1 />;
+      case "warning":
+        return <WarningSlide />;
+      case "fundOrigin":
+        return <FundOriginSlide />;
+      case "rebuildIdentities":
+        return <RebuildIdentitiesSlide />;
+      case "fundCoherence":
+        return <FundCoherenceSlide />;
       case "subscroll1":
         return (
           <SubscrollSlide1

@@ -9,6 +9,10 @@ export interface SlideConfig {
 const desktopSections: SlideConfig[] = [
   { type: "hero", className: "slide00" },
   { type: "content1", className: "slide01" },
+  { type: "warning", className: "slideWarning" },
+  { type: "fundOrigin", className: "slideFundOrigin" },
+  { type: "rebuildIdentities", className: "slideRebuildIdentities" },
+  { type: "fundCoherence", className: "slideFundCoherence" },
   { type: "subscroll1", className: "slide02" },
   { type: "slide03", className: "slide03" },
   { type: "slide04", className: "slide04" },
@@ -33,7 +37,7 @@ export const getSections = (isMobile: boolean): SlideConfig[] => {
 };
 
 // Desktop subscroll sections - indices that pause main scroll
-const DESKTOP_SUBSCROLL_SECTIONS: number[] = [2, 3, 4, 5, 6, 7, 14, 15, 16, 17]; // Slide 2 (SubscrollSlide1), Slide 3 (Slide03), Slide 4 (Slide04), Slide 5 (Slide05), Slide 6 (Slide08), Slide 7 (Slide12), Slide 14 (Slide19), Slide 15 (Slide20), Slide 16 (Slide23), and Slide 17 (Slide26) have subscroll
+const DESKTOP_SUBSCROLL_SECTIONS: number[] = [6, 7, 8, 9, 10, 11, 18, 19, 20, 21]; // Slide 6 (SubscrollSlide1), Slide 7 (Slide03), Slide 8 (Slide04), Slide 9 (Slide05), Slide 10 (Slide08), Slide 11 (Slide12), Slide 18 (Slide19), Slide 19 (Slide20), Slide 20 (Slide23), and Slide 21 (Slide26) have subscroll
 
 // Mobile subscroll sections
 const MOBILE_SUBSCROLL_SECTIONS: number[] = [];
@@ -45,16 +49,16 @@ export const getSubscrollSections = (isMobile: boolean): number[] => {
 
 // Desktop subscroll steps
 const DESKTOP_SUBSCROLL_STEPS: Record<number, number> = {
-  2: 3, // SubscrollSlide1 has 3 columns to reveal
-  3: 4, // Slide03 has 4 steps (initial + 3 card reveals)
-  4: 4, // Slide04 has 4 steps (initial + 3 card reveals)
-  5: 3, // Slide05 has 3 columns to reveal
-  6: 3, // Slide08 has 3 columns to reveal
-  7: 4, // Slide12 has 4 steps (initial + 3 card reveals)
-  14: 3, // Slide19 has 3 columns to reveal
-  15: 3, // Slide20 has 3 columns to reveal
-  16: 3, // Slide23 has 3 columns to reveal
-  17: 3, // Slide26 has 3 columns to reveal
+  6: 3, // SubscrollSlide1 has 3 columns to reveal
+  7: 4, // Slide03 has 4 steps (initial + 3 card reveals)
+  8: 4, // Slide04 has 4 steps (initial + 3 card reveals)
+  9: 3, // Slide05 has 3 columns to reveal
+  10: 3, // Slide08 has 3 columns to reveal
+  11: 4, // Slide12 has 4 steps (initial + 3 card reveals)
+  18: 3, // Slide19 has 3 columns to reveal
+  19: 3, // Slide20 has 3 columns to reveal
+  20: 3, // Slide23 has 3 columns to reveal
+  21: 3, // Slide26 has 3 columns to reveal
 };
 
 // Mobile subscroll steps
@@ -65,10 +69,14 @@ export const getSubscrollSteps = (isMobile: boolean): Record<number, number> => 
   return isMobile ? MOBILE_SUBSCROLL_STEPS : DESKTOP_SUBSCROLL_STEPS;
 };
 
-// Slide words for each section (displayed in header) - 24 slides
+// Slide words for each section (displayed in header)
 export const slideWords = [
   "LIBERATION",
   "CAPITAL",
+  "WARNING",
+  "ORIGIN",
+  "REBUILD",
+  "COHERENCE",
   "PILLARS",
   "TRIBES",
   "REVEAL",
@@ -95,10 +103,14 @@ export const slideWords = [
   "SUMMARY"
 ];
 
-// Dummy texts for each section (displayed in header) - 24 slides
+// Dummy texts for each section (displayed in header)
 export const dummyTexts = [
   "Want a new life?",
   "Fund humans, not startups",
+  "Ready to think?",
+  "Where the game begins",
+  "We fund becoming",
+  "Identity is biometric",
   "Design. Discipline. Coherence.",
   "Players and Patrons",
   "Truth exposed",
