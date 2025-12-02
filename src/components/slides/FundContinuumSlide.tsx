@@ -1,6 +1,6 @@
 "use client";
 
-export const FundAskSlide = () => {
+export const FundContinuumSlide = () => {
   const textStyle = {
     fontSize: "clamp(0.9rem, 2vw, 1.2rem)",
     lineHeight: 1.5,
@@ -33,7 +33,7 @@ export const FundAskSlide = () => {
             fontSize: "clamp(1.2rem, 2.5vw, 1.8rem)",
           }}
         >
-          Fund Ask — The Liberation Number
+          ▼ Fund Continuum — Case Studies Become Culture
         </p>
 
         <p
@@ -46,7 +46,7 @@ export const FundAskSlide = () => {
             borderLeft: "3px solid #444",
           }}
         >
-          Your future self deserves clean math and honest fuel.
+          Culture attracts capital. Capital fuels evolution. The loop expands.
         </p>
 
         <p
@@ -56,17 +56,8 @@ export const FundAskSlide = () => {
             marginBottom: "1rem",
           }}
         >
-          Forget valuations. Forget multipliers. Forget financial theatre.
-        </p>
-
-        <p
-          style={{
-            ...textStyle,
-            color: "#ffffff",
-            marginBottom: "2rem",
-          }}
-        >
-          The Liberation Number is existential budgeting:
+          When evolved humans return to the world, they rewrite how others
+          perceive:
         </p>
 
         <ul
@@ -83,7 +74,7 @@ export const FundAskSlide = () => {
               marginBottom: "0.5rem",
             }}
           >
-            What does your future self need?
+            discipline
           </li>
           <li
             style={{
@@ -92,7 +83,7 @@ export const FundAskSlide = () => {
               marginBottom: "0.5rem",
             }}
           >
-            What capital activates your becoming?
+            identity
           </li>
           <li
             style={{
@@ -101,7 +92,7 @@ export const FundAskSlide = () => {
               marginBottom: "0.5rem",
             }}
           >
-            What resources stabilize your next identity?
+            wealth
           </li>
           <li
             style={{
@@ -110,7 +101,34 @@ export const FundAskSlide = () => {
               marginBottom: "0.5rem",
             }}
           >
-            What is the cost of the life you designed?
+            work
+          </li>
+          <li
+            style={{
+              ...textStyle,
+              color: "#ffffff",
+              marginBottom: "0.5rem",
+            }}
+          >
+            purpose
+          </li>
+          <li
+            style={{
+              ...textStyle,
+              color: "#ffffff",
+              marginBottom: "0.5rem",
+            }}
+          >
+            transformation
+          </li>
+          <li
+            style={{
+              ...textStyle,
+              color: "#ffffff",
+              marginBottom: "0.5rem",
+            }}
+          >
+            ambition
           </li>
         </ul>
 
@@ -121,7 +139,8 @@ export const FundAskSlide = () => {
             marginBottom: "1rem",
           }}
         >
-          It's not an ask. It's alignment.
+          That culture attracts the next wave of Patrons. Patrons bring
+          capital.
         </p>
 
         <p
@@ -131,8 +150,18 @@ export const FundAskSlide = () => {
             marginBottom: "2rem",
           }}
         >
-          Identity is the product. Becoming is the traction. Coherence is the
-          collateral.
+          Capital funds Players. Players become myth. Myth becomes culture. And
+          the continuum continues.
+        </p>
+
+        <p
+          style={{
+            ...textStyle,
+            color: "#ffffff",
+            marginBottom: "2rem",
+          }}
+        >
+          This isn't a fund. This is an identity economy.
         </p>
       </div>
     </div>

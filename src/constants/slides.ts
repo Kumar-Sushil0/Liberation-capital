@@ -25,6 +25,15 @@ const desktopSections: SlideConfig[] = [
   { type: "liberationDay", className: "slideLiberationDay" },
   { type: "fundCrucible", className: "slideFundCrucible" },
   { type: "fundBlueprint", className: "slideFundBlueprint" },
+  { type: "fundAsk", className: "slideFundAsk" },
+  { type: "fundActivation", className: "slideFundActivation" },
+  { type: "fundSupport", className: "slideFundSupport" },
+  { type: "fundEnvironment", className: "slideFundEnvironment" },
+  { type: "fundCapital", className: "slideFundCapital" },
+  { type: "fundSpiral", className: "slideFundSpiral" },
+  { type: "fundBecoming", className: "slideFundBecoming" },
+  { type: "fundEvidence", className: "slideFundEvidence" },
+  { type: "fundContinuum", className: "slideFundContinuum" },
   { type: "slide04", className: "slide04" },
   { type: "slide05", className: "slide05" },
   { type: "slide08", className: "slide08" },
@@ -47,7 +56,7 @@ export const getSections = (isMobile: boolean): SlideConfig[] => {
 };
 
 // Desktop subscroll sections - indices that pause main scroll
-const DESKTOP_SUBSCROLL_SECTIONS: number[] = [6, 8, 18, 19, 20, 21, 28, 29, 30, 31]; // Slide 6 (Slide03), Slide 8 (SubscrollSlide1), Slide 18 (Slide04), Slide 19 (Slide05), Slide 20 (Slide08), Slide 21 (Slide12), Slide 28 (Slide19), Slide 29 (Slide20), Slide 30 (Slide23), and Slide 31 (Slide26) have subscroll
+const DESKTOP_SUBSCROLL_SECTIONS: number[] = [6, 8, 27, 28, 29, 30, 37, 38, 39, 40]; // Slide 6 (Slide03), Slide 8 (SubscrollSlide1), Slide 27 (Slide04), Slide 28 (Slide05), Slide 29 (Slide08), Slide 30 (Slide12), Slide 37 (Slide19), Slide 38 (Slide20), Slide 39 (Slide23), and Slide 40 (Slide26) have subscroll
 
 // Mobile subscroll sections
 const MOBILE_SUBSCROLL_SECTIONS: number[] = [];
@@ -61,14 +70,14 @@ export const getSubscrollSections = (isMobile: boolean): number[] => {
 const DESKTOP_SUBSCROLL_STEPS: Record<number, number> = {
   6: 4, // Slide03 has 4 steps (initial + 3 card reveals)
   8: 3, // SubscrollSlide1 has 3 columns to reveal
-  18: 4, // Slide04 has 4 steps (initial + 3 card reveals)
-  19: 3, // Slide05 has 3 columns to reveal
-  20: 3, // Slide08 has 3 columns to reveal
-  21: 4, // Slide12 has 4 steps (initial + 3 card reveals)
-  28: 3, // Slide19 has 3 columns to reveal
-  29: 3, // Slide20 has 3 columns to reveal
-  30: 3, // Slide23 has 3 columns to reveal
-  31: 3, // Slide26 has 3 columns to reveal
+  27: 4, // Slide04 has 4 steps (initial + 3 card reveals)
+  28: 3, // Slide05 has 3 columns to reveal
+  29: 3, // Slide08 has 3 columns to reveal
+  30: 4, // Slide12 has 4 steps (initial + 3 card reveals)
+  37: 3, // Slide19 has 3 columns to reveal
+  38: 3, // Slide20 has 3 columns to reveal
+  39: 3, // Slide23 has 3 columns to reveal
+  40: 3, // Slide26 has 3 columns to reveal
 };
 
 // Mobile subscroll steps

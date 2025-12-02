@@ -1,6 +1,6 @@
 "use client";
 
-export const FundAskSlide = () => {
+export const FundEvidenceSlide = () => {
   const textStyle = {
     fontSize: "clamp(0.9rem, 2vw, 1.2rem)",
     lineHeight: 1.5,
@@ -33,7 +33,7 @@ export const FundAskSlide = () => {
             fontSize: "clamp(1.2rem, 2.5vw, 1.8rem)",
           }}
         >
-          Fund Ask — The Liberation Number
+          ▼ Fund Evidence — Humans Become Case Studies
         </p>
 
         <p
@@ -46,7 +46,7 @@ export const FundAskSlide = () => {
             borderLeft: "3px solid #444",
           }}
         >
-          Your future self deserves clean math and honest fuel.
+          Every evolved human becomes a cultural artifact.
         </p>
 
         <p
@@ -56,63 +56,8 @@ export const FundAskSlide = () => {
             marginBottom: "1rem",
           }}
         >
-          Forget valuations. Forget multipliers. Forget financial theatre.
+          Not testimonials. Not reviews. Not highlight reels.
         </p>
-
-        <p
-          style={{
-            ...textStyle,
-            color: "#ffffff",
-            marginBottom: "2rem",
-          }}
-        >
-          The Liberation Number is existential budgeting:
-        </p>
-
-        <ul
-          style={{
-            listStyleType: "disc",
-            paddingLeft: "2rem",
-            marginBottom: "2rem",
-          }}
-        >
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            What does your future self need?
-          </li>
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            What capital activates your becoming?
-          </li>
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            What resources stabilize your next identity?
-          </li>
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            What is the cost of the life you designed?
-          </li>
-        </ul>
 
         <p
           style={{
@@ -121,7 +66,27 @@ export const FundAskSlide = () => {
             marginBottom: "1rem",
           }}
         >
-          It's not an ask. It's alignment.
+          But <strong>receipts of evolution</strong> documented transformations
+        </p>
+
+        <p
+          style={{
+            ...textStyle,
+            color: "#ffffff",
+            marginBottom: "1rem",
+          }}
+        >
+          That become the mythology of the ecosystem.
+        </p>
+
+        <p
+          style={{
+            ...textStyle,
+            color: "#ffffff",
+            marginBottom: "1rem",
+          }}
+        >
+          These case studies are not marketing. They're culture-shifting signals
         </p>
 
         <p
@@ -131,8 +96,18 @@ export const FundAskSlide = () => {
             marginBottom: "2rem",
           }}
         >
-          Identity is the product. Becoming is the traction. Coherence is the
-          collateral.
+          of what becomes possible when a human is funded to redesign their
+          life.
+        </p>
+
+        <p
+          style={{
+            ...textStyle,
+            color: "#ffffff",
+            marginBottom: "2rem",
+          }}
+        >
+          Every transformed Player is an artifact of truth.
         </p>
       </div>
     </div>

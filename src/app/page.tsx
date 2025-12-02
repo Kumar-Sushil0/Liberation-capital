@@ -35,6 +35,15 @@ import { DistractionTestSlide } from '../components/slides/DistractionTestSlide'
 import { LiberationDaySlide } from '../components/slides/LiberationDaySlide';
 import { FundCrucibleSlide } from '../components/slides/FundCrucibleSlide';
 import { FundBlueprintSlide } from '../components/slides/FundBlueprintSlide';
+import { FundAskSlide } from '../components/slides/FundAskSlide';
+import { FundActivationSlide } from '../components/slides/FundActivationSlide';
+import { FundSupportSlide } from '../components/slides/FundSupportSlide';
+import { FundEnvironmentSlide } from '../components/slides/FundEnvironmentSlide';
+import { FundCapitalSlide } from '../components/slides/FundCapitalSlide';
+import { FundSpiralSlide } from '../components/slides/FundSpiralSlide';
+import { FundBecomingSlide } from '../components/slides/FundBecomingSlide';
+import { FundEvidenceSlide } from '../components/slides/FundEvidenceSlide';
+import { FundContinuumSlide } from '../components/slides/FundContinuumSlide';
 import { ProgressIndicatorStandalone } from '../components/ProgressIndicatorStandalone';
 import { FixedHeader } from '../components/fixedheader/FixedHeader';
 import { VibeCheckButton } from '../components/VibecheckButton/VibeCheckButton';
@@ -190,6 +199,24 @@ export default function Home() {
         return <FundCrucibleSlide />;
       case "fundBlueprint":
         return <FundBlueprintSlide />;
+      case "fundAsk":
+        return <FundAskSlide />;
+      case "fundActivation":
+        return <FundActivationSlide />;
+      case "fundSupport":
+        return <FundSupportSlide />;
+      case "fundEnvironment":
+        return <FundEnvironmentSlide />;
+      case "fundCapital":
+        return <FundCapitalSlide />;
+      case "fundSpiral":
+        return <FundSpiralSlide />;
+      case "fundBecoming":
+        return <FundBecomingSlide />;
+      case "fundEvidence":
+        return <FundEvidenceSlide />;
+      case "fundContinuum":
+        return <FundContinuumSlide />;
       case "subscroll1":
         return (
           <SubscrollSlide1

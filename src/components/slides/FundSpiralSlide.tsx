@@ -1,6 +1,6 @@
 "use client";
 
-export const FundAskSlide = () => {
+export const FundSpiralSlide = () => {
   const textStyle = {
     fontSize: "clamp(0.9rem, 2vw, 1.2rem)",
     lineHeight: 1.5,
@@ -33,7 +33,7 @@ export const FundAskSlide = () => {
             fontSize: "clamp(1.2rem, 2.5vw, 1.8rem)",
           }}
         >
-          Fund Ask — The Liberation Number
+          ▼ Fund Spiral — Investors Become Players
         </p>
 
         <p
@@ -46,7 +46,7 @@ export const FundAskSlide = () => {
             borderLeft: "3px solid #444",
           }}
         >
-          Your future self deserves clean math and honest fuel.
+          Meaning is the real liquidity — not money.
         </p>
 
         <p
@@ -56,63 +56,8 @@ export const FundAskSlide = () => {
             marginBottom: "1rem",
           }}
         >
-          Forget valuations. Forget multipliers. Forget financial theatre.
+          Patrons arrive to fund others. They leave realizing something deeper:
         </p>
-
-        <p
-          style={{
-            ...textStyle,
-            color: "#ffffff",
-            marginBottom: "2rem",
-          }}
-        >
-          The Liberation Number is existential budgeting:
-        </p>
-
-        <ul
-          style={{
-            listStyleType: "disc",
-            paddingLeft: "2rem",
-            marginBottom: "2rem",
-          }}
-        >
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            What does your future self need?
-          </li>
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            What capital activates your becoming?
-          </li>
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            What resources stabilize your next identity?
-          </li>
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            What is the cost of the life you designed?
-          </li>
-        </ul>
 
         <p
           style={{
@@ -121,7 +66,18 @@ export const FundAskSlide = () => {
             marginBottom: "1rem",
           }}
         >
-          It's not an ask. It's alignment.
+          They haven't designed themselves yet. Watching Players evolve reveals
+          their own coherence gaps.
+        </p>
+
+        <p
+          style={{
+            ...textStyle,
+            color: "#ffffff",
+            marginBottom: "1rem",
+          }}
+        >
+          Funding becomes a mirror. Support becomes an awakening.
         </p>
 
         <p
@@ -131,8 +87,8 @@ export const FundAskSlide = () => {
             marginBottom: "2rem",
           }}
         >
-          Identity is the product. Becoming is the traction. Coherence is the
-          collateral.
+          Meaning becomes the new currency. The Patron becomes the next Player.
+          The spiral turns.
         </p>
       </div>
     </div>

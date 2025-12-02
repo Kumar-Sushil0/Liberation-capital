@@ -1,6 +1,6 @@
 "use client";
 
-export const FundAskSlide = () => {
+export const FundSupportSlide = () => {
   const textStyle = {
     fontSize: "clamp(0.9rem, 2vw, 1.2rem)",
     lineHeight: 1.5,
@@ -33,7 +33,7 @@ export const FundAskSlide = () => {
             fontSize: "clamp(1.2rem, 2.5vw, 1.8rem)",
           }}
         >
-          Fund Ask — The Liberation Number
+          Fund Support — Funding-In-Kind (FIK)
         </p>
 
         <p
@@ -46,7 +46,7 @@ export const FundAskSlide = () => {
             borderLeft: "3px solid #444",
           }}
         >
-          Your future self deserves clean math and honest fuel.
+          Sometimes the most valuable funding is everything except cash.
         </p>
 
         <p
@@ -56,17 +56,18 @@ export const FundAskSlide = () => {
             marginBottom: "1rem",
           }}
         >
-          Forget valuations. Forget multipliers. Forget financial theatre.
+          Money is only one form of fuel. Often, it's not even the most
+          powerful.
         </p>
 
         <p
           style={{
             ...textStyle,
             color: "#ffffff",
-            marginBottom: "2rem",
+            marginBottom: "1rem",
           }}
         >
-          The Liberation Number is existential budgeting:
+          FIK includes:
         </p>
 
         <ul
@@ -83,7 +84,7 @@ export const FundAskSlide = () => {
               marginBottom: "0.5rem",
             }}
           >
-            What does your future self need?
+            mentorship
           </li>
           <li
             style={{
@@ -92,7 +93,7 @@ export const FundAskSlide = () => {
               marginBottom: "0.5rem",
             }}
           >
-            What capital activates your becoming?
+            clarity architecture
           </li>
           <li
             style={{
@@ -101,7 +102,7 @@ export const FundAskSlide = () => {
               marginBottom: "0.5rem",
             }}
           >
-            What resources stabilize your next identity?
+            emotional scaffolding
           </li>
           <li
             style={{
@@ -110,7 +111,52 @@ export const FundAskSlide = () => {
               marginBottom: "0.5rem",
             }}
           >
-            What is the cost of the life you designed?
+            discipline engineering
+          </li>
+          <li
+            style={{
+              ...textStyle,
+              color: "#ffffff",
+              marginBottom: "0.5rem",
+            }}
+          >
+            attention resources
+          </li>
+          <li
+            style={{
+              ...textStyle,
+              color: "#ffffff",
+              marginBottom: "0.5rem",
+            }}
+          >
+            creative tooling
+          </li>
+          <li
+            style={{
+              ...textStyle,
+              color: "#ffffff",
+              marginBottom: "0.5rem",
+            }}
+          >
+            behavioral systems
+          </li>
+          <li
+            style={{
+              ...textStyle,
+              color: "#ffffff",
+              marginBottom: "0.5rem",
+            }}
+          >
+            EPiCENTRE access
+          </li>
+          <li
+            style={{
+              ...textStyle,
+              color: "#ffffff",
+              marginBottom: "0.5rem",
+            }}
+          >
+            identity reinforcement
           </li>
         </ul>
 
@@ -121,7 +167,17 @@ export const FundAskSlide = () => {
             marginBottom: "1rem",
           }}
         >
-          It's not an ask. It's alignment.
+          For some players, FIK is more transformative than money.
+        </p>
+
+        <p
+          style={{
+            ...textStyle,
+            color: "#ffffff",
+            marginBottom: "1rem",
+          }}
+        >
+          For others, it's the bridge to receive money later.
         </p>
 
         <p
@@ -131,8 +187,8 @@ export const FundAskSlide = () => {
             marginBottom: "2rem",
           }}
         >
-          Identity is the product. Becoming is the traction. Coherence is the
-          collateral.
+          Either way: This is funding designed to evolve a human, not inflate a
+          valuation.
         </p>
       </div>
     </div>

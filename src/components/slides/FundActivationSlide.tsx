@@ -1,6 +1,6 @@
 "use client";
 
-export const FundAskSlide = () => {
+export const FundActivationSlide = () => {
   const textStyle = {
     fontSize: "clamp(0.9rem, 2vw, 1.2rem)",
     lineHeight: 1.5,
@@ -33,7 +33,7 @@ export const FundAskSlide = () => {
             fontSize: "clamp(1.2rem, 2.5vw, 1.8rem)",
           }}
         >
-          Fund Ask — The Liberation Number
+          Fund Activation — Funding as Scaffolding
         </p>
 
         <p
@@ -46,7 +46,7 @@ export const FundAskSlide = () => {
             borderLeft: "3px solid #444",
           }}
         >
-          Your future self deserves clean math and honest fuel.
+          Capital fuels your becoming — not your branding.
         </p>
 
         <p
@@ -56,63 +56,9 @@ export const FundAskSlide = () => {
             marginBottom: "1rem",
           }}
         >
-          Forget valuations. Forget multipliers. Forget financial theatre.
+          This is not startup capital. This is <strong>identity capital</strong>
+          .
         </p>
-
-        <p
-          style={{
-            ...textStyle,
-            color: "#ffffff",
-            marginBottom: "2rem",
-          }}
-        >
-          The Liberation Number is existential budgeting:
-        </p>
-
-        <ul
-          style={{
-            listStyleType: "disc",
-            paddingLeft: "2rem",
-            marginBottom: "2rem",
-          }}
-        >
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            What does your future self need?
-          </li>
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            What capital activates your becoming?
-          </li>
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            What resources stabilize your next identity?
-          </li>
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            What is the cost of the life you designed?
-          </li>
-        </ul>
 
         <p
           style={{
@@ -121,7 +67,19 @@ export const FundAskSlide = () => {
             marginBottom: "1rem",
           }}
         >
-          It's not an ask. It's alignment.
+          It doesn't scale a company. It scaffolds a human. It doesn't reward
+          hype.
+        </p>
+
+        <p
+          style={{
+            ...textStyle,
+            color: "#ffffff",
+            marginBottom: "1rem",
+          }}
+        >
+          It rewards coherence. It doesn't demand ownership. It demands
+          responsibility.
         </p>
 
         <p
@@ -131,8 +89,8 @@ export const FundAskSlide = () => {
             marginBottom: "2rem",
           }}
         >
-          Identity is the product. Becoming is the traction. Coherence is the
-          collateral.
+          This is capital that helps you grow into your future self, not escape
+          your past.
         </p>
       </div>
     </div>
