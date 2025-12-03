@@ -239,7 +239,9 @@ export const LiberationDaySlide = ({
                   style={{
                     opacity: visibleColumns >= 1 ? 1 : 0,
                     transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)',
-                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
+                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
+                    textAlign: 'left',
+                    marginBottom: '2rem'
                   }}
                 >
                   <span style={{
@@ -255,102 +257,42 @@ export const LiberationDaySlide = ({
                   </span>
                 </h3>
 
-                <div className={styles.powersGrid2x2}>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>Your daily consistency — not your intentions.</p>
-                        </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '600px', margin: '0 auto', alignItems: 'flex-start' }}>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease' }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease', marginBottom: '0.5rem', textAlign: 'left' }}>Discipline Logs</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>
+                        <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Your daily consistency — not your intentions.</p>
                       </div>
                     </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
-                      }}
-                    >Discipline Logs</h4>
                   </div>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>Patterns that show whether your identity holds under pressure.</p>
-                        </div>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s' }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s', marginBottom: '0.5rem', textAlign: 'left' }}>Coherence Graphs</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>
+                        <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Patterns that show whether your identity holds under pressure.</p>
                       </div>
                     </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
-                      }}
-                    >Coherence Graphs</h4>
                   </div>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>Evidence of design-driven decisions, not mood-driven reactions.</p>
-                        </div>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s', marginBottom: '0.5rem', textAlign: 'left' }}>Behavioral Metrics</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s' }}>
+                        <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Evidence of design-driven decisions, not mood-driven reactions.</p>
                       </div>
                     </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
-                      }}
-                    >Behavioral Metrics</h4>
                   </div>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>Where your internal architecture evolved — visibly, measurably.</p>
-                        </div>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s', marginBottom: '0.5rem', textAlign: 'left' }}>Emotional Upgrades</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s' }}>
+                        <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Where your internal architecture evolved — visibly, measurably.</p>
                       </div>
                     </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
-                      }}
-                    >Emotional Upgrades</h4>
                   </div>
                 </div>
               </div>
@@ -363,7 +305,9 @@ export const LiberationDaySlide = ({
                   style={{
                     opacity: visibleColumns >= 1 ? 1 : 0,
                     transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)',
-                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
+                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
+                    textAlign: 'left',
+                    marginBottom: '2rem'
                   }}
                 >
                   <span style={{
@@ -379,102 +323,42 @@ export const LiberationDaySlide = ({
                   </span>
                 </h3>
 
-                <div className={styles.forcesGrid2x2}>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>Do your patterns predict growth or collapse?</p>
-                        </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '600px', margin: '0 auto', alignItems: 'flex-start' }}>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease' }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease', marginBottom: '0.5rem', textAlign: 'left' }}>Trajectory Stability</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>
+                        <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Do your patterns predict growth or collapse?</p>
                       </div>
                     </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
-                      }}
-                    >Trajectory Stability</h4>
                   </div>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>Does your design stay intact across environments?</p>
-                        </div>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s' }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s', marginBottom: '0.5rem', textAlign: 'left' }}>Identity Reliability</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>
+                        <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Does your design stay intact across environments?</p>
                       </div>
                     </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
-                      }}
-                    >Identity Reliability</h4>
                   </div>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>Are you governed by intention or craving?</p>
-                        </div>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s', marginBottom: '0.5rem', textAlign: 'left' }}>Impulse Regulation</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s' }}>
+                        <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Are you governed by intention or craving?</p>
                       </div>
                     </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
-                      }}
-                    >Impulse Regulation</h4>
                   </div>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>Can you act like the person you claim you're becoming?</p>
-                        </div>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s', marginBottom: '0.5rem', textAlign: 'left' }}>Execution Credibility</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s' }}>
+                        <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Can you act like the person you claim you're becoming?</p>
                       </div>
                     </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
-                      }}
-                    >Execution Credibility</h4>
                   </div>
                 </div>
               </div>

@@ -240,7 +240,9 @@ export const Slide03 = ({
                   style={{
                     opacity: visibleColumns >= 1 ? 1 : 0,
                     transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)',
-                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
+                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
+                    textAlign: 'left',
+                    marginBottom: '2rem'
                   }}
                 >
                   <span style={{
@@ -254,109 +256,167 @@ export const Slide03 = ({
                   }}>
                     Players
                   </span>
-                </h3>
-                <p
-                  className={styles.heroParagraph}
-                  style={{
-                    opacity: visibleColumns >= 1 ? 1 : 0,
-                    transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)',
-                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s',
-                    textAlign: 'center',
+                  <span style={{
+                    fontFamily: '"satoshi", sans-serif',
                     fontSize: '12px',
-                    marginBottom: '2rem'
-                  }}
-                >
-                  Signs You Belong Here
-                </p>
+                    color: '#888',
+                    fontWeight: '400',
+                    textTransform: 'none',
+                    letterSpacing: '0.5px',
+                    margin: '0 0 0 8px'
+                  }}>
+                    — Signs You Belong Here
+                  </span>
+                </h3>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '600px', margin: '0 auto' }}>
-                  <div className={styles.cardWrapper}>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease',
-                        marginBottom: '0.5rem'
-                      }}
-                    >You've outgrown your old self and you know it.</h4>
-                    <p
-                      style={{
-                        fontStyle: 'italic',
-                        fontSize: '14px',
-                        color: '#999',
-                        textAlign: 'center',
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '600px', margin: '0 auto', alignItems: 'flex-start' }}>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ 
+                      fontSize: '16px', 
+                      color: '#00e87b',
+                      flexShrink: 0,
+                      opacity: visibleColumns >= 2 ? 1 : 0,
+                      transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
+                    }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4
+                        className={styles.cardTitleBelow}
+                        style={{
+                          opacity: visibleColumns >= 2 ? 1 : 0,
+                          transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease',
+                          marginBottom: '0.5rem',
+                          textAlign: 'left'
+                        }}
+                      >You've outgrown your old self and you know it.</h4>
+                      <div style={{ 
+                        borderLeft: '2px solid #333', 
+                        paddingLeft: '1rem',
                         opacity: visibleColumns >= 2 ? 1 : 0,
                         transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
-                      }}
-                    >The identity you're living can't carry the life you want.</p>
+                      }}>
+                        <p style={{
+                          fontStyle: 'italic',
+                          fontSize: '14px',
+                          color: '#999',
+                          textAlign: 'left',
+                          margin: 0
+                        }}>The identity you're living can't carry the life you want.</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className={styles.cardWrapper}>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
-                        marginBottom: '0.5rem'
-                      }}
-                    >You're disciplined but underfunded.</h4>
-                    <p
-                      style={{
-                        fontStyle: 'italic',
-                        fontSize: '14px',
-                        color: '#999',
-                        textAlign: 'center',
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ 
+                      fontSize: '16px', 
+                      color: '#00e87b',
+                      flexShrink: 0,
+                      opacity: visibleColumns >= 2 ? 1 : 0,
+                      transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
+                    }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4
+                        className={styles.cardTitleBelow}
+                        style={{
+                          opacity: visibleColumns >= 2 ? 1 : 0,
+                          transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
+                          marginBottom: '0.5rem',
+                          textAlign: 'left'
+                        }}
+                      >You're disciplined but underfunded.</h4>
+                      <div style={{ 
+                        borderLeft: '2px solid #333', 
+                        paddingLeft: '1rem',
                         opacity: visibleColumns >= 2 ? 1 : 0,
                         transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
-                      }}
-                    >Your effort is real — your capital isn't.</p>
+                      }}>
+                        <p style={{
+                          fontStyle: 'italic',
+                          fontSize: '14px',
+                          color: '#999',
+                          textAlign: 'left',
+                          margin: 0
+                        }}>Your effort is real — your capital isn't.</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className={styles.cardWrapper}>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s',
-                        marginBottom: '0.5rem'
-                      }}
-                    >You want structure, not slogans.</h4>
-                    <p
-                      style={{
-                        fontStyle: 'italic',
-                        fontSize: '14px',
-                        color: '#999',
-                        textAlign: 'center',
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ 
+                      fontSize: '16px', 
+                      color: '#00e87b',
+                      flexShrink: 0,
+                      opacity: visibleColumns >= 3 ? 1 : 0,
+                      transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
+                    }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4
+                        className={styles.cardTitleBelow}
+                        style={{
+                          opacity: visibleColumns >= 3 ? 1 : 0,
+                          transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s',
+                          marginBottom: '0.5rem',
+                          textAlign: 'left'
+                        }}
+                      >You want structure, not slogans.</h4>
+                      <div style={{ 
+                        borderLeft: '2px solid #333', 
+                        paddingLeft: '1rem',
                         opacity: visibleColumns >= 3 ? 1 : 0,
                         transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s'
-                      }}
-                    >You're done with motivation. You need a system.</p>
+                      }}>
+                        <p style={{
+                          fontStyle: 'italic',
+                          fontSize: '14px',
+                          color: '#999',
+                          textAlign: 'left',
+                          margin: 0
+                        }}>You're done with motivation. You need a system.</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className={styles.cardWrapper}>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s',
-                        marginBottom: '0.5rem'
-                      }}
-                    >You're ready to prove yourself through behavior, not talk.</h4>
-                    <p
-                      style={{
-                        fontStyle: 'italic',
-                        fontSize: '14px',
-                        color: '#999',
-                        textAlign: 'center',
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ 
+                      fontSize: '16px', 
+                      color: '#00e87b',
+                      flexShrink: 0,
+                      opacity: visibleColumns >= 3 ? 1 : 0,
+                      transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
+                    }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4
+                        className={styles.cardTitleBelow}
+                        style={{
+                          opacity: visibleColumns >= 3 ? 1 : 0,
+                          transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s',
+                          marginBottom: '0.5rem',
+                          textAlign: 'left'
+                        }}
+                      >You're ready to prove yourself through behavior, not talk.</h4>
+                      <div style={{ 
+                        borderLeft: '2px solid #333', 
+                        paddingLeft: '1rem',
                         opacity: visibleColumns >= 3 ? 1 : 0,
                         transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s'
-                      }}
-                    >Coherence over charisma — that's your advantage.</p>
+                      }}>
+                        <p style={{
+                          fontStyle: 'italic',
+                          fontSize: '14px',
+                          color: '#999',
+                          textAlign: 'left',
+                          margin: 0
+                        }}>Coherence over charisma — that's your advantage.</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -369,7 +429,9 @@ export const Slide03 = ({
                   style={{
                     opacity: visibleColumns >= 1 ? 1 : 0,
                     transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)',
-                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
+                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
+                    textAlign: 'left',
+                    marginBottom: '2rem'
                   }}
                 >
                   <span style={{
@@ -383,109 +445,167 @@ export const Slide03 = ({
                   }}>
                     Patrons
                   </span>
-                </h3>
-                <p
-                  className={styles.heroParagraph}
-                  style={{
-                    opacity: visibleColumns >= 1 ? 1 : 0,
-                    transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)',
-                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s',
-                    textAlign: 'center',
+                  <span style={{
+                    fontFamily: '"satoshi", sans-serif',
                     fontSize: '12px',
-                    marginBottom: '2rem'
-                  }}
-                >
-                  Signs You're Meant for This
-                </p>
+                    color: '#888',
+                    fontWeight: '400',
+                    textTransform: 'none',
+                    letterSpacing: '0.5px',
+                    margin: '0 0 0 8px'
+                  }}>
+                    — Signs You're Meant for This
+                  </span>
+                </h3>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '600px', margin: '0 auto' }}>
-                  <div className={styles.cardWrapper}>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease',
-                        marginBottom: '0.5rem'
-                      }}
-                    >You're wealthy, but not fulfilled.</h4>
-                    <p
-                      style={{
-                        fontStyle: 'italic',
-                        fontSize: '14px',
-                        color: '#999',
-                        textAlign: 'center',
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '600px', margin: '0 auto', alignItems: 'flex-start' }}>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ 
+                      fontSize: '16px', 
+                      color: '#00e87b',
+                      flexShrink: 0,
+                      opacity: visibleColumns >= 2 ? 1 : 0,
+                      transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
+                    }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4
+                        className={styles.cardTitleBelow}
+                        style={{
+                          opacity: visibleColumns >= 2 ? 1 : 0,
+                          transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease',
+                          marginBottom: '0.5rem',
+                          textAlign: 'left'
+                        }}
+                      >You're wealthy, but not fulfilled.</h4>
+                      <div style={{ 
+                        borderLeft: '2px solid #333', 
+                        paddingLeft: '1rem',
                         opacity: visibleColumns >= 2 ? 1 : 0,
                         transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
-                      }}
-                    >Money solved comfort, not meaning.</p>
+                      }}>
+                        <p style={{
+                          fontStyle: 'italic',
+                          fontSize: '14px',
+                          color: '#999',
+                          textAlign: 'left',
+                          margin: 0
+                        }}>Money solved comfort, not meaning.</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className={styles.cardWrapper}>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
-                        marginBottom: '0.5rem'
-                      }}
-                    >You're tired of investing in noise.</h4>
-                    <p
-                      style={{
-                        fontStyle: 'italic',
-                        fontSize: '14px',
-                        color: '#999',
-                        textAlign: 'center',
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ 
+                      fontSize: '16px', 
+                      color: '#00e87b',
+                      flexShrink: 0,
+                      opacity: visibleColumns >= 2 ? 1 : 0,
+                      transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
+                    }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4
+                        className={styles.cardTitleBelow}
+                        style={{
+                          opacity: visibleColumns >= 2 ? 1 : 0,
+                          transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
+                          marginBottom: '0.5rem',
+                          textAlign: 'left'
+                        }}
+                      >You're tired of investing in noise.</h4>
+                      <div style={{ 
+                        borderLeft: '2px solid #333', 
+                        paddingLeft: '1rem',
                         opacity: visibleColumns >= 2 ? 1 : 0,
                         transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
-                      }}
-                    >Decks, founders, hype cycles — none of it feels real anymore.</p>
+                      }}>
+                        <p style={{
+                          fontStyle: 'italic',
+                          fontSize: '14px',
+                          color: '#999',
+                          textAlign: 'left',
+                          margin: 0
+                        }}>Decks, founders, hype cycles — none of it feels real anymore.</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className={styles.cardWrapper}>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s',
-                        marginBottom: '0.5rem'
-                      }}
-                    >You want to fund humans who can actually follow through.</h4>
-                    <p
-                      style={{
-                        fontStyle: 'italic',
-                        fontSize: '14px',
-                        color: '#999',
-                        textAlign: 'center',
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ 
+                      fontSize: '16px', 
+                      color: '#00e87b',
+                      flexShrink: 0,
+                      opacity: visibleColumns >= 3 ? 1 : 0,
+                      transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
+                    }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4
+                        className={styles.cardTitleBelow}
+                        style={{
+                          opacity: visibleColumns >= 3 ? 1 : 0,
+                          transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s',
+                          marginBottom: '0.5rem',
+                          textAlign: 'left'
+                        }}
+                      >You want to fund humans who can actually follow through.</h4>
+                      <div style={{ 
+                        borderLeft: '2px solid #333', 
+                        paddingLeft: '1rem',
                         opacity: visibleColumns >= 3 ? 1 : 0,
                         transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s'
-                      }}
-                    >Coherent people outperform every market trend.</p>
+                      }}>
+                        <p style={{
+                          fontStyle: 'italic',
+                          fontSize: '14px',
+                          color: '#999',
+                          textAlign: 'left',
+                          margin: 0
+                        }}>Coherent people outperform every market trend.</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className={styles.cardWrapper}>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s',
-                        marginBottom: '0.5rem'
-                      }}
-                    >You want your capital to change lives, not chase valuations.</h4>
-                    <p
-                      style={{
-                        fontStyle: 'italic',
-                        fontSize: '14px',
-                        color: '#999',
-                        textAlign: 'center',
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ 
+                      fontSize: '16px', 
+                      color: '#00e87b',
+                      flexShrink: 0,
+                      opacity: visibleColumns >= 3 ? 1 : 0,
+                      transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
+                    }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4
+                        className={styles.cardTitleBelow}
+                        style={{
+                          opacity: visibleColumns >= 3 ? 1 : 0,
+                          transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s',
+                          marginBottom: '0.5rem',
+                          textAlign: 'left'
+                        }}
+                      >You want your capital to change lives, not chase valuations.</h4>
+                      <div style={{ 
+                        borderLeft: '2px solid #333', 
+                        paddingLeft: '1rem',
                         opacity: visibleColumns >= 3 ? 1 : 0,
                         transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s'
-                      }}
-                    >Funding becoming &gt; funding branding.</p>
+                      }}>
+                        <p style={{
+                          fontStyle: 'italic',
+                          fontSize: '14px',
+                          color: '#999',
+                          textAlign: 'left',
+                          margin: 0
+                        }}>Funding becoming &gt; funding branding.</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

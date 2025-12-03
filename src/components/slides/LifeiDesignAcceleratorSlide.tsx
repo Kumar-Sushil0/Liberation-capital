@@ -240,7 +240,9 @@ export const LifeiDesignAcceleratorSlide = ({
                   style={{
                     opacity: visibleColumns >= 1 ? 1 : 0,
                     transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)',
-                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
+                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
+                    textAlign: 'left',
+                    marginBottom: '2rem'
                   }}
                 >
                   <span style={{
@@ -252,106 +254,169 @@ export const LifeiDesignAcceleratorSlide = ({
                     letterSpacing: '1px',
                     margin: 0
                   }}>
-                    LIFEiDESIGN Acceleration Is the Engine for Your Becoming
+                    LIFEiDESIGN Acceleration
+                  </span>
+                  <span style={{
+                    fontFamily: '"satoshi", sans-serif',
+                    fontSize: '12px',
+                    color: '#888',
+                    fontWeight: '400',
+                    textTransform: 'none',
+                    letterSpacing: '0.5px',
+                    margin: '0 0 0 8px'
+                  }}>
+                    — The Engine for Your Becoming
                   </span>
                 </h3>
 
-                <div className={styles.powersGrid2x2}>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '600px', margin: '0 auto', alignItems: 'flex-start' }}>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ 
+                      fontSize: '16px', 
+                      color: '#00e87b',
+                      flexShrink: 0,
+                      opacity: visibleColumns >= 2 ? 1 : 0,
+                      transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
+                    }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4
+                        className={styles.cardTitleBelow}
+                        style={{
+                          opacity: visibleColumns >= 2 ? 1 : 0,
+                          transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease',
+                          marginBottom: '0.5rem',
+                          textAlign: 'left'
+                        }}
+                      >Knowing your game gives you your edge.</h4>
+                      <div style={{ 
+                        borderLeft: '2px solid #333', 
+                        paddingLeft: '1rem',
                         opacity: visibleColumns >= 2 ? 1 : 0,
                         transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>Most people play blindly. You'll design the game you intend to win.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
-                      }}
-                    >Knowing your game gives you your edge.</h4>
-                  </div>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>Without noise, you finally see what is "you" and what is programming.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
-                      }}
-                    >Understanding your core in isolation sets your boundaries.</h4>
-                  </div>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>When progress is measurable, becoming becomes addictive.</p>
-                        </div>
+                      }}>
+                        <p style={{
+                          fontStyle: 'italic',
+                          fontSize: '14px',
+                          color: '#999',
+                          textAlign: 'left',
+                          margin: 0
+                        }}>Most people play blindly. You'll design the game you intend to win.</p>
                       </div>
                     </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
-                      }}
-                    >Evaluating the scoreboard of your life is a different high.</h4>
                   </div>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ 
+                      fontSize: '16px', 
+                      color: '#00e87b',
+                      flexShrink: 0,
+                      opacity: visibleColumns >= 2 ? 1 : 0,
+                      transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
+                    }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4
+                        className={styles.cardTitleBelow}
+                        style={{
+                          opacity: visibleColumns >= 2 ? 1 : 0,
+                          transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
+                          marginBottom: '0.5rem',
+                          textAlign: 'left'
+                        }}
+                      >Understanding your core in isolation sets your boundaries.</h4>
+                      <div style={{ 
+                        borderLeft: '2px solid #333', 
+                        paddingLeft: '1rem',
+                        opacity: visibleColumns >= 2 ? 1 : 0,
+                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>You're not surviving a plot — you're authoring a saga.</p>
-                        </div>
+                      }}>
+                        <p style={{
+                          fontStyle: 'italic',
+                          fontSize: '14px',
+                          color: '#999',
+                          textAlign: 'left',
+                          margin: 0
+                        }}>Without noise, you finally see what is "you" and what is programming.</p>
                       </div>
                     </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
+                  </div>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ 
+                      fontSize: '16px', 
+                      color: '#00e87b',
+                      flexShrink: 0,
+                      opacity: visibleColumns >= 3 ? 1 : 0,
+                      transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
+                    }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4
+                        className={styles.cardTitleBelow}
+                        style={{
+                          opacity: visibleColumns >= 3 ? 1 : 0,
+                          transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s',
+                          marginBottom: '0.5rem',
+                          textAlign: 'left'
+                        }}
+                      >Evaluating the scoreboard of your life is a different high.</h4>
+                      <div style={{ 
+                        borderLeft: '2px solid #333', 
+                        paddingLeft: '1rem',
                         opacity: visibleColumns >= 3 ? 1 : 0,
                         transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
-                      }}
-                    >Intersecting your character arc with your life story creates direction.</h4>
+                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s'
+                      }}>
+                        <p style={{
+                          fontStyle: 'italic',
+                          fontSize: '14px',
+                          color: '#999',
+                          textAlign: 'left',
+                          margin: 0
+                        }}>When progress is measurable, becoming becomes addictive.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ 
+                      fontSize: '16px', 
+                      color: '#00e87b',
+                      flexShrink: 0,
+                      opacity: visibleColumns >= 3 ? 1 : 0,
+                      transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
+                    }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4
+                        className={styles.cardTitleBelow}
+                        style={{
+                          opacity: visibleColumns >= 3 ? 1 : 0,
+                          transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s',
+                          marginBottom: '0.5rem',
+                          textAlign: 'left'
+                        }}
+                      >Intersecting your character arc with your life story creates direction.</h4>
+                      <div style={{ 
+                        borderLeft: '2px solid #333', 
+                        paddingLeft: '1rem',
+                        opacity: visibleColumns >= 3 ? 1 : 0,
+                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s'
+                      }}>
+                        <p style={{
+                          fontStyle: 'italic',
+                          fontSize: '14px',
+                          color: '#999',
+                          textAlign: 'left',
+                          margin: 0
+                        }}>You're not surviving a plot — you're authoring a saga.</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -364,7 +429,9 @@ export const LifeiDesignAcceleratorSlide = ({
                   style={{
                     opacity: visibleColumns >= 1 ? 1 : 0,
                     transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)',
-                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
+                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
+                    textAlign: 'left',
+                    marginBottom: '2rem'
                   }}
                 >
                   <span style={{
@@ -376,106 +443,169 @@ export const LifeiDesignAcceleratorSlide = ({
                     letterSpacing: '1px',
                     margin: 0
                   }}>
-                    EPiCENTRE Incubation Is where designed identity becomes lived reality.
+                    EPiCENTRE Incubation
+                  </span>
+                  <span style={{
+                    fontFamily: '"satoshi", sans-serif',
+                    fontSize: '12px',
+                    color: '#888',
+                    fontWeight: '400',
+                    textTransform: 'none',
+                    letterSpacing: '0.5px',
+                    margin: '0 0 0 8px'
+                  }}>
+                    — Where Designed Identity Becomes Lived Reality
                   </span>
                 </h3>
 
-                <div className={styles.forcesGrid2x2}>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '600px', margin: '0 auto', alignItems: 'flex-start' }}>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ 
+                      fontSize: '16px', 
+                      color: '#00e87b',
+                      flexShrink: 0,
+                      opacity: visibleColumns >= 2 ? 1 : 0,
+                      transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
+                    }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4
+                        className={styles.cardTitleBelow}
+                        style={{
+                          opacity: visibleColumns >= 2 ? 1 : 0,
+                          transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease',
+                          marginBottom: '0.5rem',
+                          textAlign: 'left'
+                        }}
+                      >Your existential needs are handled, so friction disappears.</h4>
+                      <div style={{ 
+                        borderLeft: '2px solid #333', 
+                        paddingLeft: '1rem',
                         opacity: visibleColumns >= 2 ? 1 : 0,
                         transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>With survival solved, evolution has space to happen.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
-                      }}
-                    >Your existential needs are handled, so friction disappears.</h4>
-                  </div>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>No audience, no applause — just the truth of your discipline.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
-                      }}
-                    >A performance-free environment reveals your real work.</h4>
-                  </div>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>Silence becomes a tool, not a threat.</p>
-                        </div>
+                      }}>
+                        <p style={{
+                          fontStyle: 'italic',
+                          fontSize: '14px',
+                          color: '#999',
+                          textAlign: 'left',
+                          margin: 0
+                        }}>With survival solved, evolution has space to happen.</p>
                       </div>
                     </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
-                      }}
-                    >Stillness and solitude give you access to deeper clarity.</h4>
                   </div>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ 
+                      fontSize: '16px', 
+                      color: '#00e87b',
+                      flexShrink: 0,
+                      opacity: visibleColumns >= 2 ? 1 : 0,
+                      transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
+                    }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4
+                        className={styles.cardTitleBelow}
+                        style={{
+                          opacity: visibleColumns >= 2 ? 1 : 0,
+                          transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
+                          marginBottom: '0.5rem',
+                          textAlign: 'left'
+                        }}
+                      >A performance-free environment reveals your real work.</h4>
+                      <div style={{ 
+                        borderLeft: '2px solid #333', 
+                        paddingLeft: '1rem',
+                        opacity: visibleColumns >= 2 ? 1 : 0,
+                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>Here, imagination isn't judged — it's cultivated.</p>
-                        </div>
+                      }}>
+                        <p style={{
+                          fontStyle: 'italic',
+                          fontSize: '14px',
+                          color: '#999',
+                          textAlign: 'left',
+                          margin: 0
+                        }}>No audience, no applause — just the truth of your discipline.</p>
                       </div>
                     </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
+                  </div>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ 
+                      fontSize: '16px', 
+                      color: '#00e87b',
+                      flexShrink: 0,
+                      opacity: visibleColumns >= 3 ? 1 : 0,
+                      transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
+                    }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4
+                        className={styles.cardTitleBelow}
+                        style={{
+                          opacity: visibleColumns >= 3 ? 1 : 0,
+                          transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s',
+                          marginBottom: '0.5rem',
+                          textAlign: 'left'
+                        }}
+                      >Stillness and solitude give you access to deeper clarity.</h4>
+                      <div style={{ 
+                        borderLeft: '2px solid #333', 
+                        paddingLeft: '1rem',
                         opacity: visibleColumns >= 3 ? 1 : 0,
                         transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
-                      }}
-                    >A place where visions form without needing to make sense.</h4>
+                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s'
+                      }}>
+                        <p style={{
+                          fontStyle: 'italic',
+                          fontSize: '14px',
+                          color: '#999',
+                          textAlign: 'left',
+                          margin: 0
+                        }}>Silence becomes a tool, not a threat.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                    <div style={{ 
+                      fontSize: '16px', 
+                      color: '#00e87b',
+                      flexShrink: 0,
+                      opacity: visibleColumns >= 3 ? 1 : 0,
+                      transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
+                    }}>▼</div>
+                    <div style={{ flex: 1 }}>
+                      <h4
+                        className={styles.cardTitleBelow}
+                        style={{
+                          opacity: visibleColumns >= 3 ? 1 : 0,
+                          transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s',
+                          marginBottom: '0.5rem',
+                          textAlign: 'left'
+                        }}
+                      >A place where visions form without needing to make sense.</h4>
+                      <div style={{ 
+                        borderLeft: '2px solid #333', 
+                        paddingLeft: '1rem',
+                        opacity: visibleColumns >= 3 ? 1 : 0,
+                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s'
+                      }}>
+                        <p style={{
+                          fontStyle: 'italic',
+                          fontSize: '14px',
+                          color: '#999',
+                          textAlign: 'left',
+                          margin: 0
+                        }}>Here, imagination isn't judged — it's cultivated.</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
