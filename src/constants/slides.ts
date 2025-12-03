@@ -86,30 +86,30 @@ export const getSubscrollSteps = (isMobile: boolean): Record<number, number> => 
 
 // Slide words for each section (displayed in header)
 export const slideWords = [
-  "FUND OFFER",      // 0: hero
-  "FUND SYSTEM",     // 1: content1
-  "FUND GATE",       // 2: warning
-  "FUND ETHOS",      // 3: video
-  "FUND TRIBES",     // 4: slide03
-  "FUND ORIGIN",     // 5: fundOrigin
-  "FUND INTENT",     // 6: rebuildIdentities
-  "FUND COHERENCE",  // 7: fundCoherence
-  "FUND ENGINE",       // 8: lifeiDesignAccelerator
-  "FUND REVELATION",   // 9: subscroll1
-  "FUND ARCHITECTURE", // 10: coreiDesign
-  "FUND DISCIPLINE",   // 11: playiDesign
-  "FUND DATA",        // 12: epicentre
-  "FUND TEST",        // 13: silenceTest
-  "FUND TRUTH",       // 14: disciplineTest
-  "FUND ELIGIBILITY", // 15: distractionTest
-  "FUND RECEIPTS",   // 16: liberationDay
-  "FUND RITE",       // 17: fundCrucible
-  "FUND BLUEPRINT",  // 18: fundBlueprint
-  "FUND ASK",        // 19: fundAsk
-  "FUND SUPPORT",    // 20: fundActivation
-  "FUND CAPITAL",    // 21: fundSupport
-  "FUND LOSS",       // 22: fundEnvironment
-  "FUND CONTINUUM"   // 23: fundCapital
+  "FUND OFFER         ",  // 0: hero
+  "FUND SYSTEM        ",  // 1: content1
+  "FUND GATE          ",  // 2: warning
+  "FUND ETHOS         ",  // 3: video
+  "FUND TRIBES        ",  // 4: slide03
+  "FUND ORIGIN        ",  // 5: fundOrigin
+  "FUND INTENT        ",  // 6: rebuildIdentities
+  "FUND COHERENCE     ",  // 7: fundCoherence
+  "FUND ENGINE        ",  // 8: lifeiDesignAccelerator
+  "FUND REVELATION    ",  // 9: subscroll1
+  "FUND ARCHITECTURE  ",  // 10: coreiDesign
+  "FUND DISCIPLINE    ",  // 11: playiDesign
+  "FUND DATA          ",  // 12: epicentre
+  "FUND TEST          ",  // 13: silenceTest
+  "FUND TRUTH         ",  // 14: disciplineTest
+  "FUND ELIGIBILITY   ",  // 15: distractionTest
+  "FUND RECEIPTS      ",  // 16: liberationDay
+  "FUND RITE          ",  // 17: fundCrucible
+  "FUND BLUEPRINT     ",  // 18: fundBlueprint
+  "FUND ASK           ",  // 19: fundAsk
+  "FUND SUPPORT       ",  // 20: fundActivation
+  "FUND CAPITAL       ",  // 21: fundSupport
+  "FUND LOSS          ",  // 22: fundEnvironment
+  "FUND CONTINUUM     "   // 23: fundCapital
 ];
 
 // Dummy texts for each section (displayed in header)
