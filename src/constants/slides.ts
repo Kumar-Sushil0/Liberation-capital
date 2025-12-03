@@ -86,58 +86,58 @@ export const getSubscrollSteps = (isMobile: boolean): Record<number, number> => 
 
 // Slide words for each section (displayed in header)
 export const slideWords = [
-  "LIBERATION",      // 0: hero
-  "CAPITAL",         // 1: content1
-  "WARNING",         // 2: warning
-  "VIDEO",           // 3: video
+  "FUND OFFER",      // 0: hero
+  "FUND SYSTEM",     // 1: content1
+  "FUND GATE",       // 2: warning
+  "FUND ETHOS",      // 3: video
   "FUND TRIBES",     // 4: slide03
   "FUND ORIGIN",     // 5: fundOrigin
-  "FUND ASCENT",     // 6: rebuildIdentities
+  "FUND INTENT",     // 6: rebuildIdentities
   "FUND COHERENCE",  // 7: fundCoherence
-  "FUND ENGINE",     // 8: lifeiDesignAccelerator
-  "FUND AWARENESS",  // 9: subscroll1
-  "FUND EMOTION",    // 10: coreiDesign
-  "FUND DISCIPLINE", // 11: playiDesign
-  "FUND CRUCIBLE",   // 12: epicentre
-  "FUND STILLNESS",  // 13: silenceTest
-  "FUND INTEGRITY",  // 14: disciplineTest
-  "FUND WITHDRAWAL", // 15: distractionTest
-  "FUND RITE",       // 16: liberationDay
-  "FUND RECEIPTS",   // 17: fundCrucible
+  "FUND ENGINE",       // 8: lifeiDesignAccelerator
+  "FUND REVELATION",   // 9: subscroll1
+  "FUND ARCHITECTURE", // 10: coreiDesign
+  "FUND DISCIPLINE",   // 11: playiDesign
+  "FUND DATA",        // 12: epicentre
+  "FUND TEST",        // 13: silenceTest
+  "FUND TRUTH",       // 14: disciplineTest
+  "FUND ELIGIBILITY", // 15: distractionTest
+  "FUND RECEIPTS",   // 16: liberationDay
+  "FUND RITE",       // 17: fundCrucible
   "FUND BLUEPRINT",  // 18: fundBlueprint
   "FUND ASK",        // 19: fundAsk
-  "FUND ACTIVATION", // 20: fundActivation
-  "FUND SUPPORT",    // 21: fundSupport
-  "FUND ENVIRONMENT",// 22: fundEnvironment
-  "FUND CAPITAL"     // 23: fundCapital
+  "FUND SUPPORT",    // 20: fundActivation
+  "FUND CAPITAL",    // 21: fundSupport
+  "FUND LOSS",       // 22: fundEnvironment
+  "FUND CONTINUUM"   // 23: fundCapital
 ];
 
 // Dummy texts for each section (displayed in header)
 export const dummyTexts = [
-  "Want a new life?",                    // 0: hero
-  "Fund humans, not startups",           // 1: content1
-  "Ready to think?",                     // 2: warning
-  "Watch and understand",                // 3: video
+  "Why You're Here",                     // 0: hero
+  "How This World Works",                // 1: content1
+  "Why You Must Slow Down",              // 2: warning
+  "What We Believe",                     // 3: video
   "Players & Patrons",                   // 4: slide03
   "World Funds Products, We Fund Players",  // 5: fundOrigin
-  "Institution Behind Becoming",            // 6: rebuildIdentities
+  "Reason For Becoming",                    // 6: rebuildIdentities
   "Coherence Over Traction",                // 7: fundCoherence
-  "LIFEiDESIGN Accelerator",             // 8: lifeiDesignAccelerator
-  "GAMEiDESIGN",                         // 9: subscroll1
-  "COREiDESIGN",                         // 10: coreiDesign
-  "PLAYiDESIGN",                         // 11: playiDesign
-  "The Incubator of Identity",           // 12: epicentre
-  "The Silence Test",                    // 13: silenceTest
-  "The Discipline Test",                 // 14: disciplineTest
-  "The Distraction Test",                // 15: distractionTest
-  "Liberation Day (Ceremony > Pitch)",   // 16: liberationDay
-  "Discipline Logs",                     // 17: fundCrucible
-  "Life Architecture Reveal",            // 18: fundBlueprint
+  "Acceleration & Incubation",           // 8: lifeiDesignAccelerator
+  "Know Your GAMEiDESIGN",               // 9: subscroll1
+  "Build Your COREiDESIGN",              // 10: coreiDesign
+  "Prove Your PLAYiDESIGN",              // 11: playiDesign
+  "what patterns expose",                // 12: epicentre
+  "what pressure reveals",               // 13: silenceTest
+  "what breaks teaches",                 // 14: disciplineTest
+  "who actually gets through",           // 15: distractionTest
+  "Behavioral Proof",                    // 16: liberationDay
+  "The Unveiling",                       // 17: fundCrucible
+  "Identity Architecture",               // 18: fundBlueprint
   "The Liberation Number",               // 19: fundAsk
-  "Funding as Scaffolding",              // 20: fundActivation
-  "Funding-In-Kind (FIK)",               // 21: fundSupport
-  "EPiCENTRE Residency",                 // 22: fundEnvironment
-  "Up to $100,000 Deployment"            // 23: fundCapital
+  "Systems That Sustain Becoming",       // 20: fundActivation
+  "Deployment of Up to $100k",           // 21: fundSupport
+  "The Cost of Becoming",                // 22: fundEnvironment
+  "The Identity Economy Loop"            // 23: fundCapital
 ];
 
 // Export default for backward compatibility (desktop)
