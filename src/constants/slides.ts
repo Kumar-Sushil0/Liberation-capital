@@ -30,11 +30,7 @@ const desktopSections: SlideConfig[] = [
   { type: "fundActivation", className: "slideFundActivation" },
   { type: "fundSupport", className: "slideFundSupport" },
   { type: "fundEnvironment", className: "slideFundEnvironment" },
-  { type: "fundCapital", className: "slideFundCapital" },
-  { type: "fundSpiral", className: "slideFundSpiral" },
-  { type: "fundBecoming", className: "slideFundBecoming" },
-  { type: "fundEvidence", className: "slideFundEvidence" },
-  { type: "fundContinuum", className: "slideFundContinuum" }
+  { type: "fundCapital", className: "slideFundCapital" }
 ];
 
 // Mobile sections configuration (same for now, can be customized later)
@@ -113,11 +109,7 @@ export const slideWords = [
   "FUND ACTIVATION", // 20: fundActivation
   "FUND SUPPORT",    // 21: fundSupport
   "FUND ENVIRONMENT",// 22: fundEnvironment
-  "FUND CAPITAL",    // 23: fundCapital
-  "FUND SPIRAL",     // 24: fundSpiral
-  "FUND BECOMING",   // 25: fundBecoming
-  "FUND EVIDENCE",   // 26: fundEvidence
-  "FUND CONTINUUM"   // 27: fundContinuum
+  "FUND CAPITAL"     // 23: fundCapital
 ];
 
 // Dummy texts for each section (displayed in header)
@@ -145,11 +137,7 @@ export const dummyTexts = [
   "Funding as Scaffolding",              // 20: fundActivation
   "Funding-In-Kind (FIK)",               // 21: fundSupport
   "EPiCENTRE Residency",                 // 22: fundEnvironment
-  "Up to $100,000 Deployment",           // 23: fundCapital
-  "Investors Become Players",            // 24: fundSpiral
-  "Players Become Funded Humans",        // 25: fundBecoming
-  "Humans Become Case Studies",          // 26: fundEvidence
-  "Case Studies Become Culture"          // 27: fundContinuum
+  "Up to $100,000 Deployment"            // 23: fundCapital
 ];
 
 // Export default for backward compatibility (desktop)
