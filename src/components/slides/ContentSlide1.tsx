@@ -12,96 +12,164 @@ export const ContentSlide1 = () => {
       width: '100%',
       height: '100%',
       display: 'flex',
+      flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
       padding: '3rem'
     }}>
       <div style={{
-        maxWidth: '1200px',
+        maxWidth: '1000px',
         width: '100%',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: '4rem'
+        textAlign: 'center'
       }}>
-        {/* Left Column */}
-        <div>
-          {/* Opening italic statement */}
-          <p style={{ 
-            ...textStyle,
-            color: '#b8b8b8',
-            fontStyle: 'italic',
-            marginBottom: '1.5rem'
-          }}>
-            Where online acceleration meets monastic incubation... and humans become investable.
-          </p>
+        {/* Opening italic statement */}
+        <p style={{ 
+          ...textStyle,
+          color: '#b8b8b8',
+          fontStyle: 'italic',
+          marginBottom: '2rem'
+        }}>
+          Where online acceleration meets monastic incubation... and humans become investable.
+        </p>
 
-          {/* What it's not */}
-          <p style={{ ...textStyle, color: '#b8b8b8', marginBottom: '0.3rem' }}>
-            This is not Y Combinator.
-          </p>
-          <p style={{ ...textStyle, color: '#b8b8b8', marginBottom: '0.3rem' }}>
-            This is not a retreat.
-          </p>
-          <p style={{ ...textStyle, color: '#b8b8b8', marginBottom: '1.5rem' }}>
-            This is not a course.
-          </p>
+        {/* What it's not and what it is */}
+        <p style={{ ...textStyle, color: '#ffffff', marginBottom: '1.5rem' }}>
+          This is not Y Combinator... This is not a retreat. This is not a course... This is about <strong style={{ fontStyle: 'italic' }}>FUNDING LIFE</strong>
+        </p>
 
-          {/* What it is */}
-          <p style={{ ...textStyle, color: '#ffffff', marginBottom: '0.3rem' }}>
-            This is a <strong>human evolution accelerator with a balance sheet attached</strong> —
-          </p>
-          <p style={{ ...textStyle, color: '#ffffff', marginBottom: '1rem' }}>
-            built for two tribes:
-          </p>
+        <p style={{ ...textStyle, color: '#ffffff', marginBottom: '2rem' }}>
+          This is a <strong>human evolution accelerator with Design Mechanics & Game Theory</strong>, built for two tribes:
+        </p>
 
-          {/* Two tribes */}
-          <p style={{ ...textStyle, color: '#ffffff', marginBottom: '0.3rem' }}>
-            <strong>Become Player</strong> → <em>Your game of life is the due diligence.</em>
-          </p>
-          <p style={{ ...textStyle, color: '#ffffff' }}>
-            <strong>Become Patron</strong> → <em>Invest in human capital, not hype.</em>
-          </p>
+        {/* Two tribes side by side */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '3rem',
+          marginBottom: '2.5rem'
+        }}>
+          {/* Become Player */}
+          <div>
+            <p style={{ ...textStyle, color: '#ffffff', marginBottom: '0.5rem' }}>
+              • <strong>Become Player →</strong>
+            </p>
+            <p style={{ ...textStyle, color: '#b8b8b8', fontStyle: 'italic', marginBottom: '0.3rem', paddingLeft: '1rem' }}>
+              Your game of life is the due diligence.
+            </p>
+            <p style={{ ...textStyle, color: '#b8b8b8', fontStyle: 'italic', paddingLeft: '1rem' }}>
+              Apply as Player (Accelerator → Pitch)
+            </p>
+          </div>
+
+          {/* Become Patron */}
+          <div>
+            <p style={{ ...textStyle, color: '#ffffff', marginBottom: '0.5rem' }}>
+              • <strong>Become Patron →</strong>
+            </p>
+            <p style={{ ...textStyle, color: '#b8b8b8', fontStyle: 'italic', marginBottom: '0.3rem', paddingLeft: '1rem' }}>
+              Invest in human capital, not hype.
+            </p>
+            <p style={{ ...textStyle, color: '#b8b8b8', fontStyle: 'italic', paddingLeft: '1rem' }}>
+              Request Patron Access
+            </p>
+          </div>
         </div>
 
-        {/* Right Column */}
-        <div>
-          {/* Capital at a Glance */}
-          <p style={{ 
-            ...textStyle,
-            fontWeight: 'bold',
-            color: '#ffffff',
-            marginBottom: '0.8rem'
-          }}>
-            Capital at a Glance:
-          </p>
-          
-          <p style={{ ...textStyle, color: '#ffffff', marginBottom: '0.3rem', paddingLeft: '1.5rem' }}>
-            • Up to <strong style={{ color: '#00e87b' }}>$100,000</strong>
-          </p>
-          <p style={{ ...textStyle, color: '#ffffff', marginBottom: '0.3rem', paddingLeft: '1.5rem' }}>
-            • No equity in identity
-          </p>
-          <p style={{ ...textStyle, color: '#ffffff', marginBottom: '0.3rem', paddingLeft: '1.5rem' }}>
-            • Principal + 10% / 3 years
-          </p>
-          <p style={{ ...textStyle, color: '#ffffff', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-            • Optional legacy: 2% honor-based
-          </p>
+        {/* Table */}
+        <table style={{
+          width: '100%',
+          borderCollapse: 'collapse',
+          marginTop: '2rem',
+          border: '1px solid #333',
+          fontSize: 'clamp(0.7rem, 1.5vw, 0.9rem)'
+        }}>
+          <tbody>
+            <tr>
+              <td style={{
+                color: '#ffffff',
+                fontWeight: 'bold',
+                padding: '0.6rem',
+                borderRight: '1px solid #333',
+                verticalAlign: 'top'
+              }}>
+                Up to $100,000 -
+              </td>
+              <td style={{
+                color: '#ffffff',
+                fontWeight: 'bold',
+                padding: '0.6rem',
+                borderRight: '1px solid #333',
+                verticalAlign: 'top'
+              }}>
+                No equity in identity
+              </td>
+              <td style={{
+                color: '#ffffff',
+                fontWeight: 'bold',
+                padding: '0.6rem',
+                borderRight: '1px solid #333',
+                verticalAlign: 'top'
+              }}>
+                Principal + 10% / 3 years
+              </td>
+              <td style={{
+                color: '#ffffff',
+                fontWeight: 'bold',
+                padding: '0.6rem',
+                verticalAlign: 'top'
+              }}>
+                Optional legacy: 2% honor-based
+              </td>
+            </tr>
+            <tr>
+              <td style={{
+                color: '#b8b8b8',
+                padding: '0.6rem',
+                borderRight: '1px solid #333',
+                borderTop: '1px solid #333',
+                verticalAlign: 'top'
+              }}>
+                Capital becomes scaffolding
+              </td>
+              <td style={{
+                color: '#b8b8b8',
+                padding: '0.6rem',
+                borderRight: '1px solid #333',
+                borderTop: '1px solid #333',
+                verticalAlign: 'top'
+              }}>
+                Identity becomes architecture
+              </td>
+              <td style={{
+                color: '#b8b8b8',
+                padding: '0.6rem',
+                borderRight: '1px solid #333',
+                borderTop: '1px solid #333',
+                verticalAlign: 'top'
+              }}>
+                Your evolution becomes the application.
+              </td>
+              <td style={{
+                color: '#b8b8b8',
+                padding: '0.6rem',
+                borderTop: '1px solid #333',
+                verticalAlign: 'top'
+              }}>
+                Coherence becomes proof
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-          {/* Closing statements */}
-          <p style={{ ...textStyle, color: '#b8b8b8', marginBottom: '0.3rem' }}>
-            Capital becomes scaffolding.
-          </p>
-          <p style={{ ...textStyle, color: '#b8b8b8', marginBottom: '0.3rem' }}>
-            Identity becomes architecture.
-          </p>
-          <p style={{ ...textStyle, color: '#b8b8b8', marginBottom: '0.3rem' }}>
-            Coherence becomes proof.
-          </p>
-          <p style={{ ...textStyle, color: '#ffffff', fontWeight: '500' }}>
-            Your evolution becomes the application.
-          </p>
-        </div>
+        {/* Terms text */}
+        <p style={{
+          fontSize: 'clamp(0.65rem, 1.2vw, 0.8rem)',
+          color: '#888',
+          marginTop: '0.75rem',
+          fontStyle: 'italic'
+        }}>
+          *Terms and eligibility apply.
+        </p>
       </div>
     </div>
   );
