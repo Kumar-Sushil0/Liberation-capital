@@ -7,10 +7,7 @@ import { useScrollManager } from '../hooks/useScrollManager';
 import { 
   HeroSlide, 
   ContentSlide1, 
-  SubscrollSlide1, 
-  ContentSlide2, 
-  ContentSlide3, 
-  FinalSlide 
+  SubscrollSlide1
 } from '../components/slides';
 import { FloatingArrow } from '../components/FloatingArrow';
 
@@ -150,15 +147,6 @@ export default function Home() {
             }}
           />
         );
-      
-      case "content2":
-        return <ContentSlide2 />;
-      
-      case "content3":
-        return <ContentSlide3 />;
-      
-      case "final":
-        return <FinalSlide />;
       
       default:
         return null;
