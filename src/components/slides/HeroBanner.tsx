@@ -2,28 +2,28 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export const VideoSlide = () => {
+interface HeroBannerProps {
+  videoSrc: string;
+  videoType?: string;
+  overlayOpacity?: number;
+}
+
+export default function HeroBanner({ 
+  videoSrc, 
+  videoType = "video/mp4",
+  overlayOpacity = 0.3 
+}: HeroBannerProps) {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-  const [videoError, setVideoError] = useState(false);
   const bannerVideoRef = useRef<HTMLVideoElement>(null);
 
   const toggleBannerVideo = () => {
-    if (bannerVideoRef.current && !videoError) {
+    if (bannerVideoRef.current) {
       if (isVideoPlaying) {
         bannerVideoRef.current.pause();
         setIsVideoPlaying(false);
       } else {
-        const playPromise = bannerVideoRef.current.play();
-        if (playPromise !== undefined) {
-          playPromise
-            .then(() => {
-              setIsVideoPlaying(true);
-            })
-            .catch((error) => {
-              console.error("Video play failed:", error);
-              setIsVideoPlaying(false);
-            });
-        }
+        bannerVideoRef.current.play();
+        setIsVideoPlaying(true);
       }
     }
   };
@@ -34,27 +34,17 @@ export const VideoSlide = () => {
 
     const handlePause = () => setIsVideoPlaying(false);
     const handlePlay = () => setIsVideoPlaying(true);
-    const handleError = (e: Event) => {
-      console.error("Video error:", e);
-      setVideoError(true);
-    };
-    const handleLoadedData = () => {
-      console.log("Video loaded successfully");
-      setVideoError(false);
-    };
 
     video.addEventListener('pause', handlePause);
     video.addEventListener('play', handlePlay);
-    video.addEventListener('error', handleError);
-    video.addEventListener('loadeddata', handleLoadedData);
 
     return () => {
       video.removeEventListener('pause', handlePause);
       video.removeEventListener('play', handlePlay);
-      video.removeEventListener('error', handleError);
-      video.removeEventListener('loadeddata', handleLoadedData);
     };
   }, []);
+
+
 
   return (
     <div className="absolute inset-0 cursor-pointer" onClick={toggleBannerVideo}>
@@ -62,22 +52,14 @@ export const VideoSlide = () => {
         ref={bannerVideoRef}
         loop
         playsInline
-        muted
-        preload="metadata"
-        crossOrigin="anonymous"
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="https://lidbucket.s3.ap-south-1.amazonaws.com/toolVideos/Epicenter+Walk+through+(1)+(1).mp4" type="video/mp4" />
+        <source src={videoSrc} type={videoType} />
       </video>
-      {videoError && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black text-white">
-          <p>Video failed to load. Please check the URL or try again.</p>
-        </div>
-      )}
       {/* Dark overlay */}
       <div 
         className="absolute inset-0 bg-black pointer-events-none" 
-        style={{ opacity: 0.3 }}
+        style={{ opacity: overlayOpacity }}
         aria-hidden="true" 
       />
       
@@ -100,4 +82,4 @@ export const VideoSlide = () => {
       </div>
     </div>
   );
-};
+}
