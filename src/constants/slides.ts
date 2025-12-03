@@ -46,7 +46,7 @@ export const getSections = (isMobile: boolean): SlideConfig[] => {
 };
 
 // Desktop subscroll sections - indices that pause main scroll
-const DESKTOP_SUBSCROLL_SECTIONS: number[] = [4, 5, 6, 7, 8, 9, 10, 11, 12]; // Slide 4 (Slide03), Slide 5 (FundOrigin), Slide 6 (RebuildIdentities), Slide 7 (FundCoherence), Slide 8 (LifeiDesignAccelerator), Slide 9 (SubscrollSlide1), Slide 10 (CoreiDesign), Slide 11 (PlayiDesign), Slide 12 (Epicentre) have subscroll
+const DESKTOP_SUBSCROLL_SECTIONS: number[] = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]; // Slide 4 (Slide03), Slide 5 (FundOrigin), Slide 6 (RebuildIdentities), Slide 7 (FundCoherence), Slide 8 (LifeiDesignAccelerator), Slide 9 (SubscrollSlide1), Slide 10 (CoreiDesign), Slide 11 (PlayiDesign), Slide 12 (Epicentre), Slide 13 (SilenceTest), Slide 14 (DisciplineTest), Slide 15 (DistractionTest), Slide 16 (LiberationDay), Slide 17 (FundCrucible), Slide 18 (FundBlueprint), Slide 19 (FundAsk), Slide 20 (FundActivation), Slide 21 (FundSupport), Slide 22 (FundEnvironment), Slide 23 (FundCapital) have subscroll
 
 // Mobile subscroll sections
 const MOBILE_SUBSCROLL_SECTIONS: number[] = [];
@@ -67,6 +67,17 @@ const DESKTOP_SUBSCROLL_STEPS: Record<number, number> = {
   10: 3, // CoreiDesign has 3 columns to reveal
   11: 3, // PlayiDesign has 3 columns to reveal
   12: 4, // Epicentre has 4 steps (initial + 3 card reveals)
+  13: 3, // SilenceTest has 3 columns to reveal
+  14: 3, // DisciplineTest has 3 columns to reveal
+  15: 3, // DistractionTest has 3 columns to reveal
+  16: 3, // LiberationDay has 3 steps (initial + 2 sections with cards)
+  17: 3, // FundCrucible has 3 columns to reveal
+  18: 3, // FundBlueprint has 3 columns to reveal
+  19: 3, // FundAsk has 3 columns to reveal
+  20: 3, // FundActivation has 3 steps (initial + 2 sections with cards)
+  21: 3, // FundSupport has 3 columns to reveal
+  22: 3, // FundEnvironment has 3 columns to reveal
+  23: 3, // FundCapital has 3 columns to reveal
 };
 
 // Mobile subscroll steps

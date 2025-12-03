@@ -1,195 +1,549 @@
 "use client";
 
-export const FundSupportSlide = () => {
-  const textStyle = {
-    fontSize: "clamp(0.9rem, 2vw, 1.2rem)",
-    lineHeight: 1.5,
-    margin: 0,
-  };
+import React, { useState, useRef, useEffect } from "react";
+import styles from "../../styles/slides.module.css";
+
+interface FundSupportSlideProps {
+  currentSection?: number;
+  isScrollEnabled?: boolean;
+  onAllColumnsVisible?: () => void;
+}
+
+export const FundSupportSlide = ({
+  currentSection = 0,
+  isScrollEnabled = true,
+  onAllColumnsVisible,
+}: FundSupportSlideProps) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [visibleColumns, setVisibleColumns] = useState(
+    isScrollEnabled ? 0 : 3
+  );
+  const [skipTransitions, setSkipTransitions] = useState(true);
+  const [isInitialized, setIsInitialized] = useState(false);
+  const isScrollingRef = useRef(false);
+
+  // Initialize component
+  useEffect(() => {
+    setSkipTransitions(true);
+    setVisibleColumns(isScrollEnabled ? 0 : 3);
+
+    const timer = setTimeout(() => {
+      setSkipTransitions(false);
+      setIsInitialized(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [isScrollEnabled]);
+
+  // Reset when isScrollEnabled changes
+  useEffect(() => {
+    if (!isInitialized) return;
+
+    if (currentSection !== 21) return;
+
+    setSkipTransitions(true);
+
+    if (!isScrollEnabled) {
+      setVisibleColumns(3);
+      if (onAllColumnsVisible) {
+        onAllColumnsVisible();
+      }
+    } else {
+      setVisibleColumns(0);
+      const container = containerRef.current;
+      if (container) {
+        container.scrollTop = 0;
+      }
+    }
+
+    setTimeout(() => {
+      setSkipTransitions(false);
+    }, 50);
+  }, [isScrollEnabled, onAllColumnsVisible, isInitialized, currentSection]);
+
+  // Reset to initial state when entering this slide
+  const prevSectionRef = useRef(currentSection);
+  useEffect(() => {
+    if (!isInitialized) return;
+
+    const prevSection = prevSectionRef.current;
+    prevSectionRef.current = currentSection;
+
+    if (currentSection === 21 && prevSection !== 21 && isScrollEnabled) {
+      setSkipTransitions(true);
+      setVisibleColumns(0);
+
+      const container = containerRef.current;
+      if (container) {
+        container.scrollTop = 0;
+      }
+
+      setTimeout(() => {
+        setSkipTransitions(false);
+      }, 100);
+    }
+  }, [currentSection, isScrollEnabled, isInitialized]);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container || !isInitialized) return;
+
+    if (!isScrollEnabled) {
+      return;
+    }
+
+    let wheelDelta = 0;
+    let wheelTimer: NodeJS.Timeout | null = null;
+    let currentStep = 0;
+    let isProcessingScroll = false;
+
+    const smoothScrollToStep = (step: number, skipAnimation = false) => {
+      if (isScrollingRef.current || isProcessingScroll) return;
+      isScrollingRef.current = true;
+      isProcessingScroll = true;
+
+      const scrollHeight = container.scrollHeight;
+      const containerHeight = container.clientHeight;
+      const maxScroll = scrollHeight - containerHeight;
+
+      const scrollPositions = [0, maxScroll * 0.33, maxScroll * 0.66, maxScroll];
+
+      const targetScroll = scrollPositions[step] || 0;
+
+      if (skipAnimation || step === 0) {
+        setSkipTransitions(true);
+        container.scrollTop = targetScroll;
+        setVisibleColumns(step);
+        currentStep = step;
+        isScrollingRef.current = false;
+
+        setTimeout(() => {
+          isProcessingScroll = false;
+        }, 100);
+
+        setTimeout(() => {
+          setSkipTransitions(false);
+        }, 50);
+
+        if (step === 3 && onAllColumnsVisible) {
+          onAllColumnsVisible();
+        }
+
+        return;
+      }
+
+      const startScroll = container.scrollTop;
+      const distance = targetScroll - startScroll;
+      const duration = 500;
+      const startTime = performance.now();
+
+      const animateScroll = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        const easeProgress =
+          progress < 0.5
+            ? 4 * progress * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+        container.scrollTop = startScroll + distance * easeProgress;
+
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        } else {
+          isScrollingRef.current = false;
+          setVisibleColumns(step);
+          currentStep = step;
+
+          setTimeout(() => {
+            isProcessingScroll = false;
+          }, 100);
+
+          if (step === 3 && onAllColumnsVisible) {
+            onAllColumnsVisible();
+          }
+        }
+      };
+
+      requestAnimationFrame(animateScroll);
+    };
+
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+
+      if (isScrollingRef.current) return;
+
+      wheelDelta += e.deltaY;
+
+      if (wheelTimer) clearTimeout(wheelTimer);
+
+      wheelTimer = setTimeout(() => {
+        if (Math.abs(wheelDelta) > 40 && !isProcessingScroll) {
+          if (wheelDelta > 0) {
+            const nextStep = Math.min(currentStep + 1, 3);
+            smoothScrollToStep(nextStep);
+          } else {
+            if (currentStep === 0) {
+              if (
+                typeof window !== "undefined" &&
+                (window as any).gotoPrevSlide
+              ) {
+                (window as any).gotoPrevSlide();
+              }
+            } else {
+              const prevStep = Math.max(currentStep - 1, 0);
+              smoothScrollToStep(prevStep);
+            }
+          }
+        }
+        wheelDelta = 0;
+      }, 10);
+    };
+
+    container.addEventListener("wheel", handleWheel, { passive: false });
+
+    return () => {
+      container.removeEventListener("wheel", handleWheel);
+      if (wheelTimer) clearTimeout(wheelTimer);
+    };
+  }, [isInitialized, isScrollEnabled, onAllColumnsVisible]);
 
   return (
     <div
+      ref={containerRef}
+      className={styles.scrollRevealContainer}
       style={{
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "3rem",
+        height: "100vh",
+        overflowY: "auto",
+        overflowX: "hidden",
       }}
     >
-      <div
-        style={{
-          maxWidth: "950px",
-          width: "100%",
-        }}
-      >
-        <p
+      <div style={{ height: "200vh", position: "relative" }}>
+        <div
+          className={styles.scrollRevealMasterContainer}
           style={{
-            ...textStyle,
-            color: "#ffffff",
-            fontWeight: "bold",
-            marginBottom: "2rem",
-            fontSize: "clamp(1.2rem, 2.5vw, 1.8rem)",
+            position: "sticky",
+            top: 0,
           }}
         >
-          Fund Support — Funding-In-Kind (FIK)
-        </p>
+          {/* Fixed Header */}
+          <div className={styles.greyLineContainer}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <p className={styles.greyLineText}>
+                Money is fuel — but only when given to a human who can hold it.
+              </p>
+            </div>
+          </div>
 
-        <p
-          style={{
-            ...textStyle,
-            color: "#b8b8b8",
-            fontStyle: "italic",
-            marginBottom: "2rem",
-            paddingLeft: "1.5rem",
-            borderLeft: "3px solid #444",
-          }}
-        >
-          Sometimes the most valuable funding is everything except cash.
-        </p>
+          {/* Main Content Container */}
+          <div className={styles.scrollRevealMainContent}>
+            <div
+              className={styles.threeColumnGrid}
+              style={{ marginBottom: 0 }}
+            >
+              {/* Column 1: Player Capital */}
+              <div
+                className={`${styles.gridColumn} ${
+                  !isInitialized ? styles.gridColumnInitial : ""
+                }`}
+                style={{
+                  opacity: visibleColumns >= 1 ? 1 : 0,
+                  transform:
+                    visibleColumns >= 1
+                      ? "translateX(0)"
+                      : "translateX(100px)",
+                  transition:
+                    skipTransitions || !isInitialized
+                      ? "none"
+                      : "all 0.4s ease",
+                }}
+              >
+                <div className={styles.columnTitle}>
+                  <h3
+                    style={{
+                      fontFamily:
+                        '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif',
+                      fontSize: "14px",
+                      color: "#00e87b",
+                      fontWeight: "500",
+                      textTransform: "uppercase",
+                      letterSpacing: "1px",
+                      margin: 0,
+                      textAlign: "center",
+                    }}
+                  >
+                    Player Capital — Fuel for the identity you designed.
+                  </h3>
+                </div>
+                <div className={styles.textContent}>
+                  <p
+                    className={styles.heroParagraph}
+                    style={{
+                      fontFamily: '"satoshi", sans-serif',
+                      fontSize: "14px",
+                      fontWeight: "400",
+                      letterSpacing: "0.5px",
+                      color: "#888888",
+                      textAlign: "center",
+                    }}
+                  >
+                    Up to $100,000 deployed to activate your next self — without equity, ownership, or identity extraction.
+                  </p>
+                </div>
+                <div className={styles.imageContent}>
+                  <img
+                    src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+1.svg"
+                    width={200}
+                    height={200}
+                    alt="Player Capital"
+                    className={styles.heroImageContent}
+                    style={{ width: "200px", height: "200px" }}
+                  />
+                </div>
+              </div>
 
-        <p
-          style={{
-            ...textStyle,
-            color: "#ffffff",
-            marginBottom: "1rem",
-          }}
-        >
-          Money is only one form of fuel. Often, it's not even the most
-          powerful.
-        </p>
+              {/* Column 2: Patron Capital */}
+              <div
+                className={`${styles.gridColumn} ${
+                  !isInitialized && isScrollEnabled
+                    ? styles.gridColumnInitial
+                    : ""
+                }`}
+                style={{
+                  opacity: visibleColumns >= 2 ? 1 : 0,
+                  transform:
+                    visibleColumns >= 2
+                      ? "translateX(0)"
+                      : "translateX(100px)",
+                  transition:
+                    skipTransitions || !isInitialized
+                      ? "none"
+                      : "all 0.4s ease 0.1s",
+                }}
+              >
+                <div className={styles.columnTitle}>
+                  <h3
+                    style={{
+                      fontFamily:
+                        '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif',
+                      fontSize: "14px",
+                      color: "#00e87b",
+                      fontWeight: "500",
+                      textTransform: "uppercase",
+                      letterSpacing: "1px",
+                      margin: 0,
+                      textAlign: "center",
+                    }}
+                  >
+                    Patron Capital — Investment with soul and structure.
+                  </h3>
+                </div>
+                <div className={styles.textContent}>
+                  <p
+                    className={styles.heroParagraph}
+                    style={{
+                      fontFamily: '"satoshi", sans-serif',
+                      fontSize: "14px",
+                      fontWeight: "400",
+                      letterSpacing: "0.5px",
+                      color: "#888888",
+                      textAlign: "center",
+                    }}
+                  >
+                    Principal + 10% / 3 years, with a 2% optional legacy — clean, ethical, human-first returns.
+                  </p>
+                </div>
+                <div className={styles.imageContent}>
+                  <img
+                    src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+2.svg"
+                    width={200}
+                    height={200}
+                    alt="Patron Capital"
+                    className={styles.heroImageContent}
+                    style={{ width: "200px", height: "200px" }}
+                  />
+                </div>
+              </div>
 
-        <p
-          style={{
-            ...textStyle,
-            color: "#ffffff",
-            marginBottom: "1rem",
-          }}
-        >
-          FIK includes:
-        </p>
+              {/* Column 3: System Capital */}
+              <div
+                className={`${styles.gridColumn} ${
+                  !isInitialized && isScrollEnabled
+                    ? styles.gridColumnInitial
+                    : ""
+                }`}
+                style={{
+                  opacity: visibleColumns >= 3 ? 1 : 0,
+                  transform:
+                    visibleColumns >= 3
+                      ? "translateX(0)"
+                      : "translateX(100px)",
+                  transition:
+                    skipTransitions || !isInitialized
+                      ? "none"
+                      : "all 0.4s ease 0.2s",
+                }}
+              >
+                <div className={styles.columnTitle}>
+                  <h3
+                    style={{
+                      fontFamily:
+                        '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif',
+                      fontSize: "14px",
+                      color: "#00e87b",
+                      fontWeight: "500",
+                      textTransform: "uppercase",
+                      letterSpacing: "1px",
+                      margin: 0,
+                      textAlign: "center",
+                    }}
+                  >
+                    System Capital — Responsibility replaces hype.
+                  </h3>
+                </div>
+                <div className={styles.textContent}>
+                  <p
+                    className={styles.heroParagraph}
+                    style={{
+                      fontFamily: '"satoshi", sans-serif',
+                      fontSize: "14px",
+                      fontWeight: "400",
+                      letterSpacing: "0.5px",
+                      color: "#888888",
+                      textAlign: "center",
+                    }}
+                  >
+                    Capital flows only toward humans who have proven coherence, not confidence.
+                  </p>
+                </div>
+                <div className={styles.imageContent}>
+                  <img
+                    src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+3.svg"
+                    width={200}
+                    height={200}
+                    alt="System Capital"
+                    className={styles.heroImageContent}
+                    style={{ width: "200px", height: "200px" }}
+                  />
+                </div>
+              </div>
+            </div>
 
-        <ul
-          style={{
-            listStyleType: "disc",
-            paddingLeft: "2rem",
-            marginBottom: "2rem",
-          }}
-        >
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            mentorship
-          </li>
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            clarity architecture
-          </li>
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            emotional scaffolding
-          </li>
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            discipline engineering
-          </li>
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            attention resources
-          </li>
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            creative tooling
-          </li>
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            behavioral systems
-          </li>
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            EPiCENTRE access
-          </li>
-          <li
-            style={{
-              ...textStyle,
-              color: "#ffffff",
-              marginBottom: "0.5rem",
-            }}
-          >
-            identity reinforcement
-          </li>
-        </ul>
-
-        <p
-          style={{
-            ...textStyle,
-            color: "#ffffff",
-            marginBottom: "1rem",
-          }}
-        >
-          For some players, FIK is more transformative than money.
-        </p>
-
-        <p
-          style={{
-            ...textStyle,
-            color: "#ffffff",
-            marginBottom: "1rem",
-          }}
-        >
-          For others, it's the bridge to receive money later.
-        </p>
-
-        <p
-          style={{
-            ...textStyle,
-            color: "#ffffff",
-            marginBottom: "2rem",
-          }}
-        >
-          Either way: This is funding designed to evolve a human, not inflate a
-          valuation.
-        </p>
+            {/* Progress Indicator */}
+            <div className={styles.columnProgressIndicator}>
+              <div className={styles.progressLine}>
+                <div
+                  className={styles.progressSegment}
+                  style={{
+                    opacity: visibleColumns >= 1 ? 1 : 0,
+                    transform:
+                      visibleColumns >= 1 ? "scale(1)" : "scale(0)",
+                    transition:
+                      skipTransitions || !isInitialized
+                        ? "none"
+                        : "all 0.4s ease",
+                  }}
+                >
+                  <div
+                    className={`${styles.progressNumber} ${
+                      visibleColumns >= 1 ? styles.progressActive : ""
+                    }`}
+                    style={{
+                      transition:
+                        skipTransitions || !isInitialized
+                          ? "none"
+                          : "all 0.4s ease",
+                    }}
+                  ></div>
+                </div>
+                <div
+                  className={`${styles.progressConnector} ${
+                    visibleColumns >= 2 ? styles.progressActive : ""
+                  }`}
+                  style={{
+                    opacity: visibleColumns >= 2 ? 1 : 0,
+                    transform:
+                      visibleColumns >= 2 ? "scaleX(1)" : "scaleX(0)",
+                    transformOrigin: "left",
+                    transition:
+                      skipTransitions || !isInitialized
+                        ? "none"
+                        : "all 0.4s ease 0.05s",
+                  }}
+                ></div>
+                <div
+                  className={styles.progressSegment}
+                  style={{
+                    opacity: visibleColumns >= 2 ? 1 : 0,
+                    transform:
+                      visibleColumns >= 2 ? "scale(1)" : "scale(0)",
+                    transition:
+                      skipTransitions || !isInitialized
+                        ? "none"
+                        : "all 0.4s ease 0.1s",
+                  }}
+                >
+                  <div
+                    className={`${styles.progressNumber} ${
+                      visibleColumns >= 2 ? styles.progressActive : ""
+                    }`}
+                    style={{
+                      transition:
+                        skipTransitions || !isInitialized
+                          ? "none"
+                          : "all 0.4s ease 0.1s",
+                    }}
+                  ></div>
+                </div>
+                <div
+                  className={`${styles.progressConnector} ${
+                    visibleColumns >= 3 ? styles.progressActive : ""
+                  }`}
+                  style={{
+                    opacity: visibleColumns >= 3 ? 1 : 0,
+                    transform:
+                      visibleColumns >= 3 ? "scaleX(1)" : "scaleX(0)",
+                    transformOrigin: "left",
+                    transition:
+                      skipTransitions || !isInitialized
+                        ? "none"
+                        : "all 0.4s ease 0.15s",
+                  }}
+                ></div>
+                <div
+                  className={styles.progressSegment}
+                  style={{
+                    opacity: visibleColumns >= 3 ? 1 : 0,
+                    transform:
+                      visibleColumns >= 3 ? "scale(1)" : "scale(0)",
+                    transition:
+                      skipTransitions || !isInitialized
+                        ? "none"
+                        : "all 0.4s ease 0.2s",
+                  }}
+                >
+                  <div
+                    className={`${styles.progressNumber} ${
+                      visibleColumns >= 3 ? styles.progressActive : ""
+                    }`}
+                    style={{
+                      transition:
+                        skipTransitions || !isInitialized
+                          ? "none"
+                          : "all 0.4s ease 0.2s",
+                    }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
