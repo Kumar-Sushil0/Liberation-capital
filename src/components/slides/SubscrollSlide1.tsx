@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from '../../styles/slides.module.css';
 
 interface SubscrollSlide1Props {
@@ -36,7 +36,7 @@ export const SubscrollSlide1 = ({
   useEffect(() => {
     if (!isInitialized) return;
     
-    if (currentSection !== 8) return;
+    if (currentSection !== 9) return;
 
     setSkipTransitions(true);
 
@@ -66,7 +66,7 @@ export const SubscrollSlide1 = ({
     const prevSection = prevSectionRef.current;
     prevSectionRef.current = currentSection;
 
-    if (currentSection === 8 && prevSection !== 8 && isScrollEnabled) {
+    if (currentSection === 9 && prevSection !== 9 && isScrollEnabled) {
       setSkipTransitions(true);
       setVisibleColumns(0);
 
@@ -217,236 +217,271 @@ export const SubscrollSlide1 = ({
       }}
     >
       <div style={{ height: '200vh', position: 'relative' }}>
-        <div style={{
+        <div className={styles.scrollRevealMasterContainer} style={{
           position: 'sticky',
-          top: 0,
-          width: '100%',
-          height: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '3rem'
+          top: 0
         }}>
-          {/* Opening Statement */}
-          <div style={{
-            marginBottom: '2rem',
-            textAlign: 'center',
-            maxWidth: '1200px',
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'center'
-          }}>
-            <p style={{
-              margin: 0,
-              color: '#b8b8b8',
-              fontSize: 'clamp(1rem, 2vw, 1.3rem)',
-              lineHeight: 1.5,
-              fontStyle: 'italic',
-              paddingLeft: '1.5rem',
-              borderLeft: '3px solid #444',
-              textAlign: 'left',
-              maxWidth: '900px'
-            }}>
-              You can't design a future self without confronting the current one.
-            </p>
+          {/* Fixed Grey Line Container */}
+          <div className={styles.greyLineContainer}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <p className={styles.greyLineText}>
+                You can't design who you'll become until you confront who you are now.
+              </p>
+            </div>
           </div>
 
-          {/* Subtitle */}
-          <div style={{
-            marginBottom: '2rem',
-            textAlign: 'center',
-            maxWidth: '1200px',
-            width: '100%'
-          }}>
-            <p style={{
-              margin: 0,
-              color: '#ffffff',
-              fontSize: 'clamp(1.1rem, 2.2vw, 1.5rem)',
-              lineHeight: 1.5,
-              marginBottom: '0.5rem'
-            }}>
-              <span style={{ color: '#00e87b', fontWeight: 'bold' }}>GAMEiDESIGN</span> unmasks your blind spots, your hidden code,
-            </p>
-            <p style={{
-              margin: 0,
-              color: '#ffffff',
-              fontSize: 'clamp(1.1rem, 2.2vw, 1.5rem)',
-              lineHeight: 1.5
-            }}>
-              your contradictions, your multiple possible timelines.
-            </p>
-          </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr 1fr',
-            gap: '3rem',
-            width: '100%',
-            maxWidth: '1400px',
-            position: 'relative',
-            flex: '0 0 auto'
-          }}>
-        {/* Column 1 - Pre-Game */}
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '0.5rem',
-          padding: '1.5rem',
-          textAlign: 'center',
-          opacity: visibleColumns >= 1 ? 1 : 0,
-          transform: visibleColumns >= 1 ? 'translateX(0)' : 'translateX(100px)',
-          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
-        }}>
-          <h3 style={{ margin: 0, color: '#00e87b', fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-            Pre-Game
-          </h3>
-          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.4 }}>
-            identify all potential trajectories
-          </p>
-        </div>
-
-        {/* Column 2 - Me-Game */}
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '0.5rem',
-          padding: '1.5rem',
-          textAlign: 'center',
-          opacity: visibleColumns >= 2 ? 1 : 0,
-          transform: visibleColumns >= 2 ? 'translateX(0)' : 'translateX(100px)',
-          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
-        }}>
-          <h3 style={{ margin: 0, color: '#00e87b', fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-            Me-Game
-          </h3>
-          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.4 }}>
-            choose the identity you will embody
-          </p>
-        </div>
-
-        {/* Column 3 - End-Game */}
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '0.5rem',
-          padding: '1.5rem',
-          textAlign: 'center',
-          opacity: visibleColumns >= 3 ? 1 : 0,
-          transform: visibleColumns >= 3 ? 'translateX(0)' : 'translateX(100px)',
-          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s'
-        }}>
-          <h3 style={{ margin: 0, color: '#00e87b', fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-            End-Game
-          </h3>
-          <p style={{ margin: 0, color: '#ffffff', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', lineHeight: 1.4 }}>
-            consolidate your extremes
-          </p>
-        </div>
-          </div>
-
-          {/* Closing Statements */}
-          <div style={{
-            marginTop: '2rem',
-            textAlign: 'center',
-            maxWidth: '1200px',
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '0.8rem',
-            alignItems: 'center'
-          }}>
-            <p style={{
-              margin: 0,
-              color: '#ffffff',
-              fontSize: 'clamp(1rem, 2vw, 1.3rem)',
-              lineHeight: 1.5
-            }}>
-              It's brutal honesty married to creative possibility
-            </p>
-            <p style={{
-              margin: 0,
-              color: '#ffffff',
-              fontSize: 'clamp(1rem, 2vw, 1.3rem)',
-              lineHeight: 1.5
-            }}>
-              A mirror sharp enough to cut the illusions you've been living in.
-            </p>
-          </div>
-
-          {/* Progress Indicator */}
-          <div className={styles.columnProgressIndicator}>
-            <div className={styles.progressLine}>
+          {/* Main Content Container */}
+          <div className={styles.scrollRevealMainContent}>
+            <div className={styles.threeColumnGrid} style={{ marginBottom: 0 }}>
+              {/* Column 1 - PRE-GAME */}
               <div
-                className={styles.progressSegment}
+                className={`${styles.gridColumn} ${!isInitialized ? styles.gridColumnInitial : ''}`}
                 style={{
                   opacity: visibleColumns >= 1 ? 1 : 0,
-                  transform: visibleColumns >= 1 ? 'scale(1)' : 'scale(0)',
+                  transform: visibleColumns >= 1 ? 'translateX(0)' : 'translateX(100px)',
                   transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
                 }}
               >
-                <div
-                  className={`${styles.progressNumber} ${visibleColumns >= 1 ? styles.progressActive : ''}`}
-                  style={{
-                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
-                  }}
-                >
+                <div className={styles.columnTitle}>
+                  <h3 style={{
+                    fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif',
+                    fontSize: '14px',
+                    color: '#00e87b',
+                    fontWeight: '500',
+                    textTransform: 'uppercase',
+                    letterSpacing: '1px',
+                    margin: 0,
+                    textAlign: 'center'
+                  }}>
+                    PRE-GAME — Map Your Possibilities
+                  </h3>
+                </div>
+                <div className={styles.textContent}>
+                  <p className={styles.heroParagraph} style={{
+                    fontFamily: '"satoshi", sans-serif',
+                    fontSize: '14px',
+                    fontWeight: '500',
+                    letterSpacing: '1px',
+                    color: '#888888',
+                    textAlign: 'center'
+                  }}>
+                    You don't have one future — you have many.
+                  </p>
+                </div>
+                <div className={styles.imageContent}>
+                  <img
+                    src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+1.svg"
+                    width={200}
+                    height={200}
+                    alt="Pre-Game"
+                    className={styles.heroImageContent}
+                    style={{ width: '200px', height: '200px' }}
+                  />
+                </div>
+                <div className={styles.textContent}>
+                  <p className={styles.heroParagraph} style={{
+                    fontFamily: '"satoshi", sans-serif',
+                    fontSize: '12px',
+                    fontWeight: '400',
+                    letterSpacing: '0.5px',
+                    color: '#666666',
+                    textAlign: 'center',
+                    fontStyle: 'italic'
+                  }}>
+                    Pre-Game reveals every trajectory your life can take.
+                  </p>
                 </div>
               </div>
+
+              {/* Column 2 - END-GAME */}
               <div
-                className={`${styles.progressConnector} ${visibleColumns >= 2 ? styles.progressActive : ''}`}
+                className={`${styles.gridColumn} ${!isInitialized && isScrollEnabled ? styles.gridColumnInitial : ''}`}
                 style={{
                   opacity: visibleColumns >= 2 ? 1 : 0,
-                  transform: visibleColumns >= 2 ? 'scaleX(1)' : 'scaleX(0)',
-                  transformOrigin: 'left',
-                  transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
-                }}
-              ></div>
-              <div
-                className={styles.progressSegment}
-                style={{
-                  opacity: visibleColumns >= 2 ? 1 : 0,
-                  transform: visibleColumns >= 2 ? 'scale(1)' : 'scale(0)',
+                  transform: visibleColumns >= 2 ? 'translateX(0)' : 'translateX(100px)',
                   transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
                 }}
               >
-                <div
-                  className={`${styles.progressNumber} ${visibleColumns >= 2 ? styles.progressActive : ''}`}
-                  style={{
-                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
-                  }}
-                >
+                <div className={styles.columnTitle}>
+                  <h3 style={{
+                    fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif',
+                    fontSize: '14px',
+                    color: '#00e87b',
+                    fontWeight: '500',
+                    textTransform: 'uppercase',
+                    letterSpacing: '1px',
+                    margin: 0,
+                    textAlign: 'center'
+                  }}>
+                    END-GAME — Face Your Extremes
+                  </h3>
+                </div>
+                <div className={styles.textContent}>
+                  <p className={styles.heroParagraph} style={{
+                    fontFamily: '"satoshi", sans-serif',
+                    fontSize: '14px',
+                    fontWeight: '500',
+                    letterSpacing: '1px',
+                    color: '#888888',
+                    textAlign: 'center'
+                  }}>
+                    Your best and worst selves run more of your life than you admit.
+                  </p>
+                </div>
+                <div className={styles.imageContent}>
+                  <img
+                    src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+2.svg"
+                    width={200}
+                    height={200}
+                    alt="End-Game"
+                    className={styles.heroImageContent}
+                    style={{ width: '200px', height: '200px' }}
+                  />
+                </div>
+                <div className={styles.textContent}>
+                  <p className={styles.heroParagraph} style={{
+                    fontFamily: '"satoshi", sans-serif',
+                    fontSize: '12px',
+                    fontWeight: '400',
+                    letterSpacing: '0.5px',
+                    color: '#666666',
+                    textAlign: 'center',
+                    fontStyle: 'italic'
+                  }}>
+                    End-Game consolidates the extremes that secretly control you.
+                  </p>
                 </div>
               </div>
+
+              {/* Column 3 - ME-GAME */}
               <div
-                className={`${styles.progressConnector} ${visibleColumns >= 3 ? styles.progressActive : ''}`}
+                className={`${styles.gridColumn} ${!isInitialized && isScrollEnabled ? styles.gridColumnInitial : ''}`}
                 style={{
                   opacity: visibleColumns >= 3 ? 1 : 0,
-                  transform: visibleColumns >= 3 ? 'scaleX(1)' : 'scaleX(0)',
-                  transformOrigin: 'left',
-                  transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
-                }}
-              ></div>
-              <div
-                className={styles.progressSegment}
-                style={{
-                  opacity: visibleColumns >= 3 ? 1 : 0,
-                  transform: visibleColumns >= 3 ? 'scale(1)' : 'scale(0)',
+                  transform: visibleColumns >= 3 ? 'translateX(0)' : 'translateX(100px)',
                   transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s'
                 }}
               >
+                <div className={styles.columnTitle}>
+                  <h3 style={{
+                    fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif',
+                    fontSize: '14px',
+                    color: '#00e87b',
+                    fontWeight: '500',
+                    textTransform: 'uppercase',
+                    letterSpacing: '1px',
+                    margin: 0,
+                    textAlign: 'center'
+                  }}>
+                    ME-GAME — Choose Your Identity
+                  </h3>
+                </div>
+                <div className={styles.textContent}>
+                  <p className={styles.heroParagraph} style={{
+                    fontFamily: '"satoshi", sans-serif',
+                    fontSize: '14px',
+                    fontWeight: '500',
+                    letterSpacing: '1px',
+                    color: '#888888',
+                    textAlign: 'center'
+                  }}>
+                    Identity is a decision, not an accident.
+                  </p>
+                </div>
+                <div className={styles.imageContent}>
+                  <img
+                    src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+3.svg"
+                    width={200}
+                    height={200}
+                    alt="Me-Game"
+                    className={styles.heroImageContent}
+                    style={{ width: '200px', height: '200px' }}
+                  />
+                </div>
+                <div className={styles.textContent}>
+                  <p className={styles.heroParagraph} style={{
+                    fontFamily: '"satoshi", sans-serif',
+                    fontSize: '12px',
+                    fontWeight: '400',
+                    letterSpacing: '0.5px',
+                    color: '#666666',
+                    textAlign: 'center',
+                    fontStyle: 'italic'
+                  }}>
+                    Me-Game forces you to choose the version of yourself you will become.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Progress Indicator */}
+            <div className={styles.columnProgressIndicator}>
+              <div className={styles.progressLine}>
                 <div
-                  className={`${styles.progressNumber} ${visibleColumns >= 3 ? styles.progressActive : ''}`}
+                  className={styles.progressSegment}
                   style={{
+                    opacity: visibleColumns >= 1 ? 1 : 0,
+                    transform: visibleColumns >= 1 ? 'scale(1)' : 'scale(0)',
+                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
+                  }}
+                >
+                  <div
+                    className={`${styles.progressNumber} ${visibleColumns >= 1 ? styles.progressActive : ''}`}
+                    style={{
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
+                    }}
+                  >
+                  </div>
+                </div>
+                <div
+                  className={`${styles.progressConnector} ${visibleColumns >= 2 ? styles.progressActive : ''}`}
+                  style={{
+                    opacity: visibleColumns >= 2 ? 1 : 0,
+                    transform: visibleColumns >= 2 ? 'scaleX(1)' : 'scaleX(0)',
+                    transformOrigin: 'left',
+                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
+                  }}
+                ></div>
+                <div
+                  className={styles.progressSegment}
+                  style={{
+                    opacity: visibleColumns >= 2 ? 1 : 0,
+                    transform: visibleColumns >= 2 ? 'scale(1)' : 'scale(0)',
+                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
+                  }}
+                >
+                  <div
+                    className={`${styles.progressNumber} ${visibleColumns >= 2 ? styles.progressActive : ''}`}
+                    style={{
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
+                    }}
+                  >
+                  </div>
+                </div>
+                <div
+                  className={`${styles.progressConnector} ${visibleColumns >= 3 ? styles.progressActive : ''}`}
+                  style={{
+                    opacity: visibleColumns >= 3 ? 1 : 0,
+                    transform: visibleColumns >= 3 ? 'scaleX(1)' : 'scaleX(0)',
+                    transformOrigin: 'left',
+                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
+                  }}
+                ></div>
+                <div
+                  className={styles.progressSegment}
+                  style={{
+                    opacity: visibleColumns >= 3 ? 1 : 0,
+                    transform: visibleColumns >= 3 ? 'scale(1)' : 'scale(0)',
                     transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s'
                   }}
                 >
+                  <div
+                    className={`${styles.progressNumber} ${visibleColumns >= 3 ? styles.progressActive : ''}`}
+                    style={{
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s'
+                    }}
+                  >
+                  </div>
                 </div>
               </div>
             </div>

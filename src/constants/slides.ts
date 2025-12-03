@@ -11,10 +11,10 @@ const desktopSections: SlideConfig[] = [
   { type: "content1", className: "slide01" },
   { type: "warning", className: "slideWarning" },
   { type: "video", className: "slideVideo" },
+  { type: "slide03", className: "slide03" },
   { type: "fundOrigin", className: "slideFundOrigin" },
   { type: "rebuildIdentities", className: "slideRebuildIdentities" },
   { type: "fundCoherence", className: "slideFundCoherence" },
-  { type: "slide03", className: "slide03" },
   { type: "lifeiDesignAccelerator", className: "slideLifeiDesignAccelerator" },
   { type: "subscroll1", className: "slide02" },
   { type: "coreiDesign", className: "slideCoreiDesign" },
@@ -46,7 +46,7 @@ export const getSections = (isMobile: boolean): SlideConfig[] => {
 };
 
 // Desktop subscroll sections - indices that pause main scroll
-const DESKTOP_SUBSCROLL_SECTIONS: number[] = [7, 9]; // Slide 7 (Slide03), Slide 9 (SubscrollSlide1) have subscroll
+const DESKTOP_SUBSCROLL_SECTIONS: number[] = [4, 5, 6, 7, 8, 9, 10, 11, 12]; // Slide 4 (Slide03), Slide 5 (FundOrigin), Slide 6 (RebuildIdentities), Slide 7 (FundCoherence), Slide 8 (LifeiDesignAccelerator), Slide 9 (SubscrollSlide1), Slide 10 (CoreiDesign), Slide 11 (PlayiDesign), Slide 12 (Epicentre) have subscroll
 
 // Mobile subscroll sections
 const MOBILE_SUBSCROLL_SECTIONS: number[] = [];
@@ -58,8 +58,15 @@ export const getSubscrollSections = (isMobile: boolean): number[] => {
 
 // Desktop subscroll steps
 const DESKTOP_SUBSCROLL_STEPS: Record<number, number> = {
-  7: 4, // Slide03 has 4 steps (initial + 3 card reveals)
+  4: 4, // Slide03 has 4 steps (initial + 3 card reveals)
+  5: 3, // FundOrigin has 3 columns to reveal
+  6: 3, // RebuildIdentities has 3 columns to reveal
+  7: 3, // FundCoherence has 3 columns to reveal
+  8: 4, // LifeiDesignAccelerator has 4 steps (initial + 3 card reveals)
   9: 3, // SubscrollSlide1 has 3 columns to reveal
+  10: 3, // CoreiDesign has 3 columns to reveal
+  11: 3, // PlayiDesign has 3 columns to reveal
+  12: 4, // Epicentre has 4 steps (initial + 3 card reveals)
 };
 
 // Mobile subscroll steps
@@ -76,10 +83,10 @@ export const slideWords = [
   "CAPITAL",         // 1: content1
   "WARNING",         // 2: warning
   "VIDEO",           // 3: video
-  "FUND ORIGIN",     // 4: fundOrigin
-  "FUND ASCENT",     // 5: rebuildIdentities
-  "FUND COHERENCE",  // 6: fundCoherence
-  "FUND TRIBES",     // 7: slide03
+  "FUND TRIBES",     // 4: slide03
+  "FUND ORIGIN",     // 5: fundOrigin
+  "FUND ASCENT",     // 6: rebuildIdentities
+  "FUND COHERENCE",  // 7: fundCoherence
   "FUND ENGINE",     // 8: lifeiDesignAccelerator
   "FUND AWARENESS",  // 9: subscroll1
   "FUND EMOTION",    // 10: coreiDesign
@@ -108,10 +115,10 @@ export const dummyTexts = [
   "Fund humans, not startups",           // 1: content1
   "Ready to think?",                     // 2: warning
   "Watch and understand",                // 3: video
-  "World Funds Products, We Fund Players",  // 4: fundOrigin
-  "Institution Behind Becoming",            // 5: rebuildIdentities
-  "Coherence Over Traction",                // 6: fundCoherence
-  "Players & Patrons",                      // 7: slide03
+  "Players & Patrons",                   // 4: slide03
+  "World Funds Products, We Fund Players",  // 5: fundOrigin
+  "Institution Behind Becoming",            // 6: rebuildIdentities
+  "Coherence Over Traction",                // 7: fundCoherence
   "LIFEiDESIGN Accelerator",             // 8: lifeiDesignAccelerator
   "GAMEiDESIGN",                         // 9: subscroll1
   "COREiDESIGN",                         // 10: coreiDesign

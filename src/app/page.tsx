@@ -177,19 +177,89 @@ export default function Home() {
       case "video":
         return <VideoSlide />;
       case "fundOrigin":
-        return <FundOriginSlide />;
+        return (
+          <FundOriginSlide
+            currentSection={currentSection}
+            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            onAllColumnsVisible={() => {
+              setTimeout(() => {
+                isScrollPausedRef.current = false;
+              }, 500);
+            }}
+          />
+        );
       case "rebuildIdentities":
-        return <RebuildIdentitiesSlide />;
+        return (
+          <RebuildIdentitiesSlide
+            currentSection={currentSection}
+            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            onAllColumnsVisible={() => {
+              setTimeout(() => {
+                isScrollPausedRef.current = false;
+              }, 500);
+            }}
+          />
+        );
       case "fundCoherence":
-        return <FundCoherenceSlide />;
+        return (
+          <FundCoherenceSlide
+            currentSection={currentSection}
+            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            onAllColumnsVisible={() => {
+              setTimeout(() => {
+                isScrollPausedRef.current = false;
+              }, 500);
+            }}
+          />
+        );
       case "lifeiDesignAccelerator":
-        return <LifeiDesignAcceleratorSlide />;
+        return (
+          <LifeiDesignAcceleratorSlide
+            currentSection={currentSection}
+            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            onAllColumnsVisible={() => {
+              setTimeout(() => {
+                isScrollPausedRef.current = false;
+              }, 500);
+            }}
+          />
+        );
       case "coreiDesign":
-        return <CoreiDesignSlide />;
+        return (
+          <CoreiDesignSlide
+            currentSection={currentSection}
+            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            onAllColumnsVisible={() => {
+              setTimeout(() => {
+                isScrollPausedRef.current = false;
+              }, 500);
+            }}
+          />
+        );
       case "playiDesign":
-        return <PlayiDesignSlide />;
+        return (
+          <PlayiDesignSlide
+            currentSection={currentSection}
+            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            onAllColumnsVisible={() => {
+              setTimeout(() => {
+                isScrollPausedRef.current = false;
+              }, 500);
+            }}
+          />
+        );
       case "epicentre":
-        return <EpicentreSlide />;
+        return (
+          <EpicentreSlide
+            currentSection={currentSection}
+            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            onAllColumnsVisible={() => {
+              setTimeout(() => {
+                isScrollPausedRef.current = false;
+              }, 500);
+            }}
+          />
+        );
       case "silenceTest":
         return <SilenceTestSlide />;
       case "disciplineTest":
