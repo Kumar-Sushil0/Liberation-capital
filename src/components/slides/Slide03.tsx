@@ -228,12 +228,6 @@ export const Slide03 = ({
               <p className={styles.greyLineText}>
                 Two roles. One evolution system.
               </p>
-              <p className={styles.greyLineText} style={{ fontStyle: 'italic', marginTop: '0.5rem' }}>
-                Both enter different doors, but walk the same game of human evolution.
-              </p>
-              <p className={styles.greyLineText} style={{ fontStyle: 'italic', marginTop: '0.5rem' }}>
-                If your game of life is editable... edit it.
-              </p>
             </div>
           </div>
 
@@ -241,173 +235,6 @@ export const Slide03 = ({
           <div className={styles.scrollRevealMainContent}>
             <div className={styles.powersMainContent}>
               <div className={styles.powersSection}>
-                <h3
-                  className={styles.sectionTitle}
-                  style={{
-                    opacity: visibleColumns >= 1 ? 1 : 0,
-                    transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)',
-                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
-                  }}
-                >
-                  <span style={{
-                    fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif',
-                    fontSize: '14px',
-                    color: '#00e87b',
-                    fontWeight: '500',
-                    textTransform: 'uppercase',
-                    letterSpacing: '1px',
-                    margin: 0
-                  }}>
-                    Patrons
-                  </span>
-                </h3>
-                <p
-                  className={styles.heroParagraph}
-                  style={{
-                    opacity: visibleColumns >= 1 ? 1 : 0,
-                    transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)',
-                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s',
-                    textAlign: 'center',
-                    fontSize: '12px',
-                    marginBottom: '0.5rem'
-                  }}
-                >
-                  <span style={{ display: 'block', whiteSpace: 'nowrap' }}>Wealthy, restless, allergic to hype,</span>
-                  <span style={{ display: 'block', whiteSpace: 'nowrap' }}>spiritually bankrupt from funding noise,</span>
-                  <span style={{ display: 'block', whiteSpace: 'nowrap' }}>ready to fund meaning.</span>
-                </p>
-
-                <div className={styles.powersGrid2x2}>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardEmoji} style={{ position: 'absolute', top: '-20px', left: '-20px', right: '-20px', bottom: '-20px', transform: 'none', width: 'calc(100% + 40px)', height: 'calc(100% + 40px)' }}>
-                          <img 
-                            src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/investor1.svg" 
-                            alt="Capital" 
-                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                          />
-                        </div>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription}>Capital seeking purpose.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
-                      }}
-                    >wealthy</h4>
-                  </div>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardEmoji} style={{ position: 'absolute', top: '-20px', left: '-20px', right: '-20px', bottom: '-20px', transform: 'none', width: 'calc(100% + 40px)', height: 'calc(100% + 40px)' }}>
-                          <img 
-                            src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/investor2.svg" 
-                            alt="Meaning" 
-                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                          />
-                        </div>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription}>Beyond returns.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
-                      }}
-                    >restless</h4>
-                  </div>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardEmoji} style={{ position: 'absolute', top: '-20px', left: '-20px', right: '-20px', bottom: '-20px', transform: 'none', width: 'calc(100% + 40px)', height: 'calc(100% + 40px)' }}>
-                          <img 
-                            src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/investor3.svg" 
-                            alt="Restless" 
-                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                          />
-                        </div>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription}>Tired of empty wins.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
-                      }}
-                    >allergic to hype</h4>
-                  </div>
-                  <div className={styles.cardWrapper}>
-                    <div
-                      className={styles.hoverCard}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
-                      }}
-                    >
-                      <div className={styles.cardContent}>
-                        <div className={styles.cardEmoji} style={{ position: 'absolute', top: '-20px', left: '-20px', right: '-20px', bottom: '-20px', transform: 'none', width: 'calc(100% + 40px)', height: 'calc(100% + 40px)' }}>
-                          <img 
-                            src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/investor4.svg" 
-                            alt="Hype" 
-                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                          />
-                        </div>
-                        <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription}>Allergic to fake.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <h4
-                      className={styles.cardTitleBelow}
-                      style={{
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
-                      }}
-                    >ready to fund meaning</h4>
-                  </div>
-                </div>
-              </div>
-
-              <div className={styles.separatorLine}></div>
-
-              <div className={styles.forcesSection}>
                 <h3
                   className={styles.sectionTitle}
                   style={{
@@ -439,9 +266,144 @@ export const Slide03 = ({
                     marginBottom: '0.5rem'
                   }}
                 >
-                  <span style={{ display: 'block', whiteSpace: 'nowrap' }}>Devoted, disciplined, oxygen-starved for capital,</span>
-                  <span style={{ display: 'block', whiteSpace: 'nowrap' }}>hungry enough to redesign their life,</span>
-                  <span style={{ display: 'block', whiteSpace: 'nowrap' }}>brave enough to pitch their becoming.</span>
+                  Signs You Belong Here
+                </p>
+
+                <div className={styles.powersGrid2x2}>
+                  <div className={styles.cardWrapper}>
+                    <div
+                      className={styles.hoverCard}
+                      style={{
+                        opacity: visibleColumns >= 2 ? 1 : 0,
+                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
+                      }}
+                    >
+                      <div className={styles.cardContent}>
+                        <div className={styles.cardHoverContent}>
+                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>The identity you're living can't carry the life you want.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <h4
+                      className={styles.cardTitleBelow}
+                      style={{
+                        opacity: visibleColumns >= 2 ? 1 : 0,
+                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
+                      }}
+                    >You've outgrown your old self and you know it.</h4>
+                  </div>
+                  <div className={styles.cardWrapper}>
+                    <div
+                      className={styles.hoverCard}
+                      style={{
+                        opacity: visibleColumns >= 2 ? 1 : 0,
+                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
+                      }}
+                    >
+                      <div className={styles.cardContent}>
+                        <div className={styles.cardHoverContent}>
+                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>Your effort is real — your capital isn't.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <h4
+                      className={styles.cardTitleBelow}
+                      style={{
+                        opacity: visibleColumns >= 2 ? 1 : 0,
+                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
+                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
+                      }}
+                    >You're disciplined but underfunded.</h4>
+                  </div>
+                  <div className={styles.cardWrapper}>
+                    <div
+                      className={styles.hoverCard}
+                      style={{
+                        opacity: visibleColumns >= 3 ? 1 : 0,
+                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
+                      }}
+                    >
+                      <div className={styles.cardContent}>
+                        <div className={styles.cardHoverContent}>
+                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>You're done with motivation. You need a system.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <h4
+                      className={styles.cardTitleBelow}
+                      style={{
+                        opacity: visibleColumns >= 3 ? 1 : 0,
+                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
+                      }}
+                    >You want structure, not slogans.</h4>
+                  </div>
+                  <div className={styles.cardWrapper}>
+                    <div
+                      className={styles.hoverCard}
+                      style={{
+                        opacity: visibleColumns >= 3 ? 1 : 0,
+                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
+                      }}
+                    >
+                      <div className={styles.cardContent}>
+                        <div className={styles.cardHoverContent}>
+                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>Coherence over charisma — that's your advantage.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <h4
+                      className={styles.cardTitleBelow}
+                      style={{
+                        opacity: visibleColumns >= 3 ? 1 : 0,
+                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
+                      }}
+                    >You're ready to prove yourself through behavior, not talk.</h4>
+                  </div>
+                </div>
+              </div>
+
+              <div className={styles.separatorLine}></div>
+
+              <div className={styles.forcesSection}>
+                <h3
+                  className={styles.sectionTitle}
+                  style={{
+                    opacity: visibleColumns >= 1 ? 1 : 0,
+                    transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)',
+                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
+                  }}
+                >
+                  <span style={{
+                    fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif',
+                    fontSize: '14px',
+                    color: '#00e87b',
+                    fontWeight: '500',
+                    textTransform: 'uppercase',
+                    letterSpacing: '1px',
+                    margin: 0
+                  }}>
+                    Patrons
+                  </span>
+                </h3>
+                <p
+                  className={styles.heroParagraph}
+                  style={{
+                    opacity: visibleColumns >= 1 ? 1 : 0,
+                    transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)',
+                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s',
+                    textAlign: 'center',
+                    fontSize: '12px',
+                    marginBottom: '0.5rem'
+                  }}
+                >
+                  Signs You're Meant for This
                 </p>
 
                 <div className={styles.forcesGrid2x2}>
@@ -457,13 +419,13 @@ export const Slide03 = ({
                       <div className={styles.cardContent}>
                         <div className={styles.cardEmoji} style={{ position: 'absolute', top: '-20px', left: '-20px', right: '-20px', bottom: '-20px', transform: 'none', width: 'calc(100% + 40px)', height: 'calc(100% + 40px)' }}>
                           <img 
-                            src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/player1.svg" 
-                            alt="Discipline" 
+                            src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/investor1.svg" 
+                            alt="Capital" 
                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                           />
                         </div>
                         <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription}>Relentless execution.</p>
+                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>Money solved comfort, not meaning.</p>
                         </div>
                       </div>
                     </div>
@@ -474,7 +436,7 @@ export const Slide03 = ({
                         transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
                       }}
-                    >devoted</h4>
+                    >You're wealthy, but not fulfilled.</h4>
                   </div>
                   <div className={styles.cardWrapper}>
                     <div
@@ -488,13 +450,13 @@ export const Slide03 = ({
                       <div className={styles.cardContent}>
                         <div className={styles.cardEmoji} style={{ position: 'absolute', top: '-20px', left: '-20px', right: '-20px', bottom: '-20px', transform: 'none', width: 'calc(100% + 40px)', height: 'calc(100% + 40px)' }}>
                           <img 
-                            src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/player2.svg" 
-                            alt="Devotion" 
+                            src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/investor2.svg" 
+                            alt="Meaning" 
                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                           />
                         </div>
                         <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription}>All in, always.</p>
+                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>Decks, founders, hype cycles — none of it feels real anymore.</p>
                         </div>
                       </div>
                     </div>
@@ -505,7 +467,7 @@ export const Slide03 = ({
                         transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
                       }}
-                    >disciplined</h4>
+                    >You're tired of investing in noise.</h4>
                   </div>
                   <div className={styles.cardWrapper}>
                     <div
@@ -519,13 +481,13 @@ export const Slide03 = ({
                       <div className={styles.cardContent}>
                         <div className={styles.cardEmoji} style={{ position: 'absolute', top: '-20px', left: '-20px', right: '-20px', bottom: '-20px', transform: 'none', width: 'calc(100% + 40px)', height: 'calc(100% + 40px)' }}>
                           <img 
-                            src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/player3.svg" 
-                            alt="Capital Need" 
+                            src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/investor3.svg" 
+                            alt="Restless" 
                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                           />
                         </div>
                         <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription}>Starving for fuel.</p>
+                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>Coherent people outperform every market trend.</p>
                         </div>
                       </div>
                     </div>
@@ -536,7 +498,7 @@ export const Slide03 = ({
                         transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
                       }}
-                    >oxygen-starved for capital</h4>
+                    >You want to fund humans who can actually follow through.</h4>
                   </div>
                   <div className={styles.cardWrapper}>
                     <div
@@ -550,13 +512,13 @@ export const Slide03 = ({
                       <div className={styles.cardContent}>
                         <div className={styles.cardEmoji} style={{ position: 'absolute', top: '-20px', left: '-20px', right: '-20px', bottom: '-20px', transform: 'none', width: 'calc(100% + 40px)', height: 'calc(100% + 40px)' }}>
                           <img 
-                            src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/player4.svg" 
-                            alt="Oxygen" 
+                            src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/investor4.svg" 
+                            alt="Hype" 
                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                           />
                         </div>
                         <div className={styles.cardHoverContent}>
-                          <p className={styles.cardDescription}>Need air to breathe.</p>
+                          <p className={styles.cardDescription} style={{ fontStyle: 'italic' }}>Funding becoming {'>'} funding branding.</p>
                         </div>
                       </div>
                     </div>
@@ -567,7 +529,7 @@ export const Slide03 = ({
                         transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
                       }}
-                    >brave enough to pitch their becoming</h4>
+                    >You want your capital to change lives, not chase valuations.</h4>
                   </div>
                 </div>
               </div>
