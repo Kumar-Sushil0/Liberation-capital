@@ -17,23 +17,24 @@ export const WarningSlide = () => {
       padding: '3rem'
     }}>
       <div style={{
-        maxWidth: '900px',
-        width: '100%'
+        maxWidth: '1000px',
+        width: '100%',
+        textAlign: 'center'
       }}>
         <p style={{ 
           ...textStyle,
           color: '#ffffff',
-          marginBottom: '1.5rem'
+          marginBottom: '0.75rem'
         }}>
-          <strong>Warning:</strong> This philosophy disrupts your default settings.
+          <strong>Warning:</strong> The philosophy of <strong>LIBERATION CAPITAL</strong> may disrupt your default settings.
         </p>
 
         <p style={{ 
           ...textStyle,
           color: '#ffffff',
-          marginBottom: '1.5rem'
+          marginBottom: '0.75rem'
         }}>
-          Enter only when you can give <strong>15 uninterrupted minutes</strong> to wrestle with new ideas.
+          Enter website only when you can give <strong>15 uninterrupted minutes</strong> to wrestle with new kind of reality.
         </p>
 
         <p style={{ 
@@ -41,7 +42,7 @@ export const WarningSlide = () => {
           color: '#b8b8b8',
           fontStyle: 'italic'
         }}>
-          Choose a time when you're ready to think, not react.
+          Choose a time when you're ready to think, not react. - Pick a 15-minute slot → we'll reserve it.
         </p>
       </div>
     </div>
