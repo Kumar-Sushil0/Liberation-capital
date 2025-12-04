@@ -360,11 +360,13 @@ export const HeroSlide = ({
                 fontSize: 'clamp(1.1rem, 2vw, 1.6rem)',
                 margin: 0,
                 lineHeight: 1.5,
-                color: '#ffffff',
+                color: '#00e87b',
+                fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif',
                 fontWeight: '500',
+                textTransform:"uppercase",
                 marginTop: '0.5rem'
               }}>
-                We don't fund startups. We fund humans redesigning themselves.
+                <span style={{color: '#ffffff'}}> We don't fund startups.</span> We fund humans redesigning themselves.
               </p>
             </div>
           </div>
