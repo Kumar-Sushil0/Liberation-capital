@@ -18,6 +18,7 @@ export const PlayiDesignSlide = ({
   const [skipTransitions, setSkipTransitions] = useState(true);
   const [isInitialized, setIsInitialized] = useState(false);
   const isScrollingRef = useRef(false);
+  const [triggeredColumns, setTriggeredColumns] = useState(new Set<number>());
 
   useEffect(() => {
     setSkipTransitions(true);
@@ -27,7 +28,7 @@ export const PlayiDesignSlide = ({
       setIsInitialized(true);
     }, 100);
     return () => clearTimeout(timer);
-  }, [isScrollEnabled]);
+  }, []);
 
   useEffect(() => {
     if (!isInitialized || currentSection !== 11) return;
@@ -51,11 +52,26 @@ export const PlayiDesignSlide = ({
     if (currentSection === 11 && prevSection !== 11 && isScrollEnabled) {
       setSkipTransitions(true);
       setVisibleColumns(0);
+      setTriggeredColumns(new Set());
       const container = containerRef.current;
       if (container) container.scrollTop = 0;
       setTimeout(() => setSkipTransitions(false), 100);
     }
   }, [currentSection, isScrollEnabled, isInitialized]);
+
+  useEffect(() => {
+    if (isInitialized && visibleColumns >= 1) {
+      if (visibleColumns >= 1 && !triggeredColumns.has(1)) {
+        setTimeout(() => setTriggeredColumns(prev => new Set(prev).add(1)), 200);
+      }
+      if (visibleColumns >= 2 && !triggeredColumns.has(2)) {
+        setTimeout(() => setTriggeredColumns(prev => new Set(prev).add(2)), 400);
+      }
+      if (visibleColumns >= 3 && !triggeredColumns.has(3)) {
+        setTimeout(() => setTriggeredColumns(prev => new Set(prev).add(3)), 600);
+      }
+    }
+  }, [visibleColumns, isInitialized, triggeredColumns]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -74,7 +90,7 @@ export const PlayiDesignSlide = ({
       const scrollHeight = container.scrollHeight;
       const containerHeight = container.clientHeight;
       const maxScroll = scrollHeight - containerHeight;
-      const scrollPositions = [0, maxScroll * 0.33, maxScroll * 0.66, maxScroll];
+      const scrollPositions = [0, maxScroll * 0.2, maxScroll * 0.45, maxScroll * 0.7, maxScroll];
       const targetScroll = scrollPositions[step] || 0;
 
       if (skipAnimation || step === 0) {
@@ -85,7 +101,12 @@ export const PlayiDesignSlide = ({
         isScrollingRef.current = false;
         setTimeout(() => isProcessingScroll = false, 100);
         setTimeout(() => setSkipTransitions(false), 50);
-        if (step === 3 && onAllColumnsVisible) onAllColumnsVisible();
+        if (step === 1) window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 11, step: 1 } }));
+        if (step === 2) window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 11, step: 2 } }));
+        if (step === 3) {
+          window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 11, step: 3 } }));
+          if (onAllColumnsVisible) onAllColumnsVisible();
+        }
         return;
       }
 
@@ -107,7 +128,19 @@ export const PlayiDesignSlide = ({
           setVisibleColumns(step);
           currentStep = step;
           setTimeout(() => isProcessingScroll = false, 100);
-          if (step === 3 && onAllColumnsVisible) onAllColumnsVisible();
+          if (step === 1) window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 11, step: 1 } }));
+          if (step === 2) window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 11, step: 2 } }));
+          if (step === 3) {
+            window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 11, step: 3 } }));
+            if (onAllColumnsVisible) onAllColumnsVisible();
+          }
+          if (step >= 4 && currentSection === 11) {
+            setTimeout(() => {
+              if (typeof window !== 'undefined' && (window as any).gotoNextSlide && currentSection === 11) {
+                (window as any).gotoNextSlide();
+              }
+            }, 300);
+          }
         }
       };
       requestAnimationFrame(animateScroll);
@@ -121,7 +154,7 @@ export const PlayiDesignSlide = ({
       wheelTimer = setTimeout(() => {
         if (Math.abs(wheelDelta) > 40 && !isProcessingScroll) {
           if (wheelDelta > 0) {
-            const nextStep = Math.min(currentStep + 1, 3);
+            const nextStep = Math.min(currentStep + 1, 4);
             smoothScrollToStep(nextStep);
           } else {
             if (currentStep === 0) {

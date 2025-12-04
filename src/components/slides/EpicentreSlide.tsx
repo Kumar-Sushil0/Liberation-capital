@@ -18,6 +18,7 @@ export const EpicentreSlide = ({
   const [skipTransitions, setSkipTransitions] = useState(true);
   const [isInitialized, setIsInitialized] = useState(false);
   const isScrollingRef = useRef(false);
+  const [triggeredColumns, setTriggeredColumns] = useState(new Set<number>());
 
   useEffect(() => {
     setSkipTransitions(true);
@@ -27,7 +28,7 @@ export const EpicentreSlide = ({
       setIsInitialized(true);
     }, 100);
     return () => clearTimeout(timer);
-  }, [isScrollEnabled]);
+  }, []);
 
   useEffect(() => {
     if (!isInitialized || currentSection !== 12) return;
@@ -51,11 +52,29 @@ export const EpicentreSlide = ({
     if (currentSection === 12 && prevSection !== 12 && isScrollEnabled) {
       setSkipTransitions(true);
       setVisibleColumns(0);
+      setTriggeredColumns(new Set());
       const container = containerRef.current;
       if (container) container.scrollTop = 0;
       setTimeout(() => setSkipTransitions(false), 100);
     }
   }, [currentSection, isScrollEnabled, isInitialized]);
+
+  useEffect(() => {
+    if (isInitialized && visibleColumns >= 1) {
+      if (visibleColumns >= 1 && !triggeredColumns.has(1)) {
+        setTimeout(() => setTriggeredColumns(prev => new Set(prev).add(1)), 200);
+      }
+      if (visibleColumns >= 2 && !triggeredColumns.has(2)) {
+        setTimeout(() => setTriggeredColumns(prev => new Set(prev).add(2)), 400);
+      }
+      if (visibleColumns >= 3 && !triggeredColumns.has(3)) {
+        setTimeout(() => setTriggeredColumns(prev => new Set(prev).add(3)), 600);
+      }
+      if (visibleColumns >= 4 && !triggeredColumns.has(4)) {
+        setTimeout(() => setTriggeredColumns(prev => new Set(prev).add(4)), 800);
+      }
+    }
+  }, [visibleColumns, isInitialized, triggeredColumns]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -74,7 +93,7 @@ export const EpicentreSlide = ({
       const scrollHeight = container.scrollHeight;
       const containerHeight = container.clientHeight;
       const maxScroll = scrollHeight - containerHeight;
-      const scrollPositions = [0, maxScroll * 0.25, maxScroll * 0.5, maxScroll * 0.75, maxScroll];
+      const scrollPositions = [0, maxScroll * 0.15, maxScroll * 0.35, maxScroll * 0.55, maxScroll * 0.75, maxScroll];
       const targetScroll = scrollPositions[step] || 0;
 
       if (skipAnimation || step === 0) {
@@ -85,7 +104,13 @@ export const EpicentreSlide = ({
         isScrollingRef.current = false;
         setTimeout(() => isProcessingScroll = false, 100);
         setTimeout(() => setSkipTransitions(false), 50);
-        if (step === 4 && onAllColumnsVisible) onAllColumnsVisible();
+        if (step === 1) window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 12, step: 1 } }));
+        if (step === 2) window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 12, step: 2 } }));
+        if (step === 3) window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 12, step: 3 } }));
+        if (step === 4) {
+          window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 12, step: 4 } }));
+          if (onAllColumnsVisible) onAllColumnsVisible();
+        }
         return;
       }
 
@@ -107,7 +132,20 @@ export const EpicentreSlide = ({
           setVisibleColumns(step);
           currentStep = step;
           setTimeout(() => isProcessingScroll = false, 100);
-          if (step === 4 && onAllColumnsVisible) onAllColumnsVisible();
+          if (step === 1) window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 12, step: 1 } }));
+          if (step === 2) window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 12, step: 2 } }));
+          if (step === 3) window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 12, step: 3 } }));
+          if (step === 4) {
+            window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 12, step: 4 } }));
+            if (onAllColumnsVisible) onAllColumnsVisible();
+          }
+          if (step >= 5 && currentSection === 12) {
+            setTimeout(() => {
+              if (typeof window !== 'undefined' && (window as any).gotoNextSlide && currentSection === 12) {
+                (window as any).gotoNextSlide();
+              }
+            }, 300);
+          }
         }
       };
       requestAnimationFrame(animateScroll);
@@ -121,7 +159,7 @@ export const EpicentreSlide = ({
       wheelTimer = setTimeout(() => {
         if (Math.abs(wheelDelta) > 40 && !isProcessingScroll) {
           if (wheelDelta > 0) {
-            const nextStep = Math.min(currentStep + 1, 4);
+            const nextStep = Math.min(currentStep + 1, 5);
             smoothScrollToStep(nextStep);
           } else {
             if (currentStep === 0) {
