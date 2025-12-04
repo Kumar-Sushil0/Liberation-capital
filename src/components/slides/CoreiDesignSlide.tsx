@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from 'react';
 import styles from '../../styles/slides.module.css';
+import progressStyles from '../../styles/progress-indicator.module.css';
 
 interface CoreiDesignSlideProps {
   currentSection?: number;
@@ -483,10 +484,10 @@ export const CoreiDesignSlide = ({
             </div>
 
             {/* Progress Indicator */}
-            <div className={styles.columnProgressIndicator}>
-              <div className={styles.progressLine}>
+            <div className={progressStyles.columnProgressIndicator}>
+              <div className={progressStyles.progressLine}>
                 <div
-                  className={styles.progressSegment}
+                  className={progressStyles.progressSegment}
                   style={{
                     opacity: visibleColumns >= 1 ? 1 : 0,
                     transform: visibleColumns >= 1 ? 'scale(1)' : 'scale(0)',
@@ -494,7 +495,7 @@ export const CoreiDesignSlide = ({
                   }}
                 >
                   <div
-                    className={`${styles.progressNumber} ${visibleColumns >= 1 ? styles.progressActive : ''}`}
+                    className={`${progressStyles.progressNumber} ${visibleColumns >= 1 ? progressStyles.progressActive : ''}`}
                     style={{
                       transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
                     }}
@@ -502,7 +503,7 @@ export const CoreiDesignSlide = ({
                   </div>
                 </div>
                 <div
-                  className={`${styles.progressConnector} ${visibleColumns >= 2 ? styles.progressActive : ''}`}
+                  className={`${progressStyles.progressConnector} ${visibleColumns >= 2 ? progressStyles.progressActive : ''}`}
                   style={{
                     opacity: visibleColumns >= 2 ? 1 : 0,
                     transform: visibleColumns >= 2 ? 'scaleX(1)' : 'scaleX(0)',
@@ -511,7 +512,7 @@ export const CoreiDesignSlide = ({
                   }}
                 ></div>
                 <div
-                  className={styles.progressSegment}
+                  className={progressStyles.progressSegment}
                   style={{
                     opacity: visibleColumns >= 2 ? 1 : 0,
                     transform: visibleColumns >= 2 ? 'scale(1)' : 'scale(0)',
@@ -519,7 +520,7 @@ export const CoreiDesignSlide = ({
                   }}
                 >
                   <div
-                    className={`${styles.progressNumber} ${visibleColumns >= 2 ? styles.progressActive : ''}`}
+                    className={`${progressStyles.progressNumber} ${visibleColumns >= 2 ? progressStyles.progressActive : ''}`}
                     style={{
                       transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
                     }}
@@ -527,7 +528,7 @@ export const CoreiDesignSlide = ({
                   </div>
                 </div>
                 <div
-                  className={`${styles.progressConnector} ${visibleColumns >= 3 ? styles.progressActive : ''}`}
+                  className={`${progressStyles.progressConnector} ${visibleColumns >= 3 ? progressStyles.progressActive : ''}`}
                   style={{
                     opacity: visibleColumns >= 3 ? 1 : 0,
                     transform: visibleColumns >= 3 ? 'scaleX(1)' : 'scaleX(0)',
@@ -536,7 +537,7 @@ export const CoreiDesignSlide = ({
                   }}
                 ></div>
                 <div
-                  className={styles.progressSegment}
+                  className={progressStyles.progressSegment}
                   style={{
                     opacity: visibleColumns >= 3 ? 1 : 0,
                     transform: visibleColumns >= 3 ? 'scale(1)' : 'scale(0)',
@@ -544,7 +545,7 @@ export const CoreiDesignSlide = ({
                   }}
                 >
                   <div
-                    className={`${styles.progressNumber} ${visibleColumns >= 3 ? styles.progressActive : ''}`}
+                    className={`${progressStyles.progressNumber} ${visibleColumns >= 3 ? progressStyles.progressActive : ''}`}
                     style={{
                       transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s'
                     }}

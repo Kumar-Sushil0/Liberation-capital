@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import styles from "../../styles/slides.module.css";
+import progressStyles from "../../styles/progress-indicator.module.css";
 
 interface DisciplineTestSlideProps {
   currentSection?: number;
@@ -485,10 +486,10 @@ export const DisciplineTestSlide = ({
             </div>
 
             {/* Progress Indicator */}
-            <div className={styles.columnProgressIndicator}>
-              <div className={styles.progressLine}>
+            <div className={progressStyles.columnProgressIndicator}>
+              <div className={progressStyles.progressLine}>
                 <div
-                  className={styles.progressSegment}
+                  className={progressStyles.progressSegment}
                   style={{
                     opacity: visibleColumns >= 1 ? 1 : 0,
                     transform:
@@ -500,8 +501,8 @@ export const DisciplineTestSlide = ({
                   }}
                 >
                   <div
-                    className={`${styles.progressNumber} ${
-                      visibleColumns >= 1 ? styles.progressActive : ""
+                    className={`${progressStyles.progressNumber} ${
+                      visibleColumns >= 1 ? progressStyles.progressActive : ""
                     }`}
                     style={{
                       transition:
@@ -512,8 +513,8 @@ export const DisciplineTestSlide = ({
                   ></div>
                 </div>
                 <div
-                  className={`${styles.progressConnector} ${
-                    visibleColumns >= 2 ? styles.progressActive : ""
+                  className={`${progressStyles.progressConnector} ${
+                    visibleColumns >= 2 ? progressStyles.progressActive : ""
                   }`}
                   style={{
                     opacity: visibleColumns >= 2 ? 1 : 0,
@@ -527,7 +528,7 @@ export const DisciplineTestSlide = ({
                   }}
                 ></div>
                 <div
-                  className={styles.progressSegment}
+                  className={progressStyles.progressSegment}
                   style={{
                     opacity: visibleColumns >= 2 ? 1 : 0,
                     transform:
@@ -539,8 +540,8 @@ export const DisciplineTestSlide = ({
                   }}
                 >
                   <div
-                    className={`${styles.progressNumber} ${
-                      visibleColumns >= 2 ? styles.progressActive : ""
+                    className={`${progressStyles.progressNumber} ${
+                      visibleColumns >= 2 ? progressStyles.progressActive : ""
                     }`}
                     style={{
                       transition:
@@ -551,8 +552,8 @@ export const DisciplineTestSlide = ({
                   ></div>
                 </div>
                 <div
-                  className={`${styles.progressConnector} ${
-                    visibleColumns >= 3 ? styles.progressActive : ""
+                  className={`${progressStyles.progressConnector} ${
+                    visibleColumns >= 3 ? progressStyles.progressActive : ""
                   }`}
                   style={{
                     opacity: visibleColumns >= 3 ? 1 : 0,
@@ -566,7 +567,7 @@ export const DisciplineTestSlide = ({
                   }}
                 ></div>
                 <div
-                  className={styles.progressSegment}
+                  className={progressStyles.progressSegment}
                   style={{
                     opacity: visibleColumns >= 3 ? 1 : 0,
                     transform:
@@ -578,8 +579,8 @@ export const DisciplineTestSlide = ({
                   }}
                 >
                   <div
-                    className={`${styles.progressNumber} ${
-                      visibleColumns >= 3 ? styles.progressActive : ""
+                    className={`${progressStyles.progressNumber} ${
+                      visibleColumns >= 3 ? progressStyles.progressActive : ""
                     }`}
                     style={{
                       transition:

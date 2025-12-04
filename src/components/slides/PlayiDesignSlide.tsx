@@ -1,8 +1,9 @@
 "use client";
 import React, { useState, useRef, useEffect } from 'react';
 import styles from '../../styles/slides.module.css';
+import progressStyles from '../../styles/progress-indicator.module.css';
 
-interface PlayiDesignSlideProps {
+interface PlayiDesignSlideProps{
   currentSection?: number;
   isScrollEnabled?: boolean;
   onAllColumnsVisible?: () => void;
@@ -236,18 +237,18 @@ export const PlayiDesignSlide = ({
               </div>
             </div>
 
-            <div className={styles.columnProgressIndicator}>
-              <div className={styles.progressLine}>
-                <div className={styles.progressSegment} style={{ opacity: visibleColumns >= 1 ? 1 : 0, transform: visibleColumns >= 1 ? 'scale(1)' : 'scale(0)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease' }}>
-                  <div className={`${styles.progressNumber} ${visibleColumns >= 1 ? styles.progressActive : ''}`} style={{ transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease' }}></div>
+            <div className={progressStyles.columnProgressIndicator}>
+              <div className={progressStyles.progressLine}>
+                <div className={progressStyles.progressSegment} style={{ opacity: visibleColumns >= 1 ? 1 : 0, transform: visibleColumns >= 1 ? 'scale(1)' : 'scale(0)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease' }}>
+                  <div className={`${progressStyles.progressNumber} ${visibleColumns >= 1 ? progressStyles.progressActive : ''}`} style={{ transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease' }}></div>
                 </div>
-                <div className={`${styles.progressConnector} ${visibleColumns >= 2 ? styles.progressActive : ''}`} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'scaleX(1)' : 'scaleX(0)', transformOrigin: 'left', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s' }}></div>
-                <div className={styles.progressSegment} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'scale(1)' : 'scale(0)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>
-                  <div className={`${styles.progressNumber} ${visibleColumns >= 2 ? styles.progressActive : ''}`} style={{ transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}></div>
+                <div className={`${progressStyles.progressConnector} ${visibleColumns >= 2 ? progressStyles.progressActive : ''}`} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'scaleX(1)' : 'scaleX(0)', transformOrigin: 'left', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s' }}></div>
+                <div className={progressStyles.progressSegment} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'scale(1)' : 'scale(0)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>
+                  <div className={`${progressStyles.progressNumber} ${visibleColumns >= 2 ? progressStyles.progressActive : ''}`} style={{ transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}></div>
                 </div>
-                <div className={`${styles.progressConnector} ${visibleColumns >= 3 ? styles.progressActive : ''}`} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'scaleX(1)' : 'scaleX(0)', transformOrigin: 'left', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}></div>
-                <div className={styles.progressSegment} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'scale(1)' : 'scale(0)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s' }}>
-                  <div className={`${styles.progressNumber} ${visibleColumns >= 3 ? styles.progressActive : ''}`} style={{ transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s' }}></div>
+                <div className={`${progressStyles.progressConnector} ${visibleColumns >= 3 ? progressStyles.progressActive : ''}`} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'scaleX(1)' : 'scaleX(0)', transformOrigin: 'left', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}></div>
+                <div className={progressStyles.progressSegment} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'scale(1)' : 'scale(0)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s' }}>
+                  <div className={`${progressStyles.progressNumber} ${visibleColumns >= 3 ? progressStyles.progressActive : ''}`} style={{ transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s' }}></div>
                 </div>
               </div>
             </div>

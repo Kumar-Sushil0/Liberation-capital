@@ -605,7 +605,7 @@
   }
 }
 
-/* Column Progress Indicator */
+/* Column Progress Indicator - Exact copy from Pallax */
 .columnProgressIndicator {
   display: flex;
   justify-content: center;
@@ -618,7 +618,8 @@
 .progressLine {
   display: flex;
   align-items: center;
-  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
   gap: 0;
   position: relative;
 }
@@ -627,21 +628,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
   z-index: 2;
-  position: relative;
+}
+
+.progressSegment:nth-child(1) {
+  left: calc((100% - 6rem) / 6 - 10px);
+}
+
+.progressSegment:nth-child(3) {
+  left: calc(50% - 10px);
+}
+
+.progressSegment:nth-child(5) {
+  left: calc(100% - (100% - 6rem) / 6 - 10px);
 }
 
 .progressNumber {
   width: 20px;
   height: 20px;
-  min-width: 20px;
-  min-height: 20px;
-  max-width: 20px;
-  max-height: 20px;
-  border-radius: 2px;
+  border-radius: 4px;
   background: #000000;
   border: 1px solid #00e87b;
-  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -652,7 +660,6 @@
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 2;
   position: relative;
-  flex-shrink: 0;
 }
 
 .progressNumber.progressActive {
@@ -661,10 +668,11 @@
   color: #00e87b;
   font-weight: 700;
   box-shadow: 0 0 15px rgba(0, 232, 123, 0.6);
+  transform: scale(1.1);
 }
 
 .progressConnector {
-  width: 100px;
+  position: absolute;
   height: 2px;
   background: linear-gradient(
     to right,
@@ -672,9 +680,20 @@
     rgba(0, 232, 123, 0.5),
     transparent
   );
-  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 1;
   overflow: hidden;
+}
+
+.progressConnector:nth-child(2) {
+  left: calc((100% - 6rem) / 6 + 10px);
+  right: calc(50% - 10px);
+}
+
+.progressConnector:nth-child(4) {
+  left: calc(50% + 10px);
+  right: calc((100% - 6rem) / 6 - 10px);
 }
 
 .progressConnector::before {
