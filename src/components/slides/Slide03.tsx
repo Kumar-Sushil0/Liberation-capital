@@ -18,6 +18,7 @@ export const Slide03 = ({
   const [skipTransitions, setSkipTransitions] = useState(true);
   const [isInitialized, setIsInitialized] = useState(false);
   const isScrollingRef = useRef(false);
+  const [triggeredColumns, setTriggeredColumns] = useState(new Set<number>());
 
   // Initialize component
   useEffect(() => {
@@ -30,7 +31,7 @@ export const Slide03 = ({
     }, 100);
 
     return () => clearTimeout(timer);
-  }, [isScrollEnabled]);
+  }, []);
 
   // Reset when isScrollEnabled changes
   useEffect(() => {
@@ -69,6 +70,7 @@ export const Slide03 = ({
     if (currentSection === 4 && prevSection !== 4 && isScrollEnabled) {
       setSkipTransitions(true);
       setVisibleColumns(0);
+      setTriggeredColumns(new Set());
 
       const container = containerRef.current;
       if (container) {
@@ -80,6 +82,35 @@ export const Slide03 = ({
       }, 100);
     }
   }, [currentSection, isScrollEnabled, isInitialized]);
+
+  // Trigger animations when visibleColumns changes
+  useEffect(() => {
+    if (isInitialized && visibleColumns >= 1) {
+      if (visibleColumns >= 1 && !triggeredColumns.has(1)) {
+        setTimeout(() => {
+          setTriggeredColumns(prev => new Set(prev).add(1));
+        }, 200);
+      }
+
+      if (visibleColumns >= 2 && !triggeredColumns.has(2)) {
+        setTimeout(() => {
+          setTriggeredColumns(prev => new Set(prev).add(2));
+        }, 400);
+      }
+
+      if (visibleColumns >= 3 && !triggeredColumns.has(3)) {
+        setTimeout(() => {
+          setTriggeredColumns(prev => new Set(prev).add(3));
+        }, 600);
+      }
+
+      if (visibleColumns >= 4 && !triggeredColumns.has(4)) {
+        setTimeout(() => {
+          setTriggeredColumns(prev => new Set(prev).add(4));
+        }, 800);
+      }
+    }
+  }, [visibleColumns, isInitialized, triggeredColumns]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -105,8 +136,9 @@ export const Slide03 = ({
 
       const scrollPositions = [
         0,
-        maxScroll * 0.25,
-        maxScroll * 0.5,
+        maxScroll * 0.15,
+        maxScroll * 0.35,
+        maxScroll * 0.55,
         maxScroll * 0.75,
         maxScroll
       ];
@@ -128,8 +160,31 @@ export const Slide03 = ({
           setSkipTransitions(false);
         }, 50);
 
-        if (step === 4 && onAllColumnsVisible) {
-          onAllColumnsVisible();
+        if (step === 1) {
+          window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+            detail: { section: 4, step: 1 } 
+          }));
+        }
+        
+        if (step === 2) {
+          window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+            detail: { section: 4, step: 2 } 
+          }));
+        }
+        
+        if (step === 3) {
+          window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+            detail: { section: 4, step: 3 } 
+          }));
+        }
+        
+        if (step === 4) {
+          window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+            detail: { section: 4, step: 4 } 
+          }));
+          if (onAllColumnsVisible) {
+            onAllColumnsVisible();
+          }
         }
 
         return;
@@ -161,8 +216,39 @@ export const Slide03 = ({
             isProcessingScroll = false;
           }, 100);
 
-          if (step === 4 && onAllColumnsVisible) {
-            onAllColumnsVisible();
+          if (step === 1) {
+            window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+              detail: { section: 4, step: 1 } 
+            }));
+          }
+          
+          if (step === 2) {
+            window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+              detail: { section: 4, step: 2 } 
+            }));
+          }
+          
+          if (step === 3) {
+            window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+              detail: { section: 4, step: 3 } 
+            }));
+          }
+          
+          if (step === 4) {
+            window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+              detail: { section: 4, step: 4 } 
+            }));
+            if (onAllColumnsVisible) {
+              onAllColumnsVisible();
+            }
+          }
+
+          if (step >= 5 && currentSection === 4) {
+            setTimeout(() => {
+              if (typeof window !== 'undefined' && (window as any).gotoNextSlide && currentSection === 4) {
+                (window as any).gotoNextSlide();
+              }
+            }, 300);
           }
         }
       };
@@ -182,7 +268,7 @@ export const Slide03 = ({
       wheelTimer = setTimeout(() => {
         if (Math.abs(wheelDelta) > 40 && !isProcessingScroll) {
           if (wheelDelta > 0) {
-            const nextStep = Math.min(currentStep + 1, 4);
+            const nextStep = Math.min(currentStep + 1, 5);
             smoothScrollToStep(nextStep);
           } else {
             if (currentStep === 0) {

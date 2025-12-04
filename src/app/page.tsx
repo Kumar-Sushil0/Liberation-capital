@@ -180,7 +180,7 @@ export default function Home() {
         return (
           <FundOriginSlide
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -192,7 +192,7 @@ export default function Home() {
         return (
           <RebuildIdentitiesSlide
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -204,7 +204,7 @@ export default function Home() {
         return (
           <FundCoherenceSlide
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -216,7 +216,7 @@ export default function Home() {
         return (
           <LifeiDesignAcceleratorSlide
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -228,7 +228,7 @@ export default function Home() {
         return (
           <CoreiDesignSlide
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -240,7 +240,7 @@ export default function Home() {
         return (
           <PlayiDesignSlide
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -252,7 +252,7 @@ export default function Home() {
         return (
           <EpicentreSlide
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -264,7 +264,7 @@ export default function Home() {
         return (
           <SilenceTestSlide
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -276,7 +276,7 @@ export default function Home() {
         return (
           <DisciplineTestSlide
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -288,7 +288,7 @@ export default function Home() {
         return (
           <DistractionTestSlide
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -300,7 +300,7 @@ export default function Home() {
         return (
           <LiberationDaySlide
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -312,7 +312,7 @@ export default function Home() {
         return (
           <FundCrucibleSlide
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -324,7 +324,7 @@ export default function Home() {
         return (
           <FundBlueprintSlide
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -336,7 +336,7 @@ export default function Home() {
         return (
           <FundAskSlide
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -348,7 +348,7 @@ export default function Home() {
         return (
           <FundActivationSlide
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -360,7 +360,7 @@ export default function Home() {
         return (
           <FundSupportSlide
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -372,7 +372,7 @@ export default function Home() {
         return (
           <FundEnvironmentSlide
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -384,7 +384,7 @@ export default function Home() {
         return (
           <FundCapitalSlide
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -404,7 +404,7 @@ export default function Home() {
         return (
           <SubscrollSlide1
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -416,7 +416,7 @@ export default function Home() {
         return (
           <Slide03
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -428,7 +428,7 @@ export default function Home() {
         return (
           <Slide04
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -440,7 +440,7 @@ export default function Home() {
         return (
           <Slide05
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -452,7 +452,7 @@ export default function Home() {
         return (
           <Slide08
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -464,7 +464,7 @@ export default function Home() {
         return (
           <Slide12
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -478,7 +478,7 @@ export default function Home() {
         return (
           <Slide19
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -490,7 +490,7 @@ export default function Home() {
         return (
           <Slide20
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -502,7 +502,7 @@ export default function Home() {
         return (
           <Slide23
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
@@ -514,7 +514,7 @@ export default function Home() {
         return (
           <Slide26
             currentSection={currentSection}
-            isScrollEnabled={!isMobile && isScrollPausedRef.current}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
             onAllColumnsVisible={() => {
               setTimeout(() => {
                 isScrollPausedRef.current = false;
