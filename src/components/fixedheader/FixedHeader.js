@@ -1,30 +1,11 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import SlideFlippingWords from '../Flipping_words/Flipping_words/SlideFlippingWords';
 import styles from './FixedHeader.module.css';
+import SlideFlippingWords from '../Flipping_words/Flipping_words/SlideFlippingWords';
+import { slideWords, dummyTexts } from '../../constants/slides';
 
-// Slide titles for each section
-const slideWords = [
-  "Welcome",
-  "EPiCENTRE",
-  "Membership",
-  "Rooms & Suites",
-  "FAQ",
-  "Connect"
-];
-
-// Dummy text for each section
-const dummyTexts = [
-  "A luxury retreat for self-transformation",
-  "Designed as a sandbox for the self",
-  "Entry by club membership only",
-  "Your sanctuary awaits",
-  "Everything you need to know",
-  "Stay in touch"
-];
-
-export const FixedHeader = ({ currentSection = 0 }) => {
+export const FixedHeader = ({ currentSection = 0, isMuted = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
   const [showScrollAnimation, setShowScrollAnimation] = useState(false);
@@ -45,14 +26,6 @@ export const FixedHeader = ({ currentSection = 0 }) => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-  // Calculate responsive font size for flipping words
-  const getResponsiveFontSize = () => {
-    if (windowWidth <= 480) return 18;
-    if (windowWidth <= 768) return 24;
-    if (windowWidth <= 1060) return 28;
-    return 32;
-  };
 
   // Show scroll animation - only visible on first 4 slides (sections 0-3)
   useEffect(() => {
@@ -94,7 +67,7 @@ export const FixedHeader = ({ currentSection = 0 }) => {
         const hideTimer = setTimeout(() => {
           setShowScrollAnimation(false);
           animationCountRef.current = count + 1;
-
+          
           // Schedule next cycle if under 3 times
           if (count + 1 < 3) {
             showAnimationCycle(count + 1);
@@ -116,6 +89,14 @@ export const FixedHeader = ({ currentSection = 0 }) => {
       }
     };
   }, [currentSection]);
+
+  // Calculate responsive font size for flipping words
+  const getResponsiveFontSize = () => {
+    if (windowWidth <= 480) return 18;      // Mobile
+    if (windowWidth <= 768) return 24;      // Tablet
+    if (windowWidth <= 1060) return 28;     // Small desktop
+    return 32;                              // Large desktop
+  };
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -147,14 +128,14 @@ export const FixedHeader = ({ currentSection = 0 }) => {
 
   return (
     <>
-      {/* Fixed Text Container - Top Left */}
+      {/* Fixed Text Container */}
       <div className={styles.fixedTextContainer}>
         {/* Fixed Flipping Words */}
         <div className={styles.fixedFlippingWords}>
           <SlideFlippingWords
             currentWord={slideWords[currentSection] || slideWords[0]}
             size={getResponsiveFontSize()}
-            mute={false}
+            mute={isMuted}
           />
         </div>
 
@@ -163,15 +144,6 @@ export const FixedHeader = ({ currentSection = 0 }) => {
           {dummyTexts[currentSection] || dummyTexts[0]}
         </div>
       </div>
-
-      {/* Mouse Scroll Animation - Top Center */}
-      <StyledScrollIconsContainer $isVisible={showScrollAnimation}>
-        <div className="scroll-icon ex-3">
-          <span className="wheel"></span>
-          <span className="arrow up"></span>
-          <span className="arrow down"></span>
-        </div>
-      </StyledScrollIconsContainer>
 
       {/* Fixed Hamburger Menu at Top Right */}
       <div className={styles.fixedSmallCubeGrid}>
@@ -189,19 +161,30 @@ export const FixedHeader = ({ currentSection = 0 }) => {
           <StyledMenuWrapper ref={menuRef} $isVisible={isMenuOpen}>
             <div className="nav">
               <div className="container">
-                <a className="btn" href="/rooms" onClick={() => setIsMenuOpen(false)}>Rooms</a>
-                <a className="btn" href="/experiences" onClick={() => setIsMenuOpen(false)}>Experiences</a>
-                <a className="btn" href="/explorations" onClick={() => setIsMenuOpen(false)}>Explorations</a>
-                <a className="btn" href="/wellness" onClick={() => setIsMenuOpen(false)}>Wellness</a>
-                <a className="btn" href="/events" onClick={() => setIsMenuOpen(false)}>Events</a>
-                <a className="btn" href="/capital" onClick={() => setIsMenuOpen(false)}>Capital</a>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 60" height={60} width={760} overflow="visible" className="menu-outline">
-                  <rect strokeWidth={2} fill="transparent" height={60} width={760} y={0} x={0} pathLength={100} className="rect" />
+                <a className="btn" href="/" onClick={() => setIsMenuOpen(false)}>Home</a>
+                <a className="btn" href="/philosophy" onClick={() => setIsMenuOpen(false)}>Philosophy</a>
+                <a className="btn" href="/process" onClick={() => setIsMenuOpen(false)}>Process</a>
+                <a className="btn" href="/ecosystem" onClick={() => setIsMenuOpen(false)}>Ecosystem</a>
+                <a className="btn" href="/institution" onClick={() => setIsMenuOpen(false)}>Institution</a>
+                <a className="btn" href="/applicants" onClick={() => setIsMenuOpen(false)}>Applicants</a>
+                <a className="btn" href="/operation" onClick={() => setIsMenuOpen(false)}>Operation</a>
+                <a className="btn" href="/investor" onClick={() => setIsMenuOpen(false)}>Investor</a>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 60" height={60} width={800} overflow="visible" className="outline">
+                  <rect strokeWidth={2} fill="transparent" height={60} width={800} y={0} x={0} pathLength={100} className="rect" />
                 </svg>
               </div>
             </div>
           </StyledMenuWrapper>
         )}
+
+        {/* Mouse Scroll Animation - Below Navigation */}
+        <StyledScrollIconsContainer $isVisible={showScrollAnimation}>
+          <div className="scroll-icon ex-3">
+            <span className="wheel"></span>
+            <span className="arrow up"></span>
+            <span className="arrow down"></span>
+          </div>
+        </StyledScrollIconsContainer>
       </div>
 
       {/* Mobile Sidebar - Slides in from right */}
@@ -239,23 +222,29 @@ export const FixedHeader = ({ currentSection = 0 }) => {
             </div>
 
             <div className={styles.mobileSidebarContent}>
-              <a className={styles.mobileSidebarItem} href="/rooms" onClick={handleCubeClick}>
-                <span>Rooms</span>
+              <a className={styles.mobileSidebarItem} href="/" onClick={handleCubeClick}>
+                <span>Home</span>
               </a>
-              <a className={styles.mobileSidebarItem} href="/experiences" onClick={handleCubeClick}>
-                <span>Experiences</span>
+              <a className={styles.mobileSidebarItem} href="/philosophy" onClick={handleCubeClick}>
+                <span>Philosophy</span>
               </a>
-              <a className={styles.mobileSidebarItem} href="/explorations" onClick={handleCubeClick}>
-                <span>Explorations</span>
+              <a className={styles.mobileSidebarItem} href="/process" onClick={handleCubeClick}>
+                <span>Process</span>
               </a>
-              <a className={styles.mobileSidebarItem} href="/wellness" onClick={handleCubeClick}>
-                <span>Wellness</span>
+              <a className={styles.mobileSidebarItem} href="/ecosystem" onClick={handleCubeClick}>
+                <span>Ecosystem</span>
               </a>
-              <a className={styles.mobileSidebarItem} href="/events" onClick={handleCubeClick}>
-                <span>Events</span>
+              <a className={styles.mobileSidebarItem} href="/institution" onClick={handleCubeClick}>
+                <span>Institution</span>
               </a>
-              <a className={styles.mobileSidebarItem} href="/capital" onClick={handleCubeClick}>
-                <span>Capital</span>
+              <a className={styles.mobileSidebarItem} href="/applicants" onClick={handleCubeClick}>
+                <span>Applicants</span>
+              </a>
+              <a className={styles.mobileSidebarItem} href="/operation" onClick={handleCubeClick}>
+                <span>Operation</span>
+              </a>
+              <a className={styles.mobileSidebarItem} href="/investor" onClick={handleCubeClick}>
+                <span>Investor</span>
               </a>
             </div>
           </StyledMobileSidebar>
@@ -277,7 +266,7 @@ const StyledMenuWrapper = styled.div`
   transition: all 0.3s ease;
   z-index: 1004;
 
-  .menu-outline {
+  .outline {
     position: absolute;
     inset: 0;
     pointer-events: none;
@@ -292,12 +281,12 @@ const StyledMenuWrapper = styled.div`
 
   .nav {
     position: relative;
-    width: 760px;
+    width: 800px;
     height: 60px;
     border-radius: 40px;
   }
 
-  .container:hover .menu-outline .rect {
+  .container:hover .outline .rect {
     transition: 999999s;
     stroke-dashoffset: 1;
     stroke-dasharray: 0;
@@ -336,43 +325,43 @@ const StyledMenuWrapper = styled.div`
     border-radius: 10px;
   }
 
-  /* ROOMS - First button */
+  /* LORE */
   .btn:nth-child(1):hover ~ svg .rect {
     stroke-dashoffset: 0;
-    stroke-dasharray: 0 1.3 5.0 83.5 5.0 5.2;
+    stroke-dasharray: 0 1.3 5.0 82.9 5.0 5.8;
   }
 
-  /* EXPERIENCES - Second button */
+  /* WORLD */
   .btn:nth-child(2):hover ~ svg .rect {
     stroke-dashoffset: 0;
-    stroke-dasharray: 0 9.1 5.0 67.95 5.0 12.95;
+    stroke-dasharray: 0 8.9 5.0 67.7 5.0 13.4;
   }
 
-  /* EXPLORATIONS - Third button */
+  /* PLAYBOOK */
   .btn:nth-child(3):hover ~ svg .rect {
     stroke-dashoffset: 0;
-    stroke-dasharray: 0 16.9 5.0 52.5 5.0 20.6;
+    stroke-dasharray: 0 16.5 5.0 52.5 5.0 21.0;
   }
 
-  /* WELLNESS - Fourth button */
+  /* UNLOCK */
   .btn:nth-child(4):hover ~ svg .rect {
     stroke-dashoffset: 0;
-    stroke-dasharray: 0 24.7 5.0 37.0 5.0 28.3;
+    stroke-dasharray: 0 24.1 5.0 37.3 5.0 28.6;
   }
 
-  /* EVENTS - Fifth button */
+  /* LEVELS */
   .btn:nth-child(5):hover ~ svg .rect {
     stroke-dashoffset: 0;
-    stroke-dasharray: 0 32.5 5.0 21.5 5.0 36.0;
+    stroke-dasharray: 0 31.7 5.0 22.1 5.0 36.2;
   }
 
-  /* CAPITAL - Sixth button */
+  /* PLAY */
   .btn:nth-child(6):hover ~ svg .rect {
     stroke-dashoffset: 0;
-    stroke-dasharray: 0 40.3 5.0 6.0 5.0 43.7;
+    stroke-dasharray: 0 39.3 5.0 6.9 5.0 43.8;
   }
 
-  .btn:hover ~ .menu-outline .rect {
+  .btn:hover ~ .outline .rect {
     stroke-dashoffset: 0;
     stroke-dasharray: 0 0 10 40 10 40;
     transition: 0.5s !important;
@@ -448,11 +437,13 @@ const StyledMobileSidebar = styled.div`
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
 `;
 
+
 const StyledScrollIconsContainer = styled.div`
-  position: fixed;
-  top: 20px;
+  position: absolute;
+  top: 100%;
   left: 50%;
-  transform: translateX(-50%) scale(0.8);
+  transform: translateX(-50%) scale(0.64);
+  margin-top: 12px;
   display: flex;
   z-index: 1001;
   opacity: ${props => props.$isVisible ? 1 : 0};
@@ -551,4 +542,3 @@ const StyledScrollIconsContainer = styled.div`
     }
   }
 `;
-
