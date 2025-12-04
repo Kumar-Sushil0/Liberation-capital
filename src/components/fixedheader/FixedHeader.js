@@ -541,4 +541,4 @@ const StyledScrollIconsContainer = styled.div`
       height: 0.4em;
     }
   }
-`; 
+`;
