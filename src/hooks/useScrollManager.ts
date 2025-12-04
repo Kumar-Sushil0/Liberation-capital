@@ -64,6 +64,12 @@ export const useScrollManager = ({
       currentIndex = 0;
       currentIndexRef.current = 0;
 
+      // Initialize isScrollPausedRef if starting section is a subscroll section
+      const SUBSCROLL_SECTIONS = getSubscrollSections(isMobile);
+      if (SUBSCROLL_SECTIONS.includes(0)) {
+        isScrollPausedRef.current = true;
+      }
+
       const gotoSection = (index: number, direction: number) => {
         console.log('gotoSection called with:', { index, direction, currentIndex });
         // Prevent cyclic navigation - only allow valid indices

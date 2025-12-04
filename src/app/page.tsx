@@ -169,7 +169,17 @@ export default function Home() {
   const renderSectionContent = (section: any) => {
     switch (section.type) {
       case "hero":
-        return <HeroSlide />;
+        return (
+          <HeroSlide
+            currentSection={currentSection}
+            isScrollEnabled={isMobile ? false : isScrollPausedRef.current}
+            onAllColumnsVisible={() => {
+              setTimeout(() => {
+                isScrollPausedRef.current = false;
+              }, 500);
+            }}
+          />
+        );
       case "content1":
         return <ContentSlide1 />;
       case "warning":
