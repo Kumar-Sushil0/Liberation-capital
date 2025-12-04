@@ -327,7 +327,7 @@ export const FundSupportSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Player Capital — Fuel for the identity you designed.
+                    Player Capital <br/> Fuel for the identity you designed.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -390,7 +390,7 @@ export const FundSupportSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Patron Capital — Investment with soul and structure.
+                    Patron Capital <br/> Investment with soul and structure.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -453,7 +453,7 @@ export const FundSupportSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    System Capital — Responsibility replaces hype.
+                    System Capital <br/> Responsibility replaces hype.
                   </h3>
                 </div>
                 <div className={styles.textContent}>

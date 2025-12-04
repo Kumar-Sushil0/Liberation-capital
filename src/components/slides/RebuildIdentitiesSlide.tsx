@@ -321,7 +321,7 @@ export const RebuildIdentitiesSlide = ({
                     margin: 0,
                     textAlign: 'center'
                   }}>
-                    If I'm the problem, I'm also the project.
+                    If I'm the problem,<br/> I'm also the project.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -368,7 +368,7 @@ export const RebuildIdentitiesSlide = ({
                     margin: 0,
                     textAlign: 'center'
                   }}>
-                    Your current self can't carry your future life.
+                    Your current self <br/>can't carry your future life.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -415,7 +415,7 @@ export const RebuildIdentitiesSlide = ({
                     margin: 0,
                     textAlign: 'center'
                   }}>
-                    Becoming demands structure, not motivation.
+                    Becoming demands structure, <br/>not motivation.
                   </h3>
                 </div>
                 <div className={styles.textContent}>

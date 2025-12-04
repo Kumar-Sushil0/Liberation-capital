@@ -321,7 +321,7 @@ export const FundCoherenceSlide = ({
                     margin: 0,
                     textAlign: 'center'
                   }}>
-                    Traction can be faked. Coherence can't.
+                    Traction can be faked. <br/>Coherence can't.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -368,7 +368,7 @@ export const FundCoherenceSlide = ({
                     margin: 0,
                     textAlign: 'center'
                   }}>
-                    Your daily behavior is the only pitch that matters.
+                    Your daily behavior <br/>is the only pitch that matters.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -415,7 +415,7 @@ export const FundCoherenceSlide = ({
                     margin: 0,
                     textAlign: 'center'
                   }}>
-                    We invest in who you are, not what you say.
+                    We invest in who you are,<br/> not what you say.
                   </h3>
                 </div>
                 <div className={styles.textContent}>

@@ -321,7 +321,7 @@ export const FundOriginSlide = ({
                     margin: 0,
                     textAlign: 'center'
                   }}>
-                    Products don't execute. Humans do.
+                    Products don't execute.<br/> Humans do.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -368,7 +368,7 @@ export const FundOriginSlide = ({
                     margin: 0,
                     textAlign: 'center'
                   }}>
-                    Companies pivot. Humans repeat their patterns.
+                    Companies pivot.<br/> Humans repeat their patterns.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -415,7 +415,7 @@ export const FundOriginSlide = ({
                     margin: 0,
                     textAlign: 'center'
                   }}>
-                    Identity compounds faster than capital.
+                    Identity compounds<br/> faster than capital.
                   </h3>
                 </div>
                 <div className={styles.textContent}>

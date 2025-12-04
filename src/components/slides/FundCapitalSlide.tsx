@@ -327,7 +327,7 @@ export const FundCapitalSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Player Loop — You become evidence.
+                    Player Loop <br/> You become evidence.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -390,7 +390,7 @@ export const FundCapitalSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Patron Loop — You become awakened.
+                    Patron Loop <br/> You become awakened.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -453,7 +453,7 @@ export const FundCapitalSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    System Loop — Evolution compounds into culture.
+                    System Loop <br/> Evolution compounds into culture.
                   </h3>
                 </div>
                 <div className={styles.textContent}>

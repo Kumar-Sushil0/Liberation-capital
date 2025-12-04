@@ -327,7 +327,7 @@ export const DistractionTestSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Player Eligibility — Wanting isn't enough.
+                    Player Eligibility <br/> Wanting isn't enough.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -390,7 +390,7 @@ export const DistractionTestSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Patron Eligibility — Coherence is the only qualification.
+                    Patron Eligibility <br/> Coherence is the only qualification.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -453,7 +453,7 @@ export const DistractionTestSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    System Eligibility — The gate opens only for the aligned.
+                    System Eligibility <br/> The gate opens only for the aligned.
                   </h3>
                 </div>
                 <div className={styles.textContent}>

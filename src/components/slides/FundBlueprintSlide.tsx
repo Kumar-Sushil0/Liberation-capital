@@ -345,7 +345,7 @@ export const FundBlueprintSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Player Blueprint — Show the identity you intend to live.
+                    Player Blueprint <br/> Show the identity you intend to live.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -408,7 +408,7 @@ export const FundBlueprintSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Patron Blueprint — Fund the human, not the hope.
+                    Patron Blueprint <br/> Fund the human, not the hope.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -471,7 +471,7 @@ export const FundBlueprintSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    System Blueprint — Coherence is the strategy.
+                    System Blueprint <br/> Coherence is the strategy.
                   </h3>
                 </div>
                 <div className={styles.textContent}>

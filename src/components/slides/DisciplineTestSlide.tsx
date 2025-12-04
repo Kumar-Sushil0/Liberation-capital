@@ -327,7 +327,7 @@ export const DisciplineTestSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Player Truth — Your identity isn't what you imagine.
+                    Player Truth <br/> Your identity isn't what you imagine.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -390,7 +390,7 @@ export const DisciplineTestSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Patron Truth — Consistency is the only credibility.
+                    Patron Truth<br/>Consistency is the only credibility.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -453,7 +453,7 @@ export const DisciplineTestSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    System Truth — Pressure reveals architecture.
+                    System Truth <br/> Pressure reveals architecture.
                   </h3>
                 </div>
                 <div className={styles.textContent}>

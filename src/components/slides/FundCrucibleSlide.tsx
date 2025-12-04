@@ -345,7 +345,7 @@ export const FundCrucibleSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Player Rite — Becoming visible is the final test.
+                    Player Rite <br/> Becoming visible is the final test.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -408,7 +408,7 @@ export const FundCrucibleSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Patron Rite — Witnessing is the real due diligence.
+                    Patron Rite <br/> Witnessing is the real due diligence.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -471,7 +471,7 @@ export const FundCrucibleSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    System Rite — Identity must be seen to be confirmed.
+                    System Rite <br/> Identity must be seen to be confirmed.
                   </h3>
                 </div>
                 <div className={styles.textContent}>

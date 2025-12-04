@@ -331,7 +331,7 @@ export const SilenceTestSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Player Test — Your identity isn't what you think it is.
+                    Player Test <br/> Your identity isn't what you think it is.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -395,7 +395,7 @@ export const SilenceTestSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Patron Test — Consistency is the only credibility.
+                    Patron Test <br/> Consistency is the only credibility.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -459,7 +459,7 @@ export const SilenceTestSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    System Test — Pressure reveals who you really are.
+                    System Test <br/> Pressure reveals who you really are.
                   </h3>
                 </div>
                 <div className={styles.textContent}>

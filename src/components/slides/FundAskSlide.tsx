@@ -327,7 +327,7 @@ export const FundAskSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Player Ask — Know what your becoming needs.
+                    Player Ask <br/> Know what your becoming needs.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -390,7 +390,7 @@ export const FundAskSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Patron Ask — Capital must match the identity, not inflate it.
+                    Patron Ask <br/> Capital must match the identity, not inflate it.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -453,7 +453,7 @@ export const FundAskSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    System Ask — The right number stabilizes the next self.
+                    System Ask <br/> The right number stabilizes the next self.
                   </h3>
                 </div>
                 <div className={styles.textContent}>

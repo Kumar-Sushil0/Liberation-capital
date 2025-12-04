@@ -192,7 +192,7 @@ export const PlayiDesignSlide = ({
             <div className={styles.threeColumnGrid} style={{ marginBottom: 0 }}>
               <div className={`${styles.gridColumn} ${!isInitialized ? styles.gridColumnInitial : ''}`} style={{ opacity: visibleColumns >= 1 ? 1 : 0, transform: visibleColumns >= 1 ? 'translateX(0)' : 'translateX(100px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease' }}>
                 <div className={styles.columnTitle}>
-                  <h3 style={{ fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif', fontSize: '14px', color: '#00e87b', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '1px', margin: 0, textAlign: 'center' }}>EVERYDAY MODE — Align Behavior With Intent</h3>
+                  <h3 style={{ fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif', fontSize: '14px', color: '#00e87b', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '1px', margin: 0, textAlign: 'center' }}>EVERYDAY MODE <br/> Align Behavior With Intent</h3>
                 </div>
                 <div className={styles.textContent}>
                   <p className={styles.heroParagraph} style={{ fontFamily: '"satoshi", sans-serif', fontSize: '14px', fontWeight: '500', letterSpacing: '1px', color: '#888888', textAlign: 'center' }}>Your future self is built one day at a time.</p>
@@ -207,7 +207,7 @@ export const PlayiDesignSlide = ({
 
               <div className={`${styles.gridColumn} ${!isInitialized && isScrollEnabled ? styles.gridColumnInitial : ''}`} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateX(0)' : 'translateX(100px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>
                 <div className={styles.columnTitle}>
-                  <h3 style={{ fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif', fontSize: '14px', color: '#00e87b', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '1px', margin: 0, textAlign: 'center' }}>GHOST MODE — Track Your Coherence</h3>
+                  <h3 style={{ fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif', fontSize: '14px', color: '#00e87b', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '1px', margin: 0, textAlign: 'center' }}>GHOST MODE <br/> Track Your Coherence</h3>
                 </div>
                 <div className={styles.textContent}>
                   <p className={styles.heroParagraph} style={{ fontFamily: '"satoshi", sans-serif', fontSize: '14px', fontWeight: '500', letterSpacing: '1px', color: '#888888', textAlign: 'center' }}>What you do consistently is who you are.</p>
@@ -222,7 +222,7 @@ export const PlayiDesignSlide = ({
 
               <div className={`${styles.gridColumn} ${!isInitialized && isScrollEnabled ? styles.gridColumnInitial : ''}`} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateX(0)' : 'translateX(100px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s' }}>
                 <div className={styles.columnTitle}>
-                  <h3 style={{ fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif', fontSize: '14px', color: '#00e87b', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '1px', margin: 0, textAlign: 'center' }}>UNDERGROUND MODE — See Your Internal Metrics</h3>
+                  <h3 style={{ fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif', fontSize: '14px', color: '#00e87b', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '1px', margin: 0, textAlign: 'center' }}>UNDERGROUND MODE <br/> See Your Internal Metrics</h3>
                 </div>
                 <div className={styles.textContent}>
                   <p className={styles.heroParagraph} style={{ fontFamily: '"satoshi", sans-serif', fontSize: '14px', fontWeight: '500', letterSpacing: '1px', color: '#888888', textAlign: 'center' }}>Your patterns are data — and data tells the truth.</p>

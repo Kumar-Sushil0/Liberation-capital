@@ -321,7 +321,7 @@ export const CoreiDesignSlide = ({
                     margin: 0,
                     textAlign: 'center'
                   }}>
-                    MIRROR MODE — See Your Emotional Reality
+                    MIRROR MODE <br/>See Your Emotional Reality
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -381,7 +381,7 @@ export const CoreiDesignSlide = ({
                     margin: 0,
                     textAlign: 'center'
                   }}>
-                    NPC MODE — Break Your Financial Illusions
+                    NPC MODE <br/> Break Your Financial Illusions
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -441,7 +441,7 @@ export const CoreiDesignSlide = ({
                     margin: 0,
                     textAlign: 'center'
                   }}>
-                    MONK MODE — Measure Your Readiness
+                    MONK MODE <br/> Measure Your Readiness
                   </h3>
                 </div>
                 <div className={styles.textContent}>

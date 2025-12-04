@@ -321,7 +321,7 @@ export const SubscrollSlide1 = ({
                     margin: 0,
                     textAlign: 'center'
                   }}>
-                    PRE-GAME — Map Your Possibilities
+                    PRE-GAME <br/>Map Your Possibilities
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -381,7 +381,7 @@ export const SubscrollSlide1 = ({
                     margin: 0,
                     textAlign: 'center'
                   }}>
-                    END-GAME — Face Your Extremes
+                    END-GAME <br/> Face Your Extremes
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -441,7 +441,7 @@ export const SubscrollSlide1 = ({
                     margin: 0,
                     textAlign: 'center'
                   }}>
-                    ME-GAME — Choose Your Identity
+                    ME-GAME<br/> Choose Your Identity
                   </h3>
                 </div>
                 <div className={styles.textContent}>

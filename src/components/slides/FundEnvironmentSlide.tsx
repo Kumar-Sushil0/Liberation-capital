@@ -327,7 +327,7 @@ export const FundEnvironmentSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Player Loss — You lose the version of you that couldn't evolve.
+                    Player Loss <br/> You lose the version of you that couldn't evolve.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -390,7 +390,7 @@ export const FundEnvironmentSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Patron Loss — You lose the illusion that money alone creates meaning.
+                    Patron Loss <br/> You lose the illusion that money alone creates meaning.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
@@ -453,7 +453,7 @@ export const FundEnvironmentSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    System Loss — The ecosystem rejects the misaligned.
+                    System Loss <br/> The ecosystem rejects the misaligned.
                   </h3>
                 </div>
                 <div className={styles.textContent}>
