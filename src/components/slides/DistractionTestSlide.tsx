@@ -150,25 +150,20 @@ export const DistractionTestSlide = ({
           setSkipTransitions(false);
         }, 50);
 
-        if (step === 1) {
-          window.dispatchEvent(new CustomEvent('subscrollComplete', { 
-            detail: { section: 15, step: 1 } 
-          }));
-        }
-        
-        if (step === 2) {
-          window.dispatchEvent(new CustomEvent('subscrollComplete', { 
-            detail: { section: 15, step: 2 } 
-          }));
-        }
-        
         if (step === 3) {
-          window.dispatchEvent(new CustomEvent('subscrollComplete', { 
-            detail: { section: 15, step: 3 } 
-          }));
           if (onAllColumnsVisible) {
             onAllColumnsVisible();
           }
+          
+          // Dispatch subscrollComplete event and auto-advance
+          setTimeout(() => {
+            if (typeof window !== "undefined") {
+              window.dispatchEvent(new CustomEvent("subscrollComplete"));
+              if ((window as any).gotoNextSlide) {
+                (window as any).gotoNextSlide();
+              }
+            }
+          }, 800);
         }
 
         return;
@@ -201,33 +196,20 @@ export const DistractionTestSlide = ({
             isProcessingScroll = false;
           }, 100);
 
-          if (step === 1) {
-            window.dispatchEvent(new CustomEvent('subscrollComplete', { 
-              detail: { section: 15, step: 1 } 
-            }));
-          }
-          
-          if (step === 2) {
-            window.dispatchEvent(new CustomEvent('subscrollComplete', { 
-              detail: { section: 15, step: 2 } 
-            }));
-          }
-          
           if (step === 3) {
-            window.dispatchEvent(new CustomEvent('subscrollComplete', { 
-              detail: { section: 15, step: 3 } 
-            }));
             if (onAllColumnsVisible) {
               onAllColumnsVisible();
             }
-          }
-
-          if (step >= 4 && currentSection === 15) {
+            
+            // Dispatch subscrollComplete event and auto-advance
             setTimeout(() => {
-              if (typeof window !== 'undefined' && (window as any).gotoNextSlide && currentSection === 15) {
-                (window as any).gotoNextSlide();
+              if (typeof window !== "undefined") {
+                window.dispatchEvent(new CustomEvent("subscrollComplete"));
+                if ((window as any).gotoNextSlide) {
+                  (window as any).gotoNextSlide();
+                }
               }
-            }, 300);
+            }, 800);
           }
         }
       };
