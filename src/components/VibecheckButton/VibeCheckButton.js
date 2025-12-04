@@ -33,10 +33,10 @@ export const VibeCheckButton = ({ currentSection, inline = false, sections = [],
   };
 
   // For inline version, always show. For fixed version, check currentSection
-  // Hide on slide 1 (currentSection === 0) and second-to-last slide (gamePass)
+  // Hide on slide 0 (hero), slide 1 (content1), and second-to-last slide (gamePass)
   // gamePass is at index 19 on desktop (21 sections) and index 21 on mobile (23 sections)
   const gamePassIndex = sections.length > 0 ? sections.length - 2 : 19;
-  if (!inline && (currentSection < 1 || currentSection === gamePassIndex || isModalOpen)) {
+  if (!inline && (currentSection < 2 || currentSection === gamePassIndex || isModalOpen)) {
     return null;
   }
 

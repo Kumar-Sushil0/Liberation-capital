@@ -311,7 +311,7 @@ export const Slide03 = ({
           {/* Fixed Grey Line Container */}
           <div className={styles.greyLineContainer}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <p className={styles.greyLineText}>
+              <p className={styles.greyLineText} style={{ marginBottom: '2rem' }}>
                 Two roles. One evolution system.
               </p>
             </div>
@@ -327,8 +327,8 @@ export const Slide03 = ({
                     opacity: visibleColumns >= 1 ? 1 : 0,
                     transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)',
                     transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
-                    textAlign: 'left',
-                    marginBottom: '2rem'
+                    textAlign: 'center',
+                    marginBottom: '3rem'
                   }}
                 >
                   <span style={{
@@ -337,6 +337,7 @@ export const Slide03 = ({
                     color: '#00e87b',
                     fontWeight: '500',
                     textTransform: 'uppercase',
+                    
                     letterSpacing: '1px',
                     margin: 0
                   }}>
@@ -355,8 +356,8 @@ export const Slide03 = ({
                   </span>
                 </h3>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '600px', margin: '0 auto', alignItems: 'flex-start' }}>
-                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '500px', margin: '0 auto', alignItems: 'flex-start' }}>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
                     <div style={{ 
                       fontSize: '16px', 
                       color: '#00e87b',
@@ -393,7 +394,7 @@ export const Slide03 = ({
                       </div>
                     </div>
                   </div>
-                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
                     <div style={{ 
                       fontSize: '16px', 
                       color: '#00e87b',
@@ -430,7 +431,7 @@ export const Slide03 = ({
                       </div>
                     </div>
                   </div>
-                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
                     <div style={{ 
                       fontSize: '16px', 
                       color: '#00e87b',
@@ -467,7 +468,7 @@ export const Slide03 = ({
                       </div>
                     </div>
                   </div>
-                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
                     <div style={{ 
                       fontSize: '16px', 
                       color: '#00e87b',
@@ -516,8 +517,8 @@ export const Slide03 = ({
                     opacity: visibleColumns >= 1 ? 1 : 0,
                     transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)',
                     transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
-                    textAlign: 'left',
-                    marginBottom: '2rem'
+                    textAlign: 'center',
+                    marginBottom: '3rem'
                   }}
                 >
                   <span style={{
@@ -544,8 +545,8 @@ export const Slide03 = ({
                   </span>
                 </h3>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '600px', margin: '0 auto', alignItems: 'flex-start' }}>
-                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '500px', margin: '0 auto', alignItems: 'flex-start' }}>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
                     <div style={{ 
                       fontSize: '16px', 
                       color: '#00e87b',
@@ -582,7 +583,7 @@ export const Slide03 = ({
                       </div>
                     </div>
                   </div>
-                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
                     <div style={{ 
                       fontSize: '16px', 
                       color: '#00e87b',
@@ -619,7 +620,7 @@ export const Slide03 = ({
                       </div>
                     </div>
                   </div>
-                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
                     <div style={{ 
                       fontSize: '16px', 
                       color: '#00e87b',
@@ -656,7 +657,7 @@ export const Slide03 = ({
                       </div>
                     </div>
                   </div>
-                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%' }}>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
                     <div style={{ 
                       fontSize: '16px', 
                       color: '#00e87b',
