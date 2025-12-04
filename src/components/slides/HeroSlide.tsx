@@ -83,34 +83,23 @@ export const HeroSlide = ({
     }
   }, [currentSection, isScrollEnabled, isInitialized]);
 
-  // Trigger animations when visibleStep changes
+  // Track previous step to detect actual changes
+  const prevStepRef = useRef(0);
+  
+  // Trigger animations only when step actually changes (not on init)
   useEffect(() => {
-    if (isInitialized && visibleStep >= 1) {
-      if (visibleStep >= 1 && !triggeredSteps.has(1)) {
-        setTimeout(() => {
-          setTriggeredSteps(prev => new Set(prev).add(1));
-        }, 200);
-      }
-
-      if (visibleStep >= 2 && !triggeredSteps.has(2)) {
-        setTimeout(() => {
-          setTriggeredSteps(prev => new Set(prev).add(2));
-        }, 400);
-      }
-
-      if (visibleStep >= 3 && !triggeredSteps.has(3)) {
-        setTimeout(() => {
-          setTriggeredSteps(prev => new Set(prev).add(3));
-        }, 600);
-      }
-
-      if (visibleStep >= 4 && !triggeredSteps.has(4)) {
-        setTimeout(() => {
-          setTriggeredSteps(prev => new Set(prev).add(4));
-        }, 800);
-      }
+    if (!isInitialized) return;
+    
+    const prevStep = prevStepRef.current;
+    
+    // Only trigger if step actually increased
+    if (visibleStep > prevStep) {
+      // Trigger animation immediately for the new step
+      setTriggeredSteps(prev => new Set(prev).add(visibleStep));
     }
-  }, [visibleStep, isInitialized, triggeredSteps]);
+    
+    prevStepRef.current = visibleStep;
+  }, [visibleStep, isInitialized]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -276,7 +265,7 @@ export const HeroSlide = ({
                 <SimpleFlippingWords
                   currentWord="WANT A NEW LIFE?"
                   fontSize="clamp(2rem, 4vw, 3.5rem)"
-                  animationTrigger={visibleStep >= 1 ? 1 : 0}
+                  animationTrigger={triggeredSteps.has(1) ? 1 : 0}
                   backgroundColor="#000000"
                   textColor="#ffffff"
                   mute={false}
@@ -300,7 +289,7 @@ export const HeroSlide = ({
                   <SimpleFlippingWords
                     currentWord="DESIGN IT"
                     fontSize="clamp(2rem, 4vw, 3.5rem)"
-                    animationTrigger={visibleStep >= 2 ? 1 : 0}
+                    animationTrigger={triggeredSteps.has(2) ? 1 : 0}
                     backgroundColor="#000000"
                     textColor="#ffffff"
                     mute={false}
@@ -311,7 +300,7 @@ export const HeroSlide = ({
                   <SimpleFlippingWords
                     currentWord="PLAY IT"
                     fontSize="clamp(2rem, 4vw, 3.5rem)"
-                    animationTrigger={visibleStep >= 2 ? 1 : 0}
+                    animationTrigger={triggeredSteps.has(2) ? 1 : 0}
                     backgroundColor="#000000"
                     textColor="#ffffff"
                     mute={false}
@@ -322,7 +311,7 @@ export const HeroSlide = ({
                   <SimpleFlippingWords
                     currentWord="PITCH IT"
                     fontSize="clamp(2rem, 4vw, 3.5rem)"
-                    animationTrigger={visibleStep >= 2 ? 1 : 0}
+                    animationTrigger={triggeredSteps.has(2) ? 1 : 0}
                     backgroundColor="#000000"
                     textColor="#ffffff"
                     mute={false}
@@ -341,7 +330,7 @@ export const HeroSlide = ({
                 <SimpleFlippingWords
                   currentWord="GET FUNDED FOR IT"
                   fontSize="clamp(2rem, 4vw, 3.5rem)"
-                  animationTrigger={visibleStep >= 3 ? 1 : 0}
+                  animationTrigger={triggeredSteps.has(3) ? 1 : 0}
                   backgroundColor="#000000"
                   textColor="#ffffff"
                   mute={false}
@@ -360,18 +349,9 @@ export const HeroSlide = ({
                   fontSize: 'clamp(1.1rem, 2vw, 1.6rem)',
                   margin: 0,
                   lineHeight: 1.5,
-                  color: '#b8b8b8',
-                  marginBottom: '0.5rem'
-                }}>
-                  Up to <span style={{ color: '#00e87b', fontWeight: '600' }}>$100,000</span> to redesign your identity
-                </p>
-                <p style={{
-                  fontSize: 'clamp(1.1rem, 2vw, 1.6rem)',
-                  margin: 0,
-                  lineHeight: 1.5,
                   color: '#b8b8b8'
                 }}>
-                  and pitch your <span style={{ fontStyle: 'italic', color: '#ffffff' }}>future self</span> — not another idea.
+                  Up to <span style={{ color: '#00e87b', fontWeight: '600' }}>$100,000</span> to redesign your identity and pitch your <span style={{ fontStyle: 'italic', color: '#ffffff' }}>future self</span> — not another idea.
                 </p>
               </div>
 
