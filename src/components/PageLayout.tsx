@@ -3,6 +3,7 @@
 import { ReactNode } from "react";
 import Navigation from "./Navigation";
 import MobileNavigation from "./MobileNavigation";
+import { FixedHeader } from "./fixedheader/FixedHeader";
 
 interface PageLayoutProps {
   title?: string;
@@ -14,6 +15,7 @@ interface PageLayoutProps {
 export default function PageLayout({ title, subtitle, children, bannerContent }: PageLayoutProps) {
   return (
     <main className="min-h-screen bg-background text-foreground font-sans">
+      <FixedHeader />
       {/* Banner with fixed background image */}
       <section className="relative min-h-screen pb-12">
         <div

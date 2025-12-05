@@ -46,6 +46,7 @@ import { FundBecomingSlide } from '../components/slides/FundBecomingSlide';
 import { FundEvidenceSlide } from '../components/slides/FundEvidenceSlide';
 import { FundContinuumSlide } from '../components/slides/FundContinuumSlide';
 import { ProgressIndicatorStandalone } from '../components/ProgressIndicatorStandalone';
+import { FixedHeader } from '../components/fixedheader/FixedHeader';
 import { VibeCheckButton } from '../components/VibecheckButton/VibeCheckButton';
 
 export default function Home() {
@@ -557,6 +558,9 @@ export default function Home() {
           Loading...
         </div>
       )}
+
+      {/* Fixed Header */}
+      <FixedHeader currentSection={currentSection} isMuted={isMuted} />
 
       {sections.map((section, index) => (
         <section
