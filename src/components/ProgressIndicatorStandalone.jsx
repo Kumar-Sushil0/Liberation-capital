@@ -25,10 +25,10 @@ export const ProgressIndicatorStandalone = ({
 }) => {
   const [isHovering, setIsHovering] = useState(false);
 
-  // First 4 sections as horizontal strips, middle sections as 2x2 grids, last 2 as horizontal strips
+  // First 4 sections as horizontal strips, middle sections as 2x2 grids, last 1 as horizontal strip
   const firstFourSections = Array.from({ length: Math.min(4, totalSections) }, (_, i) => i);
-  const lastTwoSections = totalSections > 4 ? Array.from({ length: Math.min(2, totalSections - 4) }, (_, i) => totalSections - 2 + i) : [];
-  const middleSections = totalSections > 6 ? Array.from({ length: totalSections - 6 }, (_, i) => i + 4) : [];
+  const lastOneSection = totalSections > 4 ? [totalSections - 1] : [];
+  const middleSections = totalSections > 5 ? Array.from({ length: totalSections - 5 }, (_, i) => i + 4) : [];
   const groupCount = Math.ceil(middleSections.length / 4);
 
   return (
@@ -104,10 +104,10 @@ export const ProgressIndicatorStandalone = ({
           );
         })}
 
-        {/* Last 2 sections as horizontal strips in a group */}
-        {lastTwoSections.length > 0 && (
+        {/* Last 1 section as horizontal strip */}
+        {lastOneSection.length > 0 && (
           <div style={styles.horizontalStripGroup}>
-            {lastTwoSections.map((sectionIndex) => {
+            {lastOneSection.map((sectionIndex) => {
               const isActive = currentSection === sectionIndex;
               
               return (

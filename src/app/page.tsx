@@ -24,8 +24,7 @@ import {
   DummySlide2,
   DummySlide3,
   DummySlide4,
-  FAQSlide,
-  FooterSlide
+  FAQSlide
 } from '../components/slides';
 import { WarningSlide } from '../components/slides/WarningSlide';
 import { VideoSlide } from '../components/slides/VideoSlide';
@@ -552,8 +551,6 @@ export default function Home() {
         return <DummySlide4 />;
       case "faq":
         return <FAQSlide />;
-      case "footer":
-        return <FooterSlide />;
       default:
         return null;
     }

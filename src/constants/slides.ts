@@ -35,8 +35,7 @@ const desktopSections: SlideConfig[] = [
   { type: "dummy2", className: "slideDummy2" },
   { type: "dummy3", className: "slideDummy3" },
   { type: "dummy4", className: "slideDummy4" },
-  { type: "faq", className: "slideFAQ" },
-  { type: "footer", className: "slideFooter" }
+  { type: "faq", className: "slideFAQ" }
 ];
 
 // Mobile sections configuration (same for now, can be customized later)
@@ -121,8 +120,7 @@ export const slideWords = [
   "FUND PLACEHOLDER 2 ",  // 25: dummy2
   "FUND PLACEHOLDER 3 ",  // 26: dummy3
   "FUND PLACEHOLDER 4 ",  // 27: dummy4
-  "FUND QUESTIONS     ",  // 28: faq
-  "FUND CONTACT       "   // 29: footer
+  "FUND QUESTIONS     "   // 28: faq
 ];
 
 // Dummy texts for each section (displayed in header)
@@ -155,8 +153,7 @@ export const dummyTexts = [
   "Placeholder Content 2",               // 25: dummy2
   "Placeholder Content 3",               // 26: dummy3
   "Placeholder Content 4",               // 27: dummy4
-  "Frequently Asked Questions",          // 28: faq
-  "Contact & Information"                // 29: footer
+  "Frequently Asked Questions"           // 28: faq
 ];
 
 // Export default for backward compatibility (desktop)
