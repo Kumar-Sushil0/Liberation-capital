@@ -19,7 +19,13 @@ import {
   Slide23,
   Slide26,
   PoemSlide,
-  OperatingSystemSlide
+  OperatingSystemSlide,
+  DummySlide1,
+  DummySlide2,
+  DummySlide3,
+  DummySlide4,
+  FAQSlide,
+  FooterSlide
 } from '../components/slides';
 import { WarningSlide } from '../components/slides/WarningSlide';
 import { VideoSlide } from '../components/slides/VideoSlide';
@@ -536,6 +542,18 @@ export default function Home() {
         return <PoemSlide />;
       case "operatingSystem":
         return <OperatingSystemSlide />;
+      case "dummy1":
+        return <DummySlide1 />;
+      case "dummy2":
+        return <DummySlide2 />;
+      case "dummy3":
+        return <DummySlide3 />;
+      case "dummy4":
+        return <DummySlide4 />;
+      case "faq":
+        return <FAQSlide />;
+      case "footer":
+        return <FooterSlide />;
       default:
         return null;
     }

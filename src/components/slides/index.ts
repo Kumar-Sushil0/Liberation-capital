@@ -14,3 +14,10 @@ export { Slide23 } from './Slide23';
 export { Slide26 } from './Slide26';
 export { PoemSlide } from './PoemSlide';
 export { OperatingSystemSlide } from './OperatingSystemSlide';
+
+export { DummySlide1 } from './DummySlide1';
+export { DummySlide2 } from './DummySlide2';
+export { DummySlide3 } from './DummySlide3';
+export { DummySlide4 } from './DummySlide4';
+export { FAQSlide } from './FAQSlide';
+export { FooterSlide } from './FooterSlide';

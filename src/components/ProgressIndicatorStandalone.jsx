@@ -25,9 +25,11 @@ export const ProgressIndicatorStandalone = ({
 }) => {
   const [isHovering, setIsHovering] = useState(false);
 
-  // Create array of sections (start from index 0)
-  const visibleSections = Array.from({ length: totalSections }, (_, i) => i);
-  const groupCount = Math.ceil(visibleSections.length / 4);
+  // First 4 sections as horizontal strips, middle sections as 2x2 grids, last 2 as horizontal strips
+  const firstFourSections = Array.from({ length: Math.min(4, totalSections) }, (_, i) => i);
+  const lastTwoSections = totalSections > 4 ? Array.from({ length: Math.min(2, totalSections - 4) }, (_, i) => totalSections - 2 + i) : [];
+  const middleSections = totalSections > 6 ? Array.from({ length: totalSections - 6 }, (_, i) => i + 4) : [];
+  const groupCount = Math.ceil(middleSections.length / 4);
 
   return (
     <div
@@ -55,22 +57,41 @@ export const ProgressIndicatorStandalone = ({
         </div>
       )}
 
-      {/* Progress Dots Grid */}
+      {/* Progress Indicators */}
       <div style={styles.progressBarGrid}>
+        {/* First 4 sections as horizontal strips in a group */}
+        <div style={styles.horizontalStripGroup}>
+          {firstFourSections.map((sectionIndex) => {
+            const isActive = currentSection === sectionIndex;
+            
+            return (
+              <div
+                key={sectionIndex}
+                onClick={() => onSectionClick && onSectionClick(sectionIndex)}
+                style={{
+                  ...styles.horizontalStrip,
+                  ...(isActive ? styles.horizontalStripActive : {}),
+                  ...(onSectionClick ? { cursor: 'pointer' } : {})
+                }}
+              />
+            );
+          })}
+        </div>
+
+        {/* Middle sections as 2x2 grids */}
         {Array.from({ length: groupCount }, (_, groupIndex) => {
           const startIndex = groupIndex * 4;
-          const groupSections = visibleSections.slice(startIndex, startIndex + 4);
+          const groupSections = middleSections.slice(startIndex, startIndex + 4);
           
           return (
-            <div key={groupIndex} style={styles.progressGroup}>
-              {groupSections.map((sectionIndex, localIndex) => {
-                const index = sectionIndex;
-                const isActive = currentSection === index;
+            <div key={`group-${groupIndex}`} style={styles.progressGroup}>
+              {groupSections.map((sectionIndex) => {
+                const isActive = currentSection === sectionIndex;
                 
                 return (
                   <div
-                    key={index}
-                    onClick={() => onSectionClick && onSectionClick(index)}
+                    key={sectionIndex}
+                    onClick={() => onSectionClick && onSectionClick(sectionIndex)}
                     style={{
                       ...styles.progressDot,
                       ...(isActive ? styles.progressDotActive : {}),
@@ -82,6 +103,27 @@ export const ProgressIndicatorStandalone = ({
             </div>
           );
         })}
+
+        {/* Last 2 sections as horizontal strips in a group */}
+        {lastTwoSections.length > 0 && (
+          <div style={styles.horizontalStripGroup}>
+            {lastTwoSections.map((sectionIndex) => {
+              const isActive = currentSection === sectionIndex;
+              
+              return (
+                <div
+                  key={sectionIndex}
+                  onClick={() => onSectionClick && onSectionClick(sectionIndex)}
+                  style={{
+                    ...styles.horizontalStrip,
+                    ...(isActive ? styles.horizontalStripActive : {}),
+                    ...(onSectionClick ? { cursor: 'pointer' } : {})
+                  }}
+                />
+              );
+            })}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -139,6 +181,12 @@ const styles = {
     gap: '6px',
     alignItems: 'center',
   },
+  horizontalStripGroup: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '4px',
+    alignItems: 'center',
+  },
   progressGroup: {
     display: 'grid',
     gridTemplateColumns: 'repeat(2, 1fr)',
@@ -157,6 +205,21 @@ const styles = {
     position: 'relative',
   },
   progressDotActive: {
+    background: '#00e87b',
+    border: '1px solid #00e87b',
+    boxShadow: '0 0 10px rgba(0, 232, 123, 0.5)',
+  },
+  horizontalStrip: {
+    width: '18px', // Same width as 2x2 grid (8px * 2 + 2px * 1 gap)
+    height: '4px',
+    background: '#000000',
+    border: '1px solid #00e87b',
+    borderRadius: '2px',
+    cursor: 'pointer',
+    transition: 'all 0.3s ease',
+    position: 'relative',
+  },
+  horizontalStripActive: {
     background: '#00e87b',
     border: '1px solid #00e87b',
     boxShadow: '0 0 10px rgba(0, 232, 123, 0.5)',

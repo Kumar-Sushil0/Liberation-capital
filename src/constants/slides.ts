@@ -5,7 +5,7 @@ export interface SlideConfig {
   className: string;
 }
 
-// Desktop sections configuration (24 slides total)
+// Desktop sections configuration (30 slides total)
 const desktopSections: SlideConfig[] = [
   { type: "hero", className: "slide00" },
   { type: "content1", className: "slide01" },
@@ -30,7 +30,13 @@ const desktopSections: SlideConfig[] = [
   { type: "fundActivation", className: "slideFundActivation" },
   { type: "fundSupport", className: "slideFundSupport" },
   { type: "fundEnvironment", className: "slideFundEnvironment" },
-  { type: "fundCapital", className: "slideFundCapital" }
+  { type: "fundCapital", className: "slideFundCapital" },
+  { type: "dummy1", className: "slideDummy1" },
+  { type: "dummy2", className: "slideDummy2" },
+  { type: "dummy3", className: "slideDummy3" },
+  { type: "dummy4", className: "slideDummy4" },
+  { type: "faq", className: "slideFAQ" },
+  { type: "footer", className: "slideFooter" }
 ];
 
 // Mobile sections configuration (same for now, can be customized later)
@@ -110,7 +116,13 @@ export const slideWords = [
   "FUND SUPPORT       ",  // 20: fundActivation
   "FUND CAPITAL       ",  // 21: fundSupport
   "FUND LOSS          ",  // 22: fundEnvironment
-  "FUND CONTINUUM     "   // 23: fundCapital
+  "FUND CONTINUUM     ",  // 23: fundCapital
+  "FUND PLACEHOLDER 1 ",  // 24: dummy1
+  "FUND PLACEHOLDER 2 ",  // 25: dummy2
+  "FUND PLACEHOLDER 3 ",  // 26: dummy3
+  "FUND PLACEHOLDER 4 ",  // 27: dummy4
+  "FUND QUESTIONS     ",  // 28: faq
+  "FUND CONTACT       "   // 29: footer
 ];
 
 // Dummy texts for each section (displayed in header)
@@ -138,7 +150,13 @@ export const dummyTexts = [
   "Systems That Sustain Becoming",       // 20: fundActivation
   "Deployment of Up to $100k",           // 21: fundSupport
   "The Cost of Becoming",                // 22: fundEnvironment
-  "The Identity Economy Loop"            // 23: fundCapital
+  "The Identity Economy Loop",           // 23: fundCapital
+  "Placeholder Content 1",               // 24: dummy1
+  "Placeholder Content 2",               // 25: dummy2
+  "Placeholder Content 3",               // 26: dummy3
+  "Placeholder Content 4",               // 27: dummy4
+  "Frequently Asked Questions",          // 28: faq
+  "Contact & Information"                // 29: footer
 ];
 
 // Export default for backward compatibility (desktop)
