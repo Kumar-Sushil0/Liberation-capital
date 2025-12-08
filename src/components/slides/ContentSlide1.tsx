@@ -94,7 +94,7 @@ export const ContentSlide1 = () => {
               <strong>← Become Patron</strong>
             </p>
              <p style={{ ...textStyle, color: '#b8b8b8', fontStyle: 'italic', paddingLeft: '1rem' }}>
-              Request Patron Access
+              Apply as Angel Investor 
             </p>
             <p style={{ ...textStyle, color: '#b8b8b8', fontStyle: 'italic', marginBottom: '0.3rem', paddingLeft: '1rem' }}>
               Invest in human capital, not hype.
