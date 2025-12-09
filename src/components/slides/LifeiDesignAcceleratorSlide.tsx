@@ -312,7 +312,7 @@ export const LifeiDesignAcceleratorSlide = ({
           <div className={styles.greyLineContainer}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <p className={styles.greyLineText}>
-                Identity isn't discovered — it's engineered through structure, pressure, and design
+                Identity isn't discovered, it's engineered through structure, pressure, and design
               </p>
             </div>
           </div>
@@ -351,7 +351,7 @@ export const LifeiDesignAcceleratorSlide = ({
                     letterSpacing: '0.5px',
                     margin: '0 0 0 8px'
                   }}>
-                    — The Engine for Your Becoming
+                  : The Engine for Your Becoming
                   </span>
                 </h3>
 
@@ -500,7 +500,7 @@ export const LifeiDesignAcceleratorSlide = ({
                           color: '#999',
                           textAlign: 'left',
                           margin: 0
-                        }}>You're not surviving a plot — you're authoring a saga.</p>
+                        }}>You're not surviving a plot, you're authoring a saga.</p>
                       </div>
                     </div>
                   </div>
@@ -540,7 +540,7 @@ export const LifeiDesignAcceleratorSlide = ({
                     letterSpacing: '0.5px',
                     margin: '0 0 0 8px'
                   }}>
-                    — Where Designed Identity Becomes Lived Reality
+                  : Where Designed Identity Becomes Lived Reality
                   </span>
                 </h3>
 
@@ -615,7 +615,7 @@ export const LifeiDesignAcceleratorSlide = ({
                           color: '#999',
                           textAlign: 'left',
                           margin: 0
-                        }}>No audience, no applause — just the truth of your discipline.</p>
+                        }}>No audience, no applause, just the truth of your discipline.</p>
                       </div>
                     </div>
                   </div>
@@ -689,7 +689,7 @@ export const LifeiDesignAcceleratorSlide = ({
                           color: '#999',
                           textAlign: 'left',
                           margin: 0
-                        }}>Here, imagination isn't judged — it's cultivated.</p>
+                        }}>Here, imagination isn't judged, it's cultivated.</p>
                       </div>
                     </div>
                   </div>

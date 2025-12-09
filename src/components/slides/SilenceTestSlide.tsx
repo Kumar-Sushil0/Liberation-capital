@@ -412,7 +412,7 @@ export const SilenceTestSlide = ({
                     }}
                   >
                     These tests show whether a human can operate from design,
-                    not mood — even when nobody is watching.
+                    not mood, even when nobody is watching.
                   </p>
                 </div>
                 <div className={styles.imageContent}>

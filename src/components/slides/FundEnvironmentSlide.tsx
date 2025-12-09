@@ -286,7 +286,7 @@ export const FundEnvironmentSlide = ({
               }}
             >
               <p className={styles.greyLineText}>
-                Funding magnifies who you are — not who you pretend to be.
+                Funding magnifies who you are, not who you pretend to be.
               </p>
             </div>
           </div>
@@ -469,7 +469,7 @@ export const FundEnvironmentSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    If identity collapses under capital, the system cuts the cord — cleanly, ethically.
+                    If identity collapses under capital, the system cuts the cord, cleanly, ethically.
                   </p>
                 </div>
                 <div className={styles.imageContent}>

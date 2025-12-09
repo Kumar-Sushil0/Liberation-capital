@@ -198,7 +198,7 @@ export const EpicentreSlide = ({
               <div className={styles.powersSection}>
                 <h3 className={styles.sectionTitle} style={{ opacity: visibleColumns >= 1 ? 1 : 0, transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s', textAlign: 'center', marginBottom: '3rem' }}>
                   <span style={{ fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif', fontSize: '14px', color: '#00e87b', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '1px', margin: 0 }}>Player Patterns</span>
-                  <span style={{ fontFamily: '"satoshi", sans-serif', fontSize: '12px', color: '#888', fontWeight: '400', textTransform: 'none', letterSpacing: '0.5px', margin: '0 0 0 8px' }}>— What Your Identity Reveals Under Pressure</span>
+                  <span style={{ fontFamily: '"satoshi", sans-serif', fontSize: '12px', color: '#888', fontWeight: '400', textTransform: 'none', letterSpacing: '0.5px', margin: '0 0 0 8px' }}>: What Your Identity Reveals Under Pressure</span>
                 </h3>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '500px', margin: '0 auto', alignItems: 'flex-start' }}>
@@ -246,7 +246,7 @@ export const EpicentreSlide = ({
               <div className={styles.forcesSection}>
                 <h3 className={styles.sectionTitle} style={{ opacity: visibleColumns >= 1 ? 1 : 0, transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s', textAlign: 'center', marginBottom: '3rem' }}>
                   <span style={{ fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif', fontSize: '14px', color: '#00e87b', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '1px', margin: 0 }}>Patron Signals</span>
-                  <span style={{ fontFamily: '"satoshi", sans-serif', fontSize: '12px', color: '#888', fontWeight: '400', textTransform: 'none', letterSpacing: '0.5px', margin: '0 0 0 8px' }}>— What Patrons Learn From Your Patterns</span>
+                  <span style={{ fontFamily: '"satoshi", sans-serif', fontSize: '12px', color: '#888', fontWeight: '400', textTransform: 'none', letterSpacing: '0.5px', margin: '0 0 0 8px' }}>: What Patrons Learn From Your Patterns</span>
                 </h3>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '500px', margin: '0 auto', alignItems: 'flex-start' }}>

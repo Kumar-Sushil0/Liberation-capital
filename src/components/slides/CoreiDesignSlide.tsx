@@ -294,7 +294,7 @@ export const CoreiDesignSlide = ({
           <div className={styles.greyLineContainer}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <p className={styles.greyLineText}>
-                Your emotional code is the real operating system — change it, and your life recalibrates.
+                Your emotional code is the real operating system, change it, and your life recalibrates.
               </p>
             </div>
           </div>

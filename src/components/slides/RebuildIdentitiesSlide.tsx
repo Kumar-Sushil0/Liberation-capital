@@ -334,7 +334,7 @@ export const RebuildIdentitiesSlide = ({
                     color: '#888888',
                     textAlign: 'center'
                   }}>
-                    Most people aren't broken — they're just running an outdated identity.
+                    Most people aren't broken, they're just running an outdated identity.
                   </p>
                 </div>
                 <div className={styles.imageContent}>

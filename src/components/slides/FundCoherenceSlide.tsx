@@ -334,7 +334,7 @@ export const FundCoherenceSlide = ({
                     color: '#888888',
                     textAlign: 'center'
                   }}>
-                    Decks, metrics, charisma — all performable. Identity isn't.
+                    Decks, metrics, charisma, all performable. Identity isn't.
                   </p>
                 </div>
                 <div className={styles.imageContent}>

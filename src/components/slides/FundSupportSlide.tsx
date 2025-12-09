@@ -286,7 +286,7 @@ export const FundSupportSlide = ({
               }}
             >
               <p className={styles.greyLineText}>
-                Money is fuel — but only when given to a human who can hold it.
+                Money is fuel, but only when given to a human who can hold it.
               </p>
             </div>
           </div>
@@ -343,7 +343,7 @@ export const FundSupportSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Up to $100,000 deployed to activate your next self — without equity, ownership, or identity extraction.
+                    Up to $100,000 deployed to activate your next self, without equity, ownership, or identity extraction.
                   </p>
                 </div>
                 <div className={styles.imageContent}>
@@ -406,7 +406,7 @@ export const FundSupportSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Principal + 10% / 3 years, with a 2% optional legacy — clean, ethical, human-first returns.
+                    Principal + 10% / 3 years, with a 2% optional legacy, clean, ethical, human-first returns.
                   </p>
                 </div>
                 <div className={styles.imageContent}>

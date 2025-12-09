@@ -361,7 +361,7 @@ export const FundBlueprintSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Your emotional OS, your behavioral model, your chosen self — laid bare.
+                    Your emotional OS, your behavioral model, your chosen self, laid bare.
                   </p>
                 </div>
                 <div className={styles.imageContent}>

@@ -352,7 +352,7 @@ export const Slide03 = ({
                     letterSpacing: '0.5px',
                     margin: '0 0 0 8px'
                   }}>
-                    — Signs You Belong Here
+                  : Signs You Belong Here
                   </span>
                 </h3>
 
@@ -427,7 +427,7 @@ export const Slide03 = ({
                           color: '#999',
                           textAlign: 'left',
                           margin: 0
-                        }}>Your effort is real — your capital isn't.</p>
+                        }}>Your effort is real, your capital isn't.</p>
                       </div>
                     </div>
                   </div>
@@ -501,7 +501,7 @@ export const Slide03 = ({
                           color: '#999',
                           textAlign: 'left',
                           margin: 0
-                        }}>Coherence over charisma — that's your advantage.</p>
+                        }}>Coherence over charisma, that's your advantage.</p>
                       </div>
                     </div>
                   </div>
@@ -541,7 +541,7 @@ export const Slide03 = ({
                     letterSpacing: '0.5px',
                     margin: '0 0 0 8px'
                   }}>
-                    — Signs You're Meant for This
+                  : Signs You're Meant for This
                   </span>
                 </h3>
 
@@ -616,7 +616,7 @@ export const Slide03 = ({
                           color: '#999',
                           textAlign: 'left',
                           margin: 0
-                        }}>Decks, founders, hype cycles — none of it feels real anymore.</p>
+                        }}>Decks, founders, hype cycles, none of it feels real anymore.</p>
                       </div>
                     </div>
                   </div>

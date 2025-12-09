@@ -331,7 +331,7 @@ export const LiberationDaySlide = ({
                     <div style={{ flex: 1 }}>
                       <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease', marginBottom: '0.5rem', textAlign: 'left' }}>Discipline Logs</h4>
                       <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>
-                        <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Your daily consistency — not your intentions.</p>
+                        <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Your daily consistency, not your intentions.</p>
                       </div>
                     </div>
                   </div>
@@ -358,7 +358,7 @@ export const LiberationDaySlide = ({
                     <div style={{ flex: 1 }}>
                       <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s', marginBottom: '0.5rem', textAlign: 'left' }}>Emotional Upgrades</h4>
                       <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s' }}>
-                        <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Where your internal architecture evolved — visibly, measurably.</p>
+                        <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Where your internal architecture evolved, visibly, measurably.</p>
                       </div>
                     </div>
                   </div>

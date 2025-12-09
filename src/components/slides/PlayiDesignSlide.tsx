@@ -226,7 +226,7 @@ export const PlayiDesignSlide = ({
                   <h3 style={{ fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif', fontSize: '14px', color: '#00e87b', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '1px', margin: 0, textAlign: 'center' }}>UNDERGROUND MODE <br/> See Your Internal Metrics</h3>
                 </div>
                 <div className={styles.textContent}>
-                  <p className={styles.heroParagraph} style={{ fontFamily: '"satoshi", sans-serif', fontSize: '14px', fontWeight: '500', letterSpacing: '1px', color: '#888888', textAlign: 'center' }}>Your patterns are data — and data tells the truth.</p>
+                  <p className={styles.heroParagraph} style={{ fontFamily: '"satoshi", sans-serif', fontSize: '14px', fontWeight: '500', letterSpacing: '1px', color: '#888888', textAlign: 'center' }}>Your patterns are data, and data tells the truth.</p>
                 </div>
                 <div className={styles.imageContent}>
                   <img src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+3.svg" width={200} height={200} alt="Underground Mode" className={styles.heroImageContent} style={{ width: '200px', height: '200px' }} />

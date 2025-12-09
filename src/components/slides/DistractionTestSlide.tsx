@@ -286,7 +286,7 @@ export const DistractionTestSlide = ({
               }}
             >
               <p className={styles.greyLineText}>
-                Fund Eligibility — who actually gets through
+                Fund Eligibility, who actually gets through
               </p>
             </div>
           </div>
@@ -406,7 +406,7 @@ export const DistractionTestSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Patrons don't fund potential — they fund the human who can hold their future without collapsing.
+                    Patrons don't fund potential, they fund the human who can hold their future without collapsing.
                   </p>
                 </div>
                 <div className={styles.imageContent}>

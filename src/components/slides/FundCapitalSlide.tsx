@@ -286,7 +286,7 @@ export const FundCapitalSlide = ({
               }}
             >
               <p className={styles.greyLineText}>
-                Liberation Capital doesn't create deals — it creates humans who create culture.
+                Liberation Capital doesn't create deals, it creates humans who create culture.
               </p>
             </div>
           </div>
@@ -406,7 +406,7 @@ export const FundCapitalSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Watching humans rebuild their identity exposes your own gaps — Patrons become the next Players.
+                    Watching humans rebuild their identity exposes your own gaps, Patrons become the next Players.
                   </p>
                 </div>
                 <div className={styles.imageContent}>

@@ -304,7 +304,7 @@ export const FundCrucibleSlide = ({
               }}
             >
               <p className={styles.greyLineText}>
-                The moment your future self steps into the light — and becomes undeniable.
+                The moment your future self steps into the light, and becomes undeniable.
               </p>
             </div>
           </div>
@@ -487,7 +487,7 @@ export const FundCrucibleSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    The ecosystem validates not your ambition — but your alignment.
+                    The ecosystem validates not your ambition, but your alignment.
                   </p>
                 </div>
                 <div className={styles.imageContent}>

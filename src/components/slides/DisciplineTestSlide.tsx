@@ -286,7 +286,7 @@ export const DisciplineTestSlide = ({
               }}
             >
               <p className={styles.greyLineText}>
-                Breakdown or breakthrough — both reveal the truth you've been avoiding.
+                Breakdown or breakthrough, both reveal the truth you've been avoiding.
               </p>
             </div>
           </div>

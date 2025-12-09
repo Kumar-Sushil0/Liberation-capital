@@ -334,7 +334,7 @@ export const FundOriginSlide = ({
                     color: '#888888',
                     textAlign: 'center'
                   }}>
-                    The human is the engine — everything else is decoration.
+                    The human is the engine, everything else is decoration.
                   </p>
                 </div>
                 <div className={styles.imageContent}>

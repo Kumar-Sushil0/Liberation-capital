@@ -343,7 +343,7 @@ export const FundAskSlide = ({
                       textAlign: "center",
                     }}
                   >
-                    Your Liberation Number isn't ambition — it's alignment.
+                    Your Liberation Number isn't ambition, it's alignment.
                   </p>
                 </div>
                 <div className={styles.imageContent}>

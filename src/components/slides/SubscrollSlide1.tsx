@@ -334,7 +334,7 @@ export const SubscrollSlide1 = ({
                     color: '#888888',
                     textAlign: 'center'
                   }}>
-                    You don't have one future — you have many.
+                    You don't have one future, you have many.
                   </p>
                 </div>
                 <div className={styles.imageContent}>
