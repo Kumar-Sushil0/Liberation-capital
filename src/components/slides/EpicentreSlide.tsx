@@ -14,7 +14,7 @@ export const EpicentreSlide = ({
   onAllColumnsVisible 
 }: EpicentreSlideProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [visibleColumns, setVisibleColumns] = useState(isScrollEnabled ? 0 : 4);
+  const [visibleColumns, setVisibleColumns] = useState(isScrollEnabled ? 0 : 5);
   const [skipTransitions, setSkipTransitions] = useState(true);
   const [isInitialized, setIsInitialized] = useState(false);
   const isScrollingRef = useRef(false);
@@ -22,7 +22,7 @@ export const EpicentreSlide = ({
 
   useEffect(() => {
     setSkipTransitions(true);
-    setVisibleColumns(isScrollEnabled ? 0 : 4);
+    setVisibleColumns(isScrollEnabled ? 0 : 5);
     const timer = setTimeout(() => {
       setSkipTransitions(false);
       setIsInitialized(true);
@@ -34,7 +34,7 @@ export const EpicentreSlide = ({
     if (!isInitialized || currentSection !== 12) return;
     setSkipTransitions(true);
     if (!isScrollEnabled) {
-      setVisibleColumns(4);
+      setVisibleColumns(5);
       if (onAllColumnsVisible) onAllColumnsVisible();
     } else {
       setVisibleColumns(0);
@@ -73,6 +73,10 @@ export const EpicentreSlide = ({
       if (visibleColumns >= 4 && !triggeredColumns.has(4)) {
         setTimeout(() => setTriggeredColumns(prev => new Set(prev).add(4)), 800);
       }
+
+      if (visibleColumns >= 5 && !triggeredColumns.has(5)) {
+        setTimeout(() => setTriggeredColumns(prev => new Set(prev).add(5)), 1000);
+      }
     }
   }, [visibleColumns, isInitialized, triggeredColumns]);
 
@@ -109,6 +113,10 @@ export const EpicentreSlide = ({
         if (step === 3) window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 12, step: 3 } }));
         if (step === 4) {
           window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 12, step: 4 } }));
+        }
+        
+        if (step === 5) {
+          window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 12, step: 5 } }));
           if (onAllColumnsVisible) onAllColumnsVisible();
         }
         return;
@@ -137,9 +145,13 @@ export const EpicentreSlide = ({
           if (step === 3) window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 12, step: 3 } }));
           if (step === 4) {
             window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 12, step: 4 } }));
+          }
+          
+          if (step === 5) {
+            window.dispatchEvent(new CustomEvent('subscrollComplete', { detail: { section: 12, step: 5 } }));
             if (onAllColumnsVisible) onAllColumnsVisible();
           }
-          if (step >= 5 && currentSection === 12) {
+          if (step >= 6 && currentSection === 12) {
             setTimeout(() => {
               if (typeof window !== 'undefined' && (window as any).gotoNextSlide && currentSection === 12) {
                 (window as any).gotoNextSlide();
@@ -196,10 +208,42 @@ export const EpicentreSlide = ({
           <div className={styles.scrollRevealMainContent}>
             <div className={styles.powersMainContent}>
               <div className={styles.powersSection}>
-                <h3 className={styles.sectionTitle} style={{ opacity: visibleColumns >= 1 ? 1 : 0, transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s', textAlign: 'center', marginBottom: '3rem' }}>
-                  <span style={{ fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif', fontSize: '14px', color: '#00e87b', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '1px', margin: 0 }}>Player Patterns</span>
-                  <span style={{ fontFamily: '"satoshi", sans-serif', fontSize: '12px', color: '#888', fontWeight: '400', textTransform: 'none', letterSpacing: '0.5px', margin: '0 0 0 8px' }}>: What Your Identity Reveals Under Pressure</span>
-                </h3>
+                <div
+                  style={{
+                    opacity: visibleColumns >= 1 ? 1 : 0,
+                    transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)',
+                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
+                    textAlign: 'center',
+                    marginBottom: '3rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '0.25rem'
+                  }}
+                >
+                  <h3 className={styles.sectionTitle} style={{
+                    fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif',
+                    fontSize: '14px',
+                    color: '#00e87b',
+                    fontWeight: '500',
+                    textTransform: 'uppercase',
+                    letterSpacing: '1px',
+                    margin: 0
+                  }}>
+                    Player Patterns
+                  </h3>
+                  <p style={{
+                    fontFamily: '"satoshi", sans-serif',
+                    fontSize: '12px',
+                    color: '#888',
+                    fontWeight: '400',
+                    textTransform: 'none',
+                    letterSpacing: '0.5px',
+                    margin: 0
+                  }}>
+                  What Your Identity Reveals Under Pressure
+                  </p>
+                </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '500px', margin: '0 auto', alignItems: 'flex-start' }}>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
@@ -212,28 +256,28 @@ export const EpicentreSlide = ({
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
-                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s' }}>▼</div>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s' }}>▼</div>
                     <div style={{ flex: 1 }}>
-                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s', marginBottom: '0.5rem', textAlign: 'left' }}>Emotional Governance</h4>
-                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s', marginBottom: '0.5rem', textAlign: 'left' }}>Emotional Governance</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>
                         <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Do you regulate your state, or does your state regulate you?</p>
                       </div>
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
-                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>▼</div>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 4 ? 1 : 0, transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>▼</div>
                     <div style={{ flex: 1 }}>
-                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s', marginBottom: '0.5rem', textAlign: 'left' }}>Impulse Overrides</h4>
-                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s' }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 4 ? 1 : 0, transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s', marginBottom: '0.5rem', textAlign: 'left' }}>Impulse Overrides</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 4 ? 1 : 0, transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s' }}>
                         <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Do you act from intention, or do cravings hijack your architecture?</p>
                       </div>
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
-                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>▼</div>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 5 ? 1 : 0, transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>▼</div>
                     <div style={{ flex: 1 }}>
-                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s', marginBottom: '0.5rem', textAlign: 'left' }}>Structural Stability</h4>
-                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s' }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 5 ? 1 : 0, transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s', marginBottom: '0.5rem', textAlign: 'left' }}>Structural Stability</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 5 ? 1 : 0, transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s' }}>
                         <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Does your identity hold its form when conditions change?</p>
                       </div>
                     </div>
@@ -244,10 +288,42 @@ export const EpicentreSlide = ({
               <div className={styles.separatorLine}></div>
 
               <div className={styles.forcesSection}>
-                <h3 className={styles.sectionTitle} style={{ opacity: visibleColumns >= 1 ? 1 : 0, transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s', textAlign: 'center', marginBottom: '3rem' }}>
-                  <span style={{ fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif', fontSize: '14px', color: '#00e87b', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '1px', margin: 0 }}>Patron Signals</span>
-                  <span style={{ fontFamily: '"satoshi", sans-serif', fontSize: '12px', color: '#888', fontWeight: '400', textTransform: 'none', letterSpacing: '0.5px', margin: '0 0 0 8px' }}>: What Patrons Learn From Your Patterns</span>
-                </h3>
+                <div
+                  style={{
+                    opacity: visibleColumns >= 1 ? 1 : 0,
+                    transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)',
+                    transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
+                    textAlign: 'center',
+                    marginBottom: '3rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '0.25rem'
+                  }}
+                >
+                  <h3 className={styles.sectionTitle} style={{
+                    fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif',
+                    fontSize: '14px',
+                    color: '#00e87b',
+                    fontWeight: '500',
+                    textTransform: 'uppercase',
+                    letterSpacing: '1px',
+                    margin: 0
+                  }}>
+                    Patron Signals
+                  </h3>
+                  <p style={{
+                    fontFamily: '"satoshi", sans-serif',
+                    fontSize: '12px',
+                    color: '#888',
+                    fontWeight: '400',
+                    textTransform: 'none',
+                    letterSpacing: '0.5px',
+                    margin: 0
+                  }}>
+                  What Patrons Learn From Your Patterns
+                  </p>
+                </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '500px', margin: '0 auto', alignItems: 'flex-start' }}>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
@@ -260,28 +336,28 @@ export const EpicentreSlide = ({
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
-                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s' }}>▼</div>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s' }}>▼</div>
                     <div style={{ flex: 1 }}>
-                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s', marginBottom: '0.5rem', textAlign: 'left' }}>Identity Integrity</h4>
-                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s', marginBottom: '0.5rem', textAlign: 'left' }}>Identity Integrity</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>
                         <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Patrons watch for alignment between what you claim and how you act.</p>
                       </div>
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
-                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>▼</div>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 4 ? 1 : 0, transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>▼</div>
                     <div style={{ flex: 1 }}>
-                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s', marginBottom: '0.5rem', textAlign: 'left' }}>Behavioral Predictability</h4>
-                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s' }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 4 ? 1 : 0, transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s', marginBottom: '0.5rem', textAlign: 'left' }}>Behavioral Predictability</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 4 ? 1 : 0, transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s' }}>
                         <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Stable patterns signal future performance more accurately than any pitch.</p>
                       </div>
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
-                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>▼</div>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 5 ? 1 : 0, transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>▼</div>
                     <div style={{ flex: 1 }}>
-                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s', marginBottom: '0.5rem', textAlign: 'left' }}>Architecture Endurance</h4>
-                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s' }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 5 ? 1 : 0, transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s', marginBottom: '0.5rem', textAlign: 'left' }}>Architecture Endurance</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 5 ? 1 : 0, transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s' }}>
                         <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>If your identity doesn't collapse under pressure, your life won't collapse under capital.</p>
                       </div>
                     </div>

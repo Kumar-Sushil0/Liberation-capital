@@ -338,9 +338,22 @@ export const HeroSlide = ({
                 />
               </div>
 
-              {/* Step 4: Funding details section */}
+              {/* Always visible: Tagline */}
+              <p style={{
+                fontSize: 'clamp(1.1rem, 2vw, 1.6rem)',
+                margin: 0,
+                lineHeight: 1.5,
+                color: '#00e87b',
+                fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif',
+                fontWeight: '500',
+                textTransform:"uppercase",
+                marginBottom: '1rem'
+              }}>
+                <span style={{color: '#ffffff'}}> We don't fund startups.</span> We fund humans redesigning themselves.
+              </p>
+
+              {/* Step 4: Funding details */}
               <div style={{ 
-                marginBottom: '1rem',
                 opacity: visibleStep >= 4 ? 1 : 0,
                 transform: visibleStep >= 4 ? 'translateY(0)' : 'translateY(30px)',
                 transition: skipTransitions || !isInitialized ? 'none' : 'all 0.6s ease 0.3s'
@@ -354,20 +367,6 @@ export const HeroSlide = ({
                   Up to <span style={{ color: '#00e87b', fontWeight: '600' }}>$100,000</span> to redesign your identity and pitch your <span style={{ fontStyle: 'italic', color: '#ffffff' }}>future self</span> — not another idea.
                 </p>
               </div>
-
-              {/* Always visible: Tagline */}
-              <p style={{
-                fontSize: 'clamp(1.1rem, 2vw, 1.6rem)',
-                margin: 0,
-                lineHeight: 1.5,
-                color: '#00e87b',
-                fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif',
-                fontWeight: '500',
-                textTransform:"uppercase",
-                marginTop: '0.5rem'
-              }}>
-                <span style={{color: '#ffffff'}}> We don't fund startups.</span> We fund humans redesigning themselves.
-              </p>
             </div>
           </div>
         </div>

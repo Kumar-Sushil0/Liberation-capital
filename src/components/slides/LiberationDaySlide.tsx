@@ -14,7 +14,7 @@ export const LiberationDaySlide = ({
   onAllColumnsVisible 
 }: LiberationDaySlideProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [visibleColumns, setVisibleColumns] = useState(isScrollEnabled ? 0 : 3);
+  const [visibleColumns, setVisibleColumns] = useState(isScrollEnabled ? 0 : 5);
   const [skipTransitions, setSkipTransitions] = useState(true);
   const [isInitialized, setIsInitialized] = useState(false);
   const isScrollingRef = useRef(false);
@@ -23,7 +23,7 @@ export const LiberationDaySlide = ({
   // Initialize component
   useEffect(() => {
     setSkipTransitions(true);
-    setVisibleColumns(isScrollEnabled ? 0 : 3);
+    setVisibleColumns(isScrollEnabled ? 0 : 5);
 
     const timer = setTimeout(() => {
       setSkipTransitions(false);
@@ -42,7 +42,7 @@ export const LiberationDaySlide = ({
     setSkipTransitions(true);
 
     if (!isScrollEnabled) {
-      setVisibleColumns(3);
+      setVisibleColumns(5);
       if (onAllColumnsVisible) {
         onAllColumnsVisible();
       }
@@ -103,6 +103,18 @@ export const LiberationDaySlide = ({
           setTriggeredColumns(prev => new Set(prev).add(3));
         }, 600);
       }
+
+      if (visibleColumns >= 4 && !triggeredColumns.has(4)) {
+        setTimeout(() => {
+          setTriggeredColumns(prev => new Set(prev).add(4));
+        }, 800);
+      }
+
+      if (visibleColumns >= 5 && !triggeredColumns.has(5)) {
+        setTimeout(() => {
+          setTriggeredColumns(prev => new Set(prev).add(5));
+        }, 1000);
+      }
     }
   }, [visibleColumns, isInitialized, triggeredColumns]);
 
@@ -130,9 +142,10 @@ export const LiberationDaySlide = ({
 
       const scrollPositions = [
         0,
-        maxScroll * 0.2,
-        maxScroll * 0.45,
-        maxScroll * 0.7,
+        maxScroll * 0.15,
+        maxScroll * 0.35,
+        maxScroll * 0.55,
+        maxScroll * 0.75,
         maxScroll
       ];
 
@@ -168,6 +181,18 @@ export const LiberationDaySlide = ({
         if (step === 3) {
           window.dispatchEvent(new CustomEvent('subscrollComplete', { 
             detail: { section: 16, step: 3 } 
+          }));
+        }
+        
+        if (step === 4) {
+          window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+            detail: { section: 16, step: 4 } 
+          }));
+        }
+        
+        if (step === 5) {
+          window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+            detail: { section: 16, step: 5 } 
           }));
           if (onAllColumnsVisible) {
             onAllColumnsVisible();
@@ -219,12 +244,24 @@ export const LiberationDaySlide = ({
             window.dispatchEvent(new CustomEvent('subscrollComplete', { 
               detail: { section: 16, step: 3 } 
             }));
+          }
+          
+          if (step === 4) {
+            window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+              detail: { section: 16, step: 4 } 
+            }));
+          }
+          
+          if (step === 5) {
+            window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+              detail: { section: 16, step: 5 } 
+            }));
             if (onAllColumnsVisible) {
               onAllColumnsVisible();
             }
           }
 
-          if (step >= 4 && currentSection === 16) {
+          if (step >= 6 && currentSection === 16) {
             setTimeout(() => {
               if (typeof window !== 'undefined' && (window as any).gotoNextSlide && currentSection === 16) {
                 (window as any).gotoNextSlide();
@@ -249,7 +286,7 @@ export const LiberationDaySlide = ({
       wheelTimer = setTimeout(() => {
         if (Math.abs(wheelDelta) > 40 && !isProcessingScroll) {
           if (wheelDelta > 0) {
-            const nextStep = Math.min(currentStep + 1, 4);
+            const nextStep = Math.min(currentStep + 1, 5);
             smoothScrollToStep(nextStep);
           } else {
             if (currentStep === 0) {
@@ -336,28 +373,28 @@ export const LiberationDaySlide = ({
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
-                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s' }}>▼</div>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s' }}>▼</div>
                     <div style={{ flex: 1 }}>
-                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s', marginBottom: '0.5rem', textAlign: 'left' }}>Coherence Graphs</h4>
-                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s', marginBottom: '0.5rem', textAlign: 'left' }}>Coherence Graphs</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>
                         <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Patterns that show whether your identity holds under pressure.</p>
                       </div>
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
-                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>▼</div>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 4 ? 1 : 0, transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>▼</div>
                     <div style={{ flex: 1 }}>
-                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s', marginBottom: '0.5rem', textAlign: 'left' }}>Behavioral Metrics</h4>
-                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s' }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 4 ? 1 : 0, transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s', marginBottom: '0.5rem', textAlign: 'left' }}>Behavioral Metrics</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 4 ? 1 : 0, transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s' }}>
                         <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Evidence of design-driven decisions, not mood-driven reactions.</p>
                       </div>
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
-                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>▼</div>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 5 ? 1 : 0, transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>▼</div>
                     <div style={{ flex: 1 }}>
-                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s', marginBottom: '0.5rem', textAlign: 'left' }}>Emotional Upgrades</h4>
-                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s' }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 5 ? 1 : 0, transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s', marginBottom: '0.5rem', textAlign: 'left' }}>Emotional Upgrades</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 5 ? 1 : 0, transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s' }}>
                         <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Where your internal architecture evolved, visibly, measurably.</p>
                       </div>
                     </div>
@@ -393,10 +430,10 @@ export const LiberationDaySlide = ({
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '500px', margin: '0 auto', alignItems: 'flex-start' }}>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
-                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease' }}>▼</div>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease' }}>▼</div>
                     <div style={{ flex: 1 }}>
-                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease', marginBottom: '0.5rem', textAlign: 'left' }}>Trajectory Stability</h4>
-                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease', marginBottom: '0.5rem', textAlign: 'left' }}>Trajectory Stability</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>
                         <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Do your patterns predict growth or collapse?</p>
                       </div>
                     </div>
@@ -411,19 +448,19 @@ export const LiberationDaySlide = ({
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
-                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>▼</div>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 4 ? 1 : 0, transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>▼</div>
                     <div style={{ flex: 1 }}>
-                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s', marginBottom: '0.5rem', textAlign: 'left' }}>Impulse Regulation</h4>
-                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s' }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 4 ? 1 : 0, transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s', marginBottom: '0.5rem', textAlign: 'left' }}>Impulse Regulation</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 4 ? 1 : 0, transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s' }}>
                         <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Are you governed by intention or craving?</p>
                       </div>
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
-                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>▼</div>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 5 ? 1 : 0, transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>▼</div>
                     <div style={{ flex: 1 }}>
-                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s', marginBottom: '0.5rem', textAlign: 'left' }}>Execution Credibility</h4>
-                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s' }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 5 ? 1 : 0, transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s', marginBottom: '0.5rem', textAlign: 'left' }}>Execution Credibility</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 5 ? 1 : 0, transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s' }}>
                         <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Can you act like the person you claim you're becoming?</p>
                       </div>
                     </div>

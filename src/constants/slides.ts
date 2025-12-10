@@ -60,23 +60,23 @@ export const getSubscrollSections = (isMobile: boolean): number[] => {
 // Desktop subscroll steps
 const DESKTOP_SUBSCROLL_STEPS: Record<number, number> = {
   0: 4, // Hero has 4 steps (headline, 3-col grid, get funded, funding details)
-  4: 4, // Slide03 has 4 steps (initial + 3 card reveals)
+  4: 5, // Slide03 has 5 steps (titles, 1st points, 2nd points, 3rd points, 4th points)
   5: 3, // FundOrigin has 3 columns to reveal
   6: 3, // RebuildIdentities has 3 columns to reveal
   7: 3, // FundCoherence has 3 columns to reveal
-  8: 4, // LifeiDesignAccelerator has 4 steps (initial + 3 card reveals)
+  8: 5, // LifeiDesignAccelerator has 5 steps (titles, 1st points, 2nd points, 3rd points, 4th points)
   9: 3, // SubscrollSlide1 has 3 columns to reveal
   10: 3, // CoreiDesign has 3 columns to reveal
   11: 3, // PlayiDesign has 3 columns to reveal
-  12: 4, // Epicentre has 4 steps (initial + 3 card reveals)
+  12: 5, // Epicentre has 5 steps (titles, 1st points, 2nd points, 3rd points, 4th points)
   13: 3, // SilenceTest has 3 columns to reveal
   14: 3, // DisciplineTest has 3 columns to reveal
   15: 3, // DistractionTest has 3 columns to reveal
-  16: 3, // LiberationDay has 3 steps (initial + 2 sections with cards)
+  16: 5, // LiberationDay has 5 steps (titles, 1st points, 2nd points, 3rd points, 4th points)
   17: 3, // FundCrucible has 3 columns to reveal
   18: 3, // FundBlueprint has 3 columns to reveal
   19: 3, // FundAsk has 3 columns to reveal
-  20: 3, // FundActivation has 3 steps (initial + 2 sections with cards)
+  20: 5, // FundActivation has 5 steps (titles, 1st points, 2nd points, 3rd points, 4th points)
   21: 3, // FundSupport has 3 columns to reveal
   22: 3, // FundEnvironment has 3 columns to reveal
   23: 3, // FundCapital has 3 columns to reveal

@@ -1,4 +1,5 @@
 "use client";
+import { createLiberationCapitalMeeting } from '../../utils/calendar';
 
 export const WarningSlide = () => {
   return (
@@ -99,24 +100,15 @@ export const WarningSlide = () => {
             }}
             onClick={(e) => {
               e.preventDefault();
-              // Add your click handler here
+              const calendarLink = createLiberationCapitalMeeting();
+              window.open(calendarLink, '_blank');
             }}
           >
-            Pick a 15-minute slot → we'll reserve it
+            Choose a time when you're ready to think, not react.
           </a>
         </div>
       </div>
-      
-      {/* Note outside container */}
-      <p style={{
-        fontSize: 'clamp(0.65rem, 1.2vw, 0.8rem)',
-        color: '#888',
-        margin: 0,
-        fontStyle: 'italic',
-        textAlign: 'center'
-      }}>
-        *Choose a time when you're ready to think, not react.
-      </p>
+
     </div>
   );
 };

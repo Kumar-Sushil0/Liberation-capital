@@ -14,7 +14,7 @@ export const LifeiDesignAcceleratorSlide = ({
   onAllColumnsVisible 
 }: LifeiDesignAcceleratorSlideProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [visibleColumns, setVisibleColumns] = useState(isScrollEnabled ? 0 : 4);
+  const [visibleColumns, setVisibleColumns] = useState(isScrollEnabled ? 0 : 5);
   const [skipTransitions, setSkipTransitions] = useState(true);
   const [isInitialized, setIsInitialized] = useState(false);
   const isScrollingRef = useRef(false);
@@ -23,7 +23,7 @@ export const LifeiDesignAcceleratorSlide = ({
   // Initialize component
   useEffect(() => {
     setSkipTransitions(true);
-    setVisibleColumns(isScrollEnabled ? 0 : 4);
+    setVisibleColumns(isScrollEnabled ? 0 : 5);
 
     const timer = setTimeout(() => {
       setSkipTransitions(false);
@@ -42,7 +42,7 @@ export const LifeiDesignAcceleratorSlide = ({
     setSkipTransitions(true);
 
     if (!isScrollEnabled) {
-      setVisibleColumns(4);
+      setVisibleColumns(5);
       if (onAllColumnsVisible) {
         onAllColumnsVisible();
       }
@@ -108,6 +108,12 @@ export const LifeiDesignAcceleratorSlide = ({
         setTimeout(() => {
           setTriggeredColumns(prev => new Set(prev).add(4));
         }, 800);
+      }
+
+      if (visibleColumns >= 5 && !triggeredColumns.has(5)) {
+        setTimeout(() => {
+          setTriggeredColumns(prev => new Set(prev).add(5));
+        }, 1000);
       }
     }
   }, [visibleColumns, isInitialized, triggeredColumns]);
@@ -182,6 +188,12 @@ export const LifeiDesignAcceleratorSlide = ({
           window.dispatchEvent(new CustomEvent('subscrollComplete', { 
             detail: { section: 8, step: 4 } 
           }));
+        }
+        
+        if (step === 5) {
+          window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+            detail: { section: 8, step: 5 } 
+          }));
           if (onAllColumnsVisible) {
             onAllColumnsVisible();
           }
@@ -238,12 +250,18 @@ export const LifeiDesignAcceleratorSlide = ({
             window.dispatchEvent(new CustomEvent('subscrollComplete', { 
               detail: { section: 8, step: 4 } 
             }));
+          }
+          
+          if (step === 5) {
+            window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+              detail: { section: 8, step: 5 } 
+            }));
             if (onAllColumnsVisible) {
               onAllColumnsVisible();
             }
           }
 
-          if (step >= 5 && currentSection === 8) {
+          if (step >= 6 && currentSection === 8) {
             setTimeout(() => {
               if (typeof window !== 'undefined' && (window as any).gotoNextSlide && currentSection === 8) {
                 (window as any).gotoNextSlide();
@@ -321,17 +339,20 @@ export const LifeiDesignAcceleratorSlide = ({
           <div className={styles.scrollRevealMainContent}>
             <div className={styles.powersMainContent}>
               <div className={styles.powersSection}>
-                <h3
-                  className={styles.sectionTitle}
+                <div
                   style={{
                     opacity: visibleColumns >= 1 ? 1 : 0,
                     transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)',
                     transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
                     textAlign: 'center',
-                    marginBottom: '3rem'
+                    marginBottom: '3rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '0.25rem'
                   }}
                 >
-                  <span style={{
+                  <h3 className={styles.sectionTitle} style={{
                     fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif',
                     fontSize: '14px',
                     color: '#00e87b',
@@ -341,19 +362,19 @@ export const LifeiDesignAcceleratorSlide = ({
                     margin: 0
                   }}>
                     LIFEiDESIGN Acceleration
-                  </span>
-                  <span style={{
+                  </h3>
+                  <p style={{
                     fontFamily: '"satoshi", sans-serif',
                     fontSize: '12px',
                     color: '#888',
                     fontWeight: '400',
                     textTransform: 'none',
                     letterSpacing: '0.5px',
-                    margin: '0 0 0 8px'
+                    margin: 0
                   }}>
-                  : The Engine for Your Becoming
-                  </span>
-                </h3>
+                  The Engine for Your Becoming
+                  </p>
+                </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '500px', margin: '0 auto', alignItems: 'flex-start' }}>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
@@ -398,17 +419,17 @@ export const LifeiDesignAcceleratorSlide = ({
                       fontSize: '16px', 
                       color: '#00e87b',
                       flexShrink: 0,
-                      opacity: visibleColumns >= 2 ? 1 : 0,
-                      transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
+                      opacity: visibleColumns >= 3 ? 1 : 0,
+                      transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
                     }}>▼</div>
                     <div style={{ flex: 1 }}>
                       <h4
                         className={styles.cardTitleBelow}
                         style={{
-                          opacity: visibleColumns >= 2 ? 1 : 0,
-                          transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
+                          opacity: visibleColumns >= 3 ? 1 : 0,
+                          transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease',
                           marginBottom: '0.5rem',
                           textAlign: 'left'
                         }}
@@ -416,9 +437,9 @@ export const LifeiDesignAcceleratorSlide = ({
                       <div style={{ 
                         borderLeft: '2px solid #333', 
                         paddingLeft: '1rem',
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
+                        opacity: visibleColumns >= 3 ? 1 : 0,
+                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
                       }}>
                         <p style={{
                           fontStyle: 'italic',
@@ -435,17 +456,17 @@ export const LifeiDesignAcceleratorSlide = ({
                       fontSize: '16px', 
                       color: '#00e87b',
                       flexShrink: 0,
-                      opacity: visibleColumns >= 3 ? 1 : 0,
-                      transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
+                      opacity: visibleColumns >= 4 ? 1 : 0,
+                      transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
                     }}>▼</div>
                     <div style={{ flex: 1 }}>
                       <h4
                         className={styles.cardTitleBelow}
                         style={{
-                          opacity: visibleColumns >= 3 ? 1 : 0,
-                          transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s',
+                          opacity: visibleColumns >= 4 ? 1 : 0,
+                          transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease',
                           marginBottom: '0.5rem',
                           textAlign: 'left'
                         }}
@@ -453,9 +474,9 @@ export const LifeiDesignAcceleratorSlide = ({
                       <div style={{ 
                         borderLeft: '2px solid #333', 
                         paddingLeft: '1rem',
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s'
+                        opacity: visibleColumns >= 4 ? 1 : 0,
+                        transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)',
+                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
                       }}>
                         <p style={{
                           fontStyle: 'italic',
@@ -472,17 +493,17 @@ export const LifeiDesignAcceleratorSlide = ({
                       fontSize: '16px', 
                       color: '#00e87b',
                       flexShrink: 0,
-                      opacity: visibleColumns >= 3 ? 1 : 0,
-                      transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
+                      opacity: visibleColumns >= 5 ? 1 : 0,
+                      transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
                     }}>▼</div>
                     <div style={{ flex: 1 }}>
                       <h4
                         className={styles.cardTitleBelow}
                         style={{
-                          opacity: visibleColumns >= 3 ? 1 : 0,
-                          transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s',
+                          opacity: visibleColumns >= 5 ? 1 : 0,
+                          transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease',
                           marginBottom: '0.5rem',
                           textAlign: 'left'
                         }}
@@ -490,9 +511,9 @@ export const LifeiDesignAcceleratorSlide = ({
                       <div style={{ 
                         borderLeft: '2px solid #333', 
                         paddingLeft: '1rem',
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s'
+                        opacity: visibleColumns >= 5 ? 1 : 0,
+                        transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)',
+                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
                       }}>
                         <p style={{
                           fontStyle: 'italic',
@@ -510,17 +531,20 @@ export const LifeiDesignAcceleratorSlide = ({
               <div className={styles.separatorLine}></div>
 
               <div className={styles.forcesSection}>
-                <h3
-                  className={styles.sectionTitle}
+                <div
                   style={{
                     opacity: visibleColumns >= 1 ? 1 : 0,
                     transform: visibleColumns >= 1 ? 'translateY(0)' : 'translateY(30px)',
                     transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
                     textAlign: 'center',
-                    marginBottom: '3rem'
+                    marginBottom: '3rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '0.25rem'
                   }}
                 >
-                  <span style={{
+                  <h3 className={styles.sectionTitle} style={{
                     fontFamily: '"Full Moon BT W01 Falling Leav", "satoshi", sans-serif',
                     fontSize: '14px',
                     color: '#00e87b',
@@ -530,19 +554,19 @@ export const LifeiDesignAcceleratorSlide = ({
                     margin: 0
                   }}>
                     EPiCENTRE Incubation
-                  </span>
-                  <span style={{
+                  </h3>
+                  <p style={{
                     fontFamily: '"satoshi", sans-serif',
                     fontSize: '12px',
                     color: '#888',
                     fontWeight: '400',
                     textTransform: 'none',
                     letterSpacing: '0.5px',
-                    margin: '0 0 0 8px'
+                    margin: 0
                   }}>
-                  : Where Designed Identity Becomes Lived Reality
-                  </span>
-                </h3>
+                  Where Designed Identity Becomes Lived Reality
+                  </p>
+                </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '500px', margin: '0 auto', alignItems: 'flex-start' }}>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
@@ -587,17 +611,17 @@ export const LifeiDesignAcceleratorSlide = ({
                       fontSize: '16px', 
                       color: '#00e87b',
                       flexShrink: 0,
-                      opacity: visibleColumns >= 2 ? 1 : 0,
-                      transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s'
+                      opacity: visibleColumns >= 3 ? 1 : 0,
+                      transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
                     }}>▼</div>
                     <div style={{ flex: 1 }}>
                       <h4
                         className={styles.cardTitleBelow}
                         style={{
-                          opacity: visibleColumns >= 2 ? 1 : 0,
-                          transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s',
+                          opacity: visibleColumns >= 3 ? 1 : 0,
+                          transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease',
                           marginBottom: '0.5rem',
                           textAlign: 'left'
                         }}
@@ -605,9 +629,9 @@ export const LifeiDesignAcceleratorSlide = ({
                       <div style={{ 
                         borderLeft: '2px solid #333', 
                         paddingLeft: '1rem',
-                        opacity: visibleColumns >= 2 ? 1 : 0,
-                        transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
+                        opacity: visibleColumns >= 3 ? 1 : 0,
+                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
                       }}>
                         <p style={{
                           fontStyle: 'italic',
@@ -624,17 +648,17 @@ export const LifeiDesignAcceleratorSlide = ({
                       fontSize: '16px', 
                       color: '#00e87b',
                       flexShrink: 0,
-                      opacity: visibleColumns >= 3 ? 1 : 0,
-                      transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
+                      opacity: visibleColumns >= 4 ? 1 : 0,
+                      transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)',
+                      transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease'
                     }}>▼</div>
                     <div style={{ flex: 1 }}>
                       <h4
                         className={styles.cardTitleBelow}
                         style={{
-                          opacity: visibleColumns >= 3 ? 1 : 0,
-                          transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s',
+                          opacity: visibleColumns >= 4 ? 1 : 0,
+                          transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)',
+                          transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease',
                           marginBottom: '0.5rem',
                           textAlign: 'left'
                         }}
@@ -642,9 +666,9 @@ export const LifeiDesignAcceleratorSlide = ({
                       <div style={{ 
                         borderLeft: '2px solid #333', 
                         paddingLeft: '1rem',
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
-                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s'
+                        opacity: visibleColumns >= 4 ? 1 : 0,
+                        transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)',
+                        transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s'
                       }}>
                         <p style={{
                           fontStyle: 'italic',
@@ -661,16 +685,16 @@ export const LifeiDesignAcceleratorSlide = ({
                       fontSize: '16px', 
                       color: '#00e87b',
                       flexShrink: 0,
-                      opacity: visibleColumns >= 3 ? 1 : 0,
-                      transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                      opacity: visibleColumns >= 5 ? 1 : 0,
+                      transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)',
                       transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s'
                     }}>▼</div>
                     <div style={{ flex: 1 }}>
                       <h4
                         className={styles.cardTitleBelow}
                         style={{
-                          opacity: visibleColumns >= 3 ? 1 : 0,
-                          transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                          opacity: visibleColumns >= 5 ? 1 : 0,
+                          transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)',
                           transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s',
                           marginBottom: '0.5rem',
                           textAlign: 'left'
@@ -679,8 +703,8 @@ export const LifeiDesignAcceleratorSlide = ({
                       <div style={{ 
                         borderLeft: '2px solid #333', 
                         paddingLeft: '1rem',
-                        opacity: visibleColumns >= 3 ? 1 : 0,
-                        transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)',
+                        opacity: visibleColumns >= 5 ? 1 : 0,
+                        transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)',
                         transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s'
                       }}>
                         <p style={{

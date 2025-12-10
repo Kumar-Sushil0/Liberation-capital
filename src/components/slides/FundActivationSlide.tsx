@@ -14,7 +14,7 @@ export const FundActivationSlide = ({
   onAllColumnsVisible 
 }: FundActivationSlideProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [visibleColumns, setVisibleColumns] = useState(isScrollEnabled ? 0 : 3);
+  const [visibleColumns, setVisibleColumns] = useState(isScrollEnabled ? 0 : 5);
   const [skipTransitions, setSkipTransitions] = useState(true);
   const [isInitialized, setIsInitialized] = useState(false);
   const isScrollingRef = useRef(false);
@@ -23,7 +23,7 @@ export const FundActivationSlide = ({
   // Initialize component
   useEffect(() => {
     setSkipTransitions(true);
-    setVisibleColumns(isScrollEnabled ? 0 : 3);
+    setVisibleColumns(isScrollEnabled ? 0 : 5);
 
     const timer = setTimeout(() => {
       setSkipTransitions(false);
@@ -42,7 +42,7 @@ export const FundActivationSlide = ({
     setSkipTransitions(true);
 
     if (!isScrollEnabled) {
-      setVisibleColumns(3);
+      setVisibleColumns(5);
       if (onAllColumnsVisible) {
         onAllColumnsVisible();
       }
@@ -103,6 +103,18 @@ export const FundActivationSlide = ({
           setTriggeredColumns(prev => new Set(prev).add(3));
         }, 600);
       }
+
+      if (visibleColumns >= 4 && !triggeredColumns.has(4)) {
+        setTimeout(() => {
+          setTriggeredColumns(prev => new Set(prev).add(4));
+        }, 800);
+      }
+
+      if (visibleColumns >= 5 && !triggeredColumns.has(5)) {
+        setTimeout(() => {
+          setTriggeredColumns(prev => new Set(prev).add(5));
+        }, 1000);
+      }
     }
   }, [visibleColumns, isInitialized, triggeredColumns]);
 
@@ -128,7 +140,14 @@ export const FundActivationSlide = ({
       const containerHeight = container.clientHeight;
       const maxScroll = scrollHeight - containerHeight;
 
-      const scrollPositions = [0, maxScroll * 0.2, maxScroll * 0.45, maxScroll * 0.7, maxScroll];
+      const scrollPositions = [
+        0,
+        maxScroll * 0.15,
+        maxScroll * 0.35,
+        maxScroll * 0.55,
+        maxScroll * 0.75,
+        maxScroll
+      ];
 
       const targetScroll = scrollPositions[step] || 0;
 
@@ -147,20 +166,37 @@ export const FundActivationSlide = ({
           setSkipTransitions(false);
         }, 50);
 
+        if (step === 1) {
+          window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+            detail: { section: 20, step: 1 } 
+          }));
+        }
+        
+        if (step === 2) {
+          window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+            detail: { section: 20, step: 2 } 
+          }));
+        }
+        
         if (step === 3) {
+          window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+            detail: { section: 20, step: 3 } 
+          }));
+        }
+        
+        if (step === 4) {
+          window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+            detail: { section: 20, step: 4 } 
+          }));
+        }
+        
+        if (step === 5) {
+          window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+            detail: { section: 20, step: 5 } 
+          }));
           if (onAllColumnsVisible) {
             onAllColumnsVisible();
           }
-          
-          // Dispatch subscrollComplete event and auto-advance
-          setTimeout(() => {
-            if (typeof window !== "undefined") {
-              window.dispatchEvent(new CustomEvent("subscrollComplete"));
-              if ((window as any).gotoNextSlide) {
-                (window as any).gotoNextSlide();
-              }
-            }
-          }, 800);
         }
 
         return;
@@ -192,20 +228,45 @@ export const FundActivationSlide = ({
             isProcessingScroll = false;
           }, 100);
 
+          if (step === 1) {
+            window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+              detail: { section: 20, step: 1 } 
+            }));
+          }
+          
+          if (step === 2) {
+            window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+              detail: { section: 20, step: 2 } 
+            }));
+          }
+          
           if (step === 3) {
+            window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+              detail: { section: 20, step: 3 } 
+            }));
+          }
+          
+          if (step === 4) {
+            window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+              detail: { section: 20, step: 4 } 
+            }));
+          }
+          
+          if (step === 5) {
+            window.dispatchEvent(new CustomEvent('subscrollComplete', { 
+              detail: { section: 20, step: 5 } 
+            }));
             if (onAllColumnsVisible) {
               onAllColumnsVisible();
             }
-            
-            // Dispatch subscrollComplete event and auto-advance
+          }
+
+          if (step >= 6 && currentSection === 20) {
             setTimeout(() => {
-              if (typeof window !== "undefined") {
-                window.dispatchEvent(new CustomEvent("subscrollComplete"));
-                if ((window as any).gotoNextSlide) {
-                  (window as any).gotoNextSlide();
-                }
+              if (typeof window !== 'undefined' && (window as any).gotoNextSlide && currentSection === 20) {
+                (window as any).gotoNextSlide();
               }
-            }, 800);
+            }, 300);
           }
         }
       };
@@ -225,7 +286,7 @@ export const FundActivationSlide = ({
       wheelTimer = setTimeout(() => {
         if (Math.abs(wheelDelta) > 40 && !isProcessingScroll) {
           if (wheelDelta > 0) {
-            const nextStep = Math.min(currentStep + 1, 3);
+            const nextStep = Math.min(currentStep + 1, 5);
             smoothScrollToStep(nextStep);
           } else {
             if (currentStep === 0) {
@@ -312,28 +373,28 @@ export const FundActivationSlide = ({
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
-                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s' }}>▼</div>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s' }}>▼</div>
                     <div style={{ flex: 1 }}>
-                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s', marginBottom: '0.5rem', textAlign: 'left' }}>Attention Engineering</h4>
-                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.05s', marginBottom: '0.5rem', textAlign: 'left' }}>Attention Engineering</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>
                         <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Guidance that keeps you pointed at the life you designed — not the life you inherited.</p>
                       </div>
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
-                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>▼</div>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 4 ? 1 : 0, transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>▼</div>
                     <div style={{ flex: 1 }}>
-                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s', marginBottom: '0.5rem', textAlign: 'left' }}>Emotional Reinforcement</h4>
-                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s' }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 4 ? 1 : 0, transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s', marginBottom: '0.5rem', textAlign: 'left' }}>Emotional Reinforcement</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 4 ? 1 : 0, transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s' }}>
                         <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Regulation, clarity, and internal stability calibrated to your new operating system.</p>
                       </div>
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
-                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>▼</div>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 5 ? 1 : 0, transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>▼</div>
                     <div style={{ flex: 1 }}>
-                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s', marginBottom: '0.5rem', textAlign: 'left' }}>EPiCENTRE Residency</h4>
-                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s' }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 5 ? 1 : 0, transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s', marginBottom: '0.5rem', textAlign: 'left' }}>EPiCENTRE Residency</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 5 ? 1 : 0, transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s' }}>
                         <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>A sealed ecosystem where your upgraded identity can stabilize before entering the world.</p>
                       </div>
                     </div>
@@ -369,10 +430,10 @@ export const FundActivationSlide = ({
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '500px', margin: '0 auto', alignItems: 'flex-start' }}>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
-                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease' }}>▼</div>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease' }}>▼</div>
                     <div style={{ flex: 1 }}>
-                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease', marginBottom: '0.5rem', textAlign: 'left' }}>Behavioral Transparency</h4>
-                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease', marginBottom: '0.5rem', textAlign: 'left' }}>Behavioral Transparency</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 2 ? 1 : 0, transform: visibleColumns >= 2 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>
                         <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Real-time visibility into how a human behaves, not how they pitch.</p>
                       </div>
                     </div>
@@ -387,19 +448,19 @@ export const FundActivationSlide = ({
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
-                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>▼</div>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 4 ? 1 : 0, transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s' }}>▼</div>
                     <div style={{ flex: 1 }}>
-                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s', marginBottom: '0.5rem', textAlign: 'left' }}>Coherence Signals</h4>
-                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s' }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 4 ? 1 : 0, transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.1s', marginBottom: '0.5rem', textAlign: 'left' }}>Coherence Signals</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 4 ? 1 : 0, transform: visibleColumns >= 4 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.2s' }}>
                         <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Metrics that reveal emotional stability, discipline, and long-term growth.</p>
                       </div>
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', minHeight: '80px' }}>
-                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>▼</div>
+                    <div style={{ fontSize: '16px', color: '#00e87b', flexShrink: 0, opacity: visibleColumns >= 5 ? 1 : 0, transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s' }}>▼</div>
                     <div style={{ flex: 1 }}>
-                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s', marginBottom: '0.5rem', textAlign: 'left' }}>Cultural Returns</h4>
-                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 3 ? 1 : 0, transform: visibleColumns >= 3 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s' }}>
+                      <h4 className={styles.cardTitleBelow} style={{ opacity: visibleColumns >= 5 ? 1 : 0, transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.15s', marginBottom: '0.5rem', textAlign: 'left' }}>Cultural Returns</h4>
+                      <div style={{ borderLeft: '2px solid #333', paddingLeft: '1rem', opacity: visibleColumns >= 5 ? 1 : 0, transform: visibleColumns >= 5 ? 'translateY(0)' : 'translateY(30px)', transition: skipTransitions || !isInitialized ? 'none' : 'all 0.4s ease 0.25s' }}>
                         <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#999', textAlign: 'left', margin: 0 }}>Funding humans who become case studies, influence, and narrative assets for the ecosystem.</p>
                       </div>
                     </div>
