@@ -337,16 +337,6 @@ export const SubscrollSlide1 = ({
                     You don't have one future, you have many.
                   </p>
                 </div>
-                <div className={styles.imageContent}>
-                  <img
-                    src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+1.svg"
-                    width={200}
-                    height={200}
-                    alt="Pre-Game"
-                    className={styles.heroImageContent}
-                    style={{ width: '200px', height: '200px' }}
-                  />
-                </div>
                 <div className={styles.textContent}>
                   <p className={styles.heroParagraph} style={{
                     fontFamily: '"satoshi", sans-serif',
@@ -359,6 +349,16 @@ export const SubscrollSlide1 = ({
                   }}>
                     Pre-Game reveals every trajectory your life can take.
                   </p>
+                </div>
+                <div className={styles.imageContent}>
+                  <img
+                    src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+1.svg"
+                    width={200}
+                    height={200}
+                    alt="Pre-Game"
+                    className={styles.heroImageContent}
+                    style={{ width: '200px', height: '200px' }}
+                  />
                 </div>
               </div>
 
@@ -397,16 +397,6 @@ export const SubscrollSlide1 = ({
                     Your best and worst selves run more of your life than you admit.
                   </p>
                 </div>
-                <div className={styles.imageContent}>
-                  <img
-                    src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+2.svg"
-                    width={200}
-                    height={200}
-                    alt="End-Game"
-                    className={styles.heroImageContent}
-                    style={{ width: '200px', height: '200px' }}
-                  />
-                </div>
                 <div className={styles.textContent}>
                   <p className={styles.heroParagraph} style={{
                     fontFamily: '"satoshi", sans-serif',
@@ -419,6 +409,16 @@ export const SubscrollSlide1 = ({
                   }}>
                     End-Game consolidates the extremes that secretly control you.
                   </p>
+                </div>
+                <div className={styles.imageContent}>
+                  <img
+                    src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+2.svg"
+                    width={200}
+                    height={200}
+                    alt="End-Game"
+                    className={styles.heroImageContent}
+                    style={{ width: '200px', height: '200px' }}
+                  />
                 </div>
               </div>
 
@@ -457,16 +457,6 @@ export const SubscrollSlide1 = ({
                     Identity is a decision, not an accident.
                   </p>
                 </div>
-                <div className={styles.imageContent}>
-                  <img
-                    src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+3.svg"
-                    width={200}
-                    height={200}
-                    alt="Me-Game"
-                    className={styles.heroImageContent}
-                    style={{ width: '200px', height: '200px' }}
-                  />
-                </div>
                 <div className={styles.textContent}>
                   <p className={styles.heroParagraph} style={{
                     fontFamily: '"satoshi", sans-serif',
@@ -479,6 +469,16 @@ export const SubscrollSlide1 = ({
                   }}>
                     Me-Game forces you to choose the version of yourself you will become.
                   </p>
+                </div>
+                <div className={styles.imageContent}>
+                  <img
+                    src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+3.svg"
+                    width={200}
+                    height={200}
+                    alt="Me-Game"
+                    className={styles.heroImageContent}
+                    style={{ width: '200px', height: '200px' }}
+                  />
                 </div>
               </div>
             </div>

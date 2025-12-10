@@ -337,16 +337,6 @@ export const CoreiDesignSlide = ({
                     You can't change what you refuse to look at.
                   </p>
                 </div>
-                <div className={styles.imageContent}>
-                  <img
-                    src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+1.svg"
-                    width={200}
-                    height={200}
-                    alt="Mirror Mode"
-                    className={styles.heroImageContent}
-                    style={{ width: '200px', height: '200px' }}
-                  />
-                </div>
                 <div className={styles.textContent}>
                   <p className={styles.heroParagraph} style={{
                     fontFamily: '"satoshi", sans-serif',
@@ -359,6 +349,16 @@ export const CoreiDesignSlide = ({
                   }}>
                     Mirror Mode reveals the emotional patterns running your life on autopilot.
                   </p>
+                </div>
+                <div className={styles.imageContent}>
+                  <img
+                    src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+1.svg"
+                    width={200}
+                    height={200}
+                    alt="Mirror Mode"
+                    className={styles.heroImageContent}
+                    style={{ width: '200px', height: '200px' }}
+                  />
                 </div>
               </div>
 
@@ -397,16 +397,6 @@ export const CoreiDesignSlide = ({
                     Money problems are rarely about money.
                   </p>
                 </div>
-                <div className={styles.imageContent}>
-                  <img
-                    src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+2.svg"
-                    width={200}
-                    height={200}
-                    alt="NPC Mode"
-                    className={styles.heroImageContent}
-                    style={{ width: '200px', height: '200px' }}
-                  />
-                </div>
                 <div className={styles.textContent}>
                   <p className={styles.heroParagraph} style={{
                     fontFamily: '"satoshi", sans-serif',
@@ -419,6 +409,16 @@ export const CoreiDesignSlide = ({
                   }}>
                     NPC Mode exposes the beliefs, fears, and stories that distort your financial decisions.
                   </p>
+                </div>
+                <div className={styles.imageContent}>
+                  <img
+                    src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+2.svg"
+                    width={200}
+                    height={200}
+                    alt="NPC Mode"
+                    className={styles.heroImageContent}
+                    style={{ width: '200px', height: '200px' }}
+                  />
                 </div>
               </div>
 
@@ -457,16 +457,6 @@ export const CoreiDesignSlide = ({
                     Ambition means nothing without discipline.
                   </p>
                 </div>
-                <div className={styles.imageContent}>
-                  <img
-                    src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+3.svg"
-                    width={200}
-                    height={200}
-                    alt="Monk Mode"
-                    className={styles.heroImageContent}
-                    style={{ width: '200px', height: '200px' }}
-                  />
-                </div>
                 <div className={styles.textContent}>
                   <p className={styles.heroParagraph} style={{
                     fontFamily: '"satoshi", sans-serif',
@@ -479,6 +469,16 @@ export const CoreiDesignSlide = ({
                   }}>
                     Monk Mode tests whether your emotional system can support the life you want.
                   </p>
+                </div>
+                <div className={styles.imageContent}>
+                  <img
+                    src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+3.svg"
+                    width={200}
+                    height={200}
+                    alt="Monk Mode"
+                    className={styles.heroImageContent}
+                    style={{ width: '200px', height: '200px' }}
+                  />
                 </div>
               </div>
             </div>

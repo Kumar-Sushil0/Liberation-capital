@@ -198,11 +198,11 @@ export const PlayiDesignSlide = ({
                 <div className={styles.textContent}>
                   <p className={styles.heroParagraph} style={{ fontFamily: '"satoshi", sans-serif', fontSize: '14px', fontWeight: '500', letterSpacing: '1px', color: '#888888', textAlign: 'center' }}>Your future self is built one day at a time.</p>
                 </div>
-                <div className={styles.imageContent}>
-                  <img src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+1.svg" width={200} height={200} alt="Everyday Mode" className={styles.heroImageContent} style={{ width: '200px', height: '200px' }} />
-                </div>
                 <div className={styles.textContent}>
                   <p className={styles.heroParagraph} style={{ fontFamily: '"satoshi", sans-serif', fontSize: '12px', fontWeight: '400', letterSpacing: '0.5px', color: '#666666', textAlign: 'center', fontStyle: 'italic' }}>Everyday Mode shows whether your actions match the life you claim to want.</p>
+                </div>
+                <div className={styles.imageContent}>
+                  <img src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+1.svg" width={200} height={200} alt="Everyday Mode" className={styles.heroImageContent} style={{ width: '200px', height: '200px' }} />
                 </div>
               </div>
 
@@ -213,11 +213,11 @@ export const PlayiDesignSlide = ({
                 <div className={styles.textContent}>
                   <p className={styles.heroParagraph} style={{ fontFamily: '"satoshi", sans-serif', fontSize: '14px', fontWeight: '500', letterSpacing: '1px', color: '#888888', textAlign: 'center' }}>What you do consistently is who you are.</p>
                 </div>
-                <div className={styles.imageContent}>
-                  <img src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+2.svg" width={200} height={200} alt="Ghost Mode" className={styles.heroImageContent} style={{ width: '200px', height: '200px' }} />
-                </div>
                 <div className={styles.textContent}>
                   <p className={styles.heroParagraph} style={{ fontFamily: '"satoshi", sans-serif', fontSize: '12px', fontWeight: '400', letterSpacing: '0.5px', color: '#666666', textAlign: 'center', fontStyle: 'italic' }}>Ghost Mode records the discipline receipts you can't fake.</p>
+                </div>
+                <div className={styles.imageContent}>
+                  <img src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+2.svg" width={200} height={200} alt="Ghost Mode" className={styles.heroImageContent} style={{ width: '200px', height: '200px' }} />
                 </div>
               </div>
 
@@ -228,11 +228,11 @@ export const PlayiDesignSlide = ({
                 <div className={styles.textContent}>
                   <p className={styles.heroParagraph} style={{ fontFamily: '"satoshi", sans-serif', fontSize: '14px', fontWeight: '500', letterSpacing: '1px', color: '#888888', textAlign: 'center' }}>Your patterns are data, and data tells the truth.</p>
                 </div>
-                <div className={styles.imageContent}>
-                  <img src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+3.svg" width={200} height={200} alt="Underground Mode" className={styles.heroImageContent} style={{ width: '200px', height: '200px' }} />
-                </div>
                 <div className={styles.textContent}>
                   <p className={styles.heroParagraph} style={{ fontFamily: '"satoshi", sans-serif', fontSize: '12px', fontWeight: '400', letterSpacing: '0.5px', color: '#666666', textAlign: 'center', fontStyle: 'italic' }}>Underground Mode exposes the behaviors, loops, and micro-decisions shaping your identity.</p>
+                </div>
+                <div className={styles.imageContent}>
+                  <img src="https://lidbucketnew.s3.ap-south-1.amazonaws.com/landingpage/slideassets/3.+game+moat+3.svg" width={200} height={200} alt="Underground Mode" className={styles.heroImageContent} style={{ width: '200px', height: '200px' }} />
                 </div>
               </div>
             </div>
