@@ -154,25 +154,8 @@ export const FundOriginSlide = ({
           setSkipTransitions(false);
         }, 50);
 
-        if (step === 1) {
-          window.dispatchEvent(new CustomEvent('subscrollComplete', { 
-            detail: { section: 5, step: 1 } 
-          }));
-        }
-        
-        if (step === 2) {
-          window.dispatchEvent(new CustomEvent('subscrollComplete', { 
-            detail: { section: 5, step: 2 } 
-          }));
-        }
-        
-        if (step === 3) {
-          window.dispatchEvent(new CustomEvent('subscrollComplete', { 
-            detail: { section: 5, step: 3 } 
-          }));
-          if (onAllColumnsVisible) {
-            onAllColumnsVisible();
-          }
+        if (step === 3 && onAllColumnsVisible) {
+          onAllColumnsVisible();
         }
 
         return;
@@ -204,33 +187,8 @@ export const FundOriginSlide = ({
             isProcessingScroll = false;
           }, 100);
 
-          if (step === 1) {
-            window.dispatchEvent(new CustomEvent('subscrollComplete', { 
-              detail: { section: 5, step: 1 } 
-            }));
-          }
-          
-          if (step === 2) {
-            window.dispatchEvent(new CustomEvent('subscrollComplete', { 
-              detail: { section: 5, step: 2 } 
-            }));
-          }
-          
-          if (step === 3) {
-            window.dispatchEvent(new CustomEvent('subscrollComplete', { 
-              detail: { section: 5, step: 3 } 
-            }));
-            if (onAllColumnsVisible) {
-              onAllColumnsVisible();
-            }
-          }
-
-          if (step >= 4 && currentSection === 5) {
-            setTimeout(() => {
-              if (typeof window !== 'undefined' && (window as any).gotoNextSlide && currentSection === 5) {
-                (window as any).gotoNextSlide();
-              }
-            }, 300);
+          if (step === 3 && onAllColumnsVisible) {
+            onAllColumnsVisible();
           }
         }
       };
@@ -250,7 +208,7 @@ export const FundOriginSlide = ({
       wheelTimer = setTimeout(() => {
         if (Math.abs(wheelDelta) > 40 && !isProcessingScroll) {
           if (wheelDelta > 0) {
-            const nextStep = Math.min(currentStep + 1, 4);
+            const nextStep = Math.min(currentStep + 1, 3);
             smoothScrollToStep(nextStep);
           } else {
             if (currentStep === 0) {
